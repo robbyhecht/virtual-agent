@@ -1,21 +1,67 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import "./Venues.css"
 
 export default class VenuesForm extends Component {
+
+  // Set initial state
+  state = {
+    name: "",
+    city: "",
+    state: "",
+    buyer: "",
+    email: "",
+    phone: "",
+    url: "",
+    notes: "",
+    played: false,
+    favorites: false,
+    userId: ""
+  };
+
+  // Update state whenever an input field is edited
+  handleFieldChange = venue => {
+    const stateToChange = {};
+    stateToChange[venue.target.id] = venue.target.value;
+    this.setState(stateToChange);
+  };
+
+  constructNewVenue = venue => {
+    venue.preventDefault();
+    const venues = {
+      name: this.state.name,
+      city: this.state.city,
+      state: this.state.state,
+      buyer: this.state.buyer,
+      email: this.state.email,
+      phone: this.state.phone,
+      url: this.url.state,
+      notes: this.state.notes,
+      played: this.played.state,
+      favorites: this.state.favorites,
+      userId: sessionStorage.getItem("username")
+    };
+    this.props.addVenue(venues).then(() => {
+      this.props.history.push("/venues")
+    });
+  };
+
+
   render() {
     return (
       <Form className="venuesForm">
         <FormGroup>
-          <Label for="name">Name</Label>
-          <Input type="text" name="name" id="venueName" placeholder="Venue Name" />
+          <Label for="name">Venue Name</Label>
+          <Input type="text" name="name" id="venueName" placeholder="" />
         </FormGroup>
         <FormGroup>
-          <Label for="venueCity">City</Label>
-          <Input type="text" name="venueCity" id="venueCity" placeholder="City" />
+          <Label for="city">City</Label>
+          <Input type="text" name="city" id="city" placeholder="" />
         </FormGroup>
         <FormGroup>
-          <Label for="venueState">State</Label>
-          <Input type="select" name="venueState" id="venueState">
+          <Label for="state">State</Label>
+          <Input type="select" name="state" id="state">
+            <option value=""></option>
             <option value="AK">Alaska</option>
             <option value="AL">Alabama</option>
             <option value="AR">Arkansas</option>
@@ -71,24 +117,20 @@ export default class VenuesForm extends Component {
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label for="venueBuyer">Talent Buyer</Label>
-          <Input type="text" name="venueBuyer" id="venueBuyer" placeholder="Talent Buyer" />
+          <Label for="buyer">Talent Buyer</Label>
+          <Input type="text" name="buyer" id="buyer" placeholder="who books this venue?" />
         </FormGroup>
         <FormGroup>
           <Label for="venueEmail">Email</Label>
-          <Input type="email" name="venueEmail" id="venueEmail" placeholder="Email" />
+          <Input type="email" name="venueEmail" id="venueEmail" placeholder="" />
         </FormGroup>
         <FormGroup>
-          <Label for="venuePhone">Phone</Label>
-          <Input type="text" name="venuePhone" id="venuePhone" placeholder="Phone number" />
+          <Label for="phone">Phone</Label>
+          <Input type="text" name="phone" id="phone" placeholder="" />
         </FormGroup>
         <FormGroup>
-          <Label for="venueUrl">Website</Label>
-          <Input type="url" name="venueUrl" id="venueUrl" placeholder="Web address" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="venueNotes">Notes</Label>
-          <Input type="textarea" name="venueNotes" id="venueNotes" />
+          <Label for="url">Website</Label>
+          <Input type="url" name="url" id="url" placeholder="http://website.com" />
         </FormGroup>
         <FormGroup check>
           <Label check>
@@ -101,6 +143,10 @@ export default class VenuesForm extends Component {
             <Input type="checkbox" />{' '}
             Favorites
           </Label>
+        </FormGroup>
+        <FormGroup>
+          <Label for="notes">Notes</Label>
+          <Input type="textarea" name="notes" id="notes" />
         </FormGroup>
         <Button>Submit</Button>
       </Form>
