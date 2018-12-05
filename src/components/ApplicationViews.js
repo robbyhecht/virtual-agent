@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import VenuesForm from "./venues/VenuesForm"
 
 export default class ApplicationViews extends Component {
   render() {
