@@ -9,8 +9,10 @@ class Agent extends Component {
     return (
       <React.Fragment>
         <Navbar />
+        <div>
         <ApplicationViews />
-    </React.Fragment>
+        </div>
+      </React.Fragment>
     );
   }
 }
