@@ -13,6 +13,7 @@ export default class ApplicationViews extends Component {
   }
 
     addVenue = venues => {
+      console.log("Hi")
       return new Promise((resolve, reject) => {
         VenuesManager.addAndList(venues)
           .then(() => VenuesManager.getAll()).then(venues =>
@@ -25,36 +26,36 @@ export default class ApplicationViews extends Component {
       })
     }
   
-    editVenues = (venues, url) => {
-      return new Promise((resolve, reject) => {
-        VenuesManager.patchAndListEvent(venues, url)
-          .then(() => VenuesManager.getAll())
-          .then(venues =>
-            this.setState({
-              venues: venues
-            }, () => {
-              resolve()
-            })
-          );
-      })
-    }
+    // editVenues = (venues, url) => {
+    //   return new Promise((resolve, reject) => {
+    //     VenuesManager.patchAndListEvent(venues, url)
+    //       .then(() => VenuesManager.getAll())
+    //       .then(venues =>
+    //         this.setState({
+    //           venues: venues
+    //         }, () => {
+    //           resolve()
+    //         })
+    //       );
+    //   })
+    // }
   
-    deleteVenues = (oldFriend, user) => {
-      return VenuesManager.removeAndList(oldFriend, user).then(venues =>
-        this.setState({
-          venues: venues
-        })
-      );
-    };
+    // deleteVenues = (oldFriend, user) => {
+    //   return VenuesManager.removeAndList(oldFriend, user).then(venues =>
+    //     this.setState({
+    //       venues: venues
+    //     })
+    //   );
+    // };
   
   render() {
     return(
       <React.Fragment>
-
+        {console.log("Hi")}
+        {<h1>Venues</h1>}
         <Route exact path="/venues" render={props => {
           // if (this.isAuthenticated()) {
             return <VenuesList {...props}
-              friends={this.state.friends}
               venues={this.state.venues}
               deleteVenues={this.deleteVenues} />
           // } else {

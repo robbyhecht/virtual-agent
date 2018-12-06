@@ -17,7 +17,8 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.url}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
-          <Button>Go somewhere</Button>
+          <Button>Edit</Button>
+          <Button>Delete</Button>
         </CardBody>
         <CardFooter className="text-muted">          
           <CardText>Have played: {this.props.venue.played}</CardText>
