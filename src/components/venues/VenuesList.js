@@ -34,16 +34,3 @@ export default class VenuesList extends Component {
     )
   }
 }
-
-
-
-  // animalOwner(animalId) {
-  //   console.log("owners", animalId)
-  //   let animalOwners = this.props.owners_animals
-  //   .filter( join => join.animal_id === animalId)
-  //   .map( join => this.props.owners.find( owner => owner.id === join.owner_id ).name)
-
-  //   console.log('owners', animalOwners );
-
-  //   return animalOwners
-  // }
