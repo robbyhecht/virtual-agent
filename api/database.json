@@ -69,6 +69,20 @@
       "favorites": true,
       "notes": "Really nice sound. Matt is slow to respond so be persistent",
       "userId": "robby"
+    },
+    {
+      "id": 6,
+      "name": "Club Passim",
+      "city": "Boston",
+      "state": "MA",
+      "buyer": "Matt Smith",
+      "email": "matt@passim.org",
+      "phone": "617-492-5300",
+      "url": "http://passim.org",
+      "played": true,
+      "favorites": true,
+      "notes": "Great listening crowd and friendly staff.",
+      "userId": "robby"
     }
   ],
 
