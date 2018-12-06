@@ -4,6 +4,8 @@ import VenuesList from "./venues/VenuesList"
 import VenuesForm from "./venues/VenuesForm"
 import VenuesManager from "./../managers/VenuesManager"
 import VenuesEdit from "./venues/VenuesEdit"
+// import Login from "./authentication/Login";
+// import Register from "./authentication/Register"
 
 
 export default class ApplicationViews extends Component {
@@ -54,34 +56,34 @@ export default class ApplicationViews extends Component {
         {console.log("Hi")}
         {<h1>Venues</h1>}
         <Route exact path="/venues" render={props => {
-          // if (this.isAuthenticated()) {
+          if (this.isAuthenticated()) {
             return <VenuesList {...props}
               venues={this.state.venues}
               deleteVenues={this.deleteVenues} />
-          // } else {
-          //   return <Redirect to="/login" />
-          // }
+          } else {
+            return <Redirect to="/login" />
+          }
         }}
           />
         
         <Route exact path="/venues/new" render={props => {
-            // if (this.isAuthenticated()) {
+            if (this.isAuthenticated()) {
               return <VenuesForm {...props} addVenue={this.addVenue} />
-            // } else {
-            //   return <Redirect to="/login" />
-            // }
+            } else {
+              return <Redirect to="/login" />
+            }
           }}
           />
 
         <Route path="/venues/edit/:venueId(\d+)"
           render={props => {
-            // if (this.isAuthenticated()) {
+            if (this.isAuthenticated()) {
               return <VenuesEdit {...props}
                 venues={this.state.venues}
                 editVenues={this.editVenues} />
-            // } else {
-            //   return <Redirect to="/login" />
-            // }
+            } else {
+              return <Redirect to="/login" />
+            }
           }} />
 
         {/* <Route path="/venues/:venuesId(\d+)" render={(props) => {
