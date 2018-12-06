@@ -3,7 +3,7 @@ import './Agent.css';
 import ApplicationViews from "./components/ApplicationViews"
 import Navbar from "./components/navbar/Navbar"
 import {  } from 'reactstrap'
-import VenuesForm from "./components/venues/VenuesForm"
+// import VenuesForm from "./components/venues/VenuesForm"
 
 class Agent extends Component {
   render() {
