@@ -11,7 +11,7 @@ class Agent extends Component {
       <React.Fragment>
         <Navbar />
         {/* remove this */}
-        <VenuesForm />
+        {/* <VenuesForm /> */}
         <div>
         <ApplicationViews />
         </div>

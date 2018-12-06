@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap';
-import { Link } from "react-router-dom";
+import React, {Component} from 'react'
+import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Link } from "react-router-dom"
 import "./Venues.css"
-export default class venueCard extends Component {
+
+export default class VenueCard extends Component {
 
   render() {
     return(
