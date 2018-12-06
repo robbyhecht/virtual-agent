@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from "react-router-dom";
 import VenuesForm from "./venues/VenuesForm"
+// import VenuesManager from "./managers/VenuesManager"
 
 export default class ApplicationViews extends Component {
   

@@ -1,13 +1,11 @@
-// convert to this project
-
 import APIManager from "./APIManager"
 
-class EventsManager extends APIManager {
-  getEvents(id) {
+class VenuesManager extends APIManager {
+  getVenues(id) {
     return this.get(id)
   }
   getAll() {
-    return this.allSortedSoonest()
+    return this.allSortedAlpha()
   }
   removeAndList(id) {
     return this.delete(id).then(() => this.all())
@@ -15,9 +13,9 @@ class EventsManager extends APIManager {
   addAndList(newMessage) {
       return this.post(newMessage).then(() => this.all())
   }
-  patchAndListEvent(payload, url) {
-    return this.patch(payload, url).then(() => this.allSortedSoonest())
+  patchAndListVenue(payload, url) {
+    return this.patch(payload, url).then(() => this.allSortedAlpha())
   }
 }
 
-export default new EventsManager("events")
+export default new VenuesManager("venues")
