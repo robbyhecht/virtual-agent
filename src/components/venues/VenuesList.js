@@ -10,20 +10,22 @@ export default class VenuesList extends Component {
 
     return (
       <React.Fragment>
-        <h1>Venues</h1>
-        <section className="newVenueButton">
-          <Button
-            color="info"
-            size="large"
-            className="btn"
-            onClick={() => {
-              this.props.history.push("/venues/new");
-            }}
-          >
-            Add New Venue
-          </Button>
-        </section>
-        <article className="venues list">
+        <div className="venuesTop">
+          <h1 className="venuesHeader">Venues</h1>
+          <section className="newVenueButton">
+            <Button
+              color="info"
+              size="large"
+              className="btn"
+              onClick={() => {
+                this.props.history.push("/venues/new");
+              }}
+            >
+              Add New Venue
+            </Button>
+          </section>
+        </div>
+        <article className="venuesList">
           {
             this.props.venues.map( venue =>
               <VenueCard key={venue.id} venue={venue} {...this.props} />

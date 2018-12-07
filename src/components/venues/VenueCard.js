@@ -8,7 +8,7 @@ export default class VenueCard extends Component {
   render() {
     return(
       <div>
-      <Card key={this.props.venue.id} className="venueCard">
+      <Card key={this.props.venue.id} className="venueCard text-center" style={{width:"60%"}}>
         <CardHeader tag="h3">{this.props.venue.name}</CardHeader>
         <CardBody>
           <CardTitle>{this.props.venue.city}, {this.props.venue.state}</CardTitle>
@@ -17,8 +17,9 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.url}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
-          <Button>Edit</Button>
-          <Button>Delete</Button>
+          <Button color="success" size="sm">Add to a tour</Button>{' '}
+          <Button color="primary" size="sm">Edit</Button>{' '}
+          <Button color="danger" size="sm">Delete</Button>
         </CardBody>
         <CardFooter className="text-muted">          
           <CardText>Have played: {this.props.venue.played}</CardText>
