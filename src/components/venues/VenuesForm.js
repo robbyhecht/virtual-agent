@@ -27,7 +27,7 @@ export default class VenuesForm extends Component {
   };
 
   constructNewVenue = venue => {
-    venue.preventDefault();
+    venue.preventDefault()
     const venues = {
       name: this.state.name,
       city: this.state.city,
@@ -40,11 +40,11 @@ export default class VenuesForm extends Component {
       played: this.played.state,
       favorites: this.state.favorites,
       userId: sessionStorage.getItem("username")
-    };
+    }
     this.props.addVenue(venues).then(() => {
       this.props.history.push("/venues")
-    });
-  };
+    })
+  }
 
 
   render() {
@@ -148,7 +148,15 @@ export default class VenuesForm extends Component {
           <Label for="notes">Notes</Label>
           <Input type="textarea" name="notes" id="notes" />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button            
+          type="submit"
+          size="lg"
+          color="success"
+          content="Submit"
+          onClick={this.constructNewVenue}
+          >
+          Submit
+          </Button>
       </Form>
     );
   }

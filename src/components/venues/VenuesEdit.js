@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';import { Link } from "react-router-dom";
-class VenueEdit extends Component {
+class VenuesEdit extends Component {
     state = {
         name: "",
         city: "",
@@ -24,13 +24,19 @@ class VenueEdit extends Component {
 
     componentDidMount() {
         // store the existing values in state to start
+        console.log("edit", this.props.venues)
         let newState = {}
-        let venue = this.props.venue.find(venue => venue.id === parseInt(this.props.match.params.venueId))
+        let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
         console.log(venue)
-        newState.title = venue.title
-        newState.synopsis = venue.synopsis
-        newState.url = venue.url
-        newState.date = venue.date
+        newState.name = venue.name
+        newState.city = venue.city
+        newState.state = venue.state
+        newState.buyer = venue.buyer
+        newState.email = venue.email
+        newState.phone = venue.phone
+        newState.played = venue.played
+        newState.favorites = venue.favorites
+        newState.notes = venue.notes
         newState.id = venue.id
         newState.userId = sessionStorage.getItem("username")
 
@@ -41,15 +47,22 @@ class VenueEdit extends Component {
         // prepare objects for editing database
         e.preventDefault()
         const venue = {
-            title: this.state.title,
-            synopsis: this.state.synopsis,
-            url: this.state.url,
-            date: this.state.date,
-            userId: sessionStorage.getItem("username"),
-            id: this.state.id
+          name: this.state.name,
+          city: this.state.city,
+          state: this.state.state,
+          buyer: this.state.buyer,
+          email: this.state.email,
+          phone: this.state.phone,
+          url: this.state.url,
+          notes: this.state.notes,
+          played: this.state.played,
+          favorites: this.state.favorites,
+          userId: sessionStorage.getItem("username"),
+          id: this.state.id
         }
         let venueURL = "http://localhost:5002/venue/"
         console.log(`${venueURL}${this.state.id}`)
+        console.log(this.state.id)
         return this.props.editVenue(venue, `${venueURL}${this.state.id}`)
             .then(() => this.props.history.push("/venue"))
     }
@@ -167,8 +180,8 @@ class VenueEdit extends Component {
                 <Input type="textarea" name="notes" id="notes" />
               </FormGroup>
 
-              <Button color="success" size="sm" onClick={this.editSubmittedArticle}>Submit Edit</Button>{' '}
-              <Button as={Link} className="card-link" color="primary" size="sm" to={`/venues/`}>Back</Button>
+              <Button color="success" size="sm" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
+              {/* <Button as={Link} className="card-link" color="primary" size="sm" to={`/venues/`}>Back</Button> */}
 
           </Form>
          </div>
@@ -176,4 +189,4 @@ class VenueEdit extends Component {
     }
 }
 
-export default VenueEdit
+export default VenuesEdit

@@ -7,8 +7,7 @@ import { Button } from "reactstrap"
 export default class VenuesList extends Component {
 
   render() {
-    let currentUser = sessionStorage.getItem("username")
-
+    console.log("list", this.props.venues)
     return (
       <React.Fragment>
         <div className="venuesTop">

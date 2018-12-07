@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap'
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Venues.css"
 
 export default class VenueCard extends Component {
@@ -18,8 +18,22 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.url}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
           <Button color="success" size="sm">Add to a tour</Button>{' '}
-          <Button color="primary" size="sm">Edit</Button>{' '}
-          <Button color="danger" size="sm">Delete</Button>
+
+          {/* <Button
+          // as={Link} to={`/venues/edit/${this.props.venue.id}`}
+          onClick={`/venues/edit/${this.props.venue.id}`}
+          color="primary" size="sm" className="card-link">
+          Edit
+          </Button>{' '} */}
+
+          <Link to={`/venues/edit/${this.props.venue.id}`}>
+          <Button color="primary" size="sm" className="card-link">Edit</Button></Link>
+
+          <Button
+          onClick={() => this.props.deleteVenue("venues", this.props.venue.id)
+          .then(venues =>
+            this.setState({ venues: venues }))}
+          className="card-link" color="danger" size="sm">Delete</Button>
         </CardBody>
         <CardFooter className="text-muted">          
           <CardText>Have played: {this.props.venue.played}</CardText>

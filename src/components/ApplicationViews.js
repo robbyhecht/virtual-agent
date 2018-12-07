@@ -23,7 +23,7 @@ export default class ApplicationViews extends Component {
   }
 
   // Venue Functions
-  addVenue = obj =>
+  addVenue = (obj) =>
     ApiManager.add("venues", obj).then(venues =>
       this.setState({ venues: venues })
     )
@@ -33,10 +33,16 @@ export default class ApplicationViews extends Component {
       this.setState({ venues: venues })
     )
 
-  deleteVenue = id =>
-    ApiManager.delete("venues", id).then(venues =>
+  // deleteVenue = id =>
+  //   ApiManager.delete(id).then(venues =>
+  //     this.setState({ venues: venues })
+  //   )
+
+  deleteVenue = (resource, id) => {
+    return ApiManager.delete(resource, id).then(venues =>
       this.setState({ venues: venues })
     )
+  }
 
 
   render() {
@@ -50,6 +56,35 @@ export default class ApplicationViews extends Component {
                   venues={this.state.venues}
                       />
             }} />
+      <Route path="/venues/edit/:venueId(\d+)"
+        render={(props) => {
+          // if (this.isAuthenticated()) {
+            return <VenuesEdit {...props}
+              venues={this.state.venues}
+              editVenue={this.editVenue} />
+          // } else {
+          //   return <Redirect to="/login" />
+          // }
+        }} />
+
+      {/* <Route exact path="/venues" render={props => {
+        if (this.isAuthenticated()) {
+          return <VenuesList {...props}
+            venues={this.state.venues}
+            deleteVenues={this.deleteVenues} />
+        } else {
+          return <Redirect to="/login" />
+        }
+      }}
+        /> */}
+      <Route exact path="/venues/new" render={props => {
+  // if (this.isAuthenticated()) {
+        return <VenuesForm {...props} addVenue={this.addVenue} />
+        // } else {
+        //   return <Redirect to="/login" />
+        // }
+      }}
+/>
     </React.Fragment>
     )
   }
@@ -94,36 +129,11 @@ export default class ApplicationViews extends Component {
 //   render() {
 //     return(
 //       <React.Fragment>
-//         <Route exact path="/venues" render={props => {
-//           if (this.isAuthenticated()) {
-//             return <VenuesList {...props}
-//               venues={this.state.venues}
-//               deleteVenues={this.deleteVenues} />
-//           } else {
-//             return <Redirect to="/login" />
-//           }
-//         }}
-//           />
-        
-//         <Route exact path="/venues/new" render={props => {
-//             if (this.isAuthenticated()) {
-//               return <VenuesForm {...props} addVenue={this.addVenue} />
-//             } else {
-//               return <Redirect to="/login" />
-//             }
-//           }}
-//           />
 
-//         <Route path="/venues/edit/:venueId(\d+)"
-//           render={props => {
-//             if (this.isAuthenticated()) {
-//               return <VenuesEdit {...props}
-//                 venues={this.state.venues}
-//                 editVenues={this.editVenues} />
-//             } else {
-//               return <Redirect to="/login" />
-//             }
-//           }} />
+        
+
+
+
 
 //         {/* <Route path="/venues/:venuesId(\d+)" render={(props) => {
 //           if (this.isAuthenticated()) {
