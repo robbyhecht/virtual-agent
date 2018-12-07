@@ -25,11 +25,11 @@ export default class Login extends Component {
       password: this.state.password
     }
     if (!this.state.username || !this.state.password) {
-      alert("please")
+      alert("Please enter a new username and password to register.")
     } else if (this.state.username || this.state.password) {
       ApiManager.searchUsername(this.state.username).then(users => {
         if (users.length) {
-          alert(`username ${this.state.username} already exits!`)
+          alert(`Username ${this.state.username} already exits!`)
         } else if (!users.length) {
           ApiManager.add("users", newUser).then(user =>{
             sessionStorage.setItem("credentials", parseInt(user.id))
@@ -45,7 +45,7 @@ export default class Login extends Component {
   handleLogin = e => {
     e.preventDefault()
     if (!this.state.username || !this.state.password) {
-      alert("please")
+      alert("Please enter a valid username and password or register a new account.")
     } else if (this.state.username || this.state.password) {
       ApiManager.searchNP(this.state.username, this.state.password).then(
         user => {
@@ -61,7 +61,8 @@ export default class Login extends Component {
   }
 
   render() {
-    return <form className="loginForm">
+    return (
+    <form className="loginForm">
         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label htmlFor="inputUsername">Username</label>
         <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" />
@@ -74,6 +75,7 @@ export default class Login extends Component {
           Register
         </button>
       </form>
+      )
   }
 }
 
