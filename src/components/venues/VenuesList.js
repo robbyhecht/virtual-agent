@@ -10,6 +10,7 @@ export default class VenuesList extends Component {
 
     return (
       <React.Fragment>
+        <h1>Venues</h1>
         <section className="newVenueButton">
           <Button
             color="info"
