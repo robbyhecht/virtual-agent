@@ -1,4 +1,17 @@
 {
+  "users": [
+    {
+      "username": "robby",
+      "password": "hecht",
+      "id": 1
+    },
+    {
+      "username": "r",
+      "password": "h",
+      "id": 2
+    }
+  ],
+  
   "venues": [
     {
       "name": "The Evening Muse",
@@ -96,24 +109,6 @@
       "name": "Northeast 2020",
       "userId": "robby",
       "id": 2
-    }
-  ],
-
-  "users": [
-    {
-      "username": "robby",
-      "password": "hecht",
-      "id": 1
-    },
-    {
-      "username": "r",
-      "password": "h",
-      "id": 2
-    },
-    {
-      "username": "dillon",
-      "password": "dillon",
-      "id": 3
     }
   ]
 }
