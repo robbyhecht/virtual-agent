@@ -1,4 +1,4 @@
-const remoteURL = "http://localhost:3002"
+const remoteURL = "http://localhost:5002"
 
 export default Object.create(null, {
   single: {
@@ -32,31 +32,6 @@ export default Object.create(null, {
         .then(() => this.all(resource))
     }
   },
-  // addJoiner: {
-  //   value: function(resource, newObject, resource2, newObject2) {
-  //     return fetch(`${remoteURL}/${resource}`, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       },
-  //       body: JSON.stringify(newObject)
-  //     })
-  //       .then(e => e.json())
-  //       .then(response => {
-  //         return fetch(`${remoteURL}/${resource2}`, {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json"
-  //           },
-  //           body: JSON.stringify({
-  //             ownerId: newObject2.ownerId,
-  //             animalId: response.id
-  //           })
-  //         }).then(e => e.json())
-  //       })
-  //       .then(() => this.all(resource))
-  //   }
-  // },
   edit: {
     value: function(resource, id, newObject) {
       return fetch(`${remoteURL}/${resource}/${id}`, {
@@ -104,3 +79,29 @@ export default Object.create(null, {
     }
   }
 })
+
+  // addJoiner: {
+  //   value: function(resource, newObject, resource2, newObject2) {
+  //     return fetch(`${remoteURL}/${resource}`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(newObject)
+  //     })
+  //       .then(e => e.json())
+  //       .then(response => {
+  //         return fetch(`${remoteURL}/${resource2}`, {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json"
+  //           },
+  //           body: JSON.stringify({
+  //             ownerId: newObject2.ownerId,
+  //             animalId: response.id
+  //           })
+  //         }).then(e => e.json())
+  //       })
+  //       .then(() => this.all(resource))
+  //   }
+  // },

@@ -40,7 +40,7 @@ export default class NavBar extends Component {
                 <NavLink href="/about/">About</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/log in/">Log In</NavLink>
+                <NavLink href="/logout/">Log Out</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

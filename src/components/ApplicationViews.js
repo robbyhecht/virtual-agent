@@ -53,7 +53,6 @@ export default class ApplicationViews extends Component {
   render() {
     return(
       <React.Fragment>
-        {console.log("Hi")}
         {<h1>Venues</h1>}
         <Route exact path="/venues" render={props => {
           if (this.isAuthenticated()) {

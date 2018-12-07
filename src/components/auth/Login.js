@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import ApiManager from "../modules/ApiManager"
-// import "./login.css"
+import "./Login.css"
 
 export default class Login extends Component {
   // Set initial state
@@ -15,6 +15,8 @@ export default class Login extends Component {
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
   }
+
+  // Registration function
 
   handleRegister = e => {
     e.preventDefault()
