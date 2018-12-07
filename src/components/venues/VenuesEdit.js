@@ -181,7 +181,8 @@ class VenuesEdit extends Component {
               </FormGroup>
 
               <Button color="success" size="sm" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
-              {/* <Button as={Link} className="card-link" color="primary" size="sm" to={`/venues/`}>Back</Button> */}
+
+              <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm">Back</Button></Link>
 
           </Form>
          </div>
