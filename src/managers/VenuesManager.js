@@ -1,4 +1,4 @@
-import APIManager from "./APIManager"
+import APIManager from "./APIManagerOrig"
 
 class VenuesManager extends APIManager {
   getVenues(id) {

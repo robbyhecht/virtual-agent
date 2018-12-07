@@ -1,7 +1,6 @@
 {
   "venues": [
     {
-      "id": 1,
       "name": "The Evening Muse",
       "city": "Charlotte",
       "state": "NC",
@@ -12,10 +11,10 @@
       "played": true,
       "favorites": true,
       "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "The Basement",
       "city": "Nashville",
       "state": "TN",
@@ -26,10 +25,10 @@
       "played": true,
       "favorites": true,
       "notes": "Favorite Nashville venue.",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Rockwood Music Hall",
       "city": "New York",
       "state": "NY",
@@ -40,10 +39,10 @@
       "played": true,
       "favorites": true,
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Crimson Moon Cafe",
       "city": "Dahlonega",
       "state": "GA",
@@ -54,10 +53,10 @@
       "played": true,
       "favorites": false,
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 4
     },
     {
-      "id": 5,
       "name": "Cactus Cafe",
       "city": "Austin",
       "state": "TX",
@@ -68,10 +67,10 @@
       "played": true,
       "favorites": true,
       "notes": "Really nice sound. Matt is slow to respond so be persistent",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 5
     },
     {
-      "id": 6,
       "name": "Club Passim",
       "city": "Boston",
       "state": "MA",
@@ -82,20 +81,39 @@
       "played": true,
       "favorites": true,
       "notes": "Great listening crowd and friendly staff.",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 6
     }
   ],
 
   "tours": [
     {
-      "id": 1,
       "name": "Southeast 2019",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Northeast 2020",
-      "userId": "robby"
+      "userId": "robby",
+      "id": 2
+    }
+  ],
+
+  "users": [
+    {
+      "username": "robby",
+      "password": "hecht",
+      "id": 1
+    },
+    {
+      "username": "r",
+      "password": "h",
+      "id": 2
+    },
+    {
+      "username": "dillon",
+      "password": "dillon",
+      "id": 3
     }
   ]
 }
