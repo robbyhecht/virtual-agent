@@ -16,7 +16,7 @@ export default class VenuesList extends Component {
             size="large"
             className="btn"
             onClick={() => {
-              this.props.history.push("/events/new");
+              this.props.history.push("/venues/new");
             }}
           >
             Add New Venue

@@ -1,6 +1,7 @@
-import APIManager from "./APIManagerOrig"
+// import APIManager from "./APIManagerOrig"
+import ApiManager from "../components/modules/ApiManager"
 
-class VenuesManager extends APIManager {
+class VenuesManager extends ApiManager {
   getVenues(id) {
     return this.get(id)
   }
