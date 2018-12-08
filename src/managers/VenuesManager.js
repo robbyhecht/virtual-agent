@@ -7,13 +7,23 @@ class VenuesManager extends APIManager {
     return this.allSortedAlpha()
   }
   removeAndList(id) {
-    return this.delete(id).then(() => this.all())
+    return this.delete(id).then(() => this.allSortedAlpha())
   }
   addAndList(newVenue) {
       return this.post(newVenue).then(() => this.all())
   }
   patchAndListVenue(venue, url) {
     return this.patch(venue, url).then(() => this.allSortedAlpha())
+  }
+  migrateVenue(venue) {
+    return this.get(venue)
+    .then(() => fetch("http://localhost:5002/tours"), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(venue)
+    }).then(data => data.json())
   }
 }
 

@@ -1,19 +1,33 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Container, Row, Col } from 'reactstrap'
 import { Link } from "react-router-dom";
+import "./Home.css"
 
 
 export default class HomePage extends Component {
 
   render() {
-    console.log("hi")
     return(
-    <React.Fragment>
-
-      <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm">Venues</Button></Link>
-      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm">Tours</Button></Link>
-
-    </React.Fragment>
+    <Container id="homeDiv">
+      <Row>
+      <Col>
+      <h1 id="slogan">Where do you <br /> want to play?</h1>
+      </Col>
+      <Col>
+      <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm" id="button1">FIND A VENUE</Button></Link>
+      </Col>
+      </Row>
+      <Row>
+      <Col>
+      <p id="sub-slogan">Find gigs.<br />
+      Stay organized.<br />
+      Take your touring to the next level.</p>
+      </Col>
+      <Col>
+      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">FIND A TOUR</Button></Link>
+      </Col>
+      </Row>
+    </Container>
     )
   }
   

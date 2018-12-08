@@ -15,7 +15,7 @@ export default class VenuesForm extends Component {
     notes: "",
     played: false,
     favorites: false,
-    userId: ""
+    user_id: ""
   };
 
   // Update state whenever an input field is edited
@@ -37,7 +37,7 @@ export default class VenuesForm extends Component {
       notes: this.state.notes,
       played: this.state.played,
       favorites: this.state.favorites,
-      userId: sessionStorage.getItem("username")
+      user_id: sessionStorage.getItem("user_id")
     }
     this.props.addVenue(venues).then(() => {
       this.props.history.push("/venues")

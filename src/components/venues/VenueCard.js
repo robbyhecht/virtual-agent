@@ -6,8 +6,11 @@ import "./Venues.css"
 export default class VenueCard extends Component {
 
   render() {
+
     return(
+
       <div>
+        
       <Card key={this.props.venue.id} className="venueCard text-center" style={{width:"60%"}}>
         <CardHeader tag="h3">{this.props.venue.name}</CardHeader>
         <CardBody>
@@ -17,16 +20,22 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
 
-          <Button color="success" size="sm">Add to a tour</Button>{' '}
+          <Button color="success" size="sm"
+          onClick={() => this.props.migrateVenue(this.props.venue.id)
+          .then(tours =>
+            this.setState({ tours: tours }))}>
+          Add to a tour</Button>{' '}
 
           <Link to={`/venues/edit/${this.props.venue.id}`}>
-          <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}</Link>
+          <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}
+          </Link>
 
           <Button
           onClick={() => this.props.deleteVenue(this.props.venue.id)
           .then(venues =>
             this.setState({ venues: venues }))}
-          className="card-link" color="danger" size="sm">Delete</Button>
+          className="card-link" color="danger" size="sm">Delete
+          </Button>
 
         </CardBody>
         <CardFooter className="text-muted">          
@@ -34,6 +43,7 @@ export default class VenueCard extends Component {
           <CardText>Favorite: {this.props.venue.favorites}</CardText>
         </CardFooter>
       </Card>
+      {console.log("venues1", this.props.venues)}
     </div>
     )
   }

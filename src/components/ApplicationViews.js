@@ -6,6 +6,8 @@ import VenuesForm from "./venues/VenuesForm"
 import VenuesEdit from "./venues/VenuesEdit"
 import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
+import ToursList from "./tours/ToursList"
+import ToursForm from "./tours/ToursForm"
 
 
 export default class ApplicationViews extends Component {
@@ -15,12 +17,10 @@ export default class ApplicationViews extends Component {
   }
 
   componentDidMount() {
-
     VenuesManager.getAll()
       .then(allVenues => {
       this.setState({venues: allVenues})
     })
-
   }
 
 
@@ -40,7 +40,7 @@ export default class ApplicationViews extends Component {
     )
 
   editVenue = (venues, url) =>
-    VenuesManager.patchAndListVenue(venues)
+    VenuesManager.patchAndListVenue(venues, url)
       .then(() => VenuesManager.getAll()).then(venues =>
         this.setState({
           venues: venues
@@ -78,10 +78,22 @@ export default class ApplicationViews extends Component {
     return (
 
       <React.Fragment>
-
         <Route exact path="/" render={(props) => {
           return <HomePage {...props} />
         }} />
+
+        <Route exact path="/tours" render={(props) => {
+          return <ToursList {...props} 
+            tours={this.state.tours}/>
+        }} />
+
+        <Route exact path="/tours/new" render={props => {
+    // if (this.isAuthenticated()) {
+          return <ToursForm {...props} addTour={this.addTour} />
+          // } else {
+          //   return <Redirect to="/login" />
+          // }
+        }}  />
 
         <Route exact path="/venues" render={(props) => {
           return <VenuesList {...props}
