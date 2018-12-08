@@ -6,6 +6,7 @@ import VenuesForm from "./venues/VenuesForm"
 import VenuesEdit from "./venues/VenuesEdit"
 import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
+import ToursList from "./tours/ToursList"
 
 
 export default class ApplicationViews extends Component {
@@ -81,6 +82,10 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/" render={(props) => {
           return <HomePage {...props} />
+        }} />
+
+        <Route exact path="/tours" render={(props) => {
+          return <ToursList {...props} />
         }} />
 
         <Route exact path="/venues" render={(props) => {
