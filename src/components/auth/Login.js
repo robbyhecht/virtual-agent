@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import ApiManager from "../modules/ApiManager"
+import APIManager from "../../managers/APIManager"
 import "./Login.css"
 
 export default class Login extends Component {
@@ -27,11 +27,11 @@ export default class Login extends Component {
     if (!this.state.username || !this.state.password) {
       alert("Please enter a new username and password to register.")
     } else if (this.state.username || this.state.password) {
-      ApiManager.searchUsername(this.state.username).then(users => {
+      APIManager.searchUsername(this.state.username).then(users => {
         if (users.length) {
           alert(`Username ${this.state.username} already exits!`)
         } else if (!users.length) {
-          ApiManager.add("users", newUser).then(user =>{
+          APIManager.add("users", newUser).then(user =>{
             sessionStorage.setItem("credentials", parseInt(user.id))
             this.props.setAuth()
           }
@@ -47,7 +47,7 @@ export default class Login extends Component {
     if (!this.state.username || !this.state.password) {
       alert("Please enter a valid username and password or register a new account.")
     } else if (this.state.username || this.state.password) {
-      ApiManager.searchNP(this.state.username, this.state.password).then(
+      APIManager.searchNP(this.state.username, this.state.password).then(
         user => {
           if (!user.length) {
             alert("Wrong username or password!")
@@ -88,7 +88,7 @@ export default class Login extends Component {
 
 
 // import React, { Component } from "react"
-// import ApiManagerAuth from "../../managers/APIManagerOrig"
+// import APIManagerAuth from "../../managers/APIManagerOrig"
 // import "./Login.css"
 
 // export default class Login extends Component {
