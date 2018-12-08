@@ -16,12 +16,10 @@ export default class ApplicationViews extends Component {
   }
 
   componentDidMount() {
-
     VenuesManager.getAll()
       .then(allVenues => {
       this.setState({venues: allVenues})
     })
-
   }
 
 
@@ -41,7 +39,7 @@ export default class ApplicationViews extends Component {
     )
 
   editVenue = (venues, url) =>
-    VenuesManager.patchAndListVenue(venues)
+    VenuesManager.patchAndListVenue(venues, url)
       .then(() => VenuesManager.getAll()).then(venues =>
         this.setState({
           venues: venues
@@ -79,7 +77,6 @@ export default class ApplicationViews extends Component {
     return (
 
       <React.Fragment>
-
         <Route exact path="/" render={(props) => {
           return <HomePage {...props} />
         }} />

@@ -7,11 +7,7 @@ class APIManager {
     // FETCH ONE ITEM
 
   get(id) {
-   return fetch(`${remoteURL}/${this.route}/${id}`).then(e => e.json())
-  }
-
-  single(id) {
-    return fetch(`${remoteURL}/${this.route}/${id}`).then(e => e.json())
+    return fetch(`${remoteURL}/${this.route}/${id}`).then(data => data.json())
   }
 
     // FETCH A COLLECTION
@@ -32,9 +28,9 @@ class APIManager {
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"
       })
-        .then(e => e.json())
+        .then(data => data.json())
         .then(() => fetch(`${remoteURL}/${this.route}`))
-        .then(e => e.json())
+        .then(data => data.json())
   }
 
     // ADD AN ITEM TO A COLLECTION (POST)
@@ -56,7 +52,7 @@ class APIManager {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newThing)
-    }).then(e => e.json())
+    }).then(data => data.json())
       .then(() => this.all(this.route))
   }
 
@@ -80,7 +76,7 @@ class APIManager {
         "Content-Type": "application/json"
       },
     })
-      .then(e => e.json())
+      .then(data => data.json())
       .then(() => this.all(this.route))
   }
 
@@ -94,14 +90,14 @@ class APIManager {
         "Content-Type": "application/json"
       }
     })
-      .then(e => e.json())
+      .then(data => data.json())
       .then(() => this.all(this.route))
   }
 
   // SEARCH FOR SOMETHING IN A COLLECTION
 
   getSearch(thing, query) {
-    return fetch(`${remoteURL}/${thing}?q=${query}`).then(e => e.json())
+    return fetch(`${remoteURL}/${thing}?q=${query}`).then(data => data.json())
   }
 
   // FETCH USERNAME AND PASSWORD
@@ -135,3 +131,6 @@ export default APIManager
 //   }).then(data => data.json())
 // }
 
+// single(id) {
+//   return fetch(`${remoteURL}/${this.route}/${id}`).then(data => data.json())
+// }

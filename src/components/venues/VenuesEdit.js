@@ -25,7 +25,6 @@ class VenuesEdit extends Component {
 
     componentDidMount() {
         // store the existing values in state to start
-        console.log("venues coming through?", this.props.venues)
         let newState = {}
         let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
         newState.name = venue.name
@@ -39,7 +38,6 @@ class VenuesEdit extends Component {
         newState.notes = venue.notes
         newState.id = venue.id
         newState.userId = sessionStorage.getItem("username")
-
         this.setState(newState)
     }
   
@@ -61,13 +59,13 @@ class VenuesEdit extends Component {
           id: this.state.id
         }
         let venueURL = "http://localhost:5002/venues/"
-        console.log(`${venueURL}${this.state.id}`)
-        console.log(this.state.id)
         return this.props.editVenue(venue, `${venueURL}${this.state.id}`)
             .then(() => this.props.history.push("/venues"))
     }
 
     render() {
+      console.log("venues4", this.props.venues)
+
         return (
           <div className="container">
             <Form className="editVenueForm">
@@ -158,14 +156,14 @@ class VenuesEdit extends Component {
 
               <FormGroup check>
                 <Label check>
-                  <Input type="checkbox" defaultValue={this.state.played} />{' '}
+                  <Input type="checkbox" defaultChecked={this.state.played} />{' '}
                   Have played
                 </Label>
               </FormGroup>
 
               <FormGroup check>
                 <Label check>
-                  <Input type="checkbox" defaultValue={this.state.favorites} />{' '}
+                  <Input type="checkbox" defaultChecked={this.state.favorites} />{' '}
                   Favorites
                 </Label>
               </FormGroup>
