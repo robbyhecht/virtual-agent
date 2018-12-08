@@ -7,7 +7,6 @@ import { Button } from "reactstrap"
 export default class VenuesList extends Component {
 
   render() {
-    console.log("list", this.props.venues)
     return (
       <React.Fragment>
         <div className="venuesTop">
