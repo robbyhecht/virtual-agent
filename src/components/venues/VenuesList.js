@@ -25,8 +25,10 @@ export default class VenuesList extends Component {
             >
               Add New Venue
             </Button>
+            
           </section>
         </div>
+
         <article className="venuesList">
           {
             this.props.venues.map( venue =>

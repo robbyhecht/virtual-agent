@@ -7,6 +7,7 @@ import VenuesEdit from "./venues/VenuesEdit"
 import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
 import ToursList from "./tours/ToursList"
+import ToursForm from "./tours/ToursForm"
 
 
 export default class ApplicationViews extends Component {
@@ -82,8 +83,17 @@ export default class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/tours" render={(props) => {
-          return <ToursList {...props} />
+          return <ToursList {...props} 
+            tours={this.state.tours}/>
         }} />
+
+        <Route exact path="/tours/new" render={props => {
+    // if (this.isAuthenticated()) {
+          return <ToursForm {...props} addTour={this.addTour} />
+          // } else {
+          //   return <Redirect to="/login" />
+          // }
+        }}  />
 
         <Route exact path="/venues" render={(props) => {
           return <VenuesList {...props}

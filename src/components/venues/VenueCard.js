@@ -6,8 +6,11 @@ import "./Venues.css"
 export default class VenueCard extends Component {
 
   render() {
+
     return(
+
       <div>
+        
       <Card key={this.props.venue.id} className="venueCard text-center" style={{width:"60%"}}>
         <CardHeader tag="h3">{this.props.venue.name}</CardHeader>
         <CardBody>
