@@ -13,18 +13,17 @@
   ],
   "venues": [
     {
-    "name": "The Evening Muse",
-    "city": "Charlotte",
-    "state": "NC",
-    "buyer": "Laurie Koster",
-    "email": "bookthemuse@gmail.com",
-    "phone": "704-618-4181",
-    "url": "https://www.eveningmuse.com",
-    "played": true,
-    "favorites": true,
-    "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
-    "user_id": "robby",
-    "id": 1
+      "name": "The Evening Muse",
+      "city": "Charlotte",
+      "state": "NC",
+      "buyer": "Laurie Koster",
+      "email": "bookthemuse@gmail.com",
+      "phone": "704-618-4181",
+      "played": true,
+      "favorites": true,
+      "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
+      "user_id": "robby",
+      "id": 1
     },
     {
       "name": "The Basement",
@@ -33,7 +32,6 @@
       "buyer": "Mike Grimes",
       "email": "mike@slowbar.com",
       "phone": "",
-      "url": "https://www.thebasementnashville.com",
       "played": true,
       "favorites": true,
       "notes": "Favorite Nashville venue.",
@@ -47,7 +45,6 @@
       "buyer": "Nate Kreichman",
       "email": "nate@rockwoodmusichall.com",
       "phone": "",
-      "url": "http://www.rockwoodmusichall.com",
       "played": true,
       "favorites": true,
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
@@ -61,7 +58,6 @@
       "buyer": "Dana LaChance",
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
-      "url": "http://www.thecrimsonmoon.com",
       "played": true,
       "favorites": false,
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
@@ -75,7 +71,6 @@
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
-      "url": "http://cactuscafe.org",
       "played": true,
       "favorites": true,
       "notes": "Really nice sound. Matt is slow to respond so be persistent",
@@ -89,7 +84,6 @@
       "buyer": "Matt Smith",
       "email": "matt@passim.org",
       "phone": "617-492-5300",
-      "url": "http://passim.org",
       "played": true,
       "favorites": true,
       "notes": "Great listening crowd and friendly staff.",
@@ -97,7 +91,6 @@
       "id": 6
     }
   ],
-
   "tours": [
     {
       "name": "Southeast 2019",

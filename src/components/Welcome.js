@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import NavBar from "./nav/Nav"
 import ApplicationViews from "./ApplicationViews";
+import HomePage from "./home/Home"
 
 export default class Welcome extends Component {
   render() {

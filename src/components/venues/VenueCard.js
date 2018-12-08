@@ -15,7 +15,6 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.buyer}</CardText>
           <CardText>{this.props.venue.email}</CardText>
           <CardText>{this.props.venue.phone}</CardText>
-          <CardText>{this.props.venue.url}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
 
           <Button color="success" size="sm">Add to a tour</Button>{' '}
@@ -24,7 +23,7 @@ export default class VenueCard extends Component {
           <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}</Link>
 
           <Button
-          onClick={() => this.props.deleteVenue("venues", this.props.venue.id)
+          onClick={() => this.props.deleteVenue(this.props.venue.id)
           .then(venues =>
             this.setState({ venues: venues }))}
           className="card-link" color="danger" size="sm">Delete</Button>

@@ -12,7 +12,6 @@ export default class VenuesForm extends Component {
     buyer: "",
     email: "",
     phone: "",
-    url: "",
     notes: "",
     played: false,
     favorites: false,
@@ -35,9 +34,8 @@ export default class VenuesForm extends Component {
       buyer: this.state.buyer,
       email: this.state.email,
       phone: this.state.phone,
-      url: this.url.state,
       notes: this.state.notes,
-      played: this.played.state,
+      played: this.state.played,
       favorites: this.state.favorites,
       userId: sessionStorage.getItem("username")
     }
@@ -128,17 +126,13 @@ export default class VenuesForm extends Component {
           <Label for="phone">Phone</Label>
           <Input type="text" name="phone" id="phone" placeholder="" />
         </FormGroup>
-        <FormGroup>
-          <Label for="url">Website</Label>
-          <Input type="url" name="url" id="url" placeholder="http://website.com" />
-        </FormGroup>
-        <FormGroup check>
+        <FormGroup check className="played">
           <Label check>
             <Input type="checkbox" />{' '}
             Have played
           </Label>
         </FormGroup>
-        <FormGroup check>
+        <FormGroup check className="favorites">
           <Label check>
             <Input type="checkbox" />{' '}
             Favorites

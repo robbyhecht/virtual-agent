@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';import { Link } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Link } from "react-router-dom";
 class VenuesEdit extends Component {
     state = {
         name: "",
@@ -24,10 +25,9 @@ class VenuesEdit extends Component {
 
     componentDidMount() {
         // store the existing values in state to start
-        console.log("edit", this.props.venues)
+        console.log("venues coming through?", this.props.venues)
         let newState = {}
         let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
-        console.log(venue)
         newState.name = venue.name
         newState.city = venue.city
         newState.state = venue.state
@@ -60,11 +60,11 @@ class VenuesEdit extends Component {
           userId: sessionStorage.getItem("username"),
           id: this.state.id
         }
-        let venueURL = "http://localhost:5002/venue/"
+        let venueURL = "http://localhost:5002/venues/"
         console.log(`${venueURL}${this.state.id}`)
         console.log(this.state.id)
         return this.props.editVenue(venue, `${venueURL}${this.state.id}`)
-            .then(() => this.props.history.push("/venue"))
+            .then(() => this.props.history.push("/venues"))
     }
 
     render() {
@@ -74,17 +74,17 @@ class VenuesEdit extends Component {
 
               <FormGroup>
                 <Label for="name">Venue Name</Label>
-                <Input type="text" name="name" id="venueName" placeholder="" />
+                <Input type="text" name="name" id="venueName" defaultValue={this.state.name} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="city">City</Label>
-                <Input type="text" name="city" id="city" placeholder="" />
+                <Input type="text" name="city" id="city" defaultValue={this.state.city} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="state">State</Label>
-                <Input type="select" name="state" id="state">
+                <Input type="select" name="state" id="state" defaultValue={this.state.state}>
                   <option value=""></option>
                   <option value="AK">Alaska</option>
                   <option value="AL">Alabama</option>
@@ -143,41 +143,36 @@ class VenuesEdit extends Component {
 
               <FormGroup>
                 <Label for="buyer">Talent Buyer</Label>
-                <Input type="text" name="buyer" id="buyer" placeholder="who books this venue?" />
+                <Input type="text" name="buyer" id="buyer" defaultValue={this.state.buyer} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="venueEmail">Email</Label>
-                <Input type="email" name="venueEmail" id="venueEmail" placeholder="" />
+                <Input type="email" name="venueEmail" id="venueEmail" defaultValue={this.state.email} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="phone">Phone</Label>
-                <Input type="text" name="phone" id="phone" placeholder="" />
-              </FormGroup>
-
-              <FormGroup>
-                <Label for="url">Website</Label>
-                <Input type="url" name="url" id="url" placeholder="http://website.com" />
+                <Input type="text" name="phone" id="phone" defaultValue={this.state.phone} />
               </FormGroup>
 
               <FormGroup check>
                 <Label check>
-                  <Input type="checkbox" />{' '}
+                  <Input type="checkbox" defaultValue={this.state.played} />{' '}
                   Have played
                 </Label>
               </FormGroup>
 
               <FormGroup check>
                 <Label check>
-                  <Input type="checkbox" />{' '}
+                  <Input type="checkbox" defaultValue={this.state.favorites} />{' '}
                   Favorites
                 </Label>
               </FormGroup>
 
               <FormGroup>
                 <Label for="notes">Notes</Label>
-                <Input type="textarea" name="notes" id="notes" />
+                <Input type="textarea" name="notes" id="notes" defaultValue={this.state.notes}/>
               </FormGroup>
 
               <Button color="success" size="sm" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}

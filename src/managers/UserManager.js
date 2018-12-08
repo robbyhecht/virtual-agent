@@ -1,4 +1,4 @@
-import APIManager from "./APIManagerOrig"
+import APIManager from "./APIManager"
 
 class UserManager extends APIManager {
   getUser(id) {

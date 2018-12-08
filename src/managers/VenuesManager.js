@@ -1,7 +1,5 @@
-// import APIManager from "./APIManagerOrig"
-import ApiManager from "../components/modules/ApiManager"
-
-class VenuesManager extends ApiManager {
+import APIManager from "./APIManager"
+class VenuesManager extends APIManager {
   getVenues(id) {
     return this.get(id)
   }
@@ -11,12 +9,13 @@ class VenuesManager extends ApiManager {
   removeAndList(id) {
     return this.delete(id).then(() => this.all())
   }
-  addAndList(newMessage) {
-      return this.post(newMessage).then(() => this.all())
+  addAndList(newVenue) {
+      return this.post(newVenue).then(() => this.all())
   }
-  patchAndListVenue(payload, url) {
-    return this.patch(payload, url).then(() => this.allSortedAlpha())
+  patchAndListVenue(venue, url) {
+    return this.patch(venue, url).then(() => this.allSortedAlpha())
   }
 }
 
+// EXPORTS VENUES MANAGER WITH 'THIS' REPRESENTING "VENUES"
 export default new VenuesManager("venues")
