@@ -1,0 +1,40 @@
+#button1 {
+  background-color: #CFE1F6;
+  color: black;
+  border: #CFE1F6;
+  width: 75%;
+  height: 125px;
+  border-radius: 10px;
+  font-size: 29px;
+  margin-top: 30%;
+  margin-left: 10%;
+}
+
+#button2 {
+  background-color: #CFE1F6;
+  color: black;
+  border: #CFE1F6;
+  width: 75%;
+  height: 125px;
+  border-radius: 10px;
+  font-size: 29px;
+  margin-left: 10%;
+
+}
+
+#homeDiv {
+  height: 700px;
+}
+
+#slogan {
+  color: white;
+  margin-top: 32%;
+  margin-left: 80px;
+  margin-bottom: 40px;
+}
+
+#sub-slogan {
+  color: white;
+  margin-left: 80px;
+
+}
