@@ -1,5 +1,6 @@
 const remoteURL = "http://localhost:5002"
-class APIManager {
+console.log("sup")
+export default class APIManager {
     constructor(route) {
         this.route = route
     }
@@ -102,21 +103,22 @@ class APIManager {
 
   // FETCH USERNAME AND PASSWORD
 
-  searchNP(username, password) {
+  static searchNP(username, password) {
     return fetch(`${remoteURL}/users?username=${username}&password=${password}`)
-    .then(data => data.json())
+    .then(e => e.json())
   }
 
   // FETCH USERNAME ONLY
 
-  searchUsername(username) {
+  static searchUsername(username) {
+    console.log('api manager username', username)
     return fetch(`${remoteURL}/users?username=${username}`)
     .then(data => data.json())
   }
 
 }
 
-export default APIManager
+
 
 
 

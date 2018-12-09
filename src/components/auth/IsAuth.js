@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import Login from "./Login"
 import Welcome from "../Welcome"
 
+
+
 class IsAuth extends Component {
   activeUser() {
     return sessionStorage.getItem("credentials")
