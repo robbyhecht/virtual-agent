@@ -1,0 +1,30 @@
+#mainLogin {
+  padding: 30px;
+}
+
+.loginForm {
+  text-align: center;
+  border: 1px solid #CFE1F6;
+  background-color:#CFE1F6;
+  margin: 140px 80px 390px 0px;
+  border-radius: 10px;
+}
+
+.loginButton {
+  margin: 20px 5px 40px 5px
+}
+
+#username {
+  border: 1px solid #CFE1F6;
+  border-radius: 3px;
+
+}
+
+#password {
+  border: 1px solid #CFE1F6;
+  border-radius: 3px;
+}
+
+#loginHeader {
+  margin-top: 45px;
+}

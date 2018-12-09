@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import APIManager from "../../managers/APIManager"
 import "./Login.css"
+import { Button, Form, Container, Row, Col } from 'reactstrap'
 
 export default class Login extends Component {
   // Set initial state
@@ -62,23 +63,54 @@ export default class Login extends Component {
 
   render() {
     return (
-    <form className="loginForm">
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label htmlFor="inputUsername">Username</label>
-        <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" />
-        <label htmlFor="inputPassword">Password</label>
-        <input onChange={this.handleFieldChange} type="password" id="password" placeholder="Password" required="" />
-        <button type="submit" onClick={this.handleLogin}>
-          Sign in
-        </button>
-        <button type="submit" onClick={this.handleRegister}>
-          Register
-        </button>
-      </form>
+      <div id="mainLogin">
+        <Container>
+          <Row>
+            <Col>
+              <h1 id="slogan">Where do you <br /> want to play?</h1>
+            </Col>
+            <Col>
+              <Form className="loginForm">
+                <h1 className="h3 mb-3 font-weight-normal" id="loginHeader">LOG IN</h1>
+                <label htmlFor="inputUsername">Username:</label>
+                <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" /><br />
+                <label htmlFor="inputPassword">Password:</label>
+                <input onChange={this.handleFieldChange} type="password" id="password" placeholder="Password" required="" /><br />
+                <Button type="submit" className="loginButton" onClick={this.handleLogin}>
+                  Sign in
+                </Button>
+                <Button type="submit" className="loginButton" onClick={this.handleRegister}>
+                  Register
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       )
   }
 }
 
+{/* <Container id="homeDiv">
+      <Row>
+      <Col>
+      <h1 id="slogan">Where do you <br /> want to play?</h1>
+      </Col>
+      <Col>
+      <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm" id="button1">ENTER VENUES</Button></Link>
+      </Col>
+      </Row>
+      <Row>
+      <Col>
+      <p id="sub-slogan">Find gigs.<br />
+      Stay organized.<br />
+      Take your touring to the next level.</p>
+      </Col>
+      <Col>
+      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">ENTER TOURS</Button></Link>
+      </Col>
+      </Row>
+    </Container> */}
 
 
 
