@@ -11,29 +11,9 @@
       "id": 2
     },
     {
-      "username": "ddd",
-      "password": "ddd",
+      "username": "iii",
+      "password": "ikkio",
       "id": 3
-    },
-    {
-      "username": "robbie",
-      "password": "hack",
-      "id": 4
-    },
-    {
-      "username": "eeeee",
-      "password": "eeeee",
-      "id": 5
-    },
-    {
-      "username": "eeeeeee",
-      "password": "dcer",
-      "id": 6
-    },
-    {
-      "username": "tb5ntervdf",
-      "password": "verbteyrevsd",
-      "id": 7
     }
   ],
   "venues": [
@@ -92,7 +72,7 @@
       "user_id": "robby",
       "id": 5,
       "url": "",
-      "userId": null
+      "userId": 5
     },
     {
       "name": "Club Passim",
@@ -104,7 +84,19 @@
       "notes": "Great listening crowd and friendly staff.",
       "user_id": "robby",
       "id": 6
+    },
+    {
+      "name": "Hotel Cafe",
+      "city": "Los Angeles",
+      "state": "CA",
+      "buyer": "Marko",
+      "email": "marko@hotelcafe.com",
+      "phone": "email only",
+      "notes": "There is a big stage and a small stage. Small room is tiny but the sound is great.",
+      "user_id": "r",
+      "id": 7
     }
+    
   ],
   "tours": [
     {

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
+import UserManager from "./../../managers/UserManager"
 import APIManager from "./../../managers/APIManager"
-import OldApiManager from "./OldApiManager"
-// import OldApiManager from "./OldApiManager"
 import "./Login.css"
 import { Button, Form, Container, Row, Col } from 'reactstrap'
 
@@ -18,14 +17,6 @@ export default class Login extends Component {
     stateToChange[entry.target.id] = entry.target.value
     this.setState(stateToChange)
   }
-  
-  // searchUsername(username) {
-  //   // console.log('api manager username', username)
-  //   // return fetch(`${remoteURL}/users?username=${username}`)
-  //   // .then(data => data.json())
-  // }
-
-  // Registration function
 
   handleRegister = e => {
     e.preventDefault()
@@ -36,10 +27,6 @@ export default class Login extends Component {
     if (!this.state.username || !this.state.password) {
       alert("Please enter a new username and password to register.")
     } else if (this.state.username || this.state.password)
-      // console.log("username", this.state.username)
-      // console.log("password", this.state.password)
-      // console.log("API Manager", APIManager)
-      // console.log("API Manager searchUsername", searchUsername)
 
     {
       APIManager.searchUsername(this.state.username).then(users => {
@@ -47,10 +34,8 @@ export default class Login extends Component {
         if (users.length) {
           alert(`Username ${this.state.username} already exits!`)
         } else if (!users.length) {
-            // OldApiManager.add("users", newUser).then(user =>{
-            //   sessionStorage.setItem("credentials", parseInt(user.id))
-            //   this.props.setAuth()
-            APIManager.add("users", newUser).then(user =>{
+          
+            UserManager.addUser(newUser).then(user =>{
               sessionStorage.setItem("credentials", parseInt(user.id))
               this.props.setAuth()
             }
@@ -60,7 +45,6 @@ export default class Login extends Component {
     }
   }
 
-  // Simplistic handler for login submit
   handleLogin = e => {
     e.preventDefault()
     if (!this.state.username || !this.state.password) {

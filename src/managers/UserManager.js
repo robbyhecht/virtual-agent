@@ -3,7 +3,7 @@ import APIManager from "./APIManager"
 class UserManager extends APIManager {
 
   addUser(newUser) {
-    return this.add(newUser)
+    return this.post(newUser)
   }
 
   getUser(id) {
@@ -16,7 +16,7 @@ class UserManager extends APIManager {
     return this.delete(id).then(() => this.all())
   }
   post(newUser) {
-    return fetch("http://localhost:5002/user", {
+    return fetch("http://localhost:5002/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -26,4 +26,4 @@ class UserManager extends APIManager {
   }
 }
 
-export default new UserManager("user")
+export default new UserManager("users")

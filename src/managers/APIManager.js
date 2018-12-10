@@ -45,7 +45,7 @@ export default class APIManager {
     }).then(data => data.json())
   }
   
-  static add(destination, newThing) {
+  add(destination, newThing) {
     return fetch(`${remoteURL}/${destination}`, {
       method: "POST",
       headers: {

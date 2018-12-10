@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -20,11 +20,11 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
 
-          <Button color="success" size="sm"
+          {/* <Button color="success" size="sm"
           onClick={() => this.props.migrateVenue(this.props.venue.id)
           .then(tours =>
             this.setState({ tours: tours }))}>
-          Add to a tour</Button>{' '}
+          Add to a tour</Button>{' '} */}
 
           <Link to={`/venues/edit/${this.props.venue.id}`}>
           <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}
