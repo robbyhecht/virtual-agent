@@ -14,7 +14,8 @@ import ToursManager from './../managers/ToursManager'
 export default class ApplicationViews extends Component {
   
   state = {
-    venues: []
+    venues: [],
+    tours: []
   }
 
   componentDidMount() {

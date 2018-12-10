@@ -68,5 +68,16 @@
       "id": 7
     }
   ],
-  "tours": []
+  "tours": [
+    {
+      "name": "Northeast 2020",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "name": "Southwest 2050",
+      "userId": 1,
+      "id": 4
+    }
+  ]
 }

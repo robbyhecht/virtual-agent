@@ -7,6 +7,7 @@ export default class ToursList extends Component {
 
   render() {
     console.log(this.props.tours)
+    
     return (
 
       <React.Fragment>
@@ -28,13 +29,12 @@ export default class ToursList extends Component {
         </div>
 
         <article className="toursList">
-            { 
-              this.props.tours.map( tour =>
-                {console.log(tour)
-                return <TourCard key={tour.id} tour={tour} {...this.props} />}
-              )
-            }
-          </article>
+          { 
+            this.props.tours.map( tour => {
+              return <TourCard key={tour.id} tour={tour} {...this.props} />
+            })
+          }
+        </article>
       </React.Fragment>
 
     )
