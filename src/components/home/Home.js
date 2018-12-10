@@ -14,7 +14,7 @@ export default class HomePage extends Component {
       <h1 id="slogan">Where do you <br /> want to play?</h1>
       </Col>
       <Col>
-      <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm" id="button1">FIND A VENUE</Button></Link>
+      <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm" id="button1">ENTER VENUES</Button></Link>
       </Col>
       </Row>
       <Row>
@@ -24,7 +24,7 @@ export default class HomePage extends Component {
       Take your touring to the next level.</p>
       </Col>
       <Col>
-      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">FIND A TOUR</Button></Link>
+      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">ENTER TOURS</Button></Link>
       </Col>
       </Row>
     </Container>

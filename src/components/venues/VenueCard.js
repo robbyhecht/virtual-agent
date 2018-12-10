@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -21,9 +21,11 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.notes}</CardText>
 
           <Button color="success" size="sm"
-          onClick={() => this.props.migrateVenue(this.props.venue.id)
-          .then(tours =>
-            this.setState({ tours: tours }))}>
+          onClick={() => alert("you pressed me, teeheehee")}
+          // onClick={() => this.props.migrateVenue(this.props.venue.id)
+          // .then(tours =>
+          //   this.setState({ tours: tours }))}
+            >
           Add to a tour</Button>{' '}
 
           <Link to={`/venues/edit/${this.props.venue.id}`}>
@@ -38,13 +40,14 @@ export default class VenueCard extends Component {
           </Button>
 
         </CardBody>
-        <CardFooter className="text-muted">          
-          <CardText>Have played: {this.props.venue.played}</CardText>
-          <CardText>Favorite: {this.props.venue.favorites}</CardText>
-        </CardFooter>
       </Card>
-      {console.log("venues1", this.props.venues)}
     </div>
     )
   }
 }
+
+
+        {/* <CardFooter className="text-muted">          
+          <CardText>Have played: {this.props.venue.played}</CardText>
+          <CardText>Favorite: {this.props.venue.favorites}</CardText>
+        </CardFooter> */}

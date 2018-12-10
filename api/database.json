@@ -11,6 +11,7 @@
       "id": 2
     }
   ],
+
   "venues": [
     {
       "name": "The Evening Muse",
@@ -19,8 +20,6 @@
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
-      "played": true,
-      "favorites": true,
       "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
       "user_id": "robby",
       "id": 1
@@ -32,8 +31,6 @@
       "buyer": "Mike Grimes",
       "email": "mike@slowbar.com",
       "phone": "",
-      "played": true,
-      "favorites": true,
       "notes": "Favorite Nashville venue.",
       "user_id": "robby",
       "id": 2
@@ -45,8 +42,6 @@
       "buyer": "Nate Kreichman",
       "email": "nate@rockwoodmusichall.com",
       "phone": "",
-      "played": true,
-      "favorites": true,
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
       "user_id": "robby",
       "id": 3
@@ -58,8 +53,6 @@
       "buyer": "Dana LaChance",
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
-      "played": true,
-      "favorites": false,
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
       "user_id": "robby",
       "id": 4
@@ -71,11 +64,11 @@
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
-      "played": true,
-      "favorites": true,
-      "notes": "Really nice sound. Matt is slow to respond so be persistent",
+      "notes": "Really nice sound. Matt is super nice.",
       "user_id": "robby",
-      "id": 5
+      "id": 5,
+      "url": "",
+      "userId": null
     },
     {
       "name": "Club Passim",
@@ -84,13 +77,25 @@
       "buyer": "Matt Smith",
       "email": "matt@passim.org",
       "phone": "617-492-5300",
-      "played": true,
-      "favorites": true,
       "notes": "Great listening crowd and friendly staff.",
       "user_id": "robby",
-      "id": 6
+      "id": 6,
+      "url": "",
+      "userId": null
+    },
+    {
+      "name": "Hotel Cafe",
+      "city": "Los Angeles",
+      "state": "CA",
+      "buyer": "Marko",
+      "email": "marko@hotelcafe.com",
+      "phone": "email only",
+      "notes": "There is a big stage and a small stage. Small room is tiny but the sound is great.",
+      "user_id": "r",
+      "id": 7
     }
   ],
+
   "tours": [
     {
       "name": "Southeast 2019",

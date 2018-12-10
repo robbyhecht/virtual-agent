@@ -26,13 +26,13 @@ export default class ToursList extends Component {
           </section>
         </div>
 
-      <article className="toursList">
+      {/* <article className="toursList">
           {
             this.props.tours.map( tour =>
               <TourCard key={tour.id} tour={tour} {...this.props} />
             )
           }
-        </article>
+        </article> */}
       </React.Fragment>
 
     )

@@ -1,5 +1,5 @@
 const remoteURL = "http://localhost:5002"
-class APIManager {
+export default class APIManager {
     constructor(route) {
         this.route = route
     }
@@ -45,15 +45,15 @@ class APIManager {
     }).then(data => data.json())
   }
   
-  add(newThing) {
-    return fetch(`${remoteURL}/${this.route}/`, {
+  add(destination, newThing) {
+    return fetch(`${remoteURL}/${destination}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newThing)
     }).then(data => data.json())
-      .then(() => this.all(this.route))
+      .then(() => this.all(destination))
   }
 
     // MAKE A CHANGE TO A COLLECTION (PATCH)
@@ -102,21 +102,22 @@ class APIManager {
 
   // FETCH USERNAME AND PASSWORD
 
-  searchNP(username, password) {
+  static searchNP(username, password) {
     return fetch(`${remoteURL}/users?username=${username}&password=${password}`)
-    .then(data => data.json())
+    .then(e => e.json())
   }
 
   // FETCH USERNAME ONLY
 
-  searchUsername(username) {
+  static searchUsername(username) {
+    console.log('api manager username', username)
     return fetch(`${remoteURL}/users?username=${username}`)
     .then(data => data.json())
   }
 
 }
 
-export default APIManager
+
 
 
 

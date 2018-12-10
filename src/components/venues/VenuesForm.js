@@ -13,8 +13,6 @@ export default class VenuesForm extends Component {
     email: "",
     phone: "",
     notes: "",
-    played: false,
-    favorites: false,
     user_id: ""
   };
 
@@ -48,17 +46,20 @@ export default class VenuesForm extends Component {
   render() {
     return (
       <Form className="venuesForm">
+
         <FormGroup>
           <Label for="name">Venue Name</Label>
-          <Input type="text" name="name" id="venueName" placeholder="" />
+          <Input type="text" name="name" id="name" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="city">City</Label>
-          <Input type="text" name="city" id="city" placeholder="" />
+          <Input type="text" name="city" id="city" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="state">State</Label>
-          <Input type="select" name="state" id="state">
+          <Input type="select" name="state" id="state" onChange={(event) => this.handleFieldChange(event)}>
             <option value=""></option>
             <option value="AK">Alaska</option>
             <option value="AL">Alabama</option>
@@ -114,34 +115,27 @@ export default class VenuesForm extends Component {
             <option value="WY">Wyoming</option>
           </Input>
         </FormGroup>
+
         <FormGroup>
           <Label for="buyer">Talent Buyer</Label>
-          <Input type="text" name="buyer" id="buyer" placeholder="who books this venue?" />
+          <Input type="text" name="buyer" id="buyer" placeholder="who books this venue?" onChange={(event) => this.handleFieldChange(event)} />
         </FormGroup>
+
         <FormGroup>
-          <Label for="venueEmail">Email</Label>
-          <Input type="email" name="venueEmail" id="venueEmail" placeholder="" />
+          <Label for="email">Email</Label>
+          <Input type="email" name="email" id="email" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="phone">Phone</Label>
-          <Input type="text" name="phone" id="phone" placeholder="" />
+          <Input type="text" name="phone" id="phone" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
-        <FormGroup check className="played">
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Have played
-          </Label>
-        </FormGroup>
-        <FormGroup check className="favorites">
-          <Label check>
-            <Input type="checkbox" />{' '}
-            Favorites
-          </Label>
-        </FormGroup>
+
         <FormGroup>
           <Label for="notes">Notes</Label>
-          <Input type="textarea" name="notes" id="notes" />
+          <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <Button            
           type="submit"
           size="lg"
@@ -151,7 +145,22 @@ export default class VenuesForm extends Component {
           >
           Submit
           </Button>
+          
       </Form>
     );
   }
 }
+
+
+{/* <FormGroup check className="played">
+<Label check>
+  <Input type="checkbox" />{' '}
+  Have played
+</Label>
+</FormGroup>
+<FormGroup check className="favorites">
+<Label check>
+  <Input type="checkbox" />{' '}
+  Favorites
+</Label>
+</FormGroup> */}

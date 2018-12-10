@@ -1,6 +1,8 @@
 import React, { Component } from "react"
-import APIManager from "../../managers/APIManager"
+import UserManager from "./../../managers/UserManager"
+import APIManager from "./../../managers/APIManager"
 import "./Login.css"
+import { Button, Form, Container, Row, Col } from 'reactstrap'
 
 export default class Login extends Component {
   // Set initial state
@@ -10,13 +12,11 @@ export default class Login extends Component {
   }
 
   // Update state whenever an input field is edited
-  handleFieldChange = evt => {
+  handleFieldChange = entry => {
     const stateToChange = {}
-    stateToChange[evt.target.id] = evt.target.value
+    stateToChange[entry.target.id] = entry.target.value
     this.setState(stateToChange)
   }
-
-  // Registration function
 
   handleRegister = e => {
     e.preventDefault()
@@ -26,22 +26,25 @@ export default class Login extends Component {
     }
     if (!this.state.username || !this.state.password) {
       alert("Please enter a new username and password to register.")
-    } else if (this.state.username || this.state.password) {
+    } else if (this.state.username || this.state.password)
+
+    {
       APIManager.searchUsername(this.state.username).then(users => {
+        console.log("users", users)
         if (users.length) {
           alert(`Username ${this.state.username} already exits!`)
         } else if (!users.length) {
-          APIManager.add("users", newUser).then(user =>{
-            sessionStorage.setItem("credentials", parseInt(user.id))
-            this.props.setAuth()
-          }
-          )
+          
+            UserManager.addUser(newUser).then(user =>{
+              sessionStorage.setItem("credentials", parseInt(user.id))
+              this.props.setAuth()
+            }
+            )
         }
       })
     }
   }
 
-  // Simplistic handler for login submit
   handleLogin = e => {
     e.preventDefault()
     if (!this.state.username || !this.state.password) {
@@ -62,104 +65,30 @@ export default class Login extends Component {
 
   render() {
     return (
-    <form className="loginForm">
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label htmlFor="inputUsername">Username</label>
-        <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" />
-        <label htmlFor="inputPassword">Password</label>
-        <input onChange={this.handleFieldChange} type="password" id="password" placeholder="Password" required="" />
-        <button type="submit" onClick={this.handleLogin}>
-          Sign in
-        </button>
-        <button type="submit" onClick={this.handleRegister}>
-          Register
-        </button>
-      </form>
+      <div id="mainLogin">
+        <Container>
+          <Row>
+            <Col>
+              <h1 id="slogan">Where do you <br /> want to play?</h1>
+            </Col>
+            <Col>
+              <Form className="loginForm">
+                <h1 className="h3 mb-3 font-weight-normal" id="loginHeader">LOG IN</h1>
+                <label htmlFor="inputUsername">Username:</label>
+                <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" /><br />
+                <label htmlFor="inputPassword">Password:</label>
+                <input onChange={this.handleFieldChange} type="password" id="password" placeholder="Password" required="" /><br />
+                <Button type="submit" className="loginButton" onClick={this.handleLogin}>
+                  Sign in
+                </Button>
+                <Button type="submit" className="loginButton" onClick={this.handleRegister}>
+                  Register
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      </div>
       )
   }
 }
-
-
-
-
-
-
-
-
-
-// import React, { Component } from "react"
-// import APIManagerAuth from "../../managers/APIManagerOrig"
-// import "./Login.css"
-
-// export default class Login extends Component {
-//   // Set initial state
-//   state = {
-//     password: "",
-//     username: ""
-//   }
-
-//   // Update state whenever an input field is edited
-//   handleFieldChange = evt => {
-//     const stateToChange = {}
-//     stateToChange[evt.target.id] = evt.target.value
-//     this.setState(stateToChange)
-//   }
-
-//   handleRegister = e => {
-//     e.preventDefault()
-//     const newUser = {
-//       username: this.state.username,
-//       password: this.state.password
-//     }
-//     if (!this.state.username || !this.state.password) {
-//       alert("Please enter a username and password")
-//     } else if (this.state.username || this.state.password) {
-//       APIManager.searchUsername(this.state.username).then(users => {
-//         if (users.length) {
-//           alert(`username ${this.state.username} already exits!`)
-//         } else if (!users.length) {
-//           APIManager.add("users", newUser).then(user =>{
-//             sessionStorage.setItem("credentials", parseInt(user.id))
-//             this.props.setAuth()
-//           }
-//           )
-//         }
-//       })
-//     }
-//   }
-
-//   // Simplistic handler for login submit
-//   handleLogin = e => {
-//     e.preventDefault()
-//     if (!this.state.username || !this.state.password) {
-//       alert("Please enter your username and password")
-//     } else if (this.state.username || this.state.password) {
-//       APIManager.searchNP(this.state.username, this.state.password).then(
-//         user => {
-//           if (!user.length) {
-//             alert("Wrong username or password!")
-//           } else if (user.length) {
-//             sessionStorage.setItem("credentials", parseInt(user[0].id))
-//             this.props.setAuth()
-//           }
-//         }
-//       )
-//     }
-//   }
-
-//   render() {
-//     return <form className="loginForm">
-//         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-//         <label htmlFor="inputUsername">Username</label>
-//         <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" />
-//         <label htmlFor="inputPassword">Password</label>
-//         <input onChange={this.handleFieldChange} type="password" id="password" placeholder="Password" required="" />
-//         <button type="submit" onClick={this.handleLogin}>
-//           Sign in
-//         </button>
-//         <button type="submit" onClick={this.handleRegister}>
-//           Register
-//         </button>
-//       </form>
-//   }
-// }
