@@ -57,27 +57,42 @@
       "id": 4
     },
     {
-      "name": "Robby",
-      "city": "Hecht",
-      "state": "CT",
-      "buyer": "",
-      "email": "",
-      "phone": "",
-      "notes": "",
-      "user_id": "",
-      "id": 7
+      "name": "Cactus Cafe",
+      "city": "Austin",
+      "state": "TX",
+      "buyer": "Matt Munoz",
+      "email": "mmunoz@kut.org",
+      "phone": "512-232-7606",
+      "notes": "Really nice sound. Matt is super nice.",
+      "user_id": "robby",
+      "id": 5,
+      "url": "",
+      "userId": 
+    },
+    {
+      "name": "Club Passim",
+      "city": "Boston",
+      "state": "MA",
+      "buyer": "Matt Smith",
+      "email": "matt@passim.org",
+      "phone": "617-492-5300",
+      "notes": "Great listening crowd and friendly staff.",
+      "user_id": "robby",
+      "id": 6,
+      "url": "",
+      "userId": ""
     }
   ],
   "tours": [
     {
-      "name": "Northeast 2020",
-      "userId": 2,
-      "id": 3
+      "name": "Southeast 2020",
+      "user_id": 1,
+      "id": 1
     },
     {
-      "name": "Southwest 2050",
-      "userId": 1,
-      "id": 4
+      "name": "Nothwest 2019",
+      "user_id": 2,
+      "id": 2
     }
   ]
 }
