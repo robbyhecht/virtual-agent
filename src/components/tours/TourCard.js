@@ -21,9 +21,7 @@ export default class TourCard extends Component {
         <CardBody> */}
 
           <Button
-            onClick={() => this.props.deleteTour(this.props.tour.id)
-            .then(tours =>
-              this.setState({ tours: tours }))}
+            onClick={() => this.props.deleteTour(this.props.tour.id)}
             className="card-link" color="danger" size="sm">Delete
           </Button>
 

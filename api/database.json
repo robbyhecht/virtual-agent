@@ -57,32 +57,6 @@
       "id": 4
     },
     {
-      "name": "Cactus Cafe",
-      "city": "Austin",
-      "state": "TX",
-      "buyer": "Matt Munoz",
-      "email": "mmunoz@kut.org",
-      "phone": "512-232-7606",
-      "notes": "Really nice sound. Matt is super nice.",
-      "user_id": "robby",
-      "id": 5,
-      "url": "",
-      "userId": ""
-    },
-    {
-      "name": "Club Passim",
-      "city": "Boston",
-      "state": "MA",
-      "buyer": "Matt Smith",
-      "email": "matt@passim.org",
-      "phone": "617-492-5300",
-      "notes": "Great listening crowd and friendly staff.",
-      "user_id": "robby",
-      "id": 6,
-      "url": "",
-      "userId": ""
-    },
-    {
       "name": "Robby",
       "city": "Hecht",
       "state": "CT",
@@ -94,11 +68,5 @@
       "id": 7
     }
   ],
-  "tours": [
-    {
-      "name": "add new",
-      "userId": "",
-      "id": 2
-    }
-  ]
+  "tours": []
 }
