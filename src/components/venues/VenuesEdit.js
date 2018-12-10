@@ -65,22 +65,22 @@ class VenuesEdit extends Component {
 
     render() {
         return (
-          <div className="container">
+          <div className="editContainer">
             <Form className="editVenueForm">
 
               <FormGroup>
                 <Label for="name">Venue Name</Label>
-                <Input type="text" name="name" id="venueName" defaultValue={this.state.name} />
+                <Input type="text" name="name" id="name" defaultValue={this.state.name} onChange={(event) => this.handleFieldChange(event)} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="city">City</Label>
-                <Input type="text" name="city" id="city" defaultValue={this.state.city} />
+                <Input type="text" name="city" id="city" defaultValue={this.state.city} onChange={(event) => this.handleFieldChange(event)}/>
               </FormGroup>
 
               <FormGroup>
                 <Label for="state">State</Label>
-                <Input type="select" name="state" id="state" defaultValue={this.state.state}>
+                <Input type="select" name="state" id="state" value={this.state.state} onChange={(event) => this.handleFieldChange(event)}>
                   <option value=""></option>
                   <option value="AK">Alaska</option>
                   <option value="AL">Alabama</option>
@@ -139,22 +139,22 @@ class VenuesEdit extends Component {
 
               <FormGroup>
                 <Label for="buyer">Talent Buyer</Label>
-                <Input type="text" name="buyer" id="buyer" defaultValue={this.state.buyer} />
+                <Input type="text" name="buyer" id="buyer" onChange={(event) => this.handleFieldChange(event)} defaultValue={this.state.buyer} />
               </FormGroup>
 
               <FormGroup>
-                <Label for="venueEmail">Email</Label>
-                <Input type="email" name="venueEmail" id="venueEmail" defaultValue={this.state.email} />
+                <Label for="email">Email</Label>
+                <Input type="email" name="email" id="email" onChange={(event) => this.handleFieldChange(event)} defaultValue={this.state.email} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="phone">Phone</Label>
-                <Input type="text" name="phone" id="phone" defaultValue={this.state.phone} />
+                <Input type="text" name="phone" id="phone" onChange={(event) => this.handleFieldChange(event)} defaultValue={this.state.phone} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="notes">Notes</Label>
-                <Input type="textarea" name="notes" id="notes" defaultValue={this.state.notes}/>
+                <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)} value={this.state.notes}/>
               </FormGroup>
 
               <Button color="success" size="sm" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}

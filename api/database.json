@@ -9,13 +9,9 @@
       "username": "r",
       "password": "h",
       "id": 2
-    },
-    {
-      "username": "iii",
-      "password": "ikkio",
-      "id": 3
     }
   ],
+
   "venues": [
     {
       "name": "The Evening Muse",
@@ -68,11 +64,11 @@
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
-      "notes": "Really nice sound. Matt is slow to respond so be persistent",
+      "notes": "Really nice sound. Matt is super nice.",
       "user_id": "robby",
       "id": 5,
       "url": "",
-      "userId": 5
+      "userId": null
     },
     {
       "name": "Club Passim",
@@ -83,7 +79,9 @@
       "phone": "617-492-5300",
       "notes": "Great listening crowd and friendly staff.",
       "user_id": "robby",
-      "id": 6
+      "id": 6,
+      "url": "",
+      "userId": null
     },
     {
       "name": "Hotel Cafe",
@@ -96,8 +94,8 @@
       "user_id": "r",
       "id": 7
     }
-    
   ],
+
   "tours": [
     {
       "name": "Southeast 2019",

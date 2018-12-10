@@ -46,14 +46,17 @@ export default class VenuesForm extends Component {
   render() {
     return (
       <Form className="venuesForm">
+
         <FormGroup>
           <Label for="name">Venue Name</Label>
           <Input type="text" name="name" id="name" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="city">City</Label>
           <Input type="text" name="city" id="city" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="state">State</Label>
           <Input type="select" name="state" id="state" onChange={(event) => this.handleFieldChange(event)}>
@@ -112,22 +115,27 @@ export default class VenuesForm extends Component {
             <option value="WY">Wyoming</option>
           </Input>
         </FormGroup>
+
         <FormGroup>
           <Label for="buyer">Talent Buyer</Label>
           <Input type="text" name="buyer" id="buyer" placeholder="who books this venue?" onChange={(event) => this.handleFieldChange(event)} />
         </FormGroup>
+
         <FormGroup>
           <Label for="email">Email</Label>
           <Input type="email" name="email" id="email" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="phone">Phone</Label>
           <Input type="text" name="phone" id="phone" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <FormGroup>
           <Label for="notes">Notes</Label>
           <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)}/>
         </FormGroup>
+
         <Button            
           type="submit"
           size="lg"
@@ -137,6 +145,7 @@ export default class VenuesForm extends Component {
           >
           Submit
           </Button>
+          
       </Form>
     );
   }
