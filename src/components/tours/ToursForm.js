@@ -36,7 +36,7 @@ export default class ToursForm extends Component {
       <Form className="toursForm">
         <FormGroup>
           <Label for="name">Tour Name</Label>
-          <Input type="text" name="name" id="tourName" placeholder="example: Southeast 2020" onChange={(event) => this.handleFieldChange(event)} />
+          <Input type="text" name="name" id="name" placeholder="example: Southeast 2020" onChange={(event) => this.handleFieldChange(event)} />
         </FormGroup>
 
         <Button            

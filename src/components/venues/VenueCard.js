@@ -33,9 +33,7 @@ export default class VenueCard extends Component {
           </Link>
 
           <Button
-          onClick={() => this.props.deleteVenue(this.props.venue.id)
-          .then(venues =>
-            this.setState({ venues: venues }))}
+          onClick={() => this.props.deleteVenue(this.props.venue.id)}
           className="card-link" color="danger" size="sm">Delete
           </Button>
 

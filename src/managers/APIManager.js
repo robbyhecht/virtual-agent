@@ -25,6 +25,7 @@ export default class APIManager {
   }
 
   delete(id) {
+    console.log("id", id, "url", remoteURL, "route", this.route)
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"
       })
@@ -35,7 +36,7 @@ export default class APIManager {
 
     // ADD AN ITEM TO A COLLECTION (POST)
 
-  post(newThing) {
+  post(newThing) {    
     return fetch(`${remoteURL}/${this.route}/`, {
       method: "POST",
       headers: {
@@ -115,6 +116,8 @@ export default class APIManager {
     .then(data => data.json())
   }
 
+
+  
 }
 
 

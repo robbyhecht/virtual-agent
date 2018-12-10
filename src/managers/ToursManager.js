@@ -10,6 +10,10 @@ class ToursManager extends APIManager {
     return this.allSortedSoonest()
   }
 
+  removeAndList(tour) {
+    return this.delete(tour).then(() => this.allSortedSoonest())
+  }
+
 
 
 

@@ -7,7 +7,9 @@ import { Button } from "reactstrap"
 export default class VenuesList extends Component {
 
   render() {
+
     return (
+
       <React.Fragment>
 
         <div className="venuesTop">
@@ -34,7 +36,6 @@ export default class VenuesList extends Component {
             )
           }
         </article>
-        
 
       </React.Fragment>
     )

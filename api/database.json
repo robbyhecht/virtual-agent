@@ -67,7 +67,7 @@
       "user_id": "robby",
       "id": 5,
       "url": "",
-      "userId": null
+      "userId": ""
     },
     {
       "name": "Club Passim",
@@ -80,29 +80,24 @@
       "user_id": "robby",
       "id": 6,
       "url": "",
-      "userId": null
+      "userId": ""
     },
     {
-      "name": "Hotel Cafe",
-      "city": "Los Angeles",
-      "state": "CA",
-      "buyer": "Marko",
-      "email": "marko@hotelcafe.com",
-      "phone": "email only",
-      "notes": "There is a big stage and a small stage. Small room is tiny but the sound is great.",
-      "user_id": "r",
+      "name": "Robby",
+      "city": "Hecht",
+      "state": "CT",
+      "buyer": "",
+      "email": "",
+      "phone": "",
+      "notes": "",
+      "user_id": "",
       "id": 7
     }
   ],
   "tours": [
     {
-      "name": "Southeast 2019",
-      "user_id": "robby",
-      "id": 1
-    },
-    {
-      "name": "Northeast 2020",
-      "user_id": "robby",
+      "name": "add new",
+      "userId": "",
       "id": 2
     }
   ]

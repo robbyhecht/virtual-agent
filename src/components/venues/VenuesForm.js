@@ -33,8 +33,6 @@ export default class VenuesForm extends Component {
       email: this.state.email,
       phone: this.state.phone,
       notes: this.state.notes,
-      played: this.state.played,
-      favorites: this.state.favorites,
       user_id: sessionStorage.getItem("user_id")
     }
     this.props.addVenue(venues).then(() => {

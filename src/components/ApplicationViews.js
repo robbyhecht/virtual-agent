@@ -22,7 +22,12 @@ export default class ApplicationViews extends Component {
       .then(allVenues => {
       this.setState({venues: allVenues})
     })
-  }
+
+    ToursManager.getAll()
+    .then(allTours => {
+    this.setState({tours: allTours})
+    })
+}
 
 
   // Venue Functions
@@ -64,6 +69,15 @@ export default class ApplicationViews extends Component {
         })
       )
 
+    deleteTour = id => {
+      console.log("id", id)
+      return ToursManager.removeAndList(id).then(tours =>
+        this.setState({
+          tours: tours
+        })
+      )
+    }
+
   // editVenue = (id, obj) =>
   //   APIManager.edit("venues", id, obj).then(venues =>
   //     this.setState({ venues: venues })
@@ -84,6 +98,7 @@ export default class ApplicationViews extends Component {
 
 
   render() {
+
     return (
 
       <React.Fragment>
@@ -93,12 +108,15 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/tours" render={(props) => {
           return <ToursList {...props} 
-            tours={this.state.tours}/>
+            tours={this.state.tours}
+            deleteTour={this.deleteTour} />
         }} />
 
         <Route exact path="/tours/new" render={props => {
     // if (this.isAuthenticated()) {
-          return <ToursForm {...props} addTour={this.addTour} />
+          return <ToursForm {...props}
+          addTour={this.addTour}
+          />
           // } else {
           //   return <Redirect to="/login" />
           // }

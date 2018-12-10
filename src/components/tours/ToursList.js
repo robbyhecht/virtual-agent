@@ -6,9 +6,10 @@ import "./Tours.css"
 export default class ToursList extends Component {
 
   render() {
+    console.log(this.props.tours)
     return (
 
-        <React.Fragment>
+      <React.Fragment>
         <div>
           <h1 className="toursHeader">Tours</h1>
           <section className="newTourButton">
@@ -26,13 +27,14 @@ export default class ToursList extends Component {
           </section>
         </div>
 
-      {/* <article className="toursList">
-          {
-            this.props.tours.map( tour =>
-              <TourCard key={tour.id} tour={tour} {...this.props} />
-            )
-          }
-        </article> */}
+        <article className="toursList">
+            { 
+              this.props.tours.map( tour =>
+                {console.log(tour)
+                return <TourCard key={tour.id} tour={tour} {...this.props} />}
+              )
+            }
+          </article>
       </React.Fragment>
 
     )
