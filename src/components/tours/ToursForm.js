@@ -17,6 +17,8 @@ export default class ToursForm extends Component {
     this.setState(stateToChange);
   };
 
+    // Update state whenever an input field is edited
+
   constructNewTour = tour => {
     tour.preventDefault()
     const tours = {
@@ -34,7 +36,7 @@ export default class ToursForm extends Component {
       <Form className="toursForm">
         <FormGroup>
           <Label for="name">Tour Name</Label>
-          <Input type="text" name="name" id="tourName" placeholder="" />
+          <Input type="text" name="name" id="tourName" placeholder="example: Southeast 2020" onChange={(event) => this.handleFieldChange(event)} />
         </FormGroup>
 
         <Button            

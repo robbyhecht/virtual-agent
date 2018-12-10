@@ -8,6 +8,7 @@ import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
 import ToursList from "./tours/ToursList"
 import ToursForm from "./tours/ToursForm"
+import ToursManager from './../managers/ToursManager'
 
 
 export default class ApplicationViews extends Component {
@@ -54,6 +55,14 @@ export default class ApplicationViews extends Component {
         })
       )
     }
+
+    addTour = tours =>
+    ToursManager.addAndList(tours)
+      .then(() => ToursManager.getAll()).then(tours =>
+        this.setState({
+          tours: tours
+        })
+      )
 
   // editVenue = (id, obj) =>
   //   APIManager.edit("venues", id, obj).then(venues =>
