@@ -38,13 +38,14 @@ export default class VenueCard extends Component {
           </Button>
 
         </CardBody>
-        <CardFooter className="text-muted">          
-          <CardText>Have played: {this.props.venue.played}</CardText>
-          <CardText>Favorite: {this.props.venue.favorites}</CardText>
-        </CardFooter>
       </Card>
-      {console.log("venues1", this.props.venues)}
     </div>
     )
   }
 }
+
+
+        {/* <CardFooter className="text-muted">          
+          <CardText>Have played: {this.props.venue.played}</CardText>
+          <CardText>Favorite: {this.props.venue.favorites}</CardText>
+        </CardFooter> */}

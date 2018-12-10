@@ -1,6 +1,11 @@
 import APIManager from "./APIManager"
 
 class UserManager extends APIManager {
+
+  addUser(newUser) {
+    return this.add(newUser)
+  }
+
   getUser(id) {
     return this.get(id)
   }

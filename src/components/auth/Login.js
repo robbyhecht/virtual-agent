@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import APIManager from "./../../managers/APIManager"
+import OldApiManager from "./OldApiManager"
 // import OldApiManager from "./OldApiManager"
 import "./Login.css"
 import { Button, Form, Container, Row, Col } from 'reactstrap'
@@ -46,11 +47,14 @@ export default class Login extends Component {
         if (users.length) {
           alert(`Username ${this.state.username} already exits!`)
         } else if (!users.length) {
-          APIManager.add("users", newUser).then(user =>{
-            sessionStorage.setItem("credentials", parseInt(user.id))
-            this.props.setAuth()
-          }
-          )
+            // OldApiManager.add("users", newUser).then(user =>{
+            //   sessionStorage.setItem("credentials", parseInt(user.id))
+            //   this.props.setAuth()
+            APIManager.add("users", newUser).then(user =>{
+              sessionStorage.setItem("credentials", parseInt(user.id))
+              this.props.setAuth()
+            }
+            )
         }
       })
     }

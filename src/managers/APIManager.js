@@ -1,5 +1,4 @@
 const remoteURL = "http://localhost:5002"
-console.log("sup")
 export default class APIManager {
     constructor(route) {
         this.route = route
@@ -46,15 +45,15 @@ export default class APIManager {
     }).then(data => data.json())
   }
   
-  add(newThing) {
-    return fetch(`${remoteURL}/${this.route}/`, {
+  static add(destination, newThing) {
+    return fetch(`${remoteURL}/${destination}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newThing)
     }).then(data => data.json())
-      .then(() => this.all(this.route))
+      .then(() => this.all(destination))
   }
 
     // MAKE A CHANGE TO A COLLECTION (PATCH)

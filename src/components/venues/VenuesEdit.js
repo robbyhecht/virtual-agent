@@ -24,7 +24,7 @@ class VenuesEdit extends Component {
     }
 
     componentDidMount() {
-        // store the existing values in state to start
+        // store the existing values in state
         let newState = {}
         let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
         newState.name = venue.name
@@ -58,14 +58,12 @@ class VenuesEdit extends Component {
           userId: sessionStorage.getItem("username"),
           id: this.state.id
         }
-        let venueURL = "http://localhost:5002/venues/"
-        return this.props.editVenue(venue, `${venueURL}${this.state.id}`)
+        // let venueURL = "http://localhost:5002/venues/"
+        return this.props.editVenue(venue, `${this.state.id}`)
             .then(() => this.props.history.push("/venues"))
     }
 
     render() {
-      console.log("venues4", this.props.venues)
-
         return (
           <div className="container">
             <Form className="editVenueForm">
@@ -154,20 +152,6 @@ class VenuesEdit extends Component {
                 <Input type="text" name="phone" id="phone" defaultValue={this.state.phone} />
               </FormGroup>
 
-              <FormGroup check>
-                <Label check>
-                  <Input type="checkbox" defaultChecked={this.state.played} />{' '}
-                  Have played
-                </Label>
-              </FormGroup>
-
-              <FormGroup check>
-                <Label check>
-                  <Input type="checkbox" defaultChecked={this.state.favorites} />{' '}
-                  Favorites
-                </Label>
-              </FormGroup>
-
               <FormGroup>
                 <Label for="notes">Notes</Label>
                 <Input type="textarea" name="notes" id="notes" defaultValue={this.state.notes}/>
@@ -184,3 +168,23 @@ class VenuesEdit extends Component {
 }
 
 export default VenuesEdit
+
+
+
+{/* <FormGroup check>
+<Label check>
+  <Input type="checkbox" defaultChecked={this.state.played} />{' '}
+  Have played
+</Label>
+</FormGroup>
+
+<FormGroup check>
+<Label check>
+  <Input type="checkbox" defaultChecked={this.state.favorites} />{' '}
+  Favorites
+</Label>
+</FormGroup> */}
+
+        // let venueURL = "http://localhost:5002/venues/"
+        // return this.props.editVenue(venue, `${venueURL}${this.state.id}`)
+        //     .then(() => this.props.history.push("/venues"))
