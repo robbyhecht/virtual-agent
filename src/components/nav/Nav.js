@@ -47,8 +47,7 @@ export default class NavBar extends Component {
                 <NavLink href="/about/" id="navAbout">ABOUT</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/logout/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink>
-                {/* MAKE 'LOG OUT' BUTTON KICK USER BACK OUT TO LOG IN PAGE */}
+                <NavLink href="/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
