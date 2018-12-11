@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import VenueCard from "./VenueCard"
 import "./Venues.css"
-import { Button } from "reactstrap"
+import { Button, Collapse, Card, CardBody } from "reactstrap"
 
 
 export default class VenuesList extends Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
+  }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse });
+  }
 
   render() {
 
@@ -25,7 +34,7 @@ export default class VenuesList extends Component {
             >
               Add New Venue
             </Button>
-            <Button
+            {/* <Button
               color="info"
               size="large"
               className="btn"
@@ -34,7 +43,17 @@ export default class VenuesList extends Component {
               }}
             >
               Filter Venues By State
-            </Button>
+            </Button> */}
+            {/* <div> */}
+              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
+              <Collapse isOpen={this.state.collapse}>
+                <Card>
+                  <CardBody>
+                  Anim
+                  </CardBody>
+                </Card>
+              </Collapse>
+            {/* </div> */}
             
           </section>
         </div>
