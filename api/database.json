@@ -25,7 +25,7 @@
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
       "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
-      "user_id": "1",
+      "user_id": 1,
       "id": 1
     },
     {
@@ -36,7 +36,7 @@
       "email": "mike@slowbar.com",
       "phone": "",
       "notes": "Favorite Nashville venue.",
-      "user_id": "2",
+      "user_id": 2,
       "id": 2
     },
     {
@@ -47,7 +47,7 @@
       "email": "nate@rockwoodmusichall.com",
       "phone": "",
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
-      "user_id": "1",
+      "user_id": 1,
       "id": 3
     },
     {
@@ -58,7 +58,7 @@
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
-      "user_id": "2",
+      "user_id": 2,
       "id": 4
     },
     {
@@ -69,7 +69,7 @@
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
       "notes": "Really nice sound. Matt is super nice.",
-      "user_id": "1",
+      "user_id": 3,
       "id": 5
     },
     {
@@ -80,7 +80,7 @@
       "email": "matt@passim.org",
       "phone": "617-492-5300",
       "notes": "Great listening crowd and friendly staff.",
-      "user_id": "2",
+      "user_id": 1,
       "id": 6
     },
     {
@@ -91,8 +91,19 @@
       "email": "thansbrough@oldtownschool.org",
       "phone": "email",
       "notes": "The staff were nice af",
-      "user_id": "1",
+      "user_id": 1,
       "id": 7
+    },
+    {
+      "name": "aaaaaa",
+      "city": "Nashville",
+      "state": "TN",
+      "buyer": "",
+      "email": "robbyhecht@gmail.com",
+      "phone": "8654067489",
+      "notes": "",
+      "user_id": 2,
+      "id": 8
     }
   ],
   "tours": [

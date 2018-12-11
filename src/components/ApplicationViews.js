@@ -40,7 +40,8 @@ export default class ApplicationViews extends Component {
 
   addVenue = venues =>
   VenuesManager.addAndList(venues)
-    .then(() => VenuesManager.getAll()).then(venues =>
+    .then(() => VenuesManager.getAll())
+    .then(venues =>
       this.setState({
         venues: venues
       })

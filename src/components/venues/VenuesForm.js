@@ -33,7 +33,7 @@ export default class VenuesForm extends Component {
       email: this.state.email,
       phone: this.state.phone,
       notes: this.state.notes,
-      user_id: sessionStorage.getItem("user_id")
+      user_id: parseInt(sessionStorage.getItem("credentials"))
     }
     this.props.addVenue(venues).then(() => {
       this.props.history.push("/venues")

@@ -25,6 +25,16 @@ export default class VenuesList extends Component {
             >
               Add New Venue
             </Button>
+            <Button
+              color="info"
+              size="large"
+              className="btn"
+              onClick={() => {
+                
+              }}
+            >
+              Filter Venues By State
+            </Button>
             
           </section>
         </div>
