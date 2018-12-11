@@ -30,7 +30,7 @@ export default class VenuesList extends Component {
               size="large"
               className="btn"
               onClick={() => {
-                
+                // place onClick event here
               }}
             >
               Filter Venues By State
@@ -41,9 +41,12 @@ export default class VenuesList extends Component {
 
         <article className="venuesList">
           {
-            this.props.venues.map( venue =>
-              <VenueCard key={venue.id} venue={venue} {...this.props} />
-            )
+            this.props.venues.map(venue => {
+              console.log("venue", venue.id)
+              console.log("user", this.props.currentUser)
+              return <VenueCard key={venue.id} venue={venue} {...this.props} />
+          
+            } ) 
           }
         </article>
 
@@ -51,27 +54,3 @@ export default class VenuesList extends Component {
     )
   }
 }
-
-// <React.Fragment>
-//                 <section className="newsButton">
-//                     <Button color="green" type="button"
-//                         className="btn btn-success"
-//                         onClick={() => {
-//                             this.props.history.push("/news/new")
-//                         }
-//                         }>
-//                         New Article
-//                     </Button>
-//                 </section>
-//                 <section className="news list">
-//                     {
-//                         this.props.news.map(story =>  {   
-//                             if (story.userId === currentUser) {
-//                                 return <NewsCard key={story.id} story={story} deleteArticle={this.props.deleteArticle}{...this.props} />
-//                             } else if (myFriendsUserNames.includes(story.userId)) {
-//                                 return <FriendsNewsCard key={story.id} story={story} deleteArticle={this.props.deleteArticle}{...this.props} />
-//                             }
-//                         })
-//                     }
-//                 </section>
-//             </React.Fragment>

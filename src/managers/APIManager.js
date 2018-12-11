@@ -20,8 +20,9 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?_sort=date&_order=asc`).then(data => data.json());
   }
 
-  allSortedAlpha() {
-    return fetch(`${remoteURL}/${this.route}?_sort=name&_order=asc`).then(data => data.json());
+  allSortedAlpha(user) {
+    console.log("user", user)
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&_sort=name&_order=asc`).then(data => data.json());
   }
 
   delete(id) {

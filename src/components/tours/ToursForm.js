@@ -23,7 +23,7 @@ export default class ToursForm extends Component {
     tour.preventDefault()
     const tours = {
       name: this.state.name,
-      userId: sessionStorage.getItem("username")
+      userId: parseInt(sessionStorage.getItem("credentials"))
     }
     this.props.addTour(tours).then(() => {
       this.props.history.push("/tours")

@@ -19,8 +19,11 @@ export default class ApplicationViews extends Component {
   }
 
   componentDidMount() {
-    VenuesManager.getAll()
+
+    VenuesManager.getAll(this.props.currentUser)
       .then(allVenues => {
+        console.log("venues", allVenues)
+
       this.setState({venues: allVenues})
     })
 
@@ -41,10 +44,12 @@ export default class ApplicationViews extends Component {
   addVenue = venues =>
   VenuesManager.addAndList(venues)
     .then(() => VenuesManager.getAll())
-    .then(venues =>
+    .then(venues => 
+    
       this.setState({
         venues: venues
       })
+    
     )
 
   editVenue = (venues, url) =>
@@ -108,29 +113,14 @@ export default class ApplicationViews extends Component {
           return <HomePage {...props} />
         }} />
 
-        <Route exact path="/tours" render={(props) => {
-          return <ToursList {...props} 
-            tours={this.state.tours}
-            deleteTour={this.deleteTour} />
-        }} />
-
-        <Route exact path="/tours/new" render={props => {
-    // if (this.isAuthenticated()) {
-          return <ToursForm {...props}
-          addTour={this.addTour}
-          />
-          // } else {
-          //   return <Redirect to="/login" />
-          // }
-        }}  />
-
         <Route exact path="/venues" render={(props) => {
           return <VenuesList {...props}
             addVenue={this.addVenue}
             editVenue={this.editVenue}
             deleteVenue={this.deleteVenue}
             venues={this.state.venues}
-          />
+            currentUser={this.props.currentUser}
+            />
         }} />
         
         <Route path="/venues/edit/:venueId(\d+)"
@@ -147,6 +137,22 @@ export default class ApplicationViews extends Component {
         <Route exact path="/venues/new" render={props => {
     // if (this.isAuthenticated()) {
           return <VenuesForm {...props} addVenue={this.addVenue} />
+          // } else {
+          //   return <Redirect to="/login" />
+          // }
+        }}  />
+
+        <Route exact path="/tours" render={(props) => {
+          return <ToursList {...props} 
+            tours={this.state.tours}
+            deleteTour={this.deleteTour} />
+        }} />
+
+        <Route exact path="/tours/new" render={props => {
+    // if (this.isAuthenticated()) {
+          return <ToursForm {...props}
+          addTour={this.addTour}
+          />
           // } else {
           //   return <Redirect to="/login" />
           // }

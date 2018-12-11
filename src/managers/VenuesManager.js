@@ -3,8 +3,8 @@ class VenuesManager extends APIManager {
   getVenues(id) {
     return this.get(id)
   }
-  getAll() {
-    return this.allSortedAlpha()
+  getAll(user) {
+    return this.allSortedAlpha(user)
   }
   removeAndList(id) {
     return this.delete(id).then(() => this.allSortedAlpha())

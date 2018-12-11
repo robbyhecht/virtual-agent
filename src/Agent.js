@@ -9,17 +9,19 @@ class Agent extends Component {
   isAuthenticated = () => sessionStorage.getItem("credentials") !== null
 
   state = {
-    activeUser: this.isAuthenticated()
+    activeUser: this.isAuthenticated(),
+    currentUser: parseInt(sessionStorage.getItem("credentials"))
   }
 
   setAuth = () => {
-    this.setState({ auth: this.isAuthenticated() })
+    this.setState({ activeUser: this.isAuthenticated(), currentUser: parseInt(sessionStorage.getItem("credentials")) })
   }
 
   render() {
+    console.log("user from Agent", this.state.currentUser)
     return (
       <React.Fragment>
-        <IsAuth isAuthenticated={this.isAuthenticated} setAuth={this.setAuth} />
+        <IsAuth isAuthenticated={this.state.activeUser} currentUser={this.state.currentUser} setAuth={this.setAuth} />
       </React.Fragment>
     );
   }
