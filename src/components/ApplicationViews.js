@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from "react-router-dom"
-// import APIManager from "../managers/APIManager"
+import APIManager from "../managers/APIManager"
 import VenuesList from "./venues/VenuesList"
 import VenuesForm from "./venues/VenuesForm"
 import VenuesEdit from "./venues/VenuesEdit"
@@ -43,7 +43,7 @@ export default class ApplicationViews extends Component {
 
   addVenue = venues =>
   VenuesManager.addAndList(venues)
-    .then(() => VenuesManager.getAll())
+    .then(() => VenuesManager.getAll(this.props.currentUser))
     .then(venues => 
     
       this.setState({
@@ -54,19 +54,31 @@ export default class ApplicationViews extends Component {
 
   editVenue = (venues, url) =>
     VenuesManager.patchAndListVenue(venues, url)
-      .then(() => VenuesManager.getAll()).then(venues =>
+      .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
         this.setState({
           venues: venues
         })
       )
 
-    deleteVenue = id => {
-      return VenuesManager.removeAndList(id).then(venues =>
-        this.setState({
-          venues: venues
-        })
+      // issue: site forgets who the user is upon delete...remembers on refresh
+  deleteVenue = venueId => {
+    return VenuesManager.removeAndList(venueId).then(venues =>
+      this.setState({
+        venues: venues
+      })
       )
     }
+
+  // deleteVenue = (venueId) => {
+  //   VenuesManager.removeAndList(venueId)
+  //   .then(VenuesManager.getAll(this.props.currentUser))
+  //   .then(venues =>
+  //     this.setState({
+  //       venues: venues
+  //     })
+  //   )}
+
+
 
     addTour = tours =>
     ToursManager.addAndList(tours)

@@ -6,8 +6,8 @@ class VenuesManager extends APIManager {
   getAll(user) {
     return this.allSortedAlpha(user)
   }
-  removeAndList(id) {
-    return this.delete(id).then(() => this.allSortedAlpha())
+  removeAndList(id, user) {
+    return this.delete(id).then(() => this.allSortedAlpha(user))
   }
   addAndList(newVenue) {
       return this.post(newVenue).then(() => this.all())

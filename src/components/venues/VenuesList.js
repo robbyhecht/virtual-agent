@@ -42,8 +42,6 @@ export default class VenuesList extends Component {
         <article className="venuesList">
           {
             this.props.venues.map(venue => {
-              console.log("venue", venue.id)
-              console.log("user", this.props.currentUser)
               return <VenueCard key={venue.id} venue={venue} {...this.props} />
           
             } ) 

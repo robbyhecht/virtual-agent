@@ -14,6 +14,11 @@
       "username": "k",
       "password": "r",
       "id": 3
+    },
+    {
+      "username": "j",
+      "password": "s",
+      "id": 4
     }
   ],
   "venues": [
@@ -26,7 +31,9 @@
       "phone": "704-618-4181",
       "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
       "user_id": 1,
-      "id": 1
+      "id": 1,
+      "url": "",
+      "userId": null
     },
     {
       "name": "The Basement",
@@ -93,17 +100,6 @@
       "notes": "The staff were nice af",
       "user_id": 1,
       "id": 7
-    },
-    {
-      "name": "aaaaaa",
-      "city": "Nashville",
-      "state": "TN",
-      "buyer": "",
-      "email": "robbyhecht@gmail.com",
-      "phone": "8654067489",
-      "notes": "",
-      "user_id": 2,
-      "id": 8
     }
   ],
   "tours": [
