@@ -23,7 +23,13 @@ export default class NavBar extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  logout = () => {
+    sessionStorage.clear();
+  };
+
   render() {
+    console.log(this.logout)
     return (
       <div>
         <Navbar id="navBar" light expand="md">
@@ -41,7 +47,8 @@ export default class NavBar extends Component {
                 <NavLink href="/about/" id="navAbout">ABOUT</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/logout/" id="navLogout">LOG OUT</NavLink>
+                <NavLink href="/logout/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink>
+                {/* MAKE 'LOG OUT' BUTTON KICK USER BACK OUT TO LOG IN PAGE */}
               </NavItem>
             </Nav>
           </Collapse>

@@ -46,16 +46,16 @@ export default class APIManager {
     }).then(data => data.json())
   }
   
-  add(destination, newThing) {
-    return fetch(`${remoteURL}/${destination}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newThing)
-    }).then(data => data.json())
-      .then(() => this.all(destination))
-  }
+  // add(destination, newThing) {
+  //   return fetch(`${remoteURL}/${destination}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(newThing)
+  //   }).then(data => data.json())
+  //     .then(() => this.all(destination))
+  // }
 
     // MAKE A CHANGE TO A COLLECTION (PATCH)
 
