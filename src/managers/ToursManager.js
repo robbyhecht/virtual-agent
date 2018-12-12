@@ -3,7 +3,7 @@ import APIManager from "./APIManager"
 class ToursManager extends APIManager {
 
   addAndList(newTour) {
-    return this.post(newTour).then(() => this.all())
+    return this.post(newTour).then(() => this.allSortedAlpha(newTour.user_id))
   }
 
   getAll(user) {

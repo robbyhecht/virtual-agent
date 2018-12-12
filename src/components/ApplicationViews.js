@@ -34,12 +34,7 @@ export default class ApplicationViews extends Component {
 }
 
 
-  // Venue Functions
-  // addVenue = (obj) =>
-  //   APIManager.addCollection("venues", obj).then(venues =>
-  //     this.setState({ venues: venues })
-  //   )
-
+  // VENUE FUNCTIONS
 
   addVenue = venues =>
   VenuesManager.addAndList(venues)
@@ -68,22 +63,28 @@ export default class ApplicationViews extends Component {
       })
     )
 
-  filterVenueStates = (venueState, user) =>
+  // FILTER VENUES BY STATE
+
+  filterVenuesByState = (venueState, user) =>
   VenuesManager.getByState(venueState, user)
-  .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
+  // .then(() => VenuesManager.getAll(this.props.currentUser))
+  .then(venues =>
     this.setState({
       venues: venues
     })
   )
 
-  addTour = tours =>
-  ToursManager.addAndList(tours)
-    .then(() => ToursManager.getAll(this.props.currentUser))
-    .then(tours =>
+  // TOUR FUNCTIONS
+
+  addTour = (tour) =>
+  ToursManager.addAndList(tour)
+    .then(tours => {
+      console.log("tours", tours)
       this.setState({
         tours: tours
       })
-    )
+    })
+
 
   deleteTour = (id, user) => {
     return ToursManager.removeAndList(id, user).then(tours =>
@@ -101,42 +102,6 @@ export default class ApplicationViews extends Component {
         })
       )
 
-    // addTour = tours =>
-    // ToursManager.addAndList(tours)
-    //   .then(() => ToursManager.getAll()).then(tours =>
-    //     this.setState({
-    //       tours: tours
-    //     })
-    //   )
-
-    // deleteTour = id => {
-    //   console.log("id", id)
-    //   return ToursManager.removeAndList(id).then(tours =>
-    //     this.setState({
-    //       tours: tours
-    //     })
-    //   )
-    // }
-
-  // editVenue = (id, obj) =>
-  //   APIManager.edit("venues", id, obj).then(venues =>
-  //     this.setState({ venues: venues })
-  //   )
-
-
-
-  // deleteVenue = id =>
-  //   APIManager.delete(id).then(venues =>
-  //     this.setState({ venues: venues })
-  //   )
-
-  // deleteVenue = (resource, id) => {
-  //   APIManager.delete(resource, id).then(venues =>
-  //     this.setState({ venues: venues })
-  //   )
-  // }
-
-
   render() {
 
     return (
@@ -153,27 +118,19 @@ export default class ApplicationViews extends Component {
             deleteVenue={this.deleteVenue}
             venues={this.state.venues}
             currentUser={this.props.currentUser}
-            filterVenueStates={this.filterVenueStates}
+            filterVenuesByState={this.filterVenuesByState}
             />
         }} />
         
         <Route path="/venues/edit/:venueId(\d+)"
           render={(props) => {
-            // if (this.isAuthenticated()) {
               return <VenuesEdit {...props}
                 venues={this.state.venues}
                 editVenue={this.editVenue} />
-            // } else {
-            //   return <Redirect to="/login" />
-            // }
           }} />
 
         <Route exact path="/venues/new" render={props => {
-    // if (this.isAuthenticated()) {
           return <VenuesForm {...props} addVenue={this.addVenue} />
-          // } else {
-          //   return <Redirect to="/login" />
-          // }
         }}  />
 
         <Route exact path="/tours" render={(props) => {
@@ -183,77 +140,12 @@ export default class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/tours/new" render={props => {
-    // if (this.isAuthenticated()) {
           return <ToursForm {...props}
           addTour={this.addTour}
           />
-          // } else {
-          //   return <Redirect to="/login" />
-          // }
         }}  />
 
     </React.Fragment>
     )
   }
 }
-
-    // addVenue = venues => {
-    //   console.log("Hi")
-    //   return new Promise((resolve, reject) => {
-    //     VenuesManager.addAndList(venues)
-    //       .then(() => VenuesManager.getAll()).then(venues =>
-    //         this.setState({
-    //           venues: venues
-    //         }, () => {
-    //           resolve()
-    //         })
-    //       );
-    //   })
-    // }
-  
-    // editVenues = (venues, url) => {
-    //   return new Promise((resolve, reject) => {
-    //     VenuesManager.patchAndListEvent(venues, url)
-    //       .then(() => VenuesManager.getAll())
-    //       .then(venues =>
-    //         this.setState({
-    //           venues: venues
-    //         }, () => {
-    //           resolve()
-    //         })
-    //       );
-    //   })
-    // }
-  
-    // deleteVenues = (oldFriend, user) => {
-    //   return VenuesManager.removeAndList(oldFriend, user).then(venues =>
-    //     this.setState({
-    //       venues: venues
-    //     })
-    //   );
-    // };
-  
-//   render() {
-//     return(
-//       <React.Fragment>
-
-        
-
-
-
-
-//         {/* <Route path="/venues/:venuesId(\d+)" render={(props) => {
-//           if (this.isAuthenticated()) {
-//             return <VenuesDetail {...props}
-//               venues={this.state.venues}
-//               deleteVenues={this.deleteVenues}
-//             />
-//           } else {
-//             return < Redirect to="/login" />
-//           }
-//         }} /> */}
-
-//       </React.Fragment>
-//     )
-//   }
-// }

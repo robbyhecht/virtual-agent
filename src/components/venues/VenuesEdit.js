@@ -10,8 +10,6 @@ class VenuesEdit extends Component {
         email: "",
         phone: "",
         url: "",
-        played: "",
-        favorites: "",
         notes: "",
         userId: "",
         id: ""
@@ -68,12 +66,14 @@ class VenuesEdit extends Component {
 
               <FormGroup>
                 <Label for="name">Venue Name</Label>
-                <Input type="text" name="name" id="name" defaultValue={this.state.name} onChange={(event) => this.handleFieldChange(event)} />
+                <Input type="text" name="name" id="name" defaultValue={this.state.name}
+                onChange={(event) => this.handleFieldChange(event)} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="city">City</Label>
-                <Input type="text" name="city" id="city" defaultValue={this.state.city} onChange={(event) => this.handleFieldChange(event)}/>
+                <Input type="text" name="city" id="city" defaultValue={this.state.city}
+                onChange={(event) => this.handleFieldChange(event)}/>
               </FormGroup>
 
               <FormGroup>

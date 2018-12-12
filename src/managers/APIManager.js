@@ -24,8 +24,8 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&_sort=name&_order=asc`).then(data => data.json());
   }
 
-  allSortedStates(venState, user) {
-    return fetch(`${remoteURL}/${this.route}?user_id=${user}&?venueState=${venState}&_sort=name&_order=asc`).then(data => data.json());
+  allSortedStates(venueState, user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&venueState=${venueState}&_sort=name&_order=asc`).then(data => data.json());
   }
 
   delete(id) {

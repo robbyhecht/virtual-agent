@@ -119,7 +119,7 @@
     },
     {
       "name": "best tour ever all over the world for days",
-      "userId": 2,
+      "user_id": 2,
       "id": 2
     },
     {
@@ -129,18 +129,33 @@
     },
     {
       "name": "Tennessee Winter Tour 2050",
-      "userId": 1,
+      "user_id": 1,
       "id": 4
     },
     {
       "name": "Tour of NSS",
-      "userId": 2,
+      "user_id": 2,
       "id": 5
     },
     {
       "name": "I don't know, we'll figure out where to go",
-      "userId": 1,
+      "user_id": 1,
       "id": 6
+    },
+    {
+      "name": "northwest",
+      "user_id": 1,
+      "id": 7
+    },
+    {
+      "name": "",
+      "user_id": 1,
+      "id": 8
+    },
+    {
+      "name": "Robert Hecht",
+      "user_id": 1,
+      "id": 9
     }
   ]
 }

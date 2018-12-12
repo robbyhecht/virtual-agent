@@ -7,25 +7,25 @@ export default class ToursForm extends Component {
   // Set initial state
   state = {
     name: "",
-    userId: ""
   };
 
   // Update state whenever an input field is edited
-  handleFieldChange = tour => {
+  handleFieldChange = event => {
     const stateToChange = {};
-    stateToChange[tour.target.id] = tour.target.value;
+    stateToChange[event.target.id] = event.target.value;
     this.setState(stateToChange);
   };
 
     // Update state whenever an input field is edited
 
-  constructNewTour = tour => {
-    tour.preventDefault()
-    const tours = {
+  constructNewTour = (evt) => {
+    console.log("construct new tour clicked")
+    evt.preventDefault()
+    const tour = {
       name: this.state.name,
-      userId: parseInt(sessionStorage.getItem("credentials"))
+      user_id: parseInt(sessionStorage.getItem("credentials"))
     }
-    this.props.addTour(tours).then(() => {
+    this.props.addTour(tour).then(() => {
       this.props.history.push("/tours")
     })
   }

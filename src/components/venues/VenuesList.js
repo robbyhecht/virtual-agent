@@ -21,10 +21,12 @@ export default class VenuesList extends Component {
     }));
   }
 
-
+  handleClickVenue = choice => {
+    this.props.filterVenuesByState(choice, this.props.currentUser)
+  }
 
   render() {
-    // console.log("filter", this.props.filterVenueStates)
+    // console.log("filter", this.props.filterVenuesByState)
 
     return (
 
@@ -47,70 +49,66 @@ export default class VenuesList extends Component {
             <Dropdown
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
             name="venueState" id="venueState" value="venueState"
-            // onChange={((this.venueState.value))}
             >
         <DropdownToggle caret>
           Filter By State
         </DropdownToggle>
         <DropdownMenu 
-        // onChange={(event) => this.handleFieldChange(event)}
         >
-          {/* <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem> */}
-          {/* <DropdownItem>Another Action</DropdownItem> */}
-          {/* <DropdownItem divider /> */}
-          <DropdownItem value="AK">Alaska</DropdownItem>
-          <DropdownItem value="AL">Alabama</DropdownItem>
-          <DropdownItem value="AR">Arkansas</DropdownItem>
-          <DropdownItem value="AZ">Arizona</DropdownItem>
-          <DropdownItem value="CA">California</DropdownItem>
-          <DropdownItem value="CO">Colorado</DropdownItem>
-          <DropdownItem value="CT">Connecticut</DropdownItem>
-          <DropdownItem value="DC">District of Columbia</DropdownItem>
-          <DropdownItem value="DE">Delaware</DropdownItem>
-          <DropdownItem value="FL">Florida</DropdownItem>
-          <DropdownItem value="GA">Georgia</DropdownItem>
-          <DropdownItem value="HI">Hawaii</DropdownItem>
-          <DropdownItem value="IA">Iowa</DropdownItem>
-          <DropdownItem value="ID">Idaho</DropdownItem>
-          <DropdownItem value="IL">Illinois</DropdownItem>
-          <DropdownItem value="IN">Indiana</DropdownItem>
-          <DropdownItem value="KS">Kansas</DropdownItem>
-          <DropdownItem value="KY">Kentucky</DropdownItem>
-          <DropdownItem value="LA">Louisiana</DropdownItem>
-          <DropdownItem value="MA">Massachusetts</DropdownItem>
-          <DropdownItem value="MD">Maryland</DropdownItem>
-          <DropdownItem value="ME">Maine</DropdownItem>
-          <DropdownItem value="MI">Michigan</DropdownItem>
-          <DropdownItem value="MN">Minnesota</DropdownItem>
-          <DropdownItem value="MO">Missouri</DropdownItem>
-          <DropdownItem value="MS">Mississippi</DropdownItem>
-          <DropdownItem value="MT">Montana</DropdownItem>
-          <DropdownItem value="NC">North Carolina</DropdownItem>
-          <DropdownItem value="ND">North Dakota</DropdownItem>
-          <DropdownItem value="NE">Nebraska</DropdownItem>
-          <DropdownItem value="NH">New Hampshire</DropdownItem>
-          <DropdownItem value="NJ">New Jersey</DropdownItem>
-          <DropdownItem value="NM">New Mexico</DropdownItem>
-          <DropdownItem value="NV">Nevada</DropdownItem>
-          <DropdownItem value="NY">New York</DropdownItem>
-          <DropdownItem value="OH">Ohio</DropdownItem>
-          <DropdownItem value="OK">Oklahoma</DropdownItem>
-          <DropdownItem value="OR">Oregon</DropdownItem>
-          <DropdownItem value="PA">Pennsylvania</DropdownItem>
-          <DropdownItem value="PR">Puerto Rico</DropdownItem>
-          <DropdownItem value="RI">Rhode Island</DropdownItem>
-          <DropdownItem value="SC">South Carolina</DropdownItem>
-          <DropdownItem value="SD">South Dakota</DropdownItem>
-          <DropdownItem value="TN">Tennessee</DropdownItem>
-          <DropdownItem value="TX">Texas</DropdownItem>
-          <DropdownItem value="UT">Utah</DropdownItem>
-          <DropdownItem value="VA">Virginia</DropdownItem>
-          <DropdownItem value="VT">Vermont</DropdownItem>
-          <DropdownItem value="WA">Washington</DropdownItem>
-          <DropdownItem value="WI">Wisconsin</DropdownItem>
-          <DropdownItem value="WV">West Virginia</DropdownItem>
-          <DropdownItem value="WY">Wyoming</DropdownItem>
+          <DropdownItem header>CHOOSE A STATE</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem onClick={() => this.handleClickVenue("AK")}>Alaska</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("AL")}>Alabama</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("AR")}>Arkansas</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("AZ")}>Arizona</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("CA")}>California</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("CO")}>Colorado</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("CT")}>Connecticut</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("DC")}>District of Columbia</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("DE")}>Delaware</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("FL")}>Florida</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("GA")}>Georgia</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("HI")}>Hawaii</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("IA")}>Iowa</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("ID")}>Idaho</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("IL")}>Illinois</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("IN")}>Indiana</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("KS")}>Kansas</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("KY")}>Kentucky</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("LA")}>Louisiana</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MA")}>Massachusetts</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MD")}>Maryland</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("ME")}>Maine</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MI")}>Michigan</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MN")}>Minnesota</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MO")}>Missouri</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MS")}>Mississippi</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("MT")}>Montana</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NC")}>North Carolina</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("ND")}>North Dakota</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NE")}>Nebraska</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NH")}>New Hampshire</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NJ")}>New Jersey</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NM")}>New Mexico</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NV")}>Nevada</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("NY")}>New York</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("OH")}>Ohio</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("OK")}>Oklahoma</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("OR")}>Oregon</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("PA")}>Pennsylvania</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("PR")}>Puerto Rico</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("RI")}>Rhode Island</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("SC")}>South Carolina</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("SD")}>South Dakota</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("TN")}>Tennessee</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("TX")}>Texas</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("UT")}>Utah</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("VA")}>Virginia</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("VT")}>Vermont</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("WA")}>Washington</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("WI")}>Wisconsin</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("WV")}>West Virginia</DropdownItem>
+          <DropdownItem onClick={() => this.handleClickVenue("WY")}>Wyoming</DropdownItem>
         </DropdownMenu>
       </Dropdown>
             
