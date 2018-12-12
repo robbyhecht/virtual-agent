@@ -68,22 +68,30 @@ export default class ApplicationViews extends Component {
       })
     )
 
-    addTour = tours =>
-    ToursManager.addAndList(tours)
-      .then(() => ToursManager.getAll(this.props.currentUser))
-      .then(tours =>
-        this.setState({
-          tours: tours
-        })
-      )
+  filterVenueStates = (states, user) =>
+  VenuesManager.getByState(states, user)
+  .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
+    this.setState({
+      venues: venues
+    })
+  )
 
-    deleteTour = (id, user) => {
-      return ToursManager.removeAndList(id, user).then(tours =>
-        this.setState({
-          tours: tours
-        })
-      )
-    }
+  addTour = tours =>
+  ToursManager.addAndList(tours)
+    .then(() => ToursManager.getAll(this.props.currentUser))
+    .then(tours =>
+      this.setState({
+        tours: tours
+      })
+    )
+
+  deleteTour = (id, user) => {
+    return ToursManager.removeAndList(id, user).then(tours =>
+      this.setState({
+        tours: tours
+      })
+    )
+  }
 
     editTour = (tours, url) =>
     ToursManager.patchAndListTour(tours, url)
@@ -145,6 +153,7 @@ export default class ApplicationViews extends Component {
             deleteVenue={this.deleteVenue}
             venues={this.state.venues}
             currentUser={this.props.currentUser}
+            filterVenueStates={this.filterVenueStates}
             />
         }} />
         
