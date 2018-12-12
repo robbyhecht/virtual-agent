@@ -24,7 +24,7 @@ export default class VenueCard extends Component {
 
           <Button className="venueToTour" color="success" size="sm"
           onClick={() => 
-            this.props.addVenueToTour(this.props.tours.venue_id, this.props.currentUser)
+            this.props.addVenueToTour(this.props.venues.id)
         }
             >
           Add to your tour</Button>{' '}

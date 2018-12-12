@@ -55,7 +55,7 @@ export default class VenuesList extends Component {
             name="venueState" id="venueState" value="venueState"
             >
         <DropdownToggle caret>
-          Filter By State
+          Filter Venues By State
         </DropdownToggle>
         <DropdownMenu 
         >
@@ -127,9 +127,10 @@ export default class VenuesList extends Component {
               this.removeFilter()
             }}
           >
-          Remove Filter
+          Remove Venues Filter
           </Button>
         </div>
+        
         <article className="venuesList">
           {
             this.props.venues.map(venue => {

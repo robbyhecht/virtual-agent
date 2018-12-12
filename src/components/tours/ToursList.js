@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import VenueCard from "./../venues/VenueCard"
 import TourCard from "./TourCard"
 import { Button } from "reactstrap"
 import "./Tours.css"
@@ -6,13 +7,26 @@ import "./Tours.css"
 export default class ToursList extends Component {
 
   render() {
-    console.log(this.props.tours)
+    console.log("tours", this.props.tours)
     
     return (
 
       <React.Fragment>
         {/* <div> */}
-          <h1 className="toursHeader">Tour</h1>
+        <h1 className="toursHeader">Tour</h1>
+
+        <article className="venuesList">
+          {
+            this.props.venues.map(venue => {
+              return <VenueCard key={venue.id} venue={venue} {...this.props} />
+          
+            } ) 
+          }
+        </article>
+
+
+
+
           {/* <section className="newTourButton">
             <Button
               color="info"

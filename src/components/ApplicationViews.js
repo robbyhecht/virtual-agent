@@ -16,7 +16,8 @@ export default class ApplicationViews extends Component {
   
   state = {
     venues: [],
-    tours: []
+    tours: [],
+    tour: []
     }
 
   componentDidMount() {
@@ -41,7 +42,7 @@ export default class ApplicationViews extends Component {
   
   addVenue = venues =>
   VenuesManager.addAndList(venues)
-    .then(() => VenuesManager.getAll(this.props.currentUser))
+    .then(() => APIManager.get(this.props.currentUser))
     .then(venues => 
     
       this.setState({
@@ -49,8 +50,8 @@ export default class ApplicationViews extends Component {
       })
     )
 
-  addVenueToTour = (venue_id) => {
-  TourVenueManager.postVenueToTour(venue_id)
+  addVenueToTour = (venue) => {
+  TourVenueManager.postVenueToTour(venue)
     .then(() => TourVenueManager.getAll(this.props.currentUser))
     .then(tour => 
       this.setState({
@@ -58,6 +59,14 @@ export default class ApplicationViews extends Component {
       })
     )
   }
+
+  // addVenueToTour = () => {
+  //   const venue = {
+  //     user_id: parseInt(APIManager.get(this.props.currentUser)),
+  //     venue_id: this.props.venue.id
+  //   }
+  //   ToursManager.addAndList(venue)
+  // }
 
   deleteVenue = (id, user) => {
     return VenuesManager.removeAndList(id, user)
