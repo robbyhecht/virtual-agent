@@ -11,9 +11,9 @@ export default class ToursList extends Component {
     return (
 
       <React.Fragment>
-        <div>
-          <h1 className="toursHeader">Tours</h1>
-          <section className="newTourButton">
+        {/* <div> */}
+          <h1 className="toursHeader">Tour</h1>
+          {/* <section className="newTourButton">
             <Button
               color="info"
               size="large"
@@ -34,7 +34,7 @@ export default class ToursList extends Component {
               return <TourCard key={tour.id} tour={tour} {...this.props} />
             })
           }
-        </article>
+        </article> */}
       </React.Fragment>
 
     )

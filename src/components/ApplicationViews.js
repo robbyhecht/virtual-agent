@@ -9,6 +9,7 @@ import HomePage from "./home/Home"
 import ToursList from "./tours/ToursList"
 import ToursForm from "./tours/ToursForm"
 import ToursManager from './../managers/ToursManager'
+import TourVenueManager from "./../managers/TourVenueManager"
 
 
 export default class ApplicationViews extends Component {
@@ -16,7 +17,7 @@ export default class ApplicationViews extends Component {
   state = {
     venues: [],
     tours: []
-  }
+    }
 
   componentDidMount() {
 
@@ -36,6 +37,8 @@ export default class ApplicationViews extends Component {
 
   // VENUE FUNCTIONS
 
+  
+  
   addVenue = venues =>
   VenuesManager.addAndList(venues)
     .then(() => VenuesManager.getAll(this.props.currentUser))
@@ -45,6 +48,16 @@ export default class ApplicationViews extends Component {
         venues: venues
       })
     )
+
+  addVenueToTour = (venue_id) => {
+  TourVenueManager.postVenueToTour(venue_id)
+    .then(() => TourVenueManager.getAll(this.props.currentUser))
+    .then(tour => 
+      this.setState({
+        tour: tour
+      })
+    )
+  }
 
   deleteVenue = (id, user) => {
     return VenuesManager.removeAndList(id, user)
@@ -116,7 +129,9 @@ export default class ApplicationViews extends Component {
             addVenue={this.addVenue}
             editVenue={this.editVenue}
             deleteVenue={this.deleteVenue}
+            addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
+            tours={this.state.tours}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
             />
@@ -136,7 +151,9 @@ export default class ApplicationViews extends Component {
         <Route exact path="/tours" render={(props) => {
           return <ToursList {...props} 
             tours={this.state.tours}
-            deleteTour={this.deleteTour} />
+            deleteTour={this.deleteTour}
+            addVenueToTour={this.addVenueToTour}
+            />
         }} />
 
         <Route exact path="/tours/new" render={props => {

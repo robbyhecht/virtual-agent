@@ -10,7 +10,20 @@ export default class TourCard extends Component {
     return(
 
       <div>
-        <h2>{this.props.tour.name}</h2>
+    
+        <div>
+        
+          {/* make venue cards post in this div? */}
+
+          
+
+        </div>
+
+
+
+
+
+        <p>{this.props.tour.name}</p>
 
         {/* <Card key={this.props.tour.id} className="tourCard text-center" style={{width:"60%"}}>
 
@@ -21,13 +34,11 @@ export default class TourCard extends Component {
         <CardBody> */}
 
           <Button
-            onClick={() => this.props.deleteTour(this.props.tour.id)}
+            onClick={() => 
+            this.props.deleteTour(this.props.tour.id)
+            }
             className="card-link" color="danger" size="sm">Delete
           </Button>
-
-        {/* </CardBody>
-
-        </Card> */}
       </div>
 
 

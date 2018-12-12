@@ -113,49 +113,8 @@
   ],
   "tours": [
     {
-      "name": "Southeast 2020",
-      "user_id": 1,
-      "id": 1
-    },
-    {
-      "name": "best tour ever all over the world for days",
-      "user_id": 2,
-      "id": 2
-    },
-    {
-      "name": "Northwest 2019",
-      "user_id": 2,
-      "id": 3
-    },
-    {
-      "name": "Tennessee Winter Tour 2050",
-      "user_id": 1,
-      "id": 4
-    },
-    {
-      "name": "Tour of NSS",
-      "user_id": 2,
-      "id": 5
-    },
-    {
-      "name": "I don't know, we'll figure out where to go",
-      "user_id": 1,
-      "id": 6
-    },
-    {
-      "name": "northwest",
-      "user_id": 1,
-      "id": 7
-    },
-    {
-      "name": "",
-      "user_id": 1,
-      "id": 8
-    },
-    {
-      "name": "Robert Hecht",
-      "user_id": 1,
-      "id": 9
+      "venue_id": "",
+      "user_id": ""
     }
   ]
 }

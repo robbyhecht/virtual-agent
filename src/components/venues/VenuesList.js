@@ -114,7 +114,18 @@ export default class VenuesList extends Component {
             
           </section>
         </div>
-
+        <div>
+          <Button
+            color="info"
+            size="large"
+            className="btn"
+            onClick={() => {
+              this.props.history.push("/venues/new");
+            }}
+          >
+          Remove Filter
+          </Button>
+        </div>
         <article className="venuesList">
           {
             this.props.venues.map(venue => {

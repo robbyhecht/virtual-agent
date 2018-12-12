@@ -26,8 +26,9 @@ export default class NavBar extends Component {
   }
 
   logout = () => {
-    sessionStorage.clear();
+    sessionStorage.clear().then(() => window.reload)
   };
+
 
   render() {
     console.log(this.logout)
@@ -49,7 +50,7 @@ export default class NavBar extends Component {
               </NavItem> */}
               <NavItem>
               {/* <NavLink href="/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink> */}
-                <Link id="navLogout" onClick={this.logout} to={'/'} >LOG OUT</Link>
+                <Link to={'/'} id="navLogout" onClick={this.logout}>LOG OUT</Link>
               </NavItem>
             </Nav>
           </Collapse>

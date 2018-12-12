@@ -1,4 +1,5 @@
 import APIManager from "./APIManager"
+import VenuesManager from "./VenuesManager"
 
 class ToursManager extends APIManager {
 
@@ -10,6 +11,10 @@ class ToursManager extends APIManager {
     return this.allSortedAlpha(user)
   }
 
+  postVenueToTour(venue) {
+    return VenuesManager.getVenues(venue).then(() => this.post(venue))
+  }
+
   removeAndList(id, user) {
     return this.delete(id).then(() => this.allSortedAlpha(user))
   }
@@ -18,6 +23,9 @@ class ToursManager extends APIManager {
     return this.patch(tour, url).then(() => this.allSortedAlpha())
   }
 
+  getVenues(id) {
+    return this.get(id)
+  }
 
 
 }

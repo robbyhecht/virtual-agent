@@ -19,13 +19,20 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
 
-          <Button color="success" size="sm"
-          onClick={() => alert("you pressed me, teeheehee")}
-          // onClick={() => this.props.migrateVenue(this.props.venue.id)
-          // .then(tours =>
-          //   this.setState({ tours: tours }))}
+
+
+
+          <Button className="venueToTour" color="success" size="sm"
+          onClick={() => 
+            this.props.addVenueToTour(this.props.tours.venue_id, this.props.currentUser)
+        }
             >
-          Add to a tour</Button>{' '}
+          Add to your tour</Button>{' '}
+
+
+
+
+
 
           <Link to={`/venues/edit/${this.props.venue.id}`}>
           <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}
