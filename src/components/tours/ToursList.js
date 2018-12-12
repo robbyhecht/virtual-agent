@@ -6,12 +6,14 @@ import "./Tours.css"
 export default class ToursList extends Component {
 
   render() {
+    console.log(this.props.tours)
+    
     return (
 
-        <React.Fragment>
-        <div>
-          <h1 className="toursHeader">Tours</h1>
-          <section className="newTourButton">
+      <React.Fragment>
+        {/* <div> */}
+          <h1 className="toursHeader">Tour</h1>
+          {/* <section className="newTourButton">
             <Button
               color="info"
               size="large"
@@ -26,11 +28,11 @@ export default class ToursList extends Component {
           </section>
         </div>
 
-      {/* <article className="toursList">
-          {
-            this.props.tours.map( tour =>
-              <TourCard key={tour.id} tour={tour} {...this.props} />
-            )
+        <article className="toursList">
+          { 
+            this.props.tours.map( tour => {
+              return <TourCard key={tour.id} tour={tour} {...this.props} />
+            })
           }
         </article> */}
       </React.Fragment>

@@ -5,13 +5,11 @@ class VenuesEdit extends Component {
     state = {
         name: "",
         city: "",
-        state: "",
+        venueState: "",
         buyer: "",
         email: "",
         phone: "",
         url: "",
-        played: "",
-        favorites: "",
         notes: "",
         userId: "",
         id: ""
@@ -29,12 +27,10 @@ class VenuesEdit extends Component {
         let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
         newState.name = venue.name
         newState.city = venue.city
-        newState.state = venue.state
+        newState.venueState = venue.venueState
         newState.buyer = venue.buyer
         newState.email = venue.email
         newState.phone = venue.phone
-        newState.played = venue.played
-        newState.favorites = venue.favorites
         newState.notes = venue.notes
         newState.id = venue.id
         newState.userId = sessionStorage.getItem("username")
@@ -47,7 +43,7 @@ class VenuesEdit extends Component {
         const venue = {
           name: this.state.name,
           city: this.state.city,
-          state: this.state.state,
+          venueState: this.state.venueState,
           buyer: this.state.buyer,
           email: this.state.email,
           phone: this.state.phone,
@@ -70,17 +66,19 @@ class VenuesEdit extends Component {
 
               <FormGroup>
                 <Label for="name">Venue Name</Label>
-                <Input type="text" name="name" id="name" defaultValue={this.state.name} onChange={(event) => this.handleFieldChange(event)} />
+                <Input type="text" name="name" id="name" defaultValue={this.state.name}
+                onChange={(event) => this.handleFieldChange(event)} />
               </FormGroup>
 
               <FormGroup>
                 <Label for="city">City</Label>
-                <Input type="text" name="city" id="city" defaultValue={this.state.city} onChange={(event) => this.handleFieldChange(event)}/>
+                <Input type="text" name="city" id="city" defaultValue={this.state.city}
+                onChange={(event) => this.handleFieldChange(event)}/>
               </FormGroup>
 
               <FormGroup>
-                <Label for="state">State</Label>
-                <Input type="select" name="state" id="state" value={this.state.state} onChange={(event) => this.handleFieldChange(event)}>
+                <Label for="venueState">State</Label>
+                <Input type="select" name="venueState" id="venueState" value={this.state.venueState} onChange={(event) => this.handleFieldChange(event)}>
                   <option value=""></option>
                   <option value="AK">Alaska</option>
                   <option value="AL">Alabama</option>

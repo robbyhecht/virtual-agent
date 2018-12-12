@@ -16,12 +16,16 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}`).then(data => data.json())
   }
   
-  allSortedSoonest() {
-    return fetch(`${remoteURL}/${this.route}?_sort=date&_order=asc`).then(data => data.json());
+  // allSortedSoonest() {
+  //   return fetch(`${remoteURL}/${this.route}?_sort=date&_order=asc`).then(data => data.json());
+  // }
+
+  allSortedAlpha(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&_sort=name&_order=asc`).then(data => data.json());
   }
 
-  allSortedAlpha() {
-    return fetch(`${remoteURL}/${this.route}?_sort=name&_order=asc`).then(data => data.json());
+  allSortedStates(venueState, user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&venueState=${venueState}&_sort=name&_order=asc`).then(data => data.json());
   }
 
   delete(id) {
@@ -35,26 +39,27 @@ export default class APIManager {
 
     // ADD AN ITEM TO A COLLECTION (POST)
 
-  post(newThing) {
+  post(newThing) {    
     return fetch(`${remoteURL}/${this.route}/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newThing)
-    }).then(data => data.json())
+    })
+    .then(data => data.json())
   }
   
-  add(destination, newThing) {
-    return fetch(`${remoteURL}/${destination}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newThing)
-    }).then(data => data.json())
-      .then(() => this.all(destination))
-  }
+  // add(destination, newThing) {
+  //   return fetch(`${remoteURL}/${destination}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(newThing)
+  //   }).then(data => data.json())
+  //     .then(() => this.all(destination))
+  // }
 
     // MAKE A CHANGE TO A COLLECTION (PATCH)
 
@@ -115,6 +120,8 @@ export default class APIManager {
     .then(data => data.json())
   }
 
+
+  
 }
 
 

@@ -9,103 +9,112 @@
       "username": "r",
       "password": "h",
       "id": 2
+    },
+    {
+      "username": "k",
+      "password": "r",
+      "id": 3
+    },
+    {
+      "username": "j",
+      "password": "s",
+      "id": 4
     }
   ],
-
   "venues": [
     {
       "name": "The Evening Muse",
       "city": "Charlotte",
-      "state": "NC",
+      "venueState": "NC",
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
       "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
-      "user_id": "robby",
+      "user_id": 1,
       "id": 1
     },
     {
       "name": "The Basement",
       "city": "Nashville",
-      "state": "TN",
+      "venueState": "TN",
       "buyer": "Mike Grimes",
       "email": "mike@slowbar.com",
       "phone": "",
       "notes": "Favorite Nashville venue.",
-      "user_id": "robby",
+      "user_id": 2,
       "id": 2
     },
     {
       "name": "Rockwood Music Hall",
       "city": "New York",
-      "state": "NY",
+      "venueState": "NY",
       "buyer": "Nate Kreichman",
       "email": "nate@rockwoodmusichall.com",
       "phone": "",
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
-      "user_id": "robby",
+      "user_id": 1,
       "id": 3
     },
     {
       "name": "Crimson Moon Cafe",
       "city": "Dahlonega",
-      "state": "GA",
+      "venueState": "GA",
       "buyer": "Dana LaChance",
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
-      "user_id": "robby",
+      "user_id": 2,
       "id": 4
     },
     {
       "name": "Cactus Cafe",
       "city": "Austin",
-      "state": "TX",
+      "venueState": "TX",
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
       "notes": "Really nice sound. Matt is super nice.",
-      "user_id": "robby",
-      "id": 5,
-      "url": "",
-      "userId": null
+      "user_id": 3,
+      "id": 5
     },
     {
       "name": "Club Passim",
       "city": "Boston",
-      "state": "MA",
+      "venueState": "MA",
       "buyer": "Matt Smith",
       "email": "matt@passim.org",
       "phone": "617-492-5300",
       "notes": "Great listening crowd and friendly staff.",
-      "user_id": "robby",
-      "id": 6,
-      "url": "",
-      "userId": null
+      "user_id": 1,
+      "id": 6
     },
     {
-      "name": "Hotel Cafe",
-      "city": "Los Angeles",
-      "state": "CA",
-      "buyer": "Marko",
-      "email": "marko@hotelcafe.com",
-      "phone": "email only",
-      "notes": "There is a big stage and a small stage. Small room is tiny but the sound is great.",
-      "user_id": "r",
+      "name": "Old Town School of Folk Music",
+      "city": "Chicago",
+      "venueState": "IL",
+      "buyer": "Troy Hansbrough",
+      "email": "thansbrough@oldtownschool.org",
+      "phone": "email",
+      "notes": "The staff were nice af",
+      "user_id": 1,
       "id": 7
+    },
+    {
+      "name": "The Listening Room Series (at The Lark)",
+      "city": "Hastings",
+      "venueState": "NE",
+      "buyer": "Robin Harrell",
+      "email": "director@thelarkdowntown.com",
+      "phone": "",
+      "notes": "Reached out- offering dates for mid-late 2019",
+      "user_id": 1,
+      "id": 8
     }
   ],
-
   "tours": [
     {
-      "name": "Southeast 2019",
-      "user_id": "robby",
-      "id": 1
-    },
-    {
-      "name": "Northeast 2020",
-      "user_id": "robby",
-      "id": 2
+      "venue_id": "",
+      "user_id": ""
     }
   ]
 }

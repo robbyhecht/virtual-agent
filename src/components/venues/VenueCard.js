@@ -6,7 +6,6 @@ import "./Venues.css"
 export default class VenueCard extends Component {
 
   render() {
-
     return(
 
       <div>
@@ -14,28 +13,33 @@ export default class VenueCard extends Component {
       <Card key={this.props.venue.id} className="venueCard text-center" style={{width:"60%"}}>
         <CardHeader tag="h3">{this.props.venue.name}</CardHeader>
         <CardBody>
-          <CardTitle>{this.props.venue.city}, {this.props.venue.state}</CardTitle>
+          <CardTitle>{this.props.venue.city}, {this.props.venue.venueState}</CardTitle>
           <CardText>{this.props.venue.buyer}</CardText>
           <CardText>{this.props.venue.email}</CardText>
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
 
-          <Button color="success" size="sm"
-          onClick={() => alert("you pressed me, teeheehee")}
-          // onClick={() => this.props.migrateVenue(this.props.venue.id)
-          // .then(tours =>
-          //   this.setState({ tours: tours }))}
+
+
+
+          <Button className="venueToTour" color="success" size="sm"
+          onClick={() => 
+            this.props.addVenueToTour(this.props.tours.venue_id, this.props.currentUser)
+        }
             >
-          Add to a tour</Button>{' '}
+          Add to your tour</Button>{' '}
+
+
+
+
+
 
           <Link to={`/venues/edit/${this.props.venue.id}`}>
           <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}
           </Link>
 
           <Button
-          onClick={() => this.props.deleteVenue(this.props.venue.id)
-          .then(venues =>
-            this.setState({ venues: venues }))}
+          onClick={() => this.props.deleteVenue(this.props.venue.id, this.props.currentUser)}
           className="card-link" color="danger" size="sm">Delete
           </Button>
 

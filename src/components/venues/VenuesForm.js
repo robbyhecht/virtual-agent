@@ -8,7 +8,7 @@ export default class VenuesForm extends Component {
   state = {
     name: "",
     city: "",
-    state: "",
+    venueState: "",
     buyer: "",
     email: "",
     phone: "",
@@ -28,14 +28,12 @@ export default class VenuesForm extends Component {
     const venues = {
       name: this.state.name,
       city: this.state.city,
-      state: this.state.state,
+      venuState: this.state.venueState,
       buyer: this.state.buyer,
       email: this.state.email,
       phone: this.state.phone,
       notes: this.state.notes,
-      played: this.state.played,
-      favorites: this.state.favorites,
-      user_id: sessionStorage.getItem("user_id")
+      user_id: parseInt(sessionStorage.getItem("credentials"))
     }
     this.props.addVenue(venues).then(() => {
       this.props.history.push("/venues")
@@ -58,8 +56,8 @@ export default class VenuesForm extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Label for="state">State</Label>
-          <Input type="select" name="state" id="state" onChange={(event) => this.handleFieldChange(event)}>
+          <Label for="venueState">State</Label>
+          <Input type="select" name="venueState" id="venueState" onChange={(event) => this.handleFieldChange(event)}>
             <option value=""></option>
             <option value="AK">Alaska</option>
             <option value="AL">Alabama</option>

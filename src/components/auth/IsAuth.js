@@ -5,14 +5,11 @@ import Welcome from "../Welcome"
 
 
 class IsAuth extends Component {
-  activeUser() {
-    return sessionStorage.getItem("credentials")
-  }
-
+  
   render() {
     return <React.Fragment>
-        {this.props.isAuthenticated() ? (
-        <Welcome activeUser={this.activeUser} {...this.props} />
+        {this.props.isAuthenticated ? (
+        <Welcome {...this.props} />
         ) : (
           <Login {...this.props} />
         )}

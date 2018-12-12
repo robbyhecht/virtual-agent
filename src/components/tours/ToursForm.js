@@ -7,23 +7,25 @@ export default class ToursForm extends Component {
   // Set initial state
   state = {
     name: "",
-    userId: ""
   };
 
   // Update state whenever an input field is edited
-  handleFieldChange = tour => {
+  handleFieldChange = event => {
     const stateToChange = {};
-    stateToChange[tour.target.id] = tour.target.value;
+    stateToChange[event.target.id] = event.target.value;
     this.setState(stateToChange);
   };
 
-  constructNewTour = tour => {
-    tour.preventDefault()
-    const tours = {
+    // Update state whenever an input field is edited
+
+  constructNewTour = (evt) => {
+    console.log("construct new tour clicked")
+    evt.preventDefault()
+    const tour = {
       name: this.state.name,
-      userId: sessionStorage.getItem("username")
+      user_id: parseInt(sessionStorage.getItem("credentials"))
     }
-    this.props.addTour(tours).then(() => {
+    this.props.addTour(tour).then(() => {
       this.props.history.push("/tours")
     })
   }
@@ -34,7 +36,7 @@ export default class ToursForm extends Component {
       <Form className="toursForm">
         <FormGroup>
           <Label for="name">Tour Name</Label>
-          <Input type="text" name="name" id="tourName" placeholder="" />
+          <Input type="text" name="name" id="name" placeholder="example: Southeast 2020" onChange={(event) => this.handleFieldChange(event)} />
         </FormGroup>
 
         <Button            

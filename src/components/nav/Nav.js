@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Link } from "react-router-dom"
 import {
   Collapse,
   Navbar,
@@ -23,25 +24,33 @@ export default class NavBar extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  logout = () => {
+    sessionStorage.clear().then(() => window.reload)
+  };
+
+
   render() {
+    console.log(this.logout)
     return (
       <div>
         <Navbar id="navBar" light expand="md">
-          <NavbarBrand href="/" id="navTitle">VIRTUAL AGENT</NavbarBrand>
+        <Link id="navTitle" to={`/`}>VIRTUAL AGENT</Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/venues/" id="navVenues">VENUES</NavLink>
+                <Link id="navVenues" to={`/venues/`}>VENUES</Link>
               </NavItem>
               <NavItem>
-                <NavLink href="/tours/" id="navTours">TOURS</NavLink>
+                <Link id="navVenues" to={`/tours/`}>TOURS</Link>
               </NavItem>
+              {/* <NavItem>
+                <Link id="navVenues" to={`/about/`}>ABOUT</Link>
+              </NavItem> */}
               <NavItem>
-                <NavLink href="/about/" id="navAbout">ABOUT</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/logout/" id="navLogout">LOG OUT</NavLink>
+              {/* <NavLink href="/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink> */}
+                <Link to={'/'} id="navLogout" onClick={this.logout}>LOG OUT</Link>
               </NavItem>
             </Nav>
           </Collapse>
@@ -50,3 +59,27 @@ export default class NavBar extends Component {
     );
   }
 }
+
+
+/* <div>
+<Navbar id="navBar" light expand="md">
+  <NavbarBrand href="/" id="navTitle">VIRTUAL AGENT</NavbarBrand>
+  <NavbarToggler onClick={this.toggle} />
+  <Collapse isOpen={this.state.isOpen} navbar>
+    <Nav className="ml-auto" navbar>
+      <NavItem>
+      <NavLink><Link id="navVenues" to={`/venues/`}>VENUES</Link></NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="/tours/" id="navTours">TOURS</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="/about/" id="navAbout">ABOUT</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink>
+      </NavItem>
+    </Nav>
+  </Collapse>
+</Navbar>
+</div> */

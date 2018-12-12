@@ -70,6 +70,9 @@ export default class Login extends Component {
           <Row>
             <Col>
               <h1 id="slogan">Where do you <br /> want to play?</h1>
+              <p id="sub-slogan">Find gigs.<br />
+              Stay organized.<br />
+              Take your touring to the next level.</p>
             </Col>
             <Col>
               <Form className="loginForm">
