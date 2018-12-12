@@ -25,7 +25,7 @@
     {
       "name": "The Evening Muse",
       "city": "Charlotte",
-      "state": "NC",
+      "venueState": "NC",
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
@@ -36,7 +36,7 @@
     {
       "name": "The Basement",
       "city": "Nashville",
-      "state": "TN",
+      "venueState": "TN",
       "buyer": "Mike Grimes",
       "email": "mike@slowbar.com",
       "phone": "",
@@ -47,7 +47,7 @@
     {
       "name": "Rockwood Music Hall",
       "city": "New York",
-      "state": "NY",
+      "venueState": "NY",
       "buyer": "Nate Kreichman",
       "email": "nate@rockwoodmusichall.com",
       "phone": "",
@@ -58,7 +58,7 @@
     {
       "name": "Crimson Moon Cafe",
       "city": "Dahlonega",
-      "state": "GA",
+      "venueState": "GA",
       "buyer": "Dana LaChance",
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
@@ -69,7 +69,7 @@
     {
       "name": "Cactus Cafe",
       "city": "Austin",
-      "state": "TX",
+      "venueState": "TX",
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
@@ -80,7 +80,7 @@
     {
       "name": "Club Passim",
       "city": "Boston",
-      "state": "MA",
+      "venueState": "MA",
       "buyer": "Matt Smith",
       "email": "matt@passim.org",
       "phone": "617-492-5300",
@@ -91,7 +91,7 @@
     {
       "name": "Old Town School of Folk Music",
       "city": "Chicago",
-      "state": "IL",
+      "venueState": "IL",
       "buyer": "Troy Hansbrough",
       "email": "thansbrough@oldtownschool.org",
       "phone": "email",
@@ -102,7 +102,7 @@
     {
       "name": "The Listening Room Series (at The Lark)",
       "city": "Hastings",
-      "state": "NE",
+      "venueState": "NE",
       "buyer": "Robin Harrell",
       "email": "director@thelarkdowntown.com",
       "phone": "",

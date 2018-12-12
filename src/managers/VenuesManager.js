@@ -8,8 +8,8 @@ class VenuesManager extends APIManager {
     return this.allSortedAlpha(user)
   }
 
-  getByState(states, user) {
-    return this.allSortedStates(states, user)
+  getByState(venState, user) {
+    return this.allSortedStates(venState, user)
   }
 
   removeAndList(id, user) {

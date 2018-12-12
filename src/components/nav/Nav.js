@@ -44,9 +44,9 @@ export default class NavBar extends Component {
               <NavItem>
                 <Link id="navVenues" to={`/tours/`}>TOURS</Link>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <Link id="navVenues" to={`/about/`}>ABOUT</Link>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
               {/* <NavLink href="/" id="navLogout" onClick={this.logout}>LOG OUT</NavLink> */}
                 <Link id="navLogout" onClick={this.logout} to={'/'} >LOG OUT</Link>

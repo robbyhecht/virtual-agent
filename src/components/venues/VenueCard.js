@@ -13,7 +13,7 @@ export default class VenueCard extends Component {
       <Card key={this.props.venue.id} className="venueCard text-center" style={{width:"60%"}}>
         <CardHeader tag="h3">{this.props.venue.name}</CardHeader>
         <CardBody>
-          <CardTitle>{this.props.venue.city}, {this.props.venue.state}</CardTitle>
+          <CardTitle>{this.props.venue.city}, {this.props.venue.venueState}</CardTitle>
           <CardText>{this.props.venue.buyer}</CardText>
           <CardText>{this.props.venue.email}</CardText>
           <CardText>{this.props.venue.phone}</CardText>

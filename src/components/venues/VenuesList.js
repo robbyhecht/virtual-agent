@@ -24,7 +24,7 @@ export default class VenuesList extends Component {
 
 
   render() {
-    // console.log("filter", this.props.getByState())
+    // console.log("filter", this.props.filterVenueStates)
 
     return (
 
@@ -46,8 +46,8 @@ export default class VenuesList extends Component {
 
             <Dropdown
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
-            name="state" id="state" value="state"
-            onChange={((this.state.value))}
+            name="venueState" id="venueState" value="venueState"
+            // onChange={((this.venueState.value))}
             >
         <DropdownToggle caret>
           Filter By State

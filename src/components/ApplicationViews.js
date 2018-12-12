@@ -68,8 +68,8 @@ export default class ApplicationViews extends Component {
       })
     )
 
-  filterVenueStates = (states, user) =>
-  VenuesManager.getByState(states, user)
+  filterVenueStates = (venueState, user) =>
+  VenuesManager.getByState(venueState, user)
   .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
     this.setState({
       venues: venues
