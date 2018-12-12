@@ -45,7 +45,7 @@ export default class VenuesList extends Component {
               Filter Venues By State
             </Button> */}
             {/* <div> */}
-              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
+              <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Filter by State</Button>
               <Collapse isOpen={this.state.collapse}>
                 <Card>
                   <CardBody>

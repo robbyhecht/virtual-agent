@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Redirect } from "react-router-dom"
+import { Route, Link, Redirect } from "react-router-dom"
 import APIManager from "../managers/APIManager"
 import VenuesList from "./venues/VenuesList"
 import VenuesForm from "./venues/VenuesForm"
@@ -60,13 +60,15 @@ export default class ApplicationViews extends Component {
         })
       )
 
-      // issue: site forgets who the user is upon delete...remembers on refresh
-  deleteVenue = venueId => {
-    return VenuesManager.removeAndList(venueId).then(venues =>
-      this.setState({
-        venues: venues
-      })
+      // issue: site forgets who the user is for venues page upon delete...remembers on refresh
+  deleteVenue = (id, user) => {
+    return VenuesManager.removeAndList(id, user)
+    .then(venues =>
+        this.setState({
+          venues: venues
+        })
       )
+      
     }
 
   // deleteVenue = (venueId) => {

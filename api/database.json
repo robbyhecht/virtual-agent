@@ -31,9 +31,7 @@
       "phone": "704-618-4181",
       "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
       "user_id": 1,
-      "id": 1,
-      "url": "",
-      "userId": null
+      "id": 1
     },
     {
       "name": "The Basement",
@@ -100,6 +98,17 @@
       "notes": "The staff were nice af",
       "user_id": 1,
       "id": 7
+    },
+    {
+      "name": "The Listening Room Series (at The Lark)",
+      "city": "Hastings",
+      "state": "NE",
+      "buyer": "Robin Harrell",
+      "email": "director@thelarkdowntown.com",
+      "phone": "",
+      "notes": "Reached out- offering dates for mid-late 2019",
+      "user_id": 1,
+      "id": 8
     }
   ],
   "tours": [

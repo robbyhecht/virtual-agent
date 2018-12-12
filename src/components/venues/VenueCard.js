@@ -6,7 +6,7 @@ import "./Venues.css"
 export default class VenueCard extends Component {
 
   render() {
-
+    console.log(this.props.deleteVenue)
     return(
 
       <div>
@@ -33,7 +33,7 @@ export default class VenueCard extends Component {
           </Link>
 
           <Button
-          onClick={() => this.props.deleteVenue(this.props.venue.id)}
+          onClick={() => this.props.deleteVenue(this.props.venue.id, this.props.currentUser)}
           className="card-link" color="danger" size="sm">Delete
           </Button>
 
