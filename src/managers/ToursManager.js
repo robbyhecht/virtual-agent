@@ -6,14 +6,17 @@ class ToursManager extends APIManager {
     return this.post(newTour).then(() => this.all())
   }
 
-  getAll() {
-    return this.allSortedSoonest()
+  getAll(user) {
+    return this.allSortedAlpha(user)
   }
 
-  removeAndList(tour) {
-    return this.delete(tour).then(() => this.allSortedSoonest())
+  removeAndList(id, user) {
+    return this.delete(id).then(() => this.allSortedAlpha(user))
   }
 
+  patchAndListTour(tour, url) {
+    return this.patch(tour, url).then(() => this.allSortedAlpha())
+  }
 
 
 

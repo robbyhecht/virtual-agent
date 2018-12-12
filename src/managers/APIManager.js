@@ -21,12 +21,14 @@ export default class APIManager {
   }
 
   allSortedAlpha(user) {
-    console.log("user", user)
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&_sort=name&_order=asc`).then(data => data.json());
   }
 
+  allSortedState() {
+    return fetch(`${remoteURL}/${this.route}?state=${}&_order=asc`).then(data => data.json());
+  }
+
   delete(id) {
-    console.log("id", id, "url", remoteURL, "route", this.route)
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"
       })

@@ -118,14 +118,29 @@
       "id": 1
     },
     {
-      "name": "Northwest 2019",
-      "user_id": 2,
+      "name": "best tour ever all over the world for days",
+      "userId": 2,
       "id": 2
     },
     {
-      "name": "best tour ever all over the world for days",
-      "userId": 2,
+      "name": "Northwest 2019",
+      "user_id": 2,
       "id": 3
+    },
+    {
+      "name": "Tennessee Winter Tour 2050",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Tour of NSS",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "name": "I don't know, we'll figure out where to go",
+      "userId": 1,
+      "id": 6
     }
   ]
 }

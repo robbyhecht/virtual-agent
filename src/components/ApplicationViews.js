@@ -27,7 +27,7 @@ export default class ApplicationViews extends Component {
       this.setState({venues: allVenues})
     })
 
-    ToursManager.getAll()
+    ToursManager.getAll(this.props.currentUser)
     .then(allTours => {
     this.setState({tours: allTours})
     })
@@ -49,18 +49,8 @@ export default class ApplicationViews extends Component {
       this.setState({
         venues: venues
       })
-    
     )
 
-  editVenue = (venues, url) =>
-    VenuesManager.patchAndListVenue(venues, url)
-      .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
-        this.setState({
-          venues: venues
-        })
-      )
-
-      // issue: site forgets who the user is for venues page upon delete...remembers on refresh
   deleteVenue = (id, user) => {
     return VenuesManager.removeAndList(id, user)
     .then(venues =>
@@ -68,36 +58,57 @@ export default class ApplicationViews extends Component {
           venues: venues
         })
       )
-      
     }
 
-  // deleteVenue = (venueId) => {
-  //   VenuesManager.removeAndList(venueId)
-  //   .then(VenuesManager.getAll(this.props.currentUser))
-  //   .then(venues =>
-  //     this.setState({
-  //       venues: venues
-  //     })
-  //   )}
-
-
+  editVenue = (venues, url) =>
+  VenuesManager.patchAndListVenue(venues, url)
+    .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
+      this.setState({
+        venues: venues
+      })
+    )
 
     addTour = tours =>
     ToursManager.addAndList(tours)
-      .then(() => ToursManager.getAll()).then(tours =>
+      .then(() => ToursManager.getAll(this.props.currentUser))
+      .then(tours =>
         this.setState({
           tours: tours
         })
       )
 
-    deleteTour = id => {
-      console.log("id", id)
-      return ToursManager.removeAndList(id).then(tours =>
+    deleteTour = (id, user) => {
+      return ToursManager.removeAndList(id, user).then(tours =>
         this.setState({
           tours: tours
         })
       )
     }
+
+    editTour = (tours, url) =>
+    ToursManager.patchAndListTour(tours, url)
+      .then(() => ToursManager.getAll(this.props.currentUser)).then(tours =>
+        this.setState({
+          tours: tours
+        })
+      )
+
+    // addTour = tours =>
+    // ToursManager.addAndList(tours)
+    //   .then(() => ToursManager.getAll()).then(tours =>
+    //     this.setState({
+    //       tours: tours
+    //     })
+    //   )
+
+    // deleteTour = id => {
+    //   console.log("id", id)
+    //   return ToursManager.removeAndList(id).then(tours =>
+    //     this.setState({
+    //       tours: tours
+    //     })
+    //   )
+    // }
 
   // editVenue = (id, obj) =>
   //   APIManager.edit("venues", id, obj).then(venues =>

@@ -6,7 +6,6 @@ import "./Venues.css"
 export default class VenueCard extends Component {
 
   render() {
-    console.log(this.props.deleteVenue)
     return(
 
       <div>

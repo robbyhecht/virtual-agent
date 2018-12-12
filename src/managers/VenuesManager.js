@@ -15,6 +15,7 @@ class VenuesManager extends APIManager {
   patchAndListVenue(venue, url) {
     return this.patch(venue, url).then(() => this.allSortedAlpha())
   }
+
   // migrateVenue(venue) {
   //   return this.get(venue)
   //   .then(() => fetch("http://localhost:5002/tours"), {
