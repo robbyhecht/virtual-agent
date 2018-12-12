@@ -25,6 +25,10 @@ export default class VenuesList extends Component {
     this.props.filterVenuesByState(choice, this.props.currentUser)
   }
 
+  removeFilter = () => {
+    window.location.reload()
+  }
+
   render() {
     // console.log("filter", this.props.filterVenuesByState)
 
@@ -120,7 +124,7 @@ export default class VenuesList extends Component {
             size="large"
             className="btn"
             onClick={() => {
-              this.props.history.push("/venues/new");
+              this.removeFilter()
             }}
           >
           Remove Filter
