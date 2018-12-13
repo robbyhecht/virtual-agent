@@ -4,10 +4,8 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink
 } from "reactstrap";
 import "./Nav.css"
 export default class NavBar extends Component {
@@ -43,7 +41,7 @@ export default class NavBar extends Component {
                 <Link id="navVenues" to={`/venues/`}>VENUES</Link>
               </NavItem>
               <NavItem>
-                <Link id="navVenues" to={`/tours/`}>TOURS</Link>
+                <Link id="navVenues" to={`/tours/`}>TOUR</Link>
               </NavItem>
               {/* <NavItem>
                 <Link id="navVenues" to={`/about/`}>ABOUT</Link>

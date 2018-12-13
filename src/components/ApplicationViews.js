@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Link, Redirect } from "react-router-dom"
-import APIManager from "../managers/APIManager"
+// import APIManager from "../managers/APIManager"
 import VenuesList from "./venues/VenuesList"
 import VenuesForm from "./venues/VenuesForm"
 import VenuesEdit from "./venues/VenuesEdit"
@@ -9,14 +9,15 @@ import HomePage from "./home/Home"
 import ToursList from "./tours/ToursList"
 import ToursForm from "./tours/ToursForm"
 import ToursManager from './../managers/ToursManager'
-import TourVenueManager from "./../managers/TourVenueManager"
+// import TourVenueManager from "./../managers/TourVenueManager"
 
 
 export default class ApplicationViews extends Component {
   
   state = {
     venues: [],
-    tours: []
+    tours: [],
+    tour: []
     }
 
   componentDidMount() {
@@ -37,8 +38,6 @@ export default class ApplicationViews extends Component {
 
   // VENUE FUNCTIONS
 
-  
-  
   addVenue = venues =>
   VenuesManager.addAndList(venues)
     .then(() => VenuesManager.getAll(this.props.currentUser))
@@ -48,16 +47,34 @@ export default class ApplicationViews extends Component {
         venues: venues
       })
     )
+  
+  // addVenue = venues =>
+  // VenuesManager.addAndList(venues)
+  //   .then(() => APIManager.get(this.props.currentUser))
+  //   .then(venues => 
+    
+  //     this.setState({
+  //       venues: venues
+  //     })
+  //   )
 
-  addVenueToTour = (venue_id) => {
-  TourVenueManager.postVenueToTour(venue_id)
-    .then(() => TourVenueManager.getAll(this.props.currentUser))
-    .then(tour => 
-      this.setState({
-        tour: tour
-      })
-    )
-  }
+  // addVenueToTour = (venue) => {
+  // TourVenueManager.postVenueToTour(venue)
+  //   .then(() => TourVenueManager.getAll(this.props.currentUser))
+  //   .then(tour => 
+  //     this.setState({
+  //       tour: tour
+  //     })
+  //   )
+  // }
+
+  // addVenueToTour = () => {
+  //   const venue = {
+  //     user_id: parseInt(APIManager.get(this.props.currentUser)),
+  //     venue_id: this.props.venue.id
+  //   }
+  //   ToursManager.addAndList(venue)
+  // }
 
   deleteVenue = (id, user) => {
     return VenuesManager.removeAndList(id, user)
@@ -129,7 +146,7 @@ export default class ApplicationViews extends Component {
             addVenue={this.addVenue}
             editVenue={this.editVenue}
             deleteVenue={this.deleteVenue}
-            addVenueToTour={this.addVenueToTour}
+            // addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
             tours={this.state.tours}
             currentUser={this.props.currentUser}
@@ -152,7 +169,7 @@ export default class ApplicationViews extends Component {
           return <ToursList {...props} 
             tours={this.state.tours}
             deleteTour={this.deleteTour}
-            addVenueToTour={this.addVenueToTour}
+            // addVenueToTour={this.addVenueToTour}
             />
         }} />
 

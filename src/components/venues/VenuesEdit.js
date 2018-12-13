@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { Link } from "react-router-dom";
+import "./Venues.css"
 class VenuesEdit extends Component {
     state = {
         name: "",
@@ -9,9 +10,8 @@ class VenuesEdit extends Component {
         buyer: "",
         email: "",
         phone: "",
-        url: "",
         notes: "",
-        userId: "",
+        // user_id: "",
         id: ""
     }
 
@@ -33,7 +33,7 @@ class VenuesEdit extends Component {
         newState.phone = venue.phone
         newState.notes = venue.notes
         newState.id = venue.id
-        newState.userId = sessionStorage.getItem("username")
+        // newState.user_id = sessionStorage.getItem("username")
         this.setState(newState)
     }
   
@@ -47,22 +47,20 @@ class VenuesEdit extends Component {
           buyer: this.state.buyer,
           email: this.state.email,
           phone: this.state.phone,
-          url: this.state.url,
           notes: this.state.notes,
           played: this.state.played,
           favorites: this.state.favorites,
-          userId: sessionStorage.getItem("username"),
+          // user_id: sessionStorage.getItem("username"),
           id: this.state.id
         }
-        // let venueURL = "http://localhost:5002/venues/"
         return this.props.editVenue(venue, `${this.state.id}`)
             .then(() => this.props.history.push("/venues"))
     }
 
     render() {
         return (
-          <div className="editContainer">
-            <Form className="editVenueForm">
+          <div className="editContainer" id="editContainer">
+            <Form className="editVenueForm" id="editForm">
 
               <FormGroup>
                 <Label for="name">Venue Name</Label>
@@ -155,9 +153,13 @@ class VenuesEdit extends Component {
                 <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)} value={this.state.notes}/>
               </FormGroup>
 
-              <Button color="success" size="sm" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
+              <div id="editButtons">
 
-              <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm">Back</Button></Link>
+              <Button size="large" id="editEditButton" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
+
+              <Link to={`/venues/`}><Button id="editBackButton" className="card-link" size="large">Back</Button></Link>
+
+              </div>
 
           </Form>
          </div>

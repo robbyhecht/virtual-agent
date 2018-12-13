@@ -1,0 +1,116 @@
+#editContainer {
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+
+#venuesFormContainer {
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+
+#newVenueButtonContainer {
+  display: block;
+}
+
+#editButtons {
+  text-align: center;
+}
+
+#submitButtonContainer {
+  text-align: center;
+}
+
+#newVenueSubmitButton {
+  background-color: rgb(0, 35, 75);
+}
+
+#editEditButton {
+  background-color: rgb(0, 35, 75);
+}
+
+#editBackButton {
+  background-color: rgb(0, 35, 75);
+
+}
+
+#venuesContainer {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#cards {
+  margin-bottom: 20px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 800px;
+}
+
+#venuesTop {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#venuesHeader {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: white;
+}
+
+#venueButtons {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#stateButton {
+  background-color: rgb(0, 35, 75);
+  margin: 0px 5px 10px 5px
+}
+
+#newVenueButton {
+  background-color: rgb(0, 35, 75);
+  margin: 0px 5px 10px 5px
+}
+
+#removeFilterButton {
+  background-color: rgb(0, 35, 75);
+  margin: 0px 5px 10px 5px
+}
+
+#venueCard {
+  border: 1px solid rgb(0, 35, 75);
+  width: 60%;
+}
+
+#cardHeader {
+  background-color: #CFE1F6;
+  border-color: black;
+}
+
+#deleteButton {
+  background-color: rgb(0, 35, 75);
+}
+
+#tourButton {
+  background-color: rgb(0, 35, 75);
+  margin-right: 20px;
+}
+
+#editButton {
+  background-color: rgb(0, 35, 75);
+}
