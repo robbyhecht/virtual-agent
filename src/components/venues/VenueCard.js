@@ -56,7 +56,7 @@ export default class VenueCard extends Component {
                     console.log("bye")
                   )}}>Confirmed
                 </Button>
-                <Button id="tourDeleteButton" size="sm" color="danger" onClick={() => {
+                <Button id="tourDeleteButton" size="sm" onClick={() => {
                   console.log("delete pressed")
                   return (
                     console.log("bye")

@@ -184,6 +184,11 @@
       "venue_id": 5,
       "user_id": 1,
       "id": 7
+    },
+    {
+      "venue_id": 5,
+      "user_id": 1,
+      "id": 8
     }
   ]
 }
