@@ -5,6 +5,30 @@ import "./Venues.css"
 
 export default class VenueCard extends Component {
 
+  state = {
+    contacted: false,
+    pending: false,
+    confirmed: false
+  }
+
+  changeContacted() {
+    this.setState({contacted: !this.state.contacted})
+    this.state.contacted === false ? this.color="secondary" : this.color="success"
+    console.log("button clicked")
+  }
+
+  changePending() {
+    this.setState({pending: !this.state.pending})
+    this.state.pending === false ? this.color="secondary" : this.color="success"
+    console.log("button clicked")
+  }
+
+  changeConfirmed() {
+    this.setState({confirmed: !this.state.confirmed})
+    this.state.confirmed === false ? this.color="secondary" : this.color="success"
+    console.log("button clicked")
+  }
+
   render() {
     
     return(
@@ -43,20 +67,18 @@ export default class VenueCard extends Component {
               </div>
             : 
               <div>
-                <Button id="contactedButton" size="sm" onClick={() => {
-                  console.log("Hi")
-                  return (
-                    console.log("bye")
-                  )}}>Contacted
+                <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
+                    this.changeContacted()
+                  }}>Contacted
                 </Button>
-                <Button id="pendingButton" size="sm" onClick={() => {
-                  console.log("Hi")
+                <Button color="danger" size="sm" onClick={() => {
+                  console.log("pending pressed")
                   return (
                     console.log("bye")
                   )}}>Pending
                 </Button>
-                <Button id="confirmedButton" size="sm" onClick={() => {
-                  console.log("Hi")
+                <Button color="danger" size="sm" onClick={() => {
+                  console.log("confirmed pressed")
                   return (
                     console.log("bye")
                   )}}>Confirmed

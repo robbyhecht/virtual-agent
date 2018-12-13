@@ -7,7 +7,8 @@ import "./Tours.css";
 export default class ToursList extends Component {
 
   state = {
-    venues: []
+    venues: [],
+    initialized: false
   }
 
   componentDidMount() {
