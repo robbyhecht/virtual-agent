@@ -15,6 +15,10 @@ export default class VenuesList extends Component {
     }
   }
 
+  componentDidMount () {
+    this.props.updateTourButtons(false)
+  }
+
   toggle() {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
@@ -45,8 +49,7 @@ export default class VenuesList extends Component {
               className="btn"
               onClick={() => {
                 this.props.history.push("/venues/new");
-              }}
-            >
+              }}>
               Add New Venue
             </Button>
             <Dropdown
@@ -116,20 +119,17 @@ export default class VenuesList extends Component {
             </Dropdown>
             
               <div>
-            <Button
-              id="removeFilterButton"
-              size="large"
-              className="btn"
-              onClick={() => {
-                this.removeFilter()
-              }}
-              >
-              Remove Venues Filter
-              </Button>
+                <Button
+                id="removeFilterButton"
+                size="large"
+                className="btn"
+                onClick={() => {
+                  this.removeFilter()
+                }}>
+                Remove Venues Filter
+                </Button>
             </div>
-
           </section>
-
         </div>
 
         <div id="venuesContainer">
