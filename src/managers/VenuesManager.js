@@ -1,6 +1,6 @@
 import APIManager from "./APIManager"
 class VenuesManager extends APIManager {
-  getVenues(id) {
+  getVenue(id) {
     return this.get(id)
   }
 
