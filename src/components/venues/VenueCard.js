@@ -10,7 +10,7 @@ export default class VenueCard extends Component {
 
       <div id="cards">
         
-      <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard" style={{width:"60%"}}>
+      <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
         <CardHeader tag="h3" id="cardHeader">{this.props.venue.name}</CardHeader>
         <CardBody>
           <CardTitle>{this.props.venue.city}, {this.props.venue.venueState}</CardTitle>

@@ -93,7 +93,8 @@
 }
 
 #venueCard {
-  border: 2px solid #CFE1F6;
+  border: 1px solid rgb(0, 35, 75);
+  width: 60%;
 }
 
 #cardHeader {
