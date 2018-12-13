@@ -1,33 +1,9 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText, ButtonGroup } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
 export default class VenueCard extends Component {
-
-  state = {
-    contacted: false,
-    pending: false,
-    confirmed: false
-  }
-
-  changeContacted() {
-    this.setState({contacted: !this.state.contacted})
-    this.state.contacted === false ? this.color="secondary" : this.color="success"
-    console.log("button clicked")
-  }
-
-  changePending() {
-    this.setState({pending: !this.state.pending})
-    this.state.pending === false ? this.color="secondary" : this.color="success"
-    console.log("button clicked")
-  }
-
-  changeConfirmed() {
-    this.setState({confirmed: !this.state.confirmed})
-    this.state.confirmed === false ? this.color="secondary" : this.color="success"
-    console.log("button clicked")
-  }
 
   render() {
     
@@ -42,8 +18,6 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.email}</CardText>
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
-
-          {/* VENUE CARD BUTTONS */}
           
           {
             (this.props.tourpage === false) ? 
@@ -68,30 +42,39 @@ export default class VenueCard extends Component {
             : 
               <div>
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
-                    this.changeContacted()
+                  this.changeContacted()
                   }}>Contacted
                 </Button>
-                <Button color="danger" size="sm" onClick={() => {
+                <Button id="pendingButton" size="sm" onClick={() => {
                   console.log("pending pressed")
                   return (
                     console.log("bye")
                   )}}>Pending
-                </Button>
-                <Button color="danger" size="sm" onClick={() => {
+                  </Button>
+                <Button id="confirmedButton" size="sm" onClick={() => {
                   console.log("confirmed pressed")
                   return (
                     console.log("bye")
                   )}}>Confirmed
                 </Button>
-              </div> 
-
-          }
-
-         
-
-        </CardBody>
-      </Card>
-    </div>
+              </div>
+            }
+          </CardBody>
+        </Card>
+        </div>
     )
   }
 }
+
+
+
+
+{/* <div>
+<h5>Radio Buttons</h5>
+  <ButtonGroup>
+    <Button color="primary" onClick={() => this.onRadioBtnClick("Contacted")} active={this.state.rSelected === "Contacted"}>Contacted</Button>
+    <Button color="primary" onClick={() => this.onRadioBtnClick("Pending")} active={this.state.rSelected === "Pending"}>Pending</Button>
+    <Button color="primary" onClick={() => this.onRadioBtnClick("Confirmed")} active={this.state.rSelected === "Confirmed"}>Confirmed</Button>
+  </ButtonGroup>
+  <p>Selected: {this.state.rSelected}</p>
+</div> */}

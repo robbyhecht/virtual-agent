@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import VenueCard from "./../venues/VenueCard";
 import VenuesManager from "./../../managers/VenuesManager"
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import "./Tours.css";
 
 export default class ToursList extends Component {
 
   state = {
-    venues: [],
-    initialized: false
+    venues: []
   }
 
   componentDidMount() {
@@ -37,6 +36,5 @@ export default class ToursList extends Component {
           </article>
         </div>
       </React.Fragment>
-    );
+    )}
   }
-}
