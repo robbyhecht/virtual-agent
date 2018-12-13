@@ -15,14 +15,14 @@ export default class ToursList extends Component {
         {/* <div> */}
         <h1 className="toursHeader">Tour</h1>
 
-        <article className="venuesList">
+        {/* <article className="venuesList">
           {
             this.props.venues.map(venue => {
               return <VenueCard key={venue.id} venue={venue} {...this.props} />
           
             } ) 
           }
-        </article>
+        </article> */}
 
 
 

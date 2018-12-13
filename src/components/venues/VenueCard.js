@@ -8,10 +8,10 @@ export default class VenueCard extends Component {
   render() {
     return(
 
-      <div>
+      <div id="cards">
         
-      <Card key={this.props.venue.id} className="venueCard text-center" style={{width:"60%"}}>
-        <CardHeader tag="h3">{this.props.venue.name}</CardHeader>
+      <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard" style={{width:"60%"}}>
+        <CardHeader tag="h3" id="cardHeader">{this.props.venue.name}</CardHeader>
         <CardBody>
           <CardTitle>{this.props.venue.city}, {this.props.venue.venueState}</CardTitle>
           <CardText>{this.props.venue.buyer}</CardText>
@@ -22,7 +22,7 @@ export default class VenueCard extends Component {
 
 
 
-          <Button className="venueToTour" color="success" size="sm"
+          <Button className="venueToTour" id="tourButton" size="sm"
           onClick={() => 
             this.props.addVenueToTour(this.props.venues.id)
         }
@@ -35,12 +35,12 @@ export default class VenueCard extends Component {
 
 
           <Link to={`/venues/edit/${this.props.venue.id}`}>
-          <Button color="primary" size="sm" className="card-link">Edit</Button>{' '}
+          <Button size="sm" className="card-link" id="editButton">Edit</Button>{' '}
           </Link>
 
           <Button
           onClick={() => this.props.deleteVenue(this.props.venue.id, this.props.currentUser)}
-          className="card-link" color="danger" size="sm">Delete
+          className="card-link" id="deleteButton" size="sm">Delete
           </Button>
 
         </CardBody>
