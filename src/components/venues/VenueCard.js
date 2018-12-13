@@ -26,8 +26,10 @@ export default class VenueCard extends Component {
               <div>
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
-                  return this.props.addVenueToTour(this.props.venue.id)
-                }}>
+                  alert(`${this.props.venue.name} has been added to your tour!`)
+                  return (
+                    this.props.addVenueToTour(this.props.venue.id)
+                  )}}>
                 Add to your tour</Button>{' '}
 
                 <Link to={`/venues/edit/${this.props.venue.id}`}>
@@ -41,11 +43,24 @@ export default class VenueCard extends Component {
               </div>
             : 
               <div>
-                <Button onClick={() => {
+                <Button id="contactedButton" size="sm" onClick={() => {
+                  console.log("Hi")
                   return (
-                    console.log("Hi")
-                    
-                )}}></Button>
+                    console.log("bye")
+                  )}}>Contacted
+                </Button>
+                <Button id="pendingButton" size="sm" onClick={() => {
+                  console.log("Hi")
+                  return (
+                    console.log("bye")
+                  )}}>Pending
+                </Button>
+                <Button id="confirmedButton" size="sm" onClick={() => {
+                  console.log("Hi")
+                  return (
+                    console.log("bye")
+                  )}}>Confirmed
+                </Button>
               </div> 
 
           }
