@@ -1,54 +1,37 @@
-import React, { Component } from 'react'
-import VenueCard from "./../venues/VenueCard"
-import TourCard from "./TourCard"
-import { Button } from "reactstrap"
-import "./Tours.css"
+import React, { Component } from "react";
+import VenueCard from "./../venues/VenueCard";
+import VenuesManager from "./../../managers/VenuesManager"
+import { Button } from "reactstrap";
+import "./Tours.css";
 
 export default class ToursList extends Component {
 
+  state = {
+    venues: []
+  }
+
+  componentDidMount() {
+    let venues = this.props.tour.map(tour => {
+      return VenuesManager.getVenue(tour.venue_id).then((venue) => venue)
+    })
+    Promise.all(venues)
+    .then( (venues) => this.setState({venues: venues}))
+  }
+
   render() {
-    console.log("tours", this.props.tours)
-    
+    console.log("venues", this.state.venues)
+
     return (
-
       <React.Fragment>
-        {/* <div> */}
         <h1 id="tourHeader">MY TOUR</h1>
-
-        {/* <article className="venuesList">
-          {
-            this.props.venues.map(venue => {
-              return <VenueCard key={venue.id} venue={venue} {...this.props} />
-          
-            } ) 
-          }
-        </article> */}
-
-
-          {/* <section className="newTourButton">
-            <Button
-              color="info"
-              size="large"
-              className="btn"
-              onClick={() => {
-                this.props.history.push("/tours/new");
-              }}
-            >
-            Add New Tour
-            </Button>
-
-          </section>
+        <div id="venuesContainer">
+          <article className="venuesList">
+            {this.state.venues.map(venue => 
+            <VenueCard key={venue.id} venue={venue} {...this.props} />
+            )}
+          </article>
         </div>
-
-        <article className="toursList">
-          { 
-            this.props.tours.map( tour => {
-              return <TourCard key={tour.id} tour={tour} {...this.props} />
-            })
-          }
-        </article> */}
       </React.Fragment>
-
-    )
+    );
   }
 }
