@@ -10,9 +10,8 @@ class VenuesEdit extends Component {
         buyer: "",
         email: "",
         phone: "",
-        url: "",
         notes: "",
-        userId: "",
+        // user_id: "",
         id: ""
     }
 
@@ -34,7 +33,7 @@ class VenuesEdit extends Component {
         newState.phone = venue.phone
         newState.notes = venue.notes
         newState.id = venue.id
-        newState.userId = sessionStorage.getItem("username")
+        // newState.user_id = sessionStorage.getItem("username")
         this.setState(newState)
     }
   
@@ -48,14 +47,12 @@ class VenuesEdit extends Component {
           buyer: this.state.buyer,
           email: this.state.email,
           phone: this.state.phone,
-          url: this.state.url,
           notes: this.state.notes,
           played: this.state.played,
           favorites: this.state.favorites,
-          userId: sessionStorage.getItem("username"),
+          // user_id: sessionStorage.getItem("username"),
           id: this.state.id
         }
-        // let venueURL = "http://localhost:5002/venues/"
         return this.props.editVenue(venue, `${this.state.id}`)
             .then(() => this.props.history.push("/venues"))
     }

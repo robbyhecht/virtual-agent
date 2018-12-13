@@ -19,6 +19,11 @@
       "username": "j",
       "password": "s",
       "id": 4
+    },
+    {
+      "username": "burt",
+      "password": "reynolds",
+      "id": 5
     }
   ],
   "venues": [
@@ -29,7 +34,7 @@
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
-      "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house",
+      "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house.",
       "user_id": 1,
       "id": 1
     },
@@ -41,7 +46,7 @@
       "email": "mike@slowbar.com",
       "phone": "",
       "notes": "Favorite Nashville venue.",
-      "user_id": 2,
+      "user_id": 1,
       "id": 2
     },
     {
@@ -74,7 +79,7 @@
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
       "notes": "Really nice sound. Matt is super nice.",
-      "user_id": 3,
+      "user_id": 1,
       "id": 5
     },
     {
@@ -86,9 +91,7 @@
       "phone": "617-492-5300",
       "notes": "Great listening crowd and friendly staff.",
       "user_id": 1,
-      "id": 6,
-      "url": "",
-      "userId": null
+      "id": 6
     },
     {
       "name": "Old Town School of Folk Music",
@@ -97,7 +100,7 @@
       "buyer": "Troy Hansbrough",
       "email": "thansbrough@oldtownschool.org",
       "phone": "email",
-      "notes": "The staff were nice af",
+      "notes": "The staff were nice af.",
       "user_id": 1,
       "id": 7
     },
@@ -122,6 +125,17 @@
       "notes": "Run by the Signature Sounds label",
       "user_id": 1,
       "id": 9
+    },
+    {
+      "name": "Ousama's Dog Park Concert Series",
+      "city": "Nashville",
+      "venueState": "TN",
+      "buyer": "Ousama",
+      "email": "dogtinder@gmail.com",
+      "phone": "615-555-WOOF",
+      "notes": "Stepped in poop halfway through the show. Never again.",
+      "user_id": 1,
+      "id": 10
     }
   ],
   "tour": [
