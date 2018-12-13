@@ -155,34 +155,29 @@
       "id": 3
     },
     {
-      "venue_id": 7,
+      "venue_id": 5,
       "user_id": 1,
       "id": 4
     },
     {
-      "venue_id": 1,
+      "venue_id": 5,
       "user_id": 1,
       "id": 5
     },
     {
-      "venue_id": 1,
+      "venue_id": 5,
       "user_id": 1,
       "id": 6
     },
     {
-      "venue_id": 9,
+      "venue_id": 5,
       "user_id": 1,
       "id": 7
     },
     {
-      "venue_id": 6,
+      "venue_id": 5,
       "user_id": 1,
       "id": 8
-    },
-    {
-      "venue_id": 1,
-      "user_id": 1,
-      "id": 9
     }
   ]
 }

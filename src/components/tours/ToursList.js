@@ -16,6 +16,8 @@ export default class ToursList extends Component {
     })
     Promise.all(venues)
     .then( (venues) => this.setState({venues: venues}))
+
+    this.props.updateTourButtons(true)
   }
 
   render() {
@@ -26,9 +28,11 @@ export default class ToursList extends Component {
         <h1 id="tourHeader">MY TOUR</h1>
         <div id="venuesContainer">
           <article className="venuesList">
-            {this.state.venues.map(venue => 
-            <VenueCard key={venue.id} venue={venue} {...this.props} />
-            )}
+            {
+              this.state.venues.map(venue => {
+                return <VenueCard key={venue.id} venue={venue} {...this.props} />
+            })
+            }
           </article>
         </div>
       </React.Fragment>

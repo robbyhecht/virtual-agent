@@ -16,8 +16,8 @@ export default class ApplicationViews extends Component {
   
   state = {
     venues: [],
-    // tours: [],
-    tour: []
+    tour: [],
+    tourpage: false
     }
 
   componentDidMount() {
@@ -35,6 +35,9 @@ export default class ApplicationViews extends Component {
     })
 }
 
+  updateTourButtons = (bool) => {
+    this.setState({tourpage: bool})
+  }
 
   // VENUE FUNCTIONS
 
@@ -151,6 +154,8 @@ export default class ApplicationViews extends Component {
             tours={this.state.tours}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
+            tourpage={this.state.tourpage}
+            updateTourButtons={this.updateTourButtons}
             />
         }} />
         
@@ -170,6 +175,8 @@ export default class ApplicationViews extends Component {
           return <ToursList {...props} 
             tour={this.state.tour}
             deleteTour={this.deleteTour}
+            tourpage={this.state.tourpage}
+            updateTourButtons={this.updateTourButtons}
             // addVenueToTour={this.addVenueToTour}
             />
         }} />
