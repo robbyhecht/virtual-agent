@@ -43,7 +43,7 @@ export default class NavBar extends Component {
                 <Link id="navVenues" to={`/venues/`}>VENUES</Link>
               </NavItem>
               <NavItem>
-                <Link id="navVenues" to={`/tours/`}>TOURS</Link>
+                <Link id="navVenues" to={`/tours/`}>TOUR</Link>
               </NavItem>
               {/* <NavItem>
                 <Link id="navVenues" to={`/about/`}>ABOUT</Link>

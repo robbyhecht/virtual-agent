@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { Link } from "react-router-dom";
+import "./Venues.css"
 class VenuesEdit extends Component {
     state = {
         name: "",
@@ -61,8 +62,8 @@ class VenuesEdit extends Component {
 
     render() {
         return (
-          <div className="editContainer">
-            <Form className="editVenueForm">
+          <div className="editContainer" id="editContainer">
+            <Form className="editVenueForm" id="editForm">
 
               <FormGroup>
                 <Label for="name">Venue Name</Label>
@@ -155,9 +156,13 @@ class VenuesEdit extends Component {
                 <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)} value={this.state.notes}/>
               </FormGroup>
 
-              <Button color="success" size="sm" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
+              <div id="editButtons">
 
-              <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm">Back</Button></Link>
+              <Button size="large" id="editEditButton" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
+
+              <Link to={`/venues/`}><Button id="editBackButton" className="card-link" size="large">Back</Button></Link>
+
+              </div>
 
           </Form>
          </div>

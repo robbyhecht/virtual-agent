@@ -81,10 +81,10 @@ export default class Login extends Component {
                 <input onChange={this.handleFieldChange} type="username" id="username" placeholder="Username" required="" autoFocus="" /><br />
                 <label htmlFor="inputPassword">Password:</label>
                 <input onChange={this.handleFieldChange} type="password" id="password" placeholder="Password" required="" /><br />
-                <Button type="submit" className="loginButton" onClick={this.handleLogin}>
+                <Button type="submit" className="loginButton" id="signInButton" onClick={this.handleLogin}>
                   Sign in
                 </Button>
-                <Button type="submit" className="loginButton" onClick={this.handleRegister}>
+                <Button type="submit" className="loginButton" id="registerButton" onClick={this.handleRegister}>
                   Register
                 </Button>
               </Form>

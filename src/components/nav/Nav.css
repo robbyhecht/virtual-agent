@@ -1,5 +1,6 @@
 #navBar {
   background-color: #4E93BB;
+  padding-top: 15px;
 }
 
 .navLink {
@@ -14,6 +15,7 @@
   color: white;
   font-size: 20px;
   margin-right: 20px;
+  margin-left: 5px;
 }
 
 #navVenues:hover {
@@ -25,6 +27,7 @@
   color: white;
   font-size: 20px;
   margin-right: 20px;
+  margin-left: 5px;
 }
 
 #navTours:hover {
@@ -36,6 +39,7 @@
   color: white;
   font-size: 20px;
   margin-right: 20px;
+  margin-left: 5px;
 }
 
 #navAbout:hover {
@@ -46,7 +50,8 @@
   background-color: #4E93BB;
   color: white;
   font-size: 20px;
-  margin-right: 70px;
+  margin-right: 60px;
+  margin-left: 5px;
 }
 
 #navLogout:hover {

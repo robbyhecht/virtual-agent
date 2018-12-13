@@ -86,7 +86,9 @@
       "phone": "617-492-5300",
       "notes": "Great listening crowd and friendly staff.",
       "user_id": 1,
-      "id": 6
+      "id": 6,
+      "url": "",
+      "userId": null
     },
     {
       "name": "Old Town School of Folk Music",
@@ -109,6 +111,17 @@
       "notes": "Reached out- offering dates for mid-late 2019",
       "user_id": 1,
       "id": 8
+    },
+    {
+      "name": "The Parlor Room",
+      "city": "Northampton",
+      "venueState": "MA",
+      "buyer": "form on website",
+      "email": "booking@signaturesounds.com",
+      "phone": "413-341-3317",
+      "notes": "Run by the Signature Sounds label",
+      "user_id": 1,
+      "id": 9
     }
   ],
   "tour": [
@@ -116,27 +129,6 @@
       "venue_id": 1,
       "user_id": 1,
       "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
     }
   ]
 }

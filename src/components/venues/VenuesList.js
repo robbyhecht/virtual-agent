@@ -37,8 +37,8 @@ export default class VenuesList extends Component {
       <React.Fragment>
 
         <div id="venuesTop">
-          <h1 id="venuesHeader">Venues</h1>
-          <section className="newVenueButton">
+          <h1 id="venuesHeader">VENUES</h1>
+          <section id="venueButtons">
             <Button
               id="newVenueButton"
               size="large"
@@ -49,7 +49,6 @@ export default class VenuesList extends Component {
             >
               Add New Venue
             </Button>
-
             <Dropdown
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
             name="venueState" id="venueState" value="venueState"
@@ -116,20 +115,20 @@ export default class VenuesList extends Component {
               </DropdownMenu>
             </Dropdown>
             
-          </section>
+              <div>
+            <Button
+              id="removeFilterButton"
+              size="large"
+              className="btn"
+              onClick={() => {
+                this.removeFilter()
+              }}
+              >
+              Remove Venues Filter
+              </Button>
+            </div>
 
-          <div>
-          <Button
-            id="removeFilterButton"
-            size="large"
-            className="btn"
-            onClick={() => {
-              this.removeFilter()
-            }}
-            >
-            Remove Venues Filter
-            </Button>
-          </div>
+          </section>
 
         </div>
 

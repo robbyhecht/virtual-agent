@@ -13,7 +13,7 @@ export default class ToursList extends Component {
 
       <React.Fragment>
         {/* <div> */}
-        <h1 className="toursHeader">Tour</h1>
+        <h1 id="tourHeader">MY TOUR</h1>
 
         {/* <article className="venuesList">
           {
@@ -23,8 +23,6 @@ export default class ToursList extends Component {
             } ) 
           }
         </article> */}
-
-
 
 
           {/* <section className="newTourButton">
