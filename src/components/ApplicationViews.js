@@ -33,6 +33,10 @@ export default class ApplicationViews extends Component {
     .then(allTours => {
     this.setState({tours: allTours})
     })
+
+    TourVenueManager.getAll(this.props.currentUser)
+    .then(tour => {
+      this.setState({tour: tour})})
 }
 
   updateTourButtons = (bool) => {
@@ -174,6 +178,7 @@ export default class ApplicationViews extends Component {
           console.log("tour state", this.state.tour)
           return <ToursList {...props} 
             tour={this.state.tour}
+            venues={this.state.venues}
             deleteTour={this.deleteTour}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}

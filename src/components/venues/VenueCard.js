@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText, ButtonGroup } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -42,20 +42,26 @@ export default class VenueCard extends Component {
             : 
               <div>
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
-                  this.changeContacted()
-                  }}>Contacted
+                  return (
+                    console.log(`contacted pressed`)
+                  )}}>Contacted
                 </Button>
                 <Button id="pendingButton" size="sm" onClick={() => {
-                  console.log("pending pressed")
+                  
                   return (
-                    console.log("bye")
+                    console.log("pending pressed")
                   )}}>Pending
                   </Button>
                 <Button id="confirmedButton" size="sm" onClick={() => {
-                  console.log("confirmed pressed")
                   return (
-                    console.log("bye")
+                    console.log("confirmed pressed")
                   )}}>Confirmed
+                </Button>
+                <Button id="tourDeleteButton" size="sm" onClick={() => {
+                  
+                  return (
+                    console.log("delete pressed")
+                  )}}>Delete
                 </Button>
               </div>
             }

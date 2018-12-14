@@ -136,6 +136,17 @@
       "notes": "Stepped in poop halfway through the show. Never again.",
       "user_id": 1,
       "id": 10
+    },
+    {
+      "name": "Joe's Pub",
+      "city": "New York",
+      "venueState": "NY",
+      "buyer": "Joe?",
+      "email": "submissions@publictheater.org",
+      "phone": "212.539.8500",
+      "notes": "",
+      "user_id": 1,
+      "id": 11
     }
   ],
   "tour": [
@@ -143,6 +154,16 @@
       "venue_id": 1,
       "user_id": 1,
       "id": 1
+    },
+    {
+      "venue_id": 5,
+      "user_id": 1,
+      "id": 2
+    },
+    {
+      "venue_id": 11,
+      "user_id": 1,
+      "id": 3
     }
   ]
 }

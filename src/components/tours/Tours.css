@@ -8,7 +8,7 @@
 #contactedButton {
   background-color: rgb(0, 35, 75);
   margin-right: 3px;
-  margin-left: 3px;
+  margin-left: 80px;
 }
 
 #pendingButton {
@@ -39,4 +39,10 @@
   background-color: rgb(0, 35, 75);
   margin-right: 3px;
   margin-left: 3px;
+}
+
+#tourDeleteButton {
+  background-color: rgb(0, 35, 75);
+  margin-right: 3px;
+  margin-left: 20px;
 }
