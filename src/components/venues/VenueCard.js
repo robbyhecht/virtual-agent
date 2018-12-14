@@ -43,7 +43,7 @@ export default class VenueCard extends Component {
               <div>
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
                   return (
-                    console.log(`contacted pressed`)
+                    console.log("contacted pressed")
                   )}}>Contacted
                 </Button>
                 <Button id="pendingButton" size="sm" onClick={() => {
@@ -60,8 +60,8 @@ export default class VenueCard extends Component {
                 <Button id="tourDeleteButton" size="sm" onClick={() => {
                   
                   return (
-                    console.log("delete pressed")
-                  )}}>Delete
+                    console.log("remove pressed")
+                  )}}>Remove
                 </Button>
               </div>
             }
@@ -71,16 +71,3 @@ export default class VenueCard extends Component {
     )
   }
 }
-
-
-
-
-{/* <div>
-<h5>Radio Buttons</h5>
-  <ButtonGroup>
-    <Button color="primary" onClick={() => this.onRadioBtnClick("Contacted")} active={this.state.rSelected === "Contacted"}>Contacted</Button>
-    <Button color="primary" onClick={() => this.onRadioBtnClick("Pending")} active={this.state.rSelected === "Pending"}>Pending</Button>
-    <Button color="primary" onClick={() => this.onRadioBtnClick("Confirmed")} active={this.state.rSelected === "Confirmed"}>Confirmed</Button>
-  </ButtonGroup>
-  <p>Selected: {this.state.rSelected}</p>
-</div> */}

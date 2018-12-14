@@ -15,10 +15,6 @@ export default class APIManager {
   all() {
     return fetch(`${remoteURL}/${this.route}`).then(data => data.json())
   }
-  
-  // allSortedSoonest() {
-  //   return fetch(`${remoteURL}/${this.route}?_sort=date&_order=asc`).then(data => data.json());
-  // }
 
   allSortedAlpha(user) {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&_sort=name&_order=asc`).then(data => data.json());
@@ -50,17 +46,6 @@ export default class APIManager {
     .then(data => data.json())
   }
   
-  // add(destination, newThing) {
-  //   return fetch(`${remoteURL}/${destination}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(newThing)
-  //   }).then(data => data.json())
-  //     .then(() => this.all(destination))
-  // }
-
     // MAKE A CHANGE TO A COLLECTION (PATCH)
 
   patch(NewThing, id) {
@@ -115,30 +100,8 @@ export default class APIManager {
   // FETCH USERNAME ONLY
 
   static searchUsername(username) {
-    console.log('api manager username', username)
     return fetch(`${remoteURL}/users?username=${username}`)
     .then(data => data.json())
   }
 
-
-  
 }
-
-
-
-
-
-
-// patch(NewThing, url) {
-//   return fetch(`${url}`, {
-//     method: "PATCH",
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify(NewThing)
-//   }).then(data => data.json())
-// }
-
-// single(id) {
-//   return fetch(`${remoteURL}/${this.route}/${id}`).then(data => data.json())
-// }

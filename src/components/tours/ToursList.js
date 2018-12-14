@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import VenueCard from "./../venues/VenueCard";
-import VenuesManager from "./../../managers/VenuesManager"
-// import { Button } from "reactstrap";
 import "./Tours.css";
 
 export default class ToursList extends Component {
@@ -13,7 +11,6 @@ export default class ToursList extends Component {
   }
 
   render() {
-    // console.log("venues", this.state.venues)
 
     return (
       <React.Fragment>

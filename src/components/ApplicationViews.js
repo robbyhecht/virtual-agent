@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link, Redirect } from "react-router-dom"
-// import APIManager from "../managers/APIManager"
+import { Route } from "react-router-dom"
 import VenuesList from "./venues/VenuesList"
 import VenuesForm from "./venues/VenuesForm"
 import VenuesEdit from "./venues/VenuesEdit"
@@ -25,8 +24,7 @@ export default class ApplicationViews extends Component {
     VenuesManager.getAll(this.props.currentUser)
       .then(allVenues => {
         console.log("venues", allVenues)
-
-      this.setState({venues: allVenues})
+        this.setState({venues: allVenues})
     })
 
     ToursManager.getAll(this.props.currentUser)
@@ -49,22 +47,10 @@ export default class ApplicationViews extends Component {
   VenuesManager.addAndList(venues)
     .then(() => VenuesManager.getAll(this.props.currentUser))
     .then(venues => 
-    
       this.setState({
         venues: venues
       })
     )
-
-
-
-
-  // addVenueToTour = () => {
-  //   const venue = {
-  //     user_id: parseInt(APIManager.get(this.props.currentUser)),
-  //     venue_id: this.props.venue.id
-  //   }
-  //   ToursManager.addAndList(venue)
-  // }
 
   deleteVenue = (id, user) => {
     return VenuesManager.removeAndList(id, user)
@@ -87,7 +73,6 @@ export default class ApplicationViews extends Component {
 
   filterVenuesByState = (venueState, user) =>
   VenuesManager.getByState(venueState, user)
-  // .then(() => VenuesManager.getAll(this.props.currentUser))
   .then(venues =>
     this.setState({
       venues: venues
@@ -102,11 +87,9 @@ export default class ApplicationViews extends Component {
     TourVenueManager.postVenueToTour(venue, this.props.currentUser)
     .then(() => TourVenueManager.getAll(this.props.currentUser))
     .then(tour => {
-      console.log("tour after add venue", tour)
       this.setState({
         tour: tour
       })
-      // TODO: Add alert that venue was added to tour
     }
     )
   }
@@ -116,7 +99,6 @@ export default class ApplicationViews extends Component {
   addTour = (tour) =>
   ToursManager.addAndList(tour)
     .then(tours => {
-      console.log("tours", tours)
       this.setState({
         tours: tours
       })
@@ -182,7 +164,6 @@ export default class ApplicationViews extends Component {
             deleteTour={this.deleteTour}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
-            // addVenueToTour={this.addVenueToTour}
             />
         }} />
 
@@ -196,14 +177,3 @@ export default class ApplicationViews extends Component {
     )
   }
 }
-
-
-  // addVenue = venues =>
-  // VenuesManager.addAndList(venues)
-  //   .then(() => APIManager.get(this.props.currentUser))
-  //   .then(venues => 
-    
-  //     this.setState({
-  //       venues: venues
-  //     })
-  //   )

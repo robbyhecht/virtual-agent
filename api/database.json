@@ -34,7 +34,7 @@
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
-      "notes": "Played Summer 2018. Good turnout, would do it again. Don and Laurie let you stay at their house.",
+      "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka \"The Rock and Roll Motel.\"",
       "user_id": 1,
       "id": 1
     },
@@ -45,7 +45,7 @@
       "buyer": "Mike Grimes",
       "email": "mike@slowbar.com",
       "phone": "",
-      "notes": "Favorite Nashville venue.",
+      "notes": "I love this place. Favorite Nashville venue.",
       "user_id": 1,
       "id": 2
     },
@@ -78,7 +78,7 @@
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
-      "notes": "Really nice sound. Matt is super nice.",
+      "notes": "On the UT-Austin campus. Matt is super nice but slow to respond so be persistent. Sound is great.",
       "user_id": 1,
       "id": 5
     },
@@ -136,17 +136,6 @@
       "notes": "Stepped in poop halfway through the show. Never again.",
       "user_id": 1,
       "id": 10
-    },
-    {
-      "name": "Joe's Pub",
-      "city": "New York",
-      "venueState": "NY",
-      "buyer": "Joe?",
-      "email": "submissions@publictheater.org",
-      "phone": "212.539.8500",
-      "notes": "",
-      "user_id": 1,
-      "id": 11
     }
   ],
   "tour": [
@@ -156,14 +145,9 @@
       "id": 1
     },
     {
-      "venue_id": 5,
+      "venue_id": 7,
       "user_id": 1,
       "id": 2
-    },
-    {
-      "venue_id": 11,
-      "user_id": 1,
-      "id": 3
     }
   ]
 }

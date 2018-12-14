@@ -34,7 +34,6 @@ export default class VenuesList extends Component {
   }
 
   render() {
-    // console.log("filter", this.props.filterVenuesByState)
 
     return (
 

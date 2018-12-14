@@ -30,7 +30,6 @@ export default class Login extends Component {
 
     {
       APIManager.searchUsername(this.state.username).then(users => {
-        console.log("users", users)
         if (users.length) {
           alert(`Username ${this.state.username} already exits!`)
         } else if (!users.length) {

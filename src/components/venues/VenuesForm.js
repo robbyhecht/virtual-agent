@@ -152,17 +152,3 @@ export default class VenuesForm extends Component {
     );
   }
 }
-
-
-{/* <FormGroup check className="played">
-<Label check>
-  <Input type="checkbox" />{' '}
-  Have played
-</Label>
-</FormGroup>
-<FormGroup check className="favorites">
-<Label check>
-  <Input type="checkbox" />{' '}
-  Favorites
-</Label>
-</FormGroup> */}

@@ -1,5 +1,4 @@
 import APIManager from "./APIManager"
-import VenuesManager from "./VenuesManager"
 
 class ToursManager extends APIManager {
 
@@ -18,10 +17,7 @@ class ToursManager extends APIManager {
   patchAndListTour(tour, url) {
     return this.patch(tour, url).then(() => this.allSortedAlpha())
   }
-
-
-
-
+  
 }
 
 // EXPORTS TOURS MANAGER WITH 'THIS' REPRESENTING 'TOURS'
