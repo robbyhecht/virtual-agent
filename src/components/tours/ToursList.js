@@ -6,22 +6,14 @@ import "./Tours.css";
 
 export default class ToursList extends Component {
 
-  state = {
-    venues: []
-  }
+
 
   componentDidMount() {
-    let venues = this.props.tour.map(tour => {
-      return VenuesManager.getVenue(tour.venue_id).then((venue) => venue)
-    })
-    Promise.all(venues)
-    .then( (venues) => this.setState({venues: venues}))
-
     this.props.updateTourButtons(true)
   }
 
   render() {
-    console.log("venues", this.state.venues)
+    // console.log("venues", this.state.venues)
 
     return (
       <React.Fragment>
@@ -29,9 +21,11 @@ export default class ToursList extends Component {
         <div id="venuesContainer">
           <article className="venuesList">
             {
-              this.state.venues.map(venue => {
-                return <VenueCard key={venue.id} venue={venue} {...this.props} />
-            })
+              this.props.tour.map(tourVenue => {
+                let venue = this.props.venues.find(venue => venue.id === tourVenue.venue_id);
+
+                return <VenueCard key={venue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
+              })
             }
           </article>
         </div>

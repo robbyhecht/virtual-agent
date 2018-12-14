@@ -189,6 +189,36 @@
       "venue_id": 5,
       "user_id": 1,
       "id": 8
+    },
+    {
+      "venue_id": 5,
+      "user_id": 1,
+      "id": 9
+    },
+    {
+      "venue_id": 4,
+      "user_id": 2,
+      "id": 10
+    },
+    {
+      "venue_id": 5,
+      "user_id": 1,
+      "id": 11
+    },
+    {
+      "venue_id": 5,
+      "user_id": 1,
+      "id": 12
+    },
+    {
+      "venue_id": 5,
+      "user_id": 1,
+      "id": 13
+    },
+    {
+      "venue_id": 6,
+      "user_id": 1,
+      "id": 14
     }
   ]
 }
