@@ -42,24 +42,25 @@ export default class VenueCard extends Component {
             : 
               <div>
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
-                  }}>Contacted
+                  return (
+                    console.log(`contacted pressed`)
+                  )}}>Contacted
                 </Button>
                 <Button id="pendingButton" size="sm" onClick={() => {
-                  console.log("pending pressed")
+                  
                   return (
-                    console.log("bye")
+                    console.log("pending pressed")
                   )}}>Pending
                   </Button>
                 <Button id="confirmedButton" size="sm" onClick={() => {
-                  console.log("confirmed pressed")
                   return (
-                    console.log("bye")
+                    console.log("confirmed pressed")
                   )}}>Confirmed
                 </Button>
                 <Button id="tourDeleteButton" size="sm" onClick={() => {
-                  console.log("delete pressed")
+                  
                   return (
-                    console.log("bye")
+                    console.log("delete pressed")
                   )}}>Delete
                 </Button>
               </div>
