@@ -29,7 +29,7 @@ export default class NavBar extends Component {
 
 
   render() {
-    console.log(this.logout)
+
     return (
       <div>
         <Navbar id="navBar" light expand="md">

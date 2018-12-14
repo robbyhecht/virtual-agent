@@ -9,6 +9,3 @@ export default class Welcome extends Component {
       </React.Fragment>
   }
 }
-
-
-// Welcome is doing what Agent.js was doing before but via authentication

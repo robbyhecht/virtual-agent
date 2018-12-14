@@ -27,15 +27,3 @@ class VenuesManager extends APIManager {
 
 // EXPORTS VENUES MANAGER WITH 'THIS' REPRESENTING "VENUES"
 export default new VenuesManager("venues")
-
-
-  // migrateVenue(venue) {
-  //   return this.get(venue)
-  //   .then(() => fetch("http://localhost:5002/tours"), {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(venue)
-  //   }).then(data => data.json())
-  // }

@@ -19,7 +19,6 @@ export default class ToursForm extends Component {
     // Update state whenever an input field is edited
 
   constructNewTour = (evt) => {
-    console.log("construct new tour clicked")
     evt.preventDefault()
     const tour = {
       name: this.state.name,

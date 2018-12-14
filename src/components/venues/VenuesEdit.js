@@ -11,7 +11,6 @@ class VenuesEdit extends Component {
         email: "",
         phone: "",
         notes: "",
-        // user_id: "",
         id: ""
     }
 
@@ -22,7 +21,6 @@ class VenuesEdit extends Component {
     }
 
     componentDidMount() {
-        // store the existing values in state
         let newState = {}
         let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
         newState.name = venue.name
@@ -33,12 +31,10 @@ class VenuesEdit extends Component {
         newState.phone = venue.phone
         newState.notes = venue.notes
         newState.id = venue.id
-        // newState.user_id = sessionStorage.getItem("username")
         this.setState(newState)
     }
   
     editSubmittedVenue = e => {
-        // prepare objects for editing database
         e.preventDefault()
         const venue = {
           name: this.state.name,
@@ -50,7 +46,6 @@ class VenuesEdit extends Component {
           notes: this.state.notes,
           played: this.state.played,
           favorites: this.state.favorites,
-          // user_id: sessionStorage.getItem("username"),
           id: this.state.id
         }
         return this.props.editVenue(venue, `${this.state.id}`)
@@ -168,23 +163,3 @@ class VenuesEdit extends Component {
 }
 
 export default VenuesEdit
-
-
-
-{/* <FormGroup check>
-<Label check>
-  <Input type="checkbox" defaultChecked={this.state.played} />{' '}
-  Have played
-</Label>
-</FormGroup>
-
-<FormGroup check>
-<Label check>
-  <Input type="checkbox" defaultChecked={this.state.favorites} />{' '}
-  Favorites
-</Label>
-</FormGroup> */}
-
-        // let venueURL = "http://localhost:5002/venues/"
-        // return this.props.editVenue(venue, `${venueURL}${this.state.id}`)
-        //     .then(() => this.props.history.push("/venues"))
