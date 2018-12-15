@@ -63,12 +63,8 @@ export default class VenueCard extends Component {
                 </Modal>
               </div>
 
-                
-
-
-
-
             : 
+
               <div>
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
                   return (
@@ -86,12 +82,20 @@ export default class VenueCard extends Component {
                     console.log("confirmed pressed")
                   )}}>Confirmed
                 </Button>
-                <Button id="tourDeleteButton" size="sm" onClick={() => {
-                  
-                  return (
-                    console.log("remove pressed")
-                  )}}>Remove
-                </Button>
+
+                <Button className="card-link" id="tourDeleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                  <ModalBody>
+                    Are you sure you want to remove this venue from your tour?
+                  </ModalBody>
+                  <ModalFooter>
+                  <Button color="danger" size="sm"
+                    onClick={() => this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)}
+                    >Delete</Button>
+                  <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
+                  </ModalFooter>
+                </Modal>
+                
               </div>
             }
           </CardBody>
