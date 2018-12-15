@@ -9,21 +9,6 @@
       "username": "r",
       "password": "h",
       "id": 2
-    },
-    {
-      "username": "k",
-      "password": "r",
-      "id": 3
-    },
-    {
-      "username": "j",
-      "password": "s",
-      "id": 4
-    },
-    {
-      "username": "burt",
-      "password": "reynolds",
-      "id": 5
     }
   ],
   "venues": [
@@ -34,7 +19,7 @@
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
-      "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka \"The Rock and Roll Motel.\"",
+      "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka \"The Rock and Roll Motel.",
       "user_id": 1,
       "id": 1
     },
@@ -68,7 +53,7 @@
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
-      "user_id": 2,
+      "user_id": 1,
       "id": 4
     },
     {
@@ -148,6 +133,11 @@
       "venue_id": 7,
       "user_id": 1,
       "id": 2
+    },
+    {
+      "venue_id": 4,
+      "user_id": 1,
+      "id": 3
     }
   ]
 }

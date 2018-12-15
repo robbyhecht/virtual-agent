@@ -13,6 +13,10 @@ class ToursManager extends APIManager {
     return this.post(newThing)
   }
 
+  removeVenueFromTour(tour_id, user) {
+    return this.delete(tour_id).then(() => this.allSortedAlpha(user))
+  }
+
 }
 
 export default new ToursManager("tour")

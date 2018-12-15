@@ -27,10 +27,10 @@ export default class ApplicationViews extends Component {
         this.setState({venues: allVenues})
     })
 
-    ToursManager.getAll(this.props.currentUser)
-    .then(allTours => {
-    this.setState({tours: allTours})
-    })
+    // ToursManager.getAll(this.props.currentUser)
+    // .then(allTours => {
+    // this.setState({tours: allTours})
+    // })
 
     TourVenueManager.getAll(this.props.currentUser)
     .then(tour => {
@@ -91,6 +91,15 @@ export default class ApplicationViews extends Component {
         tour: tour
       })
     }
+    )
+  }
+  
+  deleteTourVenue = (tour_id, user) => {
+    return TourVenueManager.removeVenueFromTour(tour_id, user)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
     )
   }
 
@@ -164,6 +173,7 @@ export default class ApplicationViews extends Component {
             deleteTour={this.deleteTour}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
+            deleteTourVenue={this.deleteTourVenue}
             />
         }} />
 
