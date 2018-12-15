@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 

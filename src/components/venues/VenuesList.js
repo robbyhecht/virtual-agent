@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import VenueCard from "./VenueCard"
 import "./Venues.css"
-import { Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Input } from 'reactstrap'
+import { Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
 
 export default class VenuesList extends Component {

@@ -90,18 +90,20 @@ export default class ApplicationViews extends Component {
       this.setState({
         tour: tour
       })
-    }
-    )
+    })
   }
   
-  deleteTourVenue = (tour_id, user) => {
-    return TourVenueManager.removeVenueFromTour(tour_id, user)
+  deleteTourVenue = (tour_id) => {
+    return TourVenueManager.removeVenueFromTour(tour_id)
+    .then(() => TourVenueManager.getAll(this.props.currentUser))
     .then(tour =>
       this.setState({
         tour: tour
       })
     )
   }
+
+
 
   // MULTIPLE TOURS
 

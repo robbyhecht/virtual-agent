@@ -1,11 +1,10 @@
-import VenuesManager from "./VenuesManager"
 import APIManager from "./APIManager"
 
 class ToursManager extends APIManager {
 
   getAll(user) {
     console.log("get all user", user)
-    return this.allSortedAlpha(user)
+    return this.all(user)
   }
 
   postVenueToTour(venue_id, user_id) {
@@ -13,8 +12,8 @@ class ToursManager extends APIManager {
     return this.post(newThing)
   }
 
-  removeVenueFromTour(tour_id, user) {
-    return this.delete(tour_id).then(() => this.allSortedAlpha(user))
+  removeVenueFromTour(tour_id) {
+    return this.delete(tour_id).then(() => this.all())
   }
 
 }

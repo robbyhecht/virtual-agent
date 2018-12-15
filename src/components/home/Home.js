@@ -19,12 +19,12 @@ export default class HomePage extends Component {
       </Row>
       <Row>
       <Col>
-      <p id="sub-slogan">Find gigs.<br />
+      <p id="sub-slogan">Book gigs.<br />
       Stay organized.<br />
       Take your touring to the next level.</p>
       </Col>
       <Col>
-      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">ENTER TOURS</Button></Link>
+      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">ENTER TOUR</Button></Link>
       </Col>
       </Row>
     </Container>
