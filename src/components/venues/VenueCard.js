@@ -1,9 +1,24 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
 export default class VenueCard extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
 
   render() {
     
@@ -34,11 +49,25 @@ export default class VenueCard extends Component {
                 <Button size="sm" className="card-link" id="editButton">Edit</Button>{' '}
                 </Link>
 
-                <Button
-                onClick={() => this.props.deleteVenue(this.props.venue.id, this.props.currentUser)}
-                className="card-link" id="deleteButton" size="sm">Delete
-                </Button>
+                <Button className="card-link" id="deleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Delete</Button>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                  <ModalBody>
+                    Are you sure you want to delete this venue?
+                  </ModalBody>
+                  <ModalFooter>
+                  <Button color="danger" size="sm"
+                    onClick={() => this.props.deleteVenue(this.props.venue.id, this.props.currentUser)}
+                    >Delete</Button>
+                  <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
+                  </ModalFooter>
+                </Modal>
               </div>
+
+                
+
+
+
+
             : 
               <div>
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
