@@ -128,7 +128,7 @@ export default class VenuesList extends Component {
               onClick={() => {
                 this.handleClickFavorite()
               }}>
-              Filter By Favorite
+              Filter By Favorites
             </Button>
             
               <div>
