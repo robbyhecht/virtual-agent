@@ -10,8 +10,8 @@ export default class VenuesForm extends Component {
     this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
   }
 
-  onRadioBtnClick(rSelected) {
-    this.setState({ rSelected });
+  onRadioBtnClick(favorite) {
+    this.setState({ favorite });
   }
   // Set initial state
   state = {
@@ -43,7 +43,7 @@ export default class VenuesForm extends Component {
       email: this.state.email,
       phone: this.state.phone,
       notes: this.state.notes,
-      favorite: this.favorite,
+      favorite: this.state.favorite,
       user_id: parseInt(sessionStorage.getItem("credentials"))
     }
     this.props.addVenue(venues).then(() => {
@@ -148,8 +148,8 @@ export default class VenuesForm extends Component {
 
           <ButtonGroup>
             <Label for="favorite">Mark As Favorite?</Label>
-            <Button color="secondary" onClick={() => this.onRadioBtnClick("yes")} active={this.state.rSelected === "yes"}>Yes</Button>
-            <Button color="secondary" onClick={() => this.onRadioBtnClick("no")} active={this.state.rSelected === "no"}>No</Button>
+            <Button color="secondary" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"}>Yes</Button>
+            <Button color="secondary" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"}>No</Button>
           </ButtonGroup>
 
           <div id="submitButtonContainer">

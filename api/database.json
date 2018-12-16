@@ -131,6 +131,18 @@
       "user_id": 1,
       "favorite": "yes",
       "id": 10
+    },
+    {
+      "name": "Alpha",
+      "city": "Nashville",
+      "venueState": "TN",
+      "buyer": "",
+      "email": "robbyhecht@gmail.com",
+      "phone": "8654067489",
+      "notes": "",
+      "favorite": "no",
+      "user_id": 1,
+      "id": 11
     }
   ],
   "tour": [
