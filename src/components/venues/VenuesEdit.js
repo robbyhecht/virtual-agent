@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input, ButtonGroup } from 'reactstrap'
 import { Link } from "react-router-dom";
 import "./Venues.css"
 class VenuesEdit extends Component {
+  
     state = {
         name: "",
         city: "",
@@ -13,6 +14,16 @@ class VenuesEdit extends Component {
         notes: "",
         favorite: "",
         id: ""
+    }
+
+    constructor (props) {
+      super(props);
+  
+      this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    }
+  
+    onRadioBtnClick(favorite) {
+      this.setState({ favorite });
     }
 
     handleFieldChange = venue => {
@@ -46,7 +57,7 @@ class VenuesEdit extends Component {
           email: this.state.email,
           phone: this.state.phone,
           notes: this.state.notes,
-          favorites: this.state.favorites,
+          favorite: this.state.favorite,
           id: this.state.id
         }
         return this.props.editVenue(venue, `${this.state.id}`)
@@ -151,9 +162,10 @@ class VenuesEdit extends Component {
 
               <ButtonGroup>
                 <Label for="favorite">Mark As Favorite?</Label>
-                <Button color="secondary" id="favoriteYesButton" onClick={() => this.onRadioBtnClick("yes")} active={this.state.rSelected === "yes"} value={this.state.favorite}>Yes</Button>
-                <Button color="secondary" id="favoriteNoButton" onClick={() => this.onRadioBtnClick("no")} active={this.state.rSelected === "no"} value={this.state.favorite}>No</Button>
+                <Button color="secondary" id="favoriteYesEditButton" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"} value={this.state.favorite}>Yes</Button>
+                <Button color="secondary" id="favoriteNoEditButton" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"} value={this.state.favorite}>No</Button>
               </ButtonGroup>
+              <p>Selected: {this.state.favorite}</p>
 
               <div id="editButtons">
 

@@ -151,7 +151,6 @@ export default class VenuesForm extends Component {
             <Button color="secondary" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"}>Yes</Button>
             <Button color="secondary" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"}>No</Button>
           </ButtonGroup>
-          <p>Selected: {this.state.favorite}</p>
 
           <div id="submitButtonContainer">
             <Button            
