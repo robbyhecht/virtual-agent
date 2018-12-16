@@ -137,11 +137,13 @@
     {
       "venue_id": 6,
       "user_id": 1,
+      "status": "",
       "id": 4
     },
     {
       "venue_id": 10,
       "user_id": 1,
+      "status": "",
       "id": 5
     }
   ]

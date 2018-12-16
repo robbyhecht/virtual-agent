@@ -8,7 +8,7 @@ class ToursManager extends APIManager {
   }
 
   postVenueToTour(venue_id, user_id) {
-    let newThing = {venue_id: venue_id, user_id: user_id}
+    let newThing = {venue_id: venue_id, user_id: user_id, status: ""}
     return this.post(newThing)
   }
 

@@ -12,12 +12,11 @@ export default class VenueCard extends Component {
     };
 
     this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
   onRadioBtnClick(status) {
     this.setState({ status });
-
-    this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
@@ -126,6 +125,3 @@ export default class VenueCard extends Component {
     )
   }
 }
-
-
-{/* <div id="star">{this.props.venue.favorite === "yes" ? `⭐️` : null}</div> */}
