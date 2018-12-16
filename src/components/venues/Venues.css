@@ -109,18 +109,28 @@
 
 #deleteButton {
   background-color: rgb(0, 35, 75);
+  margin-left: 5px;
+  margin-right: 20px
 }
 
 #tourButton {
   background-color: rgb(0, 35, 75);
-  margin-right: 20px;
+  margin-right: 5px;
+  margin-left: 100px;
 }
 
 #editButton {
   background-color: rgb(0, 35, 75);
+  margin-left: 5px;
+  margin-right: 5px
 }
 
 #star {
-  display: initial;
-  text-align: left;
+  margin-left: 45px;
+  width: 20px
+}
+
+#venueCardButtons {
+  display: flex;
+  justify-content: left;
 }

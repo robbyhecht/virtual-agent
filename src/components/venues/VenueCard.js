@@ -24,7 +24,6 @@ export default class VenueCard extends Component {
     
     return(
       <div id="cards">
-        
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
         <CardHeader tag="h3" id="cardHeader">
         {this.props.venue.name}
@@ -36,9 +35,11 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
           
+          
           {
+
             (this.props.tourpage === false) ? 
-              <div>
+              <div id="venueCardButtons">
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
                   alert(`${this.props.venue.name} has been added to your tour!`)
@@ -64,11 +65,15 @@ export default class VenueCard extends Component {
                   <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>
+                <span id="star">
+                {this.props.venue.favorite === "yes" ? `👍` : null}
+                </span>
               </div>
 
             : 
 
               <div>
+
                 <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
                   return (
                     console.log("contacted pressed")
