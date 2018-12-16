@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input, ButtonGroup } from 'reactstrap'
 import { Link } from "react-router-dom";
 import "./Venues.css"
 class VenuesEdit extends Component {
@@ -11,6 +11,7 @@ class VenuesEdit extends Component {
         email: "",
         phone: "",
         notes: "",
+        favorite: "",
         id: ""
     }
 
@@ -30,6 +31,7 @@ class VenuesEdit extends Component {
         newState.email = venue.email
         newState.phone = venue.phone
         newState.notes = venue.notes
+        newState.favorite = venue.favorite
         newState.id = venue.id
         this.setState(newState)
     }
@@ -44,7 +46,6 @@ class VenuesEdit extends Component {
           email: this.state.email,
           phone: this.state.phone,
           notes: this.state.notes,
-          played: this.state.played,
           favorites: this.state.favorites,
           id: this.state.id
         }
@@ -147,6 +148,12 @@ class VenuesEdit extends Component {
                 <Label for="notes">Notes</Label>
                 <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)} value={this.state.notes}/>
               </FormGroup>
+
+              <ButtonGroup>
+                <Label for="favorite">Mark As Favorite?</Label>
+                <Button color="secondary" id="favoriteYesButton" onClick={() => this.onRadioBtnClick("yes")} active={this.state.rSelected === "yes"} value={this.state.favorite}>Yes</Button>
+                <Button color="secondary" id="favoriteNoButton" onClick={() => this.onRadioBtnClick("no")} active={this.state.rSelected === "no"} value={this.state.favorite}>No</Button>
+              </ButtonGroup>
 
               <div id="editButtons">
 

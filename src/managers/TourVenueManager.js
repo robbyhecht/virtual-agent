@@ -1,4 +1,3 @@
-import VenuesManager from "./VenuesManager"
 import APIManager from "./APIManager"
 
 class ToursManager extends APIManager {

@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, ButtonGroup } from 'reactstrap';
 import "./Venues.css"
 
 export default class VenuesForm extends Component {
 
+  constructor (props) {
+    super(props);
+
+    this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+  }
+
+  onRadioBtnClick(rSelected) {
+    this.setState({ rSelected });
+  }
   // Set initial state
   state = {
     name: "",
@@ -13,6 +22,7 @@ export default class VenuesForm extends Component {
     email: "",
     phone: "",
     notes: "",
+    favorite: "",
     user_id: ""
   };
 
@@ -33,6 +43,7 @@ export default class VenuesForm extends Component {
       email: this.state.email,
       phone: this.state.phone,
       notes: this.state.notes,
+      favorite: this.favorite,
       user_id: parseInt(sessionStorage.getItem("credentials"))
     }
     this.props.addVenue(venues).then(() => {
@@ -134,6 +145,12 @@ export default class VenuesForm extends Component {
             <Label for="notes">Notes</Label>
             <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)}/>
           </FormGroup>
+
+          <ButtonGroup>
+            <Label for="favorite">Mark As Favorite?</Label>
+            <Button color="secondary" onClick={() => this.onRadioBtnClick("yes")} active={this.state.rSelected === "yes"}>Yes</Button>
+            <Button color="secondary" onClick={() => this.onRadioBtnClick("no")} active={this.state.rSelected === "no"}>No</Button>
+          </ButtonGroup>
 
           <div id="submitButtonContainer">
             <Button            

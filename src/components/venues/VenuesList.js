@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import VenueCard from "./VenueCard"
 import "./Venues.css"
-import { Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Input } from 'reactstrap'
+import { Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
 
 export default class VenuesList extends Component {
@@ -27,6 +27,10 @@ export default class VenuesList extends Component {
 
   handleClickVenue = choice => {
     this.props.filterVenuesByState(choice, this.props.currentUser)
+  }
+
+  handleClickFavorite() {
+    this.props.filterVenuesByFavorite()
   }
 
   removeFilter = () => {
@@ -56,7 +60,7 @@ export default class VenuesList extends Component {
             name="venueState" id="venueState" value="venueState"
             >
               <DropdownToggle id="stateButton" caret>
-                Filter Venues By State
+                Filter By State
               </DropdownToggle>
               <DropdownMenu 
               >
@@ -116,6 +120,16 @@ export default class VenuesList extends Component {
                 <DropdownItem onClick={() => this.handleClickVenue("WY")}>Wyoming</DropdownItem>
               </DropdownMenu>
             </Dropdown>
+
+            <Button
+              id="favoriteButton"
+              size="large"
+              className="btn"
+              onClick={() => {
+                this.handleClickFavorite()
+              }}>
+              Filter By Favorite
+            </Button>
             
               <div>
                 <Button
