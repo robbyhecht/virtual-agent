@@ -165,7 +165,6 @@ class VenuesEdit extends Component {
                 <Button color="secondary" id="favoriteYesEditButton" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"} value={this.state.favorite}>Yes</Button>
                 <Button color="secondary" id="favoriteNoEditButton" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"} value={this.state.favorite}>No</Button>
               </ButtonGroup>
-              <p>Selected: {this.state.favorite}</p>
 
               <div id="editButtons">
 

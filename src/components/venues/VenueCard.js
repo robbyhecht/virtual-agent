@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -10,6 +10,12 @@ export default class VenueCard extends Component {
     this.state = {
       modal: false
     };
+
+    this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+  }
+
+  onRadioBtnClick(status) {
+    this.setState({ status });
 
     this.toggle = this.toggle.bind(this);
   }
@@ -65,7 +71,7 @@ export default class VenueCard extends Component {
                   <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>
-                <span id="star">
+                <span id="favoriteIcon">
                 {this.props.venue.favorite === "yes" ? `👍` : null}
                 </span>
               </div>
@@ -74,7 +80,7 @@ export default class VenueCard extends Component {
 
               <div>
 
-                <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
+                {/* <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
                   return (
                     console.log("contacted pressed")
                   )}}>Contacted
@@ -89,7 +95,15 @@ export default class VenueCard extends Component {
                   return (
                     console.log("confirmed pressed")
                   )}}>Confirmed
-                </Button>
+                </Button> */}
+
+                <ButtonGroup>
+
+                  <Button id="contactedButton" color="secondary" size="sm" onClick={() => this.onRadioBtnClick("contacted")} active={this.state.status === "contacted"}>Contacted</Button>
+                  <Button id="pendingButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("pending")} active={this.state.status === "pending"}>Pending</Button>
+                  <Button id="confirmedButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("confirmed")} active={this.state.favorite === "confirmed"}>Confirmed</Button>
+                  
+                </ButtonGroup>
 
                 <Button className="card-link" id="tourDeleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
