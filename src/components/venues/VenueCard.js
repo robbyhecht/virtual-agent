@@ -26,7 +26,9 @@ export default class VenueCard extends Component {
       <div id="cards">
         
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
-        <CardHeader tag="h3" id="cardHeader">{this.props.venue.name}</CardHeader>
+        <CardHeader tag="h3" id="cardHeader">
+        {this.props.venue.name}
+        </CardHeader>
         <CardBody>
           <CardTitle>{this.props.venue.city}, {this.props.venue.venueState}</CardTitle>
           <CardText>{this.props.venue.buyer}</CardText>
@@ -43,7 +45,8 @@ export default class VenueCard extends Component {
                   return (
                     this.props.addVenueToTour(this.props.venue.id)
                   )}}>
-                Add to your tour</Button>{' '}
+                Add to your tour
+                </Button>{' '}
 
                 <Link to={`/venues/edit/${this.props.venue.id}`}>
                 <Button size="sm" className="card-link" id="editButton">Edit</Button>{' '}
@@ -104,3 +107,6 @@ export default class VenueCard extends Component {
     )
   }
 }
+
+
+{/* <div id="star">{this.props.venue.favorite === "yes" ? `⭐️` : null}</div> */}

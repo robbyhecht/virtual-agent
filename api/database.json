@@ -20,6 +20,7 @@
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
       "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka \"The Rock and Roll Motel.",
+      "favorite": "yes",
       "user_id": 1,
       "id": 1
     },
@@ -31,6 +32,7 @@
       "email": "mike@slowbar.com",
       "phone": "",
       "notes": "I love this place. Favorite Nashville venue.",
+      "favorite": "yes",
       "user_id": 1,
       "id": 2
     },
@@ -43,6 +45,7 @@
       "phone": "",
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
       "user_id": 1,
+      "favorite": "yes",
       "id": 3
     },
     {
@@ -54,6 +57,7 @@
       "phone": "404-374-1026",
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
       "user_id": 1,
+      "favorite": "no",
       "id": 4
     },
     {
@@ -65,6 +69,7 @@
       "phone": "512-232-7606",
       "notes": "On the UT-Austin campus. Matt is super nice but slow to respond so be persistent. Sound is great.",
       "user_id": 1,
+      "favorite": "yes",
       "id": 5
     },
     {
@@ -76,6 +81,7 @@
       "phone": "617-492-5300",
       "notes": "Great listening crowd and friendly staff.",
       "user_id": 1,
+      "favorite": "yes",
       "id": 6
     },
     {
@@ -87,6 +93,7 @@
       "phone": "email",
       "notes": "The staff were nice af.",
       "user_id": 1,
+      "favorite": "yes",
       "id": 7
     },
     {
@@ -98,6 +105,7 @@
       "phone": "",
       "notes": "Reached out- offering dates for mid-late 2019",
       "user_id": 1,
+      "favorite": "no",
       "id": 8
     },
     {
@@ -109,6 +117,7 @@
       "phone": "413-341-3317",
       "notes": "Run by the Signature Sounds label",
       "user_id": 1,
+      "favorite": "no",
       "id": 9
     },
     {
@@ -120,6 +129,7 @@
       "phone": "615-555-WOOF",
       "notes": "Stepped in poop halfway through the show. Never again.",
       "user_id": 1,
+      "favorite": "yes",
       "id": 10
     }
   ],

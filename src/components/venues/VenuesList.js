@@ -29,6 +29,10 @@ export default class VenuesList extends Component {
     this.props.filterVenuesByState(choice, this.props.currentUser)
   }
 
+  handleClickFavorite() {
+    this.props.filterVenuesByFavorite()
+  }
+
   removeFilter = () => {
     window.location.reload()
   }
@@ -56,7 +60,7 @@ export default class VenuesList extends Component {
             name="venueState" id="venueState" value="venueState"
             >
               <DropdownToggle id="stateButton" caret>
-                Filter Venues By State
+                Filter By State
               </DropdownToggle>
               <DropdownMenu 
               >
@@ -116,6 +120,16 @@ export default class VenuesList extends Component {
                 <DropdownItem onClick={() => this.handleClickVenue("WY")}>Wyoming</DropdownItem>
               </DropdownMenu>
             </Dropdown>
+
+            <Button
+              id="favoriteButton"
+              size="large"
+              className="btn"
+              onClick={() => {
+                this.handleClickFavorite()
+              }}>
+              Filter By Favorite
+            </Button>
             
               <div>
                 <Button

@@ -69,7 +69,7 @@ export default class ApplicationViews extends Component {
       })
     )
 
-  // FILTER VENUES BY STATE
+  // FILTER VENUES
 
   filterVenuesByState = (venueState, user) =>
   VenuesManager.getByState(venueState, user)
@@ -78,6 +78,15 @@ export default class ApplicationViews extends Component {
       venues: venues
     })
   )
+
+  filterVenuesByFavorite = (favorite) => {
+    VenuesManager.getByFavorite(`yes`, this.props.currentUser)
+    .then(venues =>
+      this.setState({
+        venues: venues
+      })
+    )
+  }
 
   // TOUR FUNCTIONS
 
@@ -151,6 +160,7 @@ export default class ApplicationViews extends Component {
             tours={this.state.tours}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
+            filterVenuesByFavorite={this.filterVenuesByFavorite}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
             />
