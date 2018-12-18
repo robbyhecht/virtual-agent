@@ -21,7 +21,7 @@ export default class ToursList extends Component {
               this.props.tour.map(tourVenue => {
                 let venue = this.props.venues.find(venue => venue.id === tourVenue.venue_id);
 
-                return <VenueCard key={venue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
+                return <VenueCard key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
               })
             }
           </article>
