@@ -112,6 +112,15 @@ export default class ApplicationViews extends Component {
     )
   }
 
+  updateTourVenue = (property, id) => {
+    return TourVenueManager.updateTourVenue(property, id)
+    .then(() => TourVenueManager.getAll())
+    .then (tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
 
 
   // MULTIPLE TOURS
@@ -140,6 +149,7 @@ export default class ApplicationViews extends Component {
           tours: tours
         })
       )
+
 
   render() {
 
@@ -186,6 +196,7 @@ export default class ApplicationViews extends Component {
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
             deleteTourVenue={this.deleteTourVenue}
+            updateTourVenue={this.updateTourVenue}
             />
         }} />
 

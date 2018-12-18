@@ -8,16 +8,17 @@ export default class VenueCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      contacted: this.props.tourVenue.contacted,
+      pending: this.props.tourVenue.pending,
+      confirmed: this.props.tourVenue.confirmed
     };
-
-    this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    
+    this.toggle = this.toggle.bind(this);
   }
 
-  onRadioBtnClick(status) {
-    this.setState({ status });
-
-    this.toggle = this.toggle.bind(this);
+  componentDidMount(){
+    console.log(this.props.tourVenue)
   }
 
   toggle() {
@@ -26,14 +27,36 @@ export default class VenueCard extends Component {
     });
   }
 
+  changeContacted = (id) => {
+    const status = {contacted: !this.state.contacted}
+    this.props.updateTourVenue(status, id)
+    .then(() => this.setState({contacted: this.props.tourVenue.contacted}))
+  }
+
+  changePending = (id) => {
+    const status = {pending: !this.state.pending}
+    this.props.updateTourVenue(status, id)
+    .then(() => this.setState({pending: this.props.tourVenue.pending}))
+  }
+
+  changeConfirmed = (id) => {
+    const status = {confirmed: !this.state.confirmed}
+    this.props.updateTourVenue(status, id)
+    .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
+  }
+
   render() {
     
     return(
+
       <div id="cards">
+
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
+
         <CardHeader tag="h3" id="cardHeader">
         {this.props.venue.name}
         </CardHeader>
+
         <CardBody>
           <CardTitle>{this.props.venue.city}, {this.props.venue.venueState}</CardTitle>
           <CardText>{this.props.venue.buyer}</CardText>
@@ -41,10 +64,10 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
           
-          
           {
 
             (this.props.tourpage === false) ? 
+
               <div id="venueCardButtons">
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
@@ -76,33 +99,38 @@ export default class VenueCard extends Component {
                 </span>
               </div>
 
-            : 
+            :  
 
               <div>
 
-                {/* <Button id="contactedButton" color="secondary" size="sm" onClick={() => {
-                  return (
-                    console.log("contacted pressed")
-                  )}}>Contacted
-                </Button>
-                <Button id="pendingButton" size="sm" onClick={() => {
-                  
-                  return (
-                    console.log("pending pressed")
-                  )}}>Pending
-                  </Button>
-                <Button id="confirmedButton" size="sm" onClick={() => {
-                  return (
-                    console.log("confirmed pressed")
-                  )}}>Confirmed
-                </Button> */}
-
                 <ButtonGroup>
-
-                  <Button id="contactedButton" color="secondary" size="sm" onClick={() => this.onRadioBtnClick("contacted")} active={this.state.status === "contacted"}>Contacted</Button>
-                  <Button id="pendingButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("pending")} active={this.state.status === "pending"}>Pending</Button>
-                  <Button id="confirmedButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("confirmed")} active={this.state.favorite === "confirmed"}>Confirmed</Button>
-                  
+                  {
+                    this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 
+                      this.changeContacted(this.props.tourVenue.id)
+                    }
+                    >Contacted</Button> : <Button id="contactedButton" size="sm" onClick={() => 
+                      this.changeContacted(this.props.tourVenue.id)
+                    }
+                    >Contacted</Button>
+                  }
+                  {
+                    this.state.pending ? <Button id="pendingButtonSelected" size="sm" onClick={() => 
+                      this.changePending(this.props.tourVenue.id)
+                    }
+                    >Pending</Button> : <Button id="pendingButton" size="sm" onClick={() =>
+                      this.changePending(this.props.tourVenue.id)
+                    }
+                    >Pending</Button>
+                  }
+                  {
+                    this.state.confirmed ? <Button id="confirmedButtonSelected" size="sm" onClick={() => 
+                      this.changeConfirmed(this.props.tourVenue.id)
+                    }
+                    >Confirmed</Button> : <Button id="confirmedButton" size="sm" onClick={() => 
+                      this.changeConfirmed(this.props.tourVenue.id)
+                    }
+                    >Confirmed</Button>
+                  }
                 </ButtonGroup>
 
                 <Button className="card-link" id="tourDeleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
@@ -113,13 +141,14 @@ export default class VenueCard extends Component {
                   <ModalFooter>
                   <Button color="danger" size="sm"
                     onClick={() => this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)}
-                    >Delete</Button>
+                    >Remove</Button>
                   <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>
                 
               </div>
             }
+
           </CardBody>
         </Card>
         </div>
@@ -128,4 +157,10 @@ export default class VenueCard extends Component {
 }
 
 
-{/* <div id="star">{this.props.venue.favorite === "yes" ? `⭐️` : null}</div> */}
+// radio attempt
+
+/* <ButtonGroup> */
+/* <Button id="contactedButton" color="secondary" size="sm" onClick={() => this.onRadioBtnClick("contacted")} active={this.state.status === "contacted"}>Contacted</Button>
+<Button id="pendingButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("pending")} active={this.state.status === "pending"}>Pending</Button>
+<Button id="confirmedButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("confirmed")} active={this.state.favorite === "confirmed"}>Confirmed</Button> */    
+// </ButtonGroup>

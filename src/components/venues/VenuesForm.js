@@ -147,9 +147,9 @@ export default class VenuesForm extends Component {
           </FormGroup>
 
           <ButtonGroup>
-            <Label for="favorite">Mark As Favorite?</Label>
-            <Button color="secondary" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"}>Yes</Button>
-            <Button color="secondary" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"}>No</Button>
+            <Label for="favorite" id="formFavoriteLabel">Mark As Favorite?</Label>
+            <Button id="venueFormYes" size="sm" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"}>Yes</Button>
+            <Button id="venueFormNo" size="sm" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"}>No</Button>
           </ButtonGroup>
 
           <div id="submitButtonContainer">
