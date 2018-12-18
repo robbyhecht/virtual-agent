@@ -145,10 +145,18 @@
     {
       "venue_id": 7,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
       "confirmed": false,
       "id": 3
+    },
+    {
+      "venue_id": 1,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 4
     }
   ]
 }

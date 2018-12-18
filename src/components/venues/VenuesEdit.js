@@ -161,16 +161,16 @@ class VenuesEdit extends Component {
               </FormGroup>
 
               <ButtonGroup>
-                <Label for="favorite">Mark As Favorite?</Label>
-                <Button color="secondary" id="favoriteYesEditButton" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"} value={this.state.favorite}>Yes</Button>
-                <Button color="secondary" id="favoriteNoEditButton" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"} value={this.state.favorite}>No</Button>
+                <Label id="editFavoriteLabel" for="favorite">Mark As Favorite?</Label>
+                <Button id="venueEditYes" size="sm" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"} value={this.state.favorite}>Yes</Button>
+                <Button id="venueEditNo" size="sm" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"} value={this.state.favorite}>No</Button>
               </ButtonGroup>
 
               <div id="editButtons">
 
-              <Button size="large" id="editEditButton" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
+              <Button size="large" id="editVenueSubmitButton" onClick={this.editSubmittedVenue}>Submit Edit</Button>{' '}
 
-              <Link to={`/venues/`}><Button id="editBackButton" className="card-link" size="large">Back</Button></Link>
+              <Link to={`/venues/`}><Button id="editVenueBackButton" className="card-link" size="large">Back</Button></Link>
 
               </div>
 
