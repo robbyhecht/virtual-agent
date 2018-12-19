@@ -28,6 +28,10 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&favorite=${favorite}&_sort=name&_order=asc`).then(data => data.json());
   }
 
+  queryVenueId(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&_embed=tour`).then(data => data.json())
+  }
+
   delete(id) {
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"

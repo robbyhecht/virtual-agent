@@ -27,6 +27,10 @@ class VenuesManager extends APIManager {
   patchAndListVenue(venue, url) {
     return this.patch(venue, url).then(() => this.allSortedAlpha())
   }
+
+  queryExistingVenue(user) {
+    return this.queryVenueId(user)
+  }
 }
 
 // EXPORTS VENUES MANAGER WITH 'THIS' REPRESENTING "VENUES"
