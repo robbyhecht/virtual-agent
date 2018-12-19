@@ -17,7 +17,7 @@ export default class ToursList extends Component {
 
         <h1 id="tourHeader">MY TOUR</h1>
         
-        <div id="venuesContainer">
+        <div id="tourVenuesContainer">
 
           {/* map over the 'tour' array and compare venue_ids with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
         

@@ -1,3 +1,7 @@
+
+/* VenuesEdit */
+
+
 #editContainer {
   margin-top: 20px;
   margin-left: 20%;
@@ -6,29 +10,8 @@
   font-weight: bold;
 }
 
-#venuesFormContainer {
-  margin-top: 20px;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding-bottom: 10%;
-  font-weight: bold;
-}
-
-#newVenueButtonContainer {
-  display: block;
-}
-
 #editButtons {
   text-align: center;
-}
-
-#submitButtonContainer {
-  text-align: center;
-}
-
-#newVenueSubmitButton {
-  background-color: rgb(0, 35, 75);
-  margin-top: 20px
 }
 
 #editVenueSubmitButton {
@@ -41,6 +24,61 @@
   margin-top: 20px
 }
 
+#venueEditYes {
+  margin-left: 10px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+
+#venueEditNo {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+/* VenuesForm */
+
+
+#venuesFormContainer {
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+
+#submitButtonContainer {
+  text-align: center;
+}
+
+#newVenueSubmitButton {
+  background-color: rgb(0, 35, 75);
+  margin-top: 20px
+}
+
+#formFavoriteLabel {
+  margin-top: 5px;
+}
+
+#editFavoriteLabel {
+  margin-top: 5px;
+}
+
+#venueFormYes {
+  margin-left: 10px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+
+#venueFormNo {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+/* VenuesList */
+
+
 #venuesContainer {
   display: flex;
   box-sizing: border-box;
@@ -48,20 +86,11 @@
   margin-top: 20px;
 }
 
-#cards {
-  margin-bottom: 20px;
-  display: flex;
-  box-sizing: border-box;
-  justify-content: center;
-  width: 800px;
-}
-
 #venuesTop {
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
   justify-content: center;
-
 }
 
 #venuesHeader {
@@ -97,6 +126,18 @@
 #removeFilterButton {
   background-color: rgb(0, 35, 75);
   margin: 0px 5px 10px 5px
+}
+
+
+/* VenueCard */
+
+
+#cards {
+  margin-bottom: 20px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 800px;
 }
 
 #venueCard {
@@ -135,38 +176,3 @@
   display: flex;
   justify-content: left;
 }
-
-#formFavoriteLabel {
-  margin-top: 5px;
-}
-
-#editFavoriteLabel {
-  margin-top: 5px;
-}
-
-#venueFormYes {
-  /* background-color: rgb(0, 35, 75); */
-  margin-left: 10px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px
-}
-
-#venueFormNo {
-  /* background-color: rgb(0, 35, 75); */
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-#venueEditYes {
-  /* background-color: rgb(0, 35, 75); */
-  margin-left: 10px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px
-}
-
-#venueEditNo {
-  /* background-color: rgb(0, 35, 75); */
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-

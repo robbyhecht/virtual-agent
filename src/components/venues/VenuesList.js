@@ -21,23 +21,32 @@ export default class VenuesList extends Component {
     this.props.updateTourButtons(false)
   }
 
+  // Toggle function relates to the dropdown menu for venueState selection
+
   toggle() {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
 
+  // uses user selection from dropdown to show only the venues that exist in that venueState. The filterVenuesByState function draws on a json fetch address extension to filter specific states
+
   handleClickVenue = choice => {
     this.props.filterVenuesByState(choice, this.props.currentUser)
   }
+
+  // Similar to the above function but this json extension specifies the 'favorite' property
 
   handleClickFavorite() {
     this.props.filterVenuesByFavorite()
   }
 
+  // This function just reloads the page to remove a filter
+
   removeFilter = () => {
     window.location.reload()
   }
+
 
   render() {
 
@@ -46,8 +55,13 @@ export default class VenuesList extends Component {
       <React.Fragment>
 
         <div id="venuesTop">
+
           <h1 id="venuesHeader">VENUES</h1>
+
           <section id="venueButtons">
+
+            {/* pushes the user to the venues/new address */}
+
             <Button
               id="newVenueButton"
               size="large"
@@ -57,6 +71,9 @@ export default class VenuesList extends Component {
               }}>
               Add New Venue
             </Button>
+
+            {/* calls the state filter method */}
+
             <Dropdown
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
             name="venueState" id="venueState" value="venueState"
@@ -123,6 +140,8 @@ export default class VenuesList extends Component {
               </DropdownMenu>
             </Dropdown>
 
+            {/* Calls the favorite filter method */}
+
             <Button
               id="favoriteButton"
               size="large"
@@ -133,6 +152,8 @@ export default class VenuesList extends Component {
               Filter By Favorites
             </Button>
             
+              {/* calls the filter removal method */}
+
               <div>
                 <Button
                 id="removeFilterButton"
@@ -148,6 +169,10 @@ export default class VenuesList extends Component {
         </div>
 
         <div id="venuesContainer">
+
+
+          {/* maps over the 'venues' array and sends the information to VenueCard to make a card for each venue. */}
+
           <article className="venuesList">
             {
               this.props.venues.map(venue => {

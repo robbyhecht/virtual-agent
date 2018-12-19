@@ -11,9 +11,9 @@ export default class VenueCard extends Component {
     super(props);
     this.state = {
       modal: false,
-      contacted: this.props.tourVenue.contacted,
-      pending: this.props.tourVenue.pending,
-      confirmed: this.props.tourVenue.confirmed
+      // contacted: this.props.tourVenue.contacted,
+      // pending: this.props.tourVenue.pending,
+      // confirmed: this.props.tourVenue.confirmed
     };
     
     this.toggle = this.toggle.bind(this);
@@ -25,11 +25,15 @@ export default class VenueCard extends Component {
     });
   }
 
-  // these are functions that toggle boolean state of button properties in the tour objects
+  // these are functions that toggle boolean state of button properties in the tour objects.
+  // The tour object id is passed in as the sole argument, and each method first makes a variable that reverses the state of the targeted property when called, then patches the new value to the database and sets the new state.
 
   changeContacted = (id) => {
+    // variable 'status' holds the new reversed boolean value
     const status = {contacted: !this.state.contacted}
+    // the tour patch function is called using the new value as its argument
     this.props.updateTourVenue(status, id)
+    // state is set using the updated value
     .then(() => this.setState({contacted: this.props.tourVenue.contacted}))
   }
 
@@ -123,7 +127,7 @@ export default class VenueCard extends Component {
 
               <div id="tourCardButtons">
 
-                {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties and alternates color accordingly */}
+                {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
 
                 <ButtonGroup>
                   {
