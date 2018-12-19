@@ -14,22 +14,26 @@ export default class ApplicationViews extends Component {
   state = {
     venues: [],
     tour: [],
-    tourpage: false
+    tourpage: false,
+    venueWithTour: []
     }
 
   componentDidMount() {
-
-    VenuesManager.getAll(this.props.currentUser)
-      .then(allVenues => {
-        console.log("venues", allVenues)
-        this.setState({venues: allVenues})
-    })
-
-    TourVenueManager.getAll(this.props.currentUser)
-    .then(tour => {
-      this.setState({tour: tour})})
-}
-
+    let _state = {}
+    VenuesManager.queryExistingVenue(this.props.currentUser)
+      .then(
+        venueWithTour => (_state.venueWithTour = venueWithTour)
+      )
+      .then(() =>
+        TourVenueManager.getAll(this.props.currentUser))
+      .then(
+        tour => (_state.tour = tour)
+      )
+      .then(() =>
+      VenuesManager.getAll(this.props.currentUser))
+      .then(allVenues => (_state.venues = allVenues))
+      .then(() => this.setState(_state))
+  }
   updateTourButtons = (bool) => {
     this.setState({tourpage: bool})
   }
@@ -113,6 +117,17 @@ export default class ApplicationViews extends Component {
     )
   }
 
+  checkTourVenue = (venue_id) => {
+    let bool = TourVenueManager.queryExistingVenue(venue_id, this.props.currentUser)
+    console.log("bool", bool)
+    if (bool === null) {
+      return false
+    } else {
+      return true
+    }
+  }
+
+
 
   render() {
 
@@ -133,12 +148,14 @@ export default class ApplicationViews extends Component {
             deleteVenue={this.deleteVenue}
             addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
+            venueWithTour={this.state.venueWithTour}
             tours={this.state.tours}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
             filterVenuesByFavorite={this.filterVenuesByFavorite}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
+            checkTourVenue={this.checkTourVenue}
             />
         }} />
         

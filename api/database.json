@@ -135,7 +135,7 @@
   ],
   "tour": [
     {
-      "venue_id": 4,
+      "venueId": 4,
       "user_id": 1,
       "contacted": true,
       "pending": true,
@@ -143,7 +143,7 @@
       "id": 2
     },
     {
-      "venue_id": 7,
+      "venueId": 7,
       "user_id": 1,
       "contacted": false,
       "pending": false,
@@ -151,7 +151,7 @@
       "id": 3
     },
     {
-      "venue_id": 1,
+      "venueId": 1,
       "user_id": 1,
       "contacted": false,
       "pending": false,
@@ -159,12 +159,12 @@
       "id": 4
     },
     {
-      "venue_id": 3,
+      "venueId": 5,
       "user_id": 1,
       "contacted": false,
       "pending": false,
       "confirmed": false,
-      "id": 5
+      "id": 6
     }
   ]
 }

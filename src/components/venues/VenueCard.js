@@ -9,17 +9,12 @@ export default class VenueCard extends Component {
 
   constructor(props) {
     super(props);
-    // (this.props.tourpage === true) ?
     this.state = {
       modal: false,
       contacted: "",
       pending: "",
       confirmed: ""
     }
-    // :
-    // this.state = {
-    //   modal: false
-    // }
     
     this.toggle = this.toggle.bind(this);
   }
@@ -98,14 +93,16 @@ export default class VenueCard extends Component {
 
           {
 
-            (this.props.tourpage === false) ? 
+            (this.props.page === "venue") ? 
 
               // VENUES PAGE BUTTONS: 
 
               <div id="venueCardButtons">
 
               {/* this button adds the selected venue to the tour page, alerting the user */}
-
+              {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOURS */}
+                {
+                !this.props.venue.tour.length  ?
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
                   alert(`${this.props.venue.name} has been added to your tour!`)
@@ -113,7 +110,10 @@ export default class VenueCard extends Component {
                     this.props.addVenueToTour(this.props.venue.id)
                   )}}>
                 Add to your tour
-                </Button>{' '}
+                </Button>
+                : null
+      
+                }
 
                 {/* edit card button */}
 
