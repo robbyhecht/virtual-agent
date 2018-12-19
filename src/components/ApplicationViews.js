@@ -6,8 +6,6 @@ import VenuesEdit from "./venues/VenuesEdit"
 import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
 import ToursList from "./tours/ToursList"
-import ToursForm from "./tours/ToursForm"
-import ToursManager from './../managers/ToursManager'
 import TourVenueManager from "./../managers/TourVenueManager"
 
 
@@ -26,11 +24,6 @@ export default class ApplicationViews extends Component {
         console.log("venues", allVenues)
         this.setState({venues: allVenues})
     })
-
-    // ToursManager.getAll(this.props.currentUser)
-    // .then(allTours => {
-    // this.setState({tours: allTours})
-    // })
 
     TourVenueManager.getAll(this.props.currentUser)
     .then(tour => {
@@ -90,8 +83,6 @@ export default class ApplicationViews extends Component {
 
   // TOUR FUNCTIONS
 
-  // ADD TO SINGLE TOUR PAGE
-
   addVenueToTour = (venue) => {
     TourVenueManager.postVenueToTour(venue, this.props.currentUser)
     .then(() => TourVenueManager.getAll(this.props.currentUser))
@@ -123,39 +114,14 @@ export default class ApplicationViews extends Component {
   }
 
 
-  // MULTIPLE TOURS
-
-  addTour = (tour) =>
-  ToursManager.addAndList(tour)
-    .then(tours => {
-      this.setState({
-        tours: tours
-      })
-    })
-
-
-  deleteTour = (id, user) => {
-    return ToursManager.removeAndList(id, user).then(tours =>
-      this.setState({
-        tours: tours
-      })
-    )
-  }
-
-    editTour = (tours, url) =>
-    ToursManager.patchAndListTour(tours, url)
-      .then(() => ToursManager.getAll(this.props.currentUser)).then(tours =>
-        this.setState({
-          tours: tours
-        })
-      )
-
-
   render() {
 
     return (
 
+      // Route everything down as props
+
       <React.Fragment>
+
         <Route exact path="/" render={(props) => {
           return <HomePage {...props} />
         }} />
@@ -199,12 +165,6 @@ export default class ApplicationViews extends Component {
             updateTourVenue={this.updateTourVenue}
             />
         }} />
-
-        <Route exact path="/tours/new" render={props => {
-          return <ToursForm {...props}
-          addTour={this.addTour}
-          />
-        }}  />
 
     </React.Fragment>
     )

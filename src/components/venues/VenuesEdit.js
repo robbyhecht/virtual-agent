@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import "./Venues.css"
 class VenuesEdit extends Component {
   
+  // Set initial state for editing
+
     state = {
         name: "",
         city: "",
@@ -22,9 +24,13 @@ class VenuesEdit extends Component {
       this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
     }
   
+    // Sets the state on the 'favorite' option upon user radio button selection below
+
     onRadioBtnClick(favorite) {
       this.setState({ favorite });
     }
+
+    // Sets state using values entered by user below
 
     handleFieldChange = venue => {
         const stateToChange = {}
@@ -32,9 +38,12 @@ class VenuesEdit extends Component {
         this.setState(stateToChange)
     }
 
+    // Mount the particular venue object we are editing
+venueId = parseInt(this.props.match.params.venueId)
     componentDidMount() {
+      console.log("venues",this.props.venues)
         let newState = {}
-        let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venueId))
+        let venue = this.props.venues.find(venue => venue.id === this.venueId)
         newState.name = venue.name
         newState.city = venue.city
         newState.venueState = venue.venueState
@@ -47,8 +56,10 @@ class VenuesEdit extends Component {
         this.setState(newState)
     }
   
-    editSubmittedVenue = e => {
-        e.preventDefault()
+    // This method runs when the submit button is clicked at the bottom of the form. Runs editVenue method from AppViews which is the venue patch method. Then sends user back to venues page.
+
+    editSubmittedVenue = evt => {
+        evt.preventDefault()
         const venue = {
           name: this.state.name,
           city: this.state.city,

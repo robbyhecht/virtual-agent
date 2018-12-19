@@ -10,10 +10,8 @@ export default class VenuesForm extends Component {
     this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
   }
 
-  onRadioBtnClick(favorite) {
-    this.setState({ favorite });
-  }
   // Set initial state
+
   state = {
     name: "",
     city: "",
@@ -24,17 +22,26 @@ export default class VenuesForm extends Component {
     notes: "",
     favorite: "",
     user_id: ""
-  };
+  }
 
-  // Update state whenever an input field is edited
+  // Sets the state on the 'favorite' option upon user radio button selection below
+
+  onRadioBtnClick(favorite) {
+    this.setState({ favorite });
+  }
+
+  // Update state with user generated input in form
+
   handleFieldChange = venue => {
     const stateToChange = {};
     stateToChange[venue.target.id] = venue.target.value;
     this.setState(stateToChange);
   };
 
-  constructNewVenue = venue => {
-    venue.preventDefault()
+  // This method is called on the submit button at the end of the form. Builds new venue submission with user input, calls the addVenue function from AppViews, which is the venues 'post' function, and sends user back to the venues list page.
+
+  constructNewVenue = evt => {
+    evt.preventDefault()
     const venues = {
       name: this.state.name,
       city: this.state.city,
