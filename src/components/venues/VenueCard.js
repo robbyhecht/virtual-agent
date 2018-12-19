@@ -179,7 +179,7 @@ export default class VenueCard extends Component {
 
           </CardBody>
         </Card>
-        </div>
+      </div>
     )
   }
 }
