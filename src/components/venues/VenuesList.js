@@ -11,7 +11,8 @@ export default class VenuesList extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      dropdownOpen: false
+      dropdownOpen: false,
+      page: "venue"
     }
   }
 
@@ -176,7 +177,7 @@ export default class VenuesList extends Component {
           <article className="venuesList">
             {
               this.props.venues.map(venue => {
-                return <VenueCard key={venue.id} venue={venue} {...this.props} />
+                return <VenueCard page={this.state.page} key={venue.id} venue={venue} {...this.props} />
             
               } ) 
             }

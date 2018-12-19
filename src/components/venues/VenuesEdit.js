@@ -39,10 +39,11 @@ class VenuesEdit extends Component {
     }
 
     // Mount the particular venue object we are editing
-
+venueId = parseInt(this.props.match.params.venueId)
     componentDidMount() {
+      console.log("venues",this.props.venues)
         let newState = {}
-        let venue = this.props.venues.find(venue => venue.id === parseInt(this.props.match.params.venue_id))
+        let venue = this.props.venues.find(venue => venue.id === this.venueId)
         newState.name = venue.name
         newState.city = venue.city
         newState.venueState = venue.venueState

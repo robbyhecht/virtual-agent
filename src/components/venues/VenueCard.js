@@ -9,12 +9,17 @@ export default class VenueCard extends Component {
 
   constructor(props) {
     super(props);
+    // (this.props.tourpage === true) ?
     this.state = {
       modal: false,
-      // contacted: this.props.tourVenue.contacted,
-      // pending: this.props.tourVenue.pending,
-      // confirmed: this.props.tourVenue.confirmed
-    };
+      contacted: "",
+      pending: "",
+      confirmed: ""
+    }
+    // :
+    // this.state = {
+    //   modal: false
+    // }
     
     this.toggle = this.toggle.bind(this);
   }
@@ -25,6 +30,16 @@ export default class VenueCard extends Component {
     });
   }
 
+  componentDidMount () {
+    if (this.props.page === "tour") {
+    this.setState({
+      contacted: this.props.tourVenue.contacted,
+      pending: this.props.tourVenue.pending,
+      confirmed: this.props.tourVenue.confirmed
+      })
+    }
+  }
+
   // these are functions that toggle boolean state of button properties in the tour objects.
   // The tour object id is passed in as the sole argument, and each method first makes a variable that reverses the state of the targeted property when called, then patches the new value to the database and sets the new state.
 
@@ -33,7 +48,7 @@ export default class VenueCard extends Component {
     const status = {contacted: !this.state.contacted}
     // the tour patch function is called using the new value as its argument
     this.props.updateTourVenue(status, id)
-    // state is set using the updated value
+    // state is set using the updated value9
     .then(() => this.setState({contacted: this.props.tourVenue.contacted}))
   }
 
@@ -48,6 +63,14 @@ export default class VenueCard extends Component {
     this.props.updateTourVenue(status, id)
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
   }
+
+  // tourCardState() {
+  //   this.setState = ({
+  //     contacted: this.props.tourVenue.contacted,
+  //     pending: this.props.tourVenue.pending,
+  //     confirmed: this.props.tourVenue.confirmed
+  //   })
+  // }
 
 
   render() {
@@ -128,7 +151,7 @@ export default class VenueCard extends Component {
               <div id="tourCardButtons">
 
                 {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
-
+                
                 <ButtonGroup>
                   {
                     this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 

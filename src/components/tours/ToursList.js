@@ -3,6 +3,9 @@ import VenueCard from "./../venues/VenueCard";
 import "./Tours.css";
 
 export default class ToursList extends Component {
+  state = {
+    page : "tour"
+  }
 
   // Sets the state of 'tourpage' to 'true', letting VenueCard know to assign tour page buttons on card display. in VenuesList, this same function mounts as 'false'
 
@@ -26,7 +29,7 @@ export default class ToursList extends Component {
               this.props.tour.map(tourVenue => {
                 let venue = this.props.venues.find(venue => venue.id === tourVenue.venue_id);
 
-                return <VenueCard key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
+                return <VenueCard page={this.state.page} key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
               })
             }
           </article>
