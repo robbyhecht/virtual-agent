@@ -5,6 +5,8 @@ import "./Venues.css"
 
 export default class VenueCard extends Component {
 
+  // set state in constructor for the modals and tour button status
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,15 +19,13 @@ export default class VenueCard extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  componentDidMount(){
-    console.log(this.props.tourVenue)
-  }
-
   toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
+
+  // these are functions that toggle boolean state of button properties in the tour objects
 
   changeContacted = (id) => {
     const status = {contacted: !this.state.contacted}
@@ -45,9 +45,12 @@ export default class VenueCard extends Component {
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
   }
 
+
   render() {
     
     return(
+
+      // the cards all share these initial properties for both tour page and venues page
 
       <div id="cards">
 
@@ -63,12 +66,19 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.email}</CardText>
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
-          
+
+          {/* At this point, the cards are built differently for tour and venue pages, as dictated by the status of 'tourpage', which is set in the componentDidMount sections of ToursList and VenuesList */}
+
           {
 
             (this.props.tourpage === false) ? 
 
+              // VENUES PAGE BUTTONS: 
+
               <div id="venueCardButtons">
+
+              {/* this button adds the selected venue to the tour page, alerting the user */}
+
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
                   alert(`${this.props.venue.name} has been added to your tour!`)
@@ -78,9 +88,13 @@ export default class VenueCard extends Component {
                 Add to your tour
                 </Button>{' '}
 
+                {/* edit card button */}
+
                 <Link to={`/venues/edit/${this.props.venue.id}`}>
                 <Button size="sm" className="card-link" id="editButton">Edit</Button>{' '}
                 </Link>
+
+                {/* the initial 'delete' button actually opens a modal with the real delete button along with a 'cancel' option */}
 
                 <Button className="card-link" id="deleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Delete</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -94,14 +108,22 @@ export default class VenueCard extends Component {
                   <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>
+
+                {/* if the user designates a venue as a favorite in the new or edit venue forms, an icon appears in the bottom right corner */}
+
                 <span id="favoriteIcon">
                 {this.props.venue.favorite === "yes" ? `👍` : null}
                 </span>
+
               </div>
 
             :  
 
-              <div>
+              // TOURS PAGE BUTTONS:
+
+              <div id="tourCardButtons">
+
+                {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties and alternates color accordingly */}
 
                 <ButtonGroup>
                   {
@@ -133,6 +155,8 @@ export default class VenueCard extends Component {
                   }
                 </ButtonGroup>
 
+                {/* Initial 'Remove' button takes user to a modal that has remove and cancel buttons */}
+
                 <Button className="card-link" id="tourDeleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                   <ModalBody>
@@ -155,12 +179,3 @@ export default class VenueCard extends Component {
     )
   }
 }
-
-
-// radio attempt
-
-/* <ButtonGroup> */
-/* <Button id="contactedButton" color="secondary" size="sm" onClick={() => this.onRadioBtnClick("contacted")} active={this.state.status === "contacted"}>Contacted</Button>
-<Button id="pendingButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("pending")} active={this.state.status === "pending"}>Pending</Button>
-<Button id="confirmedButton" size="sm" color="secondary" onClick={() => this.onRadioBtnClick("confirmed")} active={this.state.favorite === "confirmed"}>Confirmed</Button> */    
-// </ButtonGroup>

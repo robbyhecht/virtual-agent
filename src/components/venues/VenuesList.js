@@ -15,6 +15,8 @@ export default class VenuesList extends Component {
     }
   }
 
+  // Sets the state of 'tourpage' to 'false', letting VenueCard know to assign venue page buttons on card display. in ToursList, this same function mounts as 'true'
+
   componentDidMount () {
     this.props.updateTourButtons(false)
   }

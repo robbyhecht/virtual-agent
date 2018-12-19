@@ -145,7 +145,7 @@
     {
       "venue_id": 7,
       "user_id": 1,
-      "contacted": true,
+      "contacted": false,
       "pending": false,
       "confirmed": false,
       "id": 3

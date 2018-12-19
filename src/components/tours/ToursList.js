@@ -4,7 +4,7 @@ import "./Tours.css";
 
 export default class ToursList extends Component {
 
-
+  // Sets the state of 'tourpage' to 'true', letting VenueCard know to assign tour page buttons on card display. in VenuesList, this same function mounts as 'false'
 
   componentDidMount() {
     this.props.updateTourButtons(true)
@@ -14,8 +14,13 @@ export default class ToursList extends Component {
 
     return (
       <React.Fragment>
+
         <h1 id="tourHeader">MY TOUR</h1>
+        
         <div id="venuesContainer">
+
+          {/* map over the 'tour' array and compare venue_ids with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
+        
           <article className="venuesList">
             {
               this.props.tour.map(tourVenue => {
@@ -25,7 +30,9 @@ export default class ToursList extends Component {
               })
             }
           </article>
+          
         </div>
+
       </React.Fragment>
     )}
   }

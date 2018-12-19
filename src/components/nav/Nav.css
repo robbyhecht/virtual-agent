@@ -10,6 +10,19 @@
 #navItems {
   color: white;
 }
+
+/* styling for individual links in navbar */
+
+#navTitle {
+  background-color: #4E93BB;
+  color: white;
+  font-size: 20px;
+  margin-left: 70px;
+}
+
+#navTitle:hover {
+  color: #CFE1F6;
+}
 #navVenues {
   background-color: #4E93BB;
   color: white;
@@ -55,16 +68,5 @@
 }
 
 #navLogout:hover {
-  color: #CFE1F6;
-}
-
-#navTitle {
-  background-color: #4E93BB;
-  color: white;
-  font-size: 20px;
-  margin-left: 70px;
-}
-
-#navTitle:hover {
   color: #CFE1F6;
 }

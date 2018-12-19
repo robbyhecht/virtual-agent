@@ -5,8 +5,22 @@
   color: white;
 }
 
+#tourDeleteButton {
+  background-color: rgb(0, 35, 75);
+  margin-right: 3px;
+  margin-left: 20px;
+}
+
+/* the following ids assign the colors used with state change and add margins */
+
 #contactedButton {
   background-color: rgb(0, 35, 75);
+  margin-right: 1px;
+  margin-left: 80px;
+}
+
+#contactedButtonSelected {
+  background-color: green;
   margin-right: 1px;
   margin-left: 80px;
 }
@@ -17,21 +31,15 @@
   margin-left: 1px;
 }
 
-#confirmedButton {
-  background-color: rgb(0, 35, 75);
-  margin-right: 3px;
-  margin-left: 1px;
-}
-
-#contactedButtonSelected {
-  background-color: green;
-  margin-right: 1px;
-  margin-left: 80px;
-}
-
 #pendingButtonSelected {
   background-color: green;
   margin-right: 1px;
+  margin-left: 1px;
+}
+
+#confirmedButton {
+  background-color: rgb(0, 35, 75);
+  margin-right: 3px;
   margin-left: 1px;
 }
 
@@ -39,10 +47,4 @@
   background-color: green;
   margin-right: 3px;
   margin-left: 1px;
-}
-
-#tourDeleteButton {
-  background-color: rgb(0, 35, 75);
-  margin-right: 3px;
-  margin-left: 20px;
 }

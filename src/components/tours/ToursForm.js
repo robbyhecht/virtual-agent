@@ -1,3 +1,5 @@
+// THIS COMPONENT WILL ONLY BE USED IF FUNCTIONALITY IS ADDED FOR MULTIPLE TOURS. IT WOULD CREATE AND NAME NEW TOURS.
+
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import "./Tours.css"

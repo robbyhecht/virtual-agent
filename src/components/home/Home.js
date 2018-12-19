@@ -7,6 +7,9 @@ import "./Home.css"
 export default class HomePage extends Component {
 
   render() {
+
+    // home page is divided into 2x2 colums and rows
+
     return(
     <Container id="homeDiv">
       <Row>
