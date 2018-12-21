@@ -84,7 +84,7 @@ export default class VenuesList extends Component {
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
             name="venueState" id="venueState" value="venueState"
             >
-              <DropdownToggle id="stateButton" caret>
+              <DropdownToggle id="stateButton">
                 Filter By State
               </DropdownToggle>
               <DropdownMenu 
