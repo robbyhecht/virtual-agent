@@ -95,7 +95,7 @@ export default class ToursList extends Component {
 
           {/* map over the 'tour' array and compare venueIds with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
         
-          <article className="venuesList">
+          <article className="tourVenuesList">
             {
               this.props.tour.map(tourVenue => {
                 let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId);

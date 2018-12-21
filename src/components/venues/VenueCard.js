@@ -77,7 +77,11 @@ export default class VenueCard extends Component {
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
 
         <CardHeader tag="h3" id="cardHeader">
-        {this.props.venue.name}
+        {
+        this.props.venue.url !== "" ?
+        <a target="_blank" rel="noopener noreferrer" href={this.props.venue.url}>{this.props.venue.name}</a> :
+        this.props.venue.name
+        }
         </CardHeader>
 
         <CardBody>

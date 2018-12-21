@@ -21,6 +21,7 @@
       "phone": "704-618-4181",
       "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka \"The Rock and Roll Motel.",
       "favorite": "yes",
+      "url": "http://eveningmuse.com",
       "user_id": 1,
       "id": 1
     },
@@ -33,6 +34,7 @@
       "phone": "",
       "notes": "I love this place. Favorite Nashville venue.",
       "favorite": "yes",
+      "url": "http://thebasementnashville.com",
       "user_id": 1,
       "id": 2
     },
@@ -46,6 +48,7 @@
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
       "user_id": 1,
       "favorite": "yes",
+      "url": "http://rockwoodmusichall.com",
       "id": 3
     },
     {
@@ -58,6 +61,7 @@
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
       "user_id": 1,
       "favorite": "no",
+      "url": "",
       "id": 4
     },
     {
@@ -70,6 +74,7 @@
       "notes": "On the UT-Austin campus. Matt is super nice but slow to respond so be persistent. Sound is great.",
       "user_id": 1,
       "favorite": "yes",
+      "url": "",
       "id": 5
     },
     {
@@ -82,6 +87,7 @@
       "notes": "Great listening crowd and friendly staff.",
       "user_id": 1,
       "favorite": "yes",
+      "url": "http://passim.org",
       "id": 6
     },
     {
@@ -94,6 +100,7 @@
       "notes": "The staff were nice af.",
       "user_id": 1,
       "favorite": "yes",
+      "url": "http://oldtownschool.org",
       "id": 7
     },
     {
@@ -106,6 +113,7 @@
       "notes": "Reached out- offering dates for mid-late 2019",
       "user_id": 1,
       "favorite": "no",
+      "url": "",
       "id": 8
     },
     {
@@ -118,18 +126,20 @@
       "notes": "Run by the Signature Sounds label",
       "user_id": 1,
       "favorite": "no",
+      "url": "",
       "id": 9
     },
     {
-      "name": "Ousama's Dog Park Concert Series",
-      "city": "Nashville",
-      "venueState": "TN",
-      "buyer": "Ousama",
-      "email": "dogtinder@gmail.com",
-      "phone": "615-555-WOOF",
-      "notes": "Stepped in poop halfway through the show. Never again.",
+      "name": "Hotel Cafe",
+      "city": "Los Angeles",
+      "venueState": "CA",
+      "buyer": "Marko",
+      "email": "marko@hotelcafe.com",
+      "phone": "email only",
+      "url": "http://www.hotelcafe.com",
+      "notes": "Played the small room which sounds good but holds like 12 people.",
+      "favorite": "no",
       "user_id": 1,
-      "favorite": "yes",
       "id": 10
     }
   ],
@@ -137,7 +147,7 @@
     {
       "venueId": 5,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
       "confirmed": false,
       "id": 1
@@ -153,7 +163,7 @@
     {
       "venueId": 3,
       "user_id": 1,
-      "contacted": true,
+      "contacted": false,
       "pending": false,
       "confirmed": true,
       "id": 3
@@ -161,16 +171,16 @@
     {
       "venueId": 1,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
-      "confirmed": true,
+      "confirmed": false,
       "id": 4
     },
     {
       "venueId": 6,
       "user_id": 1,
-      "contacted": true,
-      "pending": false,
+      "contacted": false,
+      "pending": true,
       "confirmed": false,
       "id": 5
     },
@@ -179,13 +189,13 @@
       "user_id": 1,
       "contacted": false,
       "pending": false,
-      "confirmed": false,
+      "confirmed": true,
       "id": 6
     },
     {
       "venueId": 9,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
       "confirmed": false,
       "id": 7

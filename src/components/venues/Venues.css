@@ -148,6 +148,13 @@
 #cardHeader {
   background-color: #CFE1F6;
   border-color: black;
+  color: black;
+}
+
+#cardHeader a {
+  background-color: #CFE1F6;
+  border-color: black;
+  color: rgb(0, 49, 104)
 }
 
 #deleteButton {
