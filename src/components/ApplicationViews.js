@@ -28,7 +28,7 @@ export default class ApplicationViews extends Component {
     TourVenueManager.getAll(this.props.currentUser)
     .then(tour => {
       this.setState({tour: tour})})
-}
+  }
 
   updateTourButtons = (bool) => {
     this.setState({tourpage: bool})
@@ -112,6 +112,12 @@ export default class ApplicationViews extends Component {
       })
     )
   }
+
+
+  // get venue id from venue
+  // check against venue ids in tour venues
+  // if venue id is included, return true and block button creation
+
 
 
   render() {

@@ -109,12 +109,3 @@ export default class APIManager {
   }
 
 }
-
-// {
-//   "venue_id": 4,
-//   "user_id": 1,
-//   "contacted": false,
-//   "pending": false,
-//   "confirmed": false,
-//   "id": 2
-// }
