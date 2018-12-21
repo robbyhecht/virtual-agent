@@ -155,7 +155,6 @@ export default class VenuesList extends Component {
             
               {/* calls the filter removal method */}
 
-            <div>
               <Button
               id="removeFilterButton"
               size="large"
@@ -165,7 +164,6 @@ export default class VenuesList extends Component {
               }}>
               Remove Venues Filter
               </Button>
-            </div>
           </section>
         </div>
 

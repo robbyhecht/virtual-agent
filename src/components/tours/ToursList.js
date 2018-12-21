@@ -47,10 +47,10 @@ export default class ToursList extends Component {
 
         <h1 id="tourHeader">MY TOUR</h1>
 
-        <section>
+        <section id="tourFilterButtons">
 
           <Button
-            id="favoriteButton"
+            id="contactedFilterButton"
             size="large"
             className="btn"
             onClick={() => {
@@ -60,7 +60,7 @@ export default class ToursList extends Component {
           </Button>
 
           <Button
-            id="favoriteButton"
+            id="pendingFilterButton"
             size="large"
             className="btn"
             onClick={() => {
@@ -70,7 +70,7 @@ export default class ToursList extends Component {
           </Button>
 
           <Button
-            id="favoriteButton"
+            id="confirmedFilterButton"
             size="large"
             className="btn"
             onClick={() => {
@@ -80,7 +80,7 @@ export default class ToursList extends Component {
           </Button>
 
             <Button
-            id="removeFilterButton"
+            id="removeTourFilterButton"
             size="large"
             className="btn"
             onClick={() => {

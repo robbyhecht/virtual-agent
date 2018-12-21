@@ -137,9 +137,9 @@
     {
       "venueId": 5,
       "user_id": 1,
-      "contacted": true,
-      "pending": true,
-      "confirmed": true,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
       "id": 1
     },
     {
