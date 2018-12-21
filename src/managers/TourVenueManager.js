@@ -19,7 +19,7 @@ class ToursManager extends APIManager {
   updateTourVenue(property, id) {
     return this.patch(property, id)
   }
-
+  
 }
 
 export default new ToursManager("tour")

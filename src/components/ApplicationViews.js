@@ -31,7 +31,7 @@ export default class ApplicationViews extends Component {
     this.setState({tourpage: bool})
   }
 
-  
+
   // VENUE FUNCTIONS
 
   addVenue = venues =>
@@ -113,6 +113,29 @@ export default class ApplicationViews extends Component {
     )
   }
 
+  // checkStatus = () => {
+  //  this.tour.map(tourVenue => {
+  //     let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId).then(() => console.log(venue))})
+  // }
+
+  // checkStatus = (venueId) => {
+  //   let venueInTour = TourVenueManager.getAll(this.props.currentUser).find(tour => tour.venueId === venueId)
+  //   .then(() => 
+  //   console.log(venueInTour))
+  // }
+
+  // grab the venue
+
+  // checkStatus = (venue) => {
+  //   let tourVenues = TourVenueManager.getAll(this.props.currentUser)
+  //   let thisVenue = VenuesManager.getVenue(venue)
+  //   let bool = thisVenue.find(venue => venue.id === tourVenues.venueId) ? true : false
+  //   console.log(bool)
+  //   }
+
+
+  // .map(tourVenue => {
+  //   this.props.venueId.find(venue => venue.id === tourVenue.venueId)
 
   // get venue id from venue
   // check against venue ids in tour venues
@@ -123,6 +146,7 @@ export default class ApplicationViews extends Component {
   render() {
 
     return (
+
 
       // Route everything down as props
 
@@ -145,6 +169,7 @@ export default class ApplicationViews extends Component {
             filterVenuesByFavorite={this.filterVenuesByFavorite}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
+            checkStatus={this.checkStatus}
             />
         }} />
         
@@ -169,6 +194,7 @@ export default class ApplicationViews extends Component {
             updateTourButtons={this.updateTourButtons}
             deleteTourVenue={this.deleteTourVenue}
             updateTourVenue={this.updateTourVenue}
+            checkStatus={this.checkStatus}
             />
         }} />
 
