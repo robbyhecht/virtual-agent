@@ -14,7 +14,8 @@ export default class ApplicationViews extends Component {
   state = {
     venues: [],
     tour: [],
-    tourpage: false
+    tourpage: false,
+    venueWithTour: []
     }
 
   componentDidMount() {
@@ -191,13 +192,13 @@ export default class ApplicationViews extends Component {
             deleteVenue={this.deleteVenue}
             addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
+            venueWithTour={this.state.venueWithTour}
             tours={this.state.tours}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
             filterVenuesByFavorite={this.filterVenuesByFavorite}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
-            checkStatus={this.checkStatus}
             />
         }} />
         
@@ -222,7 +223,6 @@ export default class ApplicationViews extends Component {
             updateTourButtons={this.updateTourButtons}
             deleteTourVenue={this.deleteTourVenue}
             updateTourVenue={this.updateTourVenue}
-            checkStatus={this.checkStatus}
             filterVenuesByContacted={this.filterVenuesByContacted}
             filterVenuesByPending={this.filterVenuesByPending}
             filterVenuesByConfirmed={this.filterVenuesByConfirmed}
