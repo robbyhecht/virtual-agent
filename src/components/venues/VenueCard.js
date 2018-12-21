@@ -99,10 +99,9 @@ export default class VenueCard extends Component {
               {/* this button adds the selected venue to the tour page, alerting the user */}
               {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOURS */}
                 {
-                !this.props.venue.tour.length  ?
+                // !this.props.venue.tour.length  ?
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
-                  // this.props.checkStatus()
                   alert(`${this.props.venue.name} has been added to your tour!`)
                   return (
                     this.props.addVenueToTour(this.props.venue.id)
@@ -110,7 +109,7 @@ export default class VenueCard extends Component {
                   }}>
                 Add to your tour
                 </Button>
-                : null
+                // : null
       
                 }
 
