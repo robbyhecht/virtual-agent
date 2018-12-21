@@ -19,6 +19,7 @@ export default class VenuesForm extends Component {
     buyer: "",
     email: "",
     phone: "",
+    url: "",
     notes: "",
     favorite: "",
     user_id: ""
@@ -49,6 +50,7 @@ export default class VenuesForm extends Component {
       buyer: this.state.buyer,
       email: this.state.email,
       phone: this.state.phone,
+      url: this.state.url,
       notes: this.state.notes,
       favorite: this.state.favorite,
       user_id: parseInt(sessionStorage.getItem("credentials"))
@@ -146,6 +148,11 @@ export default class VenuesForm extends Component {
           <FormGroup>
             <Label for="phone">Phone</Label>
             <Input type="text" name="phone" id="phone" placeholder="" onChange={(event) => this.handleFieldChange(event)}/>
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="url">Website</Label>
+            <Input type="url" name="url" id="url" placeholder="http://website.com" onChange={(event) => this.handleFieldChange(event)}/>
           </FormGroup>
 
           <FormGroup>

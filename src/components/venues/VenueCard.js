@@ -58,14 +58,7 @@ export default class VenueCard extends Component {
     this.props.updateTourVenue(status, id)
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
   }
-
-  // tourCardState() {
-  //   this.setState = ({
-  //     contacted: this.props.tourVenue.contacted,
-  //     pending: this.props.tourVenue.pending,
-  //     confirmed: this.props.tourVenue.confirmed
-  //   })
-  // }
+  
 
 
   render() {
@@ -79,7 +72,11 @@ export default class VenueCard extends Component {
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
 
         <CardHeader tag="h3" id="cardHeader">
-        {this.props.venue.name}
+        {
+        this.props.venue.url !== "" ?
+        <a target="_blank" rel="noopener noreferrer" href={this.props.venue.url}>{this.props.venue.name}</a> :
+        this.props.venue.name
+        }
         </CardHeader>
 
         <CardBody>
@@ -105,10 +102,12 @@ export default class VenueCard extends Component {
                 !this.props.venue.tour.length  ?
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
+                  // this.props.checkStatus()
                   alert(`${this.props.venue.name} has been added to your tour!`)
                   return (
                     this.props.addVenueToTour(this.props.venue.id)
-                  )}}>
+                  )
+                  }}>
                 Add to your tour
                 </Button>
                 : null

@@ -28,8 +28,16 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&favorite=${favorite}&_sort=name&_order=asc`).then(data => data.json());
   }
 
-  queryVenueId(user) {
-    return fetch(`${remoteURL}/${this.route}?user_id=${user}&_embed=tour`).then(data => data.json())
+  allSortedContacted(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&contacted=true`).then(data => data.json());
+  }
+
+  allSortedPending(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&pending=true`).then(data => data.json());
+  }
+
+  allSortedConfirmed(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&confirmed=true`).then(data => data.json());
   }
 
   delete(id) {
@@ -113,12 +121,3 @@ export default class APIManager {
   }
 
 }
-
-// {
-//   "venue_id": 4,
-//   "user_id": 1,
-//   "contacted": false,
-//   "pending": false,
-//   "confirmed": false,
-//   "id": 2
-// }

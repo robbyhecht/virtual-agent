@@ -160,17 +160,15 @@ export default class VenuesList extends Component {
             
               {/* calls the filter removal method */}
 
-              <div>
-                <Button
-                id="removeFilterButton"
-                size="large"
-                className="btn"
-                onClick={() => {
-                  this.removeFilter()
-                }}>
-                Remove Venues Filter
-                </Button>
-            </div>
+              <Button
+              id="removeFilterButton"
+              size="large"
+              className="btn"
+              onClick={() => {
+                this.removeFilter()
+              }}>
+              Remove Venues Filter
+              </Button>
           </section>
         </div>
 

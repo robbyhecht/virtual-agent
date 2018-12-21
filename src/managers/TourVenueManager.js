@@ -7,8 +7,8 @@ class ToursManager extends APIManager {
     return this.all(user)
   }
 
-  postVenueToTour(venue_id, user_id) {
-    let newTourVenue = {venue_id: venue_id, user_id: user_id, contacted: false, pending: false, confirmed: false}
+  postVenueToTour(venueId, user_id) {
+    let newTourVenue = {venueId: venueId, user_id: user_id, contacted: false, pending: false, confirmed: false}
     return this.post(newTourVenue)
   }
 
@@ -20,8 +20,18 @@ class ToursManager extends APIManager {
     return this.patch(property, id)
   }
 
+  getByContacted(user) {
+    return this.allSortedContacted(user)
+  }
 
+  getByPending(user) {
+    return this.allSortedPending(user)
+  }
 
+  getByConfirmed(user) {
+    return this.allSortedConfirmed(user)
+  }
+  
 }
 
 export default new ToursManager("tour")

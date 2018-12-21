@@ -19,24 +19,19 @@ export default class ApplicationViews extends Component {
     }
 
   componentDidMount() {
-    let _state = {}
-    VenuesManager.queryExistingVenue(this.props.currentUser)
-      .then(
-        venueWithTour => (_state.venueWithTour = venueWithTour)
-      )
-      .then(() =>
-        TourVenueManager.getAll(this.props.currentUser))
-      .then(
-        tour => (_state.tour = tour)
-      )
-      .then(() =>
-      VenuesManager.getAll(this.props.currentUser))
-      .then(allVenues => (_state.venues = allVenues))
-      .then(() => this.setState(_state))
+
+    let stateSet = {}
+    TourVenueManager.getAll(this.props.currentUser)
+    .then(tour => (stateSet.tour = tour))
+    .then(() => VenuesManager.getAll(this.props.currentUser))
+    .then(allVenues => (stateSet.venues = allVenues))
+    .then(() => this.setState(stateSet))
   }
+
   updateTourButtons = (bool) => {
     this.setState({tourpage: bool})
   }
+
 
   // VENUE FUNCTIONS
 
@@ -117,21 +112,70 @@ export default class ApplicationViews extends Component {
     )
   }
 
-  checkTourVenue = (venue_id) => {
-    let bool = TourVenueManager.queryExistingVenue(venue_id, this.props.currentUser)
-    console.log("bool", bool)
-    if (bool === null) {
-      return false
-    } else {
-      return true
-    }
+  // TOUR FILTERS
+
+  filterVenuesByContacted = () => {
+    TourVenueManager.getByContacted(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
   }
+
+  filterVenuesByPending = () => {
+    TourVenueManager.getByPending(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
+
+  filterVenuesByConfirmed = () => {
+    TourVenueManager.getByConfirmed(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
+
+
+  // checkStatus = () => {
+  //  this.tour.map(tourVenue => {
+  //     let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId).then(() => console.log(venue))})
+  // }
+
+  // checkStatus = (venueId) => {
+  //   let venueInTour = TourVenueManager.getAll(this.props.currentUser).find(tour => tour.venueId === venueId)
+  //   .then(() => 
+  //   console.log(venueInTour))
+  // }
+
+  // grab the venue
+
+  // checkStatus = (venue) => {
+  //   let tourVenues = TourVenueManager.getAll(this.props.currentUser)
+  //   let thisVenue = VenuesManager.getVenue(venue)
+  //   let bool = thisVenue.find(venue => venue.id === tourVenues.venueId) ? true : false
+  //   console.log(bool)
+  //   }
+
+
+  // .map(tourVenue => {
+  //   this.props.venueId.find(venue => venue.id === tourVenue.venueId)
+
+  // get venue id from venue
+  // check against venue ids in tour venues
+  // if venue id is included, return true and block button creation
 
 
 
   render() {
 
     return (
+
 
       // Route everything down as props
 
@@ -155,7 +199,6 @@ export default class ApplicationViews extends Component {
             filterVenuesByFavorite={this.filterVenuesByFavorite}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
-            checkTourVenue={this.checkTourVenue}
             />
         }} />
         
@@ -180,6 +223,9 @@ export default class ApplicationViews extends Component {
             updateTourButtons={this.updateTourButtons}
             deleteTourVenue={this.deleteTourVenue}
             updateTourVenue={this.updateTourVenue}
+            filterVenuesByContacted={this.filterVenuesByContacted}
+            filterVenuesByPending={this.filterVenuesByPending}
+            filterVenuesByConfirmed={this.filterVenuesByConfirmed}
             />
         }} />
 
@@ -187,3 +233,13 @@ export default class ApplicationViews extends Component {
     )
   }
 }
+
+
+// VenuesManager.getAll(this.props.currentUser)
+// .then(allVenues => {
+//   this.setState({venues: allVenues})
+// })
+
+// TourVenueManager.getAll(this.props.currentUser)
+// .then(tour => {
+// this.setState({tour: tour})})

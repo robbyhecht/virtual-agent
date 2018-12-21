@@ -13,6 +13,7 @@ class VenuesEdit extends Component {
         buyer: "",
         email: "",
         phone: "",
+        url: "",
         notes: "",
         favorite: "",
         id: ""
@@ -50,6 +51,7 @@ venueId = parseInt(this.props.match.params.venueId)
         newState.buyer = venue.buyer
         newState.email = venue.email
         newState.phone = venue.phone
+        newState.url = venue.url
         newState.notes = venue.notes
         newState.favorite = venue.favorite
         newState.id = venue.id
@@ -67,6 +69,7 @@ venueId = parseInt(this.props.match.params.venueId)
           buyer: this.state.buyer,
           email: this.state.email,
           phone: this.state.phone,
+          url: this.state.url,
           notes: this.state.notes,
           favorite: this.state.favorite,
           id: this.state.id
@@ -164,6 +167,11 @@ venueId = parseInt(this.props.match.params.venueId)
               <FormGroup>
                 <Label for="phone">Phone</Label>
                 <Input type="text" name="phone" id="phone" onChange={(event) => this.handleFieldChange(event)} defaultValue={this.state.phone} />
+              </FormGroup>
+
+              <FormGroup>
+                <Label for="url">Website</Label>
+                <Input type="url" name="url" id="url" onChange={(event) => this.handleFieldChange(event)} defaultValue={this.state.url} />
               </FormGroup>
 
               <FormGroup>
