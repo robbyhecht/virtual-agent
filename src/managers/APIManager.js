@@ -28,6 +28,18 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&favorite=${favorite}&_sort=name&_order=asc`).then(data => data.json());
   }
 
+  allSortedContacted(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&contacted=true`).then(data => data.json());
+  }
+
+  allSortedPending(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&pending=true`).then(data => data.json());
+  }
+
+  allSortedConfirmed(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&confirmed=true`).then(data => data.json());
+  }
+
   delete(id) {
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"

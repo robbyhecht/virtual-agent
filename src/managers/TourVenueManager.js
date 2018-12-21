@@ -19,6 +19,18 @@ class ToursManager extends APIManager {
   updateTourVenue(property, id) {
     return this.patch(property, id)
   }
+
+  getByContacted(user) {
+    return this.allSortedContacted(user)
+  }
+
+  getByPending(user) {
+    return this.allSortedPending(user)
+  }
+
+  getByConfirmed(user) {
+    return this.allSortedConfirmed(user)
+  }
   
 }
 

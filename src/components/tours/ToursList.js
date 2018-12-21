@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import VenueCard from "./../venues/VenueCard";
+import { Button } from 'reactstrap'
 import "./Tours.css";
 
 export default class ToursList extends Component {
@@ -13,12 +14,82 @@ export default class ToursList extends Component {
     this.props.updateTourButtons(true)
   }
 
+  // Similar to the above function but this json extension specifies the 'contacted' property
+
+  handleClickContacted() {
+    this.props.filterVenuesByContacted()
+  }
+
+  // Similar to the above function but this json extension specifies the 'pending' property
+
+
+  handleClickPending() {
+    this.props.filterVenuesByPending()
+  }
+
+  // Similar to the above function but this json extension specifies the 'confirmed' property
+
+
+  handleClickConfirmed() {
+    this.props.filterVenuesByConfirmed()
+  }
+
+  // This function reloads the page to remove filter
+
+  removeFilter = () => {
+    window.location.reload()
+  }
+
   render() {
 
     return (
       <React.Fragment>
 
         <h1 id="tourHeader">MY TOUR</h1>
+
+        <section>
+
+          <Button
+            id="favoriteButton"
+            size="large"
+            className="btn"
+            onClick={() => {
+              this.handleClickContacted()
+            }}>
+            Filter By Contacted
+          </Button>
+
+          <Button
+            id="favoriteButton"
+            size="large"
+            className="btn"
+            onClick={() => {
+              this.handleClickPending()
+            }}>
+            Filter By Pending
+          </Button>
+
+          <Button
+            id="favoriteButton"
+            size="large"
+            className="btn"
+            onClick={() => {
+              this.handleClickConfirmed()
+            }}>
+            Filter By Confirmed
+          </Button>
+
+            <Button
+            id="removeFilterButton"
+            size="large"
+            className="btn"
+            onClick={() => {
+              this.removeFilter()
+            }}>
+            Remove Tour Filter
+            </Button>
+
+          </section>
         
         <div id="tourVenuesContainer">
 

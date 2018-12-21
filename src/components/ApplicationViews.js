@@ -90,8 +90,6 @@ export default class ApplicationViews extends Component {
       })
     })
   }
-
-
   
   deleteTourVenue = (tour_id) => {
     return TourVenueManager.removeVenueFromTour(tour_id)
@@ -112,6 +110,36 @@ export default class ApplicationViews extends Component {
       })
     )
   }
+
+  // TOUR FILTERS
+
+  filterVenuesByContacted = () => {
+    TourVenueManager.getByContacted(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
+
+  filterVenuesByPending = () => {
+    TourVenueManager.getByPending(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
+
+  filterVenuesByConfirmed = () => {
+    TourVenueManager.getByConfirmed(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
+
 
   // checkStatus = () => {
   //  this.tour.map(tourVenue => {
@@ -195,6 +223,9 @@ export default class ApplicationViews extends Component {
             deleteTourVenue={this.deleteTourVenue}
             updateTourVenue={this.updateTourVenue}
             checkStatus={this.checkStatus}
+            filterVenuesByContacted={this.filterVenuesByContacted}
+            filterVenuesByPending={this.filterVenuesByPending}
+            filterVenuesByConfirmed={this.filterVenuesByConfirmed}
             />
         }} />
 
