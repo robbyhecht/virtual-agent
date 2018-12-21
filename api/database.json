@@ -138,7 +138,7 @@
       "venueId": 5,
       "user_id": 1,
       "contacted": true,
-      "pending": false,
+      "pending": true,
       "confirmed": false,
       "id": 1
     },
@@ -173,6 +173,14 @@
       "pending": false,
       "confirmed": false,
       "id": 5
+    },
+    {
+      "venueId": 4,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 6
     }
   ]
 }

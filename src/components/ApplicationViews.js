@@ -19,21 +19,19 @@ export default class ApplicationViews extends Component {
 
   componentDidMount() {
 
-    VenuesManager.getAll(this.props.currentUser)
-      .then(allVenues => {
-        console.log("venues", allVenues)
-        this.setState({venues: allVenues})
-    })
-
+    let stateSet = {}
     TourVenueManager.getAll(this.props.currentUser)
-    .then(tour => {
-      this.setState({tour: tour})})
+    .then(tour => (stateSet.tour = tour))
+    .then(() => VenuesManager.getAll(this.props.currentUser))
+    .then(allVenues => (stateSet.venues = allVenues))
+    .then(() => this.setState(stateSet))
   }
 
   updateTourButtons = (bool) => {
     this.setState({tourpage: bool})
   }
 
+  
   // VENUE FUNCTIONS
 
   addVenue = venues =>
@@ -92,6 +90,8 @@ export default class ApplicationViews extends Component {
       })
     })
   }
+
+
   
   deleteTourVenue = (tour_id) => {
     return TourVenueManager.removeVenueFromTour(tour_id)
@@ -176,3 +176,13 @@ export default class ApplicationViews extends Component {
     )
   }
 }
+
+
+// VenuesManager.getAll(this.props.currentUser)
+// .then(allVenues => {
+//   this.setState({venues: allVenues})
+// })
+
+// TourVenueManager.getAll(this.props.currentUser)
+// .then(tour => {
+// this.setState({tour: tour})})
