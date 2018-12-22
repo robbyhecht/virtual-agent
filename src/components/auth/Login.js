@@ -88,6 +88,8 @@ export default class Login extends Component {
     }
   }
 
+  // Describes Login page display- divided into one row with two columns
+
   render() {
     return (
       <div id="mainLogin">
