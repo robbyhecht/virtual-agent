@@ -141,48 +141,45 @@
       "favorite": "no",
       "user_id": 1,
       "id": 10
+    },
+    {
+      "name": "Burlap and Bean",
+      "city": "Newtown Square",
+      "venueState": "PA",
+      "buyer": "Tara Endicott",
+      "email": "tara@burlapandbean.com",
+      "phone": "484-427-4547",
+      "url": "http://burlapandbean.com",
+      "notes": "Cozy space. Owner is easy to work with. Sound is decent.",
+      "favorite": "yes",
+      "user_id": 1,
+      "id": 11
     }
   ],
   "tour": [
     {
-      "venueId": 1,
-      "user_id": 1,
-      "contacted": false,
-      "pending": true,
-      "confirmed": false,
-      "id": 4
-    },
-    {
-      "venueId": 4,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": true,
-      "id": 6
-    },
-    {
-      "venueId": 9,
-      "user_id": 1,
-      "contacted": true,
-      "pending": true,
-      "confirmed": false,
-      "id": 7
-    },
-    {
-      "venueId": 5,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": true,
-      "id": 8
-    },
-    {
-      "venueId": 10,
+      "venueId": 11,
       "user_id": 1,
       "contacted": true,
       "pending": false,
       "confirmed": false,
-      "id": 9
+      "id": 1
+    },
+    {
+      "venueId": 6,
+      "user_id": 1,
+      "contacted": false,
+      "pending": true,
+      "confirmed": false,
+      "id": 2
+    },
+    {
+      "venueId": 7,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": true,
+      "id": 3
     }
   ]
 }
