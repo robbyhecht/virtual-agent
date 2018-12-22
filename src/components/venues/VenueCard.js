@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
-import TourVenueManager from '../../managers/TourVenueManager';
 
 export default class VenueCard extends Component {
 
@@ -59,19 +58,6 @@ export default class VenueCard extends Component {
     this.props.updateTourVenue(status, id)
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
   }
-
-  // Should confirm that venue is not already a part of the tour before adding to tour list. If the venue is already in the tour array, user is alerted and tour is not added. Currently always returning false so needs to be fixed.
-
-  checkTour = (venue, i) => {
-    let allTourVenues = TourVenueManager.getAll(this.props.currentUser)
-    for (i=0; i<allTourVenues.length; i++) {
-      if (this.props.venue.id === allTourVenues.venueId[i]) {
-        return false
-      } else {
-        return true
-      }
-    }
-  }
   
 
 
@@ -86,9 +72,6 @@ export default class VenueCard extends Component {
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
 
         <CardHeader tag="h3" id="cardHeader">
-
-        {/* url is added as a hyperlink wrapping the venue name displayed on the card */}
-
         {
         this.props.venue.url !== "" ?
         <a target="_blank" rel="noopener noreferrer" href={this.props.venue.url}>{this.props.venue.name}</a> :
@@ -114,20 +97,20 @@ export default class VenueCard extends Component {
               <div id="venueCardButtons">
 
               {/* this button adds the selected venue to the tour page, alerting the user */}
-
+              {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOURS */}
                 {
+                // !this.props.venue.tour.length  ?
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
-                  // this.checkTour() ?
-                    alert(`${this.props.venue.name} has been added to your tour!`) 
-                    return (
-                    this.props.addVenueToTour(this.props.venue.id))
-                  // : alert(`This venue has already been added!`)
+                  // this.props.checkStatus()
+                  alert(`${this.props.venue.name} has been added to your tour!`)
+                  return (
+                    this.props.addVenueToTour(this.props.venue.id)
+                  )
                   }}>
                 Add to your tour
                 </Button>
                 // : null
-      
                 }
 
                 {/* edit card button */}
