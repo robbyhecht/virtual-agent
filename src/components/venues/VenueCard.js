@@ -62,13 +62,13 @@ export default class VenueCard extends Component {
 
   // Should confirm that venue is not already a part of the tour before adding to tour list. If the venue is already in the tour array, user is alerted and tour is not added. Currently always returning false so needs to be fixed.
 
-  checkTour = (i) => {
-    let allTourVenues = TourVenueManager.getAll()
+  checkTour = (venue, i) => {
+    let allTourVenues = TourVenueManager.getAll(this.props.currentUser)
     for (i=0; i<allTourVenues.length; i++) {
-      if (this.venues.id === allTourVenues[i]) {
-        return true
-      } else {
+      if (this.props.venue.id === allTourVenues.venueId[i]) {
         return false
+      } else {
+        return true
       }
     }
   }
@@ -119,10 +119,11 @@ export default class VenueCard extends Component {
                 {
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
-                  this.checkTour() === false ?
-                    alert(`${this.props.venue.name} has been added to your tour!`)
-                    .then(() => this.props.addVenueToTour(this.props.venue.id))
-                  : alert(`This venue has already been added!`)
+                  // this.checkTour() ?
+                    alert(`${this.props.venue.name} has been added to your tour!`) 
+                    return (
+                    this.props.addVenueToTour(this.props.venue.id))
+                  // : alert(`This venue has already been added!`)
                   }}>
                 Add to your tour
                 </Button>

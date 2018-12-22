@@ -198,7 +198,7 @@ export default class VenuesList extends Component {
 
 // let venueExists = this.props.checkTourVenue(this.props.venues.venue_id)
 
-{/* <article className="venuesList">
+/* <article className="venuesList">
 {
   this.props.venueWithTour.map(venue => {
     
@@ -206,4 +206,4 @@ export default class VenuesList extends Component {
 
   } ) 
 }
-</article> */}
+</article> */
