@@ -145,44 +145,12 @@
   ],
   "tour": [
     {
-      "venueId": 5,
-      "user_id": 1,
-      "contacted": true,
-      "pending": false,
-      "confirmed": false,
-      "id": 1
-    },
-    {
-      "venueId": 7,
-      "user_id": 1,
-      "contacted": false,
-      "pending": true,
-      "confirmed": false,
-      "id": 2
-    },
-    {
-      "venueId": 3,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": true,
-      "id": 3
-    },
-    {
       "venueId": 1,
       "user_id": 1,
-      "contacted": true,
+      "contacted": false,
       "pending": false,
       "confirmed": false,
       "id": 4
-    },
-    {
-      "venueId": 6,
-      "user_id": 1,
-      "contacted": false,
-      "pending": true,
-      "confirmed": false,
-      "id": 5
     },
     {
       "venueId": 4,
@@ -199,6 +167,14 @@
       "pending": false,
       "confirmed": false,
       "id": 7
+    },
+    {
+      "venueId": 5,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": true,
+      "id": 8
     }
   ]
 }

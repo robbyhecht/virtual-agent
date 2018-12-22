@@ -15,7 +15,7 @@ export default class ApplicationViews extends Component {
     venues: [],
     tour: [],
     tourpage: false,
-    venueWithTour: []
+    // venueWithTour: []
     }
 
   componentDidMount() {

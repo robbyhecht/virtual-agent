@@ -84,7 +84,7 @@ export default class VenuesList extends Component {
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
             name="venueState" id="venueState" value="venueState"
             >
-              <DropdownToggle id="stateButton" caret>
+              <DropdownToggle id="stateButton">
                 Filter By State
               </DropdownToggle>
               <DropdownMenu 
@@ -181,7 +181,7 @@ export default class VenuesList extends Component {
 
           <article className="venuesList">
             {
-              this.props.venueWithTour.map(venue => {
+              this.props.venues.map(venue => {
                 
                 return <VenueCard page={this.state.page} key={venue.id} venue={venue} {...this.props} />
             
@@ -197,3 +197,13 @@ export default class VenuesList extends Component {
 
 
 // let venueExists = this.props.checkTourVenue(this.props.venues.venue_id)
+
+/* <article className="venuesList">
+{
+  this.props.venueWithTour.map(venue => {
+    
+    return <VenueCard page={this.state.page} key={venue.id} venue={venue} {...this.props} />
+
+  } ) 
+}
+</article> */
