@@ -178,6 +178,15 @@ export default class ApplicationViews extends Component {
     )
   }
 
+  filterVenuesByNew = () => {
+    TourVenueManager.getByNew(this.props.currentUser)
+    .then(tour =>
+      this.setState({
+        tour: tour
+      })
+    )
+  }
+
   render() {
 
     return (
@@ -233,6 +242,7 @@ export default class ApplicationViews extends Component {
             filterVenuesByContacted={this.filterVenuesByContacted}
             filterVenuesByPending={this.filterVenuesByPending}
             filterVenuesByConfirmed={this.filterVenuesByConfirmed}
+            filterVenuesByNew={this.filterVenuesByNew}
             />
         }} />
 

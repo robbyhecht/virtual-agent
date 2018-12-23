@@ -126,9 +126,10 @@
   margin: 0px 5px 10px 5px
 }
 
-/* #havePlayedButton {
-
-} */
+#havePlayedButton {
+  background-color: rgb(0, 35, 75);
+  margin: 0px 5px 10px 5px
+}
 
 #newVenueButton {
   background-color: rgb(0, 35, 75);
@@ -172,13 +173,13 @@
 #deleteButton {
   background-color: rgb(0, 35, 75);
   margin-left: 5px;
-  margin-right: 20px
+  margin-right: 7%
 }
 
 #tourButton {
   background-color: rgb(0, 35, 75);
   margin-right: 5px;
-  margin-left: 20%;
+  margin-left: 7%;
 }
 
 #editButton {
@@ -188,14 +189,16 @@
 }
 
 #favoriteIcon {
-  margin-left: 30px;
+  margin-left: 5%;;
+  margin-right: 5%;
 }
 
-/* #havePlayedIcon {
-
-} */
+#havePlayedIcon {
+  margin-left: 5%;
+  margin-right: 5%
+}
 
 #venueCardButtons {
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }

@@ -31,6 +31,10 @@ class ToursManager extends APIManager {
   getByConfirmed(user) {
     return this.allSortedConfirmed(user)
   }
+
+  getByNew(user) {
+    return this.allSortedNew(user)
+  }
   
 }
 

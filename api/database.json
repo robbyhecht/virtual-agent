@@ -165,6 +165,20 @@
       "havePlayed": "yes",
       "user_id": 1,
       "id": 11
+    },
+    {
+      "name": "Eddie's Attic",
+      "city": "Decatur",
+      "venueState": "GA",
+      "buyer": "Andy Hingley",
+      "email": "andrew@alexcooley.com",
+      "phone": "404-377-4976",
+      "url": "http://eddiesattic.com",
+      "notes": "Great sounding acoustic venue that holds around 100 people.",
+      "favorite": "yes",
+      "havePlayed": "yes",
+      "user_id": 1,
+      "id": 12
     }
   ],
   "tour": [
@@ -191,6 +205,22 @@
       "pending": false,
       "confirmed": true,
       "id": 3
+    },
+    {
+      "venueId": 3,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 4
+    },
+    {
+      "venueId": 2,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 5
     }
   ]
 }

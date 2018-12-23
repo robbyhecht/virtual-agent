@@ -44,6 +44,10 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&confirmed=true`).then(data => data.json());
   }
 
+  allSortedNew(user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&contacted=false&pending=false&confirmed=false`).then(data => data.json());
+  }
+
   delete(id) {
     return fetch(`${remoteURL}/${this.route}/${id}`, {
         method: "DELETE"
