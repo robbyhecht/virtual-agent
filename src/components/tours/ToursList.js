@@ -34,6 +34,10 @@ export default class ToursList extends Component {
     this.props.filterVenuesByConfirmed()
   }
 
+  handleClickNew() {
+    this.props.filterVenuesByNew()
+  }
+
   // This function reloads the page to remove filter
 
   removeFilter = () => {
@@ -48,6 +52,16 @@ export default class ToursList extends Component {
         <h1 id="tourHeader">MY TOUR</h1>
 
         <section id="tourFilterButtons">
+
+          <Button
+            id="newFilterButton"
+            size="large"
+            className="btn"
+            onClick={() => {
+              this.handleClickNew()
+            }}>
+            Filter By New
+          </Button>
 
           <Button
             id="contactedFilterButton"

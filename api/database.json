@@ -205,6 +205,22 @@
       "pending": false,
       "confirmed": true,
       "id": 3
+    },
+    {
+      "venueId": 3,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 4
+    },
+    {
+      "venueId": 2,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 5
     }
   ]
 }
