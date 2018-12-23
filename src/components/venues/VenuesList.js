@@ -173,7 +173,7 @@ export default class VenuesList extends Component {
               onClick={() => {
                 this.handleClickHavePlayed()
               }}>
-              Filter By Have Played
+              Filter By Played
             </Button>
             
               {/* calls the filter removal method */}
