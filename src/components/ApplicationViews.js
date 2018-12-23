@@ -95,6 +95,15 @@ export default class ApplicationViews extends Component {
     )
   }
 
+  filterVenuesByHavePlayed = (havePlayed) => {
+    VenuesManager.getByHavePlayed(`yes`, this.props.currentUser)
+    .then(venues =>
+      this.setState({
+        venues: venues
+      })
+    )
+  }
+
   // TOUR FUNCTIONS
 
   // Adds a venue to the ToursList page - called in VenueCard
@@ -194,6 +203,7 @@ export default class ApplicationViews extends Component {
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
             filterVenuesByFavorite={this.filterVenuesByFavorite}
+            filterVenuesByHavePlayed={this.filterVenuesByHavePlayed}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
             />

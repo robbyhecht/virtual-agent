@@ -16,6 +16,7 @@ class VenuesEdit extends Component {
         url: "",
         notes: "",
         favorite: "",
+        havePlayed: "",
         id: ""
     }
 
@@ -23,6 +24,8 @@ class VenuesEdit extends Component {
       super(props);
   
       this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+      this.onRadioBtnClickPlayed = this.onRadioBtnClickPlayed.bind(this);
+
     }
   
     // Sets the state on the 'favorite' option upon user radio button selection below
@@ -30,6 +33,16 @@ class VenuesEdit extends Component {
     onRadioBtnClick(favorite) {
       this.setState({ favorite });
     }
+
+    onRadioBtnClickPlayed(havePlayed) {
+      this.setState({ havePlayed });
+    }
+
+    // Sets the state on the 'havePlayed' option upon user radio button selection below
+
+    // onRadioBtnClick(havePlayed) {
+    //   this.setState({ havePlayed });
+    // }
 
     // Sets state using values entered by user below
 
@@ -54,6 +67,7 @@ venueId = parseInt(this.props.match.params.venueId)
         newState.url = venue.url
         newState.notes = venue.notes
         newState.favorite = venue.favorite
+        newState.havePlayed = venue.havePlayed
         newState.id = venue.id
         this.setState(newState)
     }
@@ -72,6 +86,7 @@ venueId = parseInt(this.props.match.params.venueId)
           url: this.state.url,
           notes: this.state.notes,
           favorite: this.state.favorite,
+          havePlayed: this.state.havePlayed,
           id: this.state.id
         }
         return this.props.editVenue(venue, `${this.state.id}`)
@@ -183,6 +198,12 @@ venueId = parseInt(this.props.match.params.venueId)
                 <Label id="editFavoriteLabel" for="favorite">Mark As Favorite?</Label>
                 <Button id="venueEditYes" size="sm" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"} value={this.state.favorite}>Yes</Button>
                 <Button id="venueEditNo" size="sm" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"} value={this.state.favorite}>No</Button>
+              </ButtonGroup>
+
+              <ButtonGroup>
+                <Label id="editHavePlayedLabel" for="havePlayed">Played this venue before?</Label>
+                <Button id="venueEditPlayedYes" size="sm" onClick={() => this.onRadioBtnClickPlayed("yes")} active={this.state.havePlayed === "yes"} value={this.state.havePlayed}>Yes</Button>
+                <Button id="venueEditPlayedNo" size="sm" onClick={() => this.onRadioBtnClickPlayed("no")} active={this.state.havePlayed === "no"} value={this.state.havePlayed}>No</Button>
               </ButtonGroup>
 
               <div id="editButtons">

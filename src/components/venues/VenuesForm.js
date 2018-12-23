@@ -7,7 +7,9 @@ export default class VenuesForm extends Component {
   constructor (props) {
     super(props);
 
-    this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    this.onRadioBtnClick = this.onRadioBtnClick.bind(this)
+    this.onRadioBtnClickPlayed = this.onRadioBtnClickPlayed.bind(this);
+
   }
 
   // Set initial state
@@ -22,6 +24,7 @@ export default class VenuesForm extends Component {
     url: "",
     notes: "",
     favorite: "",
+    havePlayed: "",
     user_id: ""
   }
 
@@ -29,6 +32,12 @@ export default class VenuesForm extends Component {
 
   onRadioBtnClick(favorite) {
     this.setState({ favorite });
+  }
+
+    // Sets the state on the 'havePlayed' option upon user radio button selection below
+
+  onRadioBtnClickPlayed(havePlayed) {
+    this.setState({ havePlayed });
   }
 
   // Update state with user generated input in form
@@ -53,6 +62,7 @@ export default class VenuesForm extends Component {
       url: this.state.url,
       notes: this.state.notes,
       favorite: this.state.favorite,
+      havePlayed: this.state.havePlayed,
       user_id: parseInt(sessionStorage.getItem("credentials"))
     }
     this.props.addVenue(venues).then(() => {
@@ -164,6 +174,12 @@ export default class VenuesForm extends Component {
             <Label for="favorite" id="formFavoriteLabel">Mark As Favorite?</Label>
             <Button id="venueFormYes" size="sm" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"}>Yes</Button>
             <Button id="venueFormNo" size="sm" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"}>No</Button>
+          </ButtonGroup>
+
+          <ButtonGroup>
+            <Label for="havePlayed" id="formHavePlayedLabel">Played this venue before?</Label>
+            <Button id="venueFormPlayedYes" size="sm" onClick={() => this.onRadioBtnClickPlayed("yes")} active={this.state.havePlayed === "yes"}>Yes</Button>
+            <Button id="venueFormPlayedNo" size="sm" onClick={() => this.onRadioBtnClickPlayed("no")} active={this.state.havePlayed === "no"}>No</Button>
           </ButtonGroup>
 
           <div id="submitButtonContainer">

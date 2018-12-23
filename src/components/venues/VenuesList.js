@@ -42,6 +42,12 @@ export default class VenuesList extends Component {
     this.props.filterVenuesByFavorite()
   }
 
+  // Similar to the above function but this json extension specifies the 'havePlayed' property
+
+  handleClickHavePlayed() {
+    this.props.filterVenuesByHavePlayed()
+  }
+
   // This function just reloads the page to remove a filter
 
   removeFilter = () => {
@@ -157,10 +163,22 @@ export default class VenuesList extends Component {
               }}>
               Filter By Favorites
             </Button>
+
+              {/* Calls the havePlayed filter method */}
+
+            <Button
+              id="havePlayedButton"
+              size="large"
+              className="btn"
+              onClick={() => {
+                this.handleClickHavePlayed()
+              }}>
+              Filter By Have Played
+            </Button>
             
               {/* calls the filter removal method */}
 
-              <Button
+            <Button
               id="removeFilterButton"
               size="large"
               className="btn"
@@ -168,7 +186,7 @@ export default class VenuesList extends Component {
                 this.removeFilter()
               }}>
               Remove Venues Filter
-              </Button>
+            </Button>
           </section>
         </div>
 

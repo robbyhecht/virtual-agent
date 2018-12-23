@@ -19,8 +19,9 @@
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
-      "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka \"The Rock and Roll Motel.",
+      "notes": "Played Summer 2018. Don and Laurie let you stay at their house aka 'The Rock and Roll Motel'.",
       "favorite": "yes",
+      "havePlayed": "yes",
       "url": "http://eveningmuse.com",
       "user_id": 1,
       "id": 1
@@ -34,6 +35,7 @@
       "phone": "",
       "notes": "I love this place. Favorite Nashville venue.",
       "favorite": "yes",
+      "havePlayed": "yes",
       "url": "http://thebasementnashville.com",
       "user_id": 1,
       "id": 2
@@ -48,6 +50,7 @@
       "notes": "Played Stage 3. $10 cover, 70/30 split after $100 production fee.",
       "user_id": 1,
       "favorite": "yes",
+      "havePlayed": "yes",
       "url": "http://rockwoodmusichall.com",
       "id": 3
     },
@@ -61,6 +64,7 @@
       "notes": "Venue is kind of in the middle of nowhere. Poor turnout and food was only half-off. Good beef jerky store down the street though.",
       "user_id": 1,
       "favorite": "no",
+      "havePlayed": "yes",
       "url": "",
       "id": 4
     },
@@ -74,6 +78,7 @@
       "notes": "On the UT-Austin campus. Matt is super nice but slow to respond so be persistent. Sound is great.",
       "user_id": 1,
       "favorite": "yes",
+      "havePlayed": "yes",
       "url": "",
       "id": 5
     },
@@ -87,6 +92,7 @@
       "notes": "Great listening crowd and friendly staff.",
       "user_id": 1,
       "favorite": "yes",
+      "havePlayed": "yes",
       "url": "http://passim.org",
       "id": 6
     },
@@ -100,6 +106,7 @@
       "notes": "The staff were nice af.",
       "user_id": 1,
       "favorite": "yes",
+      "havePlayed": "yes",
       "url": "http://oldtownschool.org",
       "id": 7
     },
@@ -113,6 +120,7 @@
       "notes": "Reached out- offering dates for mid-late 2019",
       "user_id": 1,
       "favorite": "no",
+      "havePlayed": "no",
       "url": "",
       "id": 8
     },
@@ -126,6 +134,7 @@
       "notes": "Run by the Signature Sounds label",
       "user_id": 1,
       "favorite": "no",
+      "havePlayed": "no",
       "url": "",
       "id": 9
     },
@@ -139,6 +148,7 @@
       "url": "http://www.hotelcafe.com",
       "notes": "Played the small room which sounds good but holds like 12 people.",
       "favorite": "no",
+      "havePlayed": "yes",
       "user_id": 1,
       "id": 10
     },
@@ -152,6 +162,7 @@
       "url": "http://burlapandbean.com",
       "notes": "Cozy space. Owner is easy to work with. Sound is decent.",
       "favorite": "yes",
+      "havePlayed": "yes",
       "user_id": 1,
       "id": 11
     }
