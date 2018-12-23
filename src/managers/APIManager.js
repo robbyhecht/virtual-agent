@@ -28,6 +28,10 @@ export default class APIManager {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&favorite=${favorite}&_sort=name&_order=asc`).then(data => data.json());
   }
 
+  allSortedHavePlayed(havePlayed, user) {
+    return fetch(`${remoteURL}/${this.route}?user_id=${user}&havePlayed=${havePlayed}&_sort=name&_order=asc`).then(data => data.json());
+  }
+
   allSortedContacted(user) {
     return fetch(`${remoteURL}/${this.route}?user_id=${user}&contacted=true`).then(data => data.json());
   }

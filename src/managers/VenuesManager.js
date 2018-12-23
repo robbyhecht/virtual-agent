@@ -16,6 +16,10 @@ class VenuesManager extends APIManager {
     return this.allSortedFavorites(favorite, user)
   }
 
+  getByHavePlayed(havePlayed, user) {
+    return this.allSortedHavePlayed(havePlayed, user)
+  }
+
   removeAndList(id, user) {
     return this.delete(id).then(() => this.allSortedAlpha(user))
   }

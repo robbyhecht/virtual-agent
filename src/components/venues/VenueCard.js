@@ -98,7 +98,11 @@ export default class VenueCard extends Component {
 
               {/* this button adds the selected venue to the tour page, alerting the user */}
               {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOURS */}
-                {
+
+                <span id="havePlayedIcon">
+                  {this.props.venue.havePlayed === "yes" ? `🎙` : null}
+                </span>
+                { 
                 // !this.props.venue.tour.length  ?
                 <Button className="venueToTour" id="tourButton" size="sm"
                 onClick={() => {
@@ -139,6 +143,8 @@ export default class VenueCard extends Component {
                 <span id="favoriteIcon">
                 {this.props.venue.favorite === "yes" ? `👍` : null}
                 </span>
+
+                {/* if the user designates a venue as havePlayed in the new or edit venue forms, an icon appears in the bottom left corner */}
 
               </div>
 

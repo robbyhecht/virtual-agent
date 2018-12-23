@@ -20,7 +20,7 @@ export default class ToursList extends Component {
     this.props.filterVenuesByContacted()
   }
 
-  // Similar to the above function but this json extension specifies the 'pending' property
+  // Similar to the above functions but this json extension specifies the 'pending' property
 
 
   handleClickPending() {

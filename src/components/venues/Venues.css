@@ -64,6 +64,14 @@
   margin-top: 5px;
 }
 
+/* #formHavePlayedLabel {
+  margin-top: 5px;
+}
+
+#editHavePlayedLabel {
+  margin-top: 5px;
+} */
+
 #venueFormYes {
   margin-left: 10px;
   border-top-left-radius: 4px;
@@ -117,6 +125,10 @@
   background-color: rgb(0, 35, 75);
   margin: 0px 5px 10px 5px
 }
+
+/* #havePlayedButton {
+
+} */
 
 #newVenueButton {
   background-color: rgb(0, 35, 75);
@@ -178,6 +190,10 @@
 #favoriteIcon {
   margin-left: 30px;
 }
+
+/* #havePlayedIcon {
+
+} */
 
 #venueCardButtons {
   display: flex;
