@@ -159,8 +159,17 @@ export default class VenueCard extends Component {
                 {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
                 
 
+                <section className="tourButtonContainer">
 
                 <ButtonGroup>
+                  {
+                    <Button id="notesButton" size="sm" onClick={() =>
+                      console.log("notes button pressed")}
+                    >
+                    Add Note
+                    </Button>
+                  }
+
                   {
                     this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 
                       this.changeContacted(this.props.tourVenue.id)
@@ -192,7 +201,7 @@ export default class VenueCard extends Component {
 
                 {/* Initial 'Remove' button takes user to a modal that has remove and cancel buttons */}
 
-                <Button className="card-link" id="tourDeleteButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
+                <Button className="card-link" id="tourRemoveButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                   <ModalBody>
                     Are you sure you want to remove this venue from your tour?
@@ -204,6 +213,8 @@ export default class VenueCard extends Component {
                   <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
                   </ModalFooter>
                 </Modal>
+
+                </section>
                 
               </div>
             }
