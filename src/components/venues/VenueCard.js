@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardFooter, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup, Label, Input } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup, Label, Input } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -228,7 +228,7 @@ export default class VenueCard extends Component {
                 </section>
 
                 <section id="tourNotesContainer">
-                  <Input type="textarea" name="notes" id="notes" placeholder="Notes"
+                  <Input type="textarea" name="notes" id="notes" placeholder="Notes" value={this.state.notes}
 
                   />
                 {

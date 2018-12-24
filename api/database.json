@@ -185,8 +185,8 @@
     {
       "venueId": 11,
       "user_id": 1,
-      "contacted": true,
-      "pending": false,
+      "contacted": false,
+      "pending": true,
       "confirmed": false,
       "notes": "hi my name is note",
       "id": 1
