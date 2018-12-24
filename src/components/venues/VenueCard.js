@@ -86,7 +86,7 @@ export default class VenueCard extends Component {
           <CardText>{this.props.venue.phone}</CardText>
           <CardText>{this.props.venue.notes}</CardText>
 
-          {/* At this point, the cards are built differently for tour and venue pages, as dictated by the status of 'tourpage', which is set in the componentDidMount sections of ToursList and VenuesList */}
+          {/* At this point, the cards are built differently for tour and venue pages, as dictated by the status of 'tourpage', which is set in the componentDidMount sections of TourList and VenuesList */}
 
           {
 

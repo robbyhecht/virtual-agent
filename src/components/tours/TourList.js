@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import VenueCard from "./../venues/VenueCard";
+import VenueCard from "../venues/VenueCard";
 import { Button } from 'reactstrap'
-import "./Tours.css";
+import "./Tour.css";
 
-export default class ToursList extends Component {
+export default class TourList extends Component {
   state = {
     page : "tour"
   }
