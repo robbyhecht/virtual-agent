@@ -5,7 +5,7 @@ import VenuesForm from "./venues/VenuesForm"
 import VenuesEdit from "./venues/VenuesEdit"
 import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
-import ToursList from "./tours/ToursList"
+import TourList from "./tours/TourList"
 import TourVenueManager from "./../managers/TourVenueManager"
 
 
@@ -30,7 +30,7 @@ export default class ApplicationViews extends Component {
     .then(() => this.setState(stateSet))
   }
 
-  // This method will be used via ToursList and VenuesList to tell VenueCard whether to assign Tour page buttons or Venues page buttons
+  // This method will be used via TourList and VenuesList to tell VenueCard whether to assign Tour page buttons or Venues page buttons
 
   updateTourButtons = (bool) => {
     this.setState({tourpage: bool})
@@ -106,7 +106,7 @@ export default class ApplicationViews extends Component {
 
   // TOUR FUNCTIONS
 
-  // Adds a venue to the ToursList page - called in VenueCard
+  // Adds a venue to the TourList page - called in VenueCard
 
   addVenueToTour = (venue) => {
     TourVenueManager.postVenueToTour(venue, this.props.currentUser)
@@ -118,7 +118,7 @@ export default class ApplicationViews extends Component {
     })
   }
 
-  // Removes a venue object from the ToursList page - called in VenueCard
+  // Removes a venue object from the TourList page - called in VenueCard
   
   deleteTourVenue = (tour_id) => {
     return TourVenueManager.removeVenueFromTour(tour_id)
@@ -145,7 +145,7 @@ export default class ApplicationViews extends Component {
 
   // TOUR FILTERS
 
-  // Shows only those venues with the "contacted" property set to "true" - called in ToursList inside handleClickContacted method
+  // Shows only those venues with the "contacted" property set to "true" - called in TourList inside handleClickContacted method
 
   filterVenuesByContacted = () => {
     TourVenueManager.getByContacted(this.props.currentUser)
@@ -156,7 +156,7 @@ export default class ApplicationViews extends Component {
     )
   }
 
-  // Shows only those venues with the "pending" property set to "true" - called in ToursList inside handleClickPending method
+  // Shows only those venues with the "pending" property set to "true" - called in TourList inside handleClickPending method
 
   filterVenuesByPending = () => {
     TourVenueManager.getByPending(this.props.currentUser)
@@ -167,7 +167,7 @@ export default class ApplicationViews extends Component {
     )
   }
 
-  // Shows only those venues with the "confirmed" property set to "true" - called in ToursList inside handleClickConfirmed method
+  // Shows only those venues with the "confirmed" property set to "true" - called in TourList inside handleClickConfirmed method
 
   filterVenuesByConfirmed = () => {
     TourVenueManager.getByConfirmed(this.props.currentUser)
@@ -231,7 +231,7 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/tours" render={(props) => {
           console.log("tour state", this.state.tour)
-          return <ToursList {...props} 
+          return <TourList {...props} 
             tour={this.state.tour}
             venues={this.state.venues}
             deleteTour={this.deleteTour}

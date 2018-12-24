@@ -148,7 +148,7 @@
       "url": "http://www.hotelcafe.com",
       "notes": "Played the small room which sounds good but holds like 12 people.",
       "favorite": "no",
-      "havePlayed": "yes",
+      "havePlayed": "no",
       "user_id": 1,
       "id": 10
     },
@@ -209,18 +209,10 @@
     {
       "venueId": 3,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
       "confirmed": false,
       "id": 4
-    },
-    {
-      "venueId": 2,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": false,
-      "id": 5
     }
   ]
 }
