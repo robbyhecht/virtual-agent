@@ -228,12 +228,14 @@ export default class VenueCard extends Component {
                 </section>
 
                 <section id="tourNotesContainer">
-                {/* <CardFooter id="tourCardFooter"> */}
-                  <Input type="textarea" name="notes" id="notes"
+                  <Input type="textarea" name="notes" id="notes" placeholder="Notes"
 
                   />
-                {/* </CardFooter> */}
-                <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add note</Button>
+                {
+                this.state.notes === "" ? 
+                <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button> :
+                <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Edit Note</Button>
+                }
                 </section>
                 
               </div>
