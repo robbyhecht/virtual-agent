@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardFooter, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup, Label, Input } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -34,8 +34,6 @@ export default class VenueCard extends Component {
     });
   }
 
-
-
   componentDidMount () {
     if (this.props.page === "tour") {
     this.setState({
@@ -55,7 +53,7 @@ export default class VenueCard extends Component {
     const status = {contacted: !this.state.contacted}
     // the tour patch function is called using the new value as its argument
     this.props.updateTourVenue(status, id)
-    // state is set using the updated value9
+    // state is set using the updated value
     .then(() => this.setState({contacted: this.props.tourVenue.contacted}))
   }
 
@@ -70,7 +68,18 @@ export default class VenueCard extends Component {
     this.props.updateTourVenue(status, id)
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
   }
-  
+
+  handleNoteChange = (id) => {
+    const newNote = {notes: this.value}
+    this.props.updateTourVenue(newNote, id)
+    .then(() => this.setState({notes: this.props.tourVenue.notes}))
+  }
+
+  // handleNoteChange(tourVenue) {
+  //   const stateToChange = {};
+  //   stateToChange[tourVenue.notes] = tourVenue.value;
+  //   this.setState(stateToChange);
+  // }
 
 
   render() {
@@ -169,23 +178,8 @@ export default class VenueCard extends Component {
                 {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
                 
 
+ 
                 <section className="tourButtonContainer">
-                  <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button>
-                  <Modal isOpen={this.state.modalNote} toggle={this.toggle} className={this.props.className}>
-                    <ModalBody>
-                      Notes Notes Notes
-                    </ModalBody>
-                    <ModalFooter>
-                    <Button color="success" size="sm"
-                      onClick={() =>
-                        console.log("Notes for days")
-                        //  this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)
-                      }
-                      >Add Note</Button>
-                    <Button color="secondary" size="sm" onClick={this.toggle2}>Cancel</Button>
-                    </ModalFooter>
-                  </Modal>
-
                   <ButtonGroup>
                     {
                       this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 
@@ -232,6 +226,15 @@ export default class VenueCard extends Component {
                   </Modal>
 
                 </section>
+
+                <section id="tourNotesContainer">
+                {/* <CardFooter id="tourCardFooter"> */}
+                  <Input type="textarea" name="notes" id="notes"
+
+                  />
+                {/* </CardFooter> */}
+                <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add note</Button>
+                </section>
                 
               </div>
             }
@@ -242,3 +245,25 @@ export default class VenueCard extends Component {
     )
   }
 }
+
+
+
+// <section className="tourButtonContainer">
+// <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button>
+
+{/* <Modal isOpen={this.state.modalNote} className={this.props.className}>
+<ModalBody>
+  <Label for="notes">Notes</Label>
+  <Input type="textarea" name="notes" id="notes" onChange={() => this.handleNoteChange(this.props.tourVenue.notes)} value={this.state.notes}
+  // .then(() => console.log())
+  />
+</ModalBody>
+<ModalFooter>
+<Button color="success" size="sm"
+  onClick={() =>
+    console.log(`footer`)
+  }
+  >Add Note</Button>
+<Button color="secondary" size="sm" onClick={this.toggle2}>Cancel</Button>
+</ModalFooter>
+</Modal> */}
