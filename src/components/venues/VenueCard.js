@@ -11,6 +11,7 @@ export default class VenueCard extends Component {
     super(props);
     this.state = {
       modal: false,
+      modalNote: false,
       contacted: "",
       pending: "",
       confirmed: "",
@@ -18,13 +19,22 @@ export default class VenueCard extends Component {
     }
     
     this.toggle = this.toggle.bind(this);
+    this.toggle2 = this.toggle2.bind(this);
   }
 
   toggle() {
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
     });
   }
+
+  toggle2() {
+    this.setState({
+      modalNote: !this.state.modalNote,
+    });
+  }
+
+
 
   componentDidMount () {
     if (this.props.page === "tour") {
@@ -160,59 +170,66 @@ export default class VenueCard extends Component {
                 
 
                 <section className="tourButtonContainer">
+                  <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button>
+                  <Modal isOpen={this.state.modalNote} toggle={this.toggle} className={this.props.className}>
+                    <ModalBody>
+                      Notes Notes Notes
+                    </ModalBody>
+                    <ModalFooter>
+                    <Button color="success" size="sm"
+                      onClick={() =>
+                        console.log("Notes for days")
+                        //  this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)
+                      }
+                      >Add Note</Button>
+                    <Button color="secondary" size="sm" onClick={this.toggle2}>Cancel</Button>
+                    </ModalFooter>
+                  </Modal>
 
-                <ButtonGroup>
-                  {
-                    <Button id="notesButton" size="sm" onClick={() =>
-                      console.log("notes button pressed")}
-                    >
-                    Add Note
-                    </Button>
-                  }
+                  <ButtonGroup>
+                    {
+                      this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 
+                        this.changeContacted(this.props.tourVenue.id)
+                      }
+                      >Contacted</Button> : <Button id="contactedButton" size="sm" onClick={() => 
+                        this.changeContacted(this.props.tourVenue.id)
+                      }
+                      >Contacted</Button>
+                    }
+                    {
+                      this.state.pending ? <Button id="pendingButtonSelected" size="sm" onClick={() => 
+                        this.changePending(this.props.tourVenue.id)
+                      }
+                      >Pending</Button> : <Button id="pendingButton" size="sm" onClick={() =>
+                        this.changePending(this.props.tourVenue.id)
+                      }
+                      >Pending</Button>
+                    }
+                    {
+                      this.state.confirmed ? <Button id="confirmedButtonSelected" size="sm" onClick={() => 
+                        this.changeConfirmed(this.props.tourVenue.id)
+                      }
+                      >Confirmed</Button> : <Button id="confirmedButton" size="sm" onClick={() => 
+                        this.changeConfirmed(this.props.tourVenue.id)
+                      }
+                      >Confirmed</Button>
+                    }
+                  </ButtonGroup>
 
-                  {
-                    this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 
-                      this.changeContacted(this.props.tourVenue.id)
-                    }
-                    >Contacted</Button> : <Button id="contactedButton" size="sm" onClick={() => 
-                      this.changeContacted(this.props.tourVenue.id)
-                    }
-                    >Contacted</Button>
-                  }
-                  {
-                    this.state.pending ? <Button id="pendingButtonSelected" size="sm" onClick={() => 
-                      this.changePending(this.props.tourVenue.id)
-                    }
-                    >Pending</Button> : <Button id="pendingButton" size="sm" onClick={() =>
-                      this.changePending(this.props.tourVenue.id)
-                    }
-                    >Pending</Button>
-                  }
-                  {
-                    this.state.confirmed ? <Button id="confirmedButtonSelected" size="sm" onClick={() => 
-                      this.changeConfirmed(this.props.tourVenue.id)
-                    }
-                    >Confirmed</Button> : <Button id="confirmedButton" size="sm" onClick={() => 
-                      this.changeConfirmed(this.props.tourVenue.id)
-                    }
-                    >Confirmed</Button>
-                  }
-                </ButtonGroup>
+                  {/* Initial 'Remove' button takes user to a modal that has remove and cancel buttons */}
 
-                {/* Initial 'Remove' button takes user to a modal that has remove and cancel buttons */}
-
-                <Button className="card-link" id="tourRemoveButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                  <ModalBody>
-                    Are you sure you want to remove this venue from your tour?
-                  </ModalBody>
-                  <ModalFooter>
-                  <Button color="danger" size="sm"
-                    onClick={() => this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)}
-                    >Remove</Button>
-                  <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
-                  </ModalFooter>
-                </Modal>
+                  <Button className="card-link" id="tourRemoveButton" size="sm" onClick={this.toggle}>{this.props.buttonLabel}Remove</Button>
+                  <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                    <ModalBody>
+                      Are you sure you want to remove this venue from your tour?
+                    </ModalBody>
+                    <ModalFooter>
+                    <Button color="danger" size="sm"
+                      onClick={() => this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)}
+                      >Remove</Button>
+                    <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
+                    </ModalFooter>
+                  </Modal>
 
                 </section>
                 
