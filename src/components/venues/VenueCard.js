@@ -13,7 +13,8 @@ export default class VenueCard extends Component {
       modal: false,
       contacted: "",
       pending: "",
-      confirmed: ""
+      confirmed: "",
+      notes: ""
     }
     
     this.toggle = this.toggle.bind(this);
@@ -30,7 +31,8 @@ export default class VenueCard extends Component {
     this.setState({
       contacted: this.props.tourVenue.contacted,
       pending: this.props.tourVenue.pending,
-      confirmed: this.props.tourVenue.confirmed
+      confirmed: this.props.tourVenue.confirmed,
+      notes: this.props.tourVenue.notes,
       })
     }
   }
@@ -156,6 +158,8 @@ export default class VenueCard extends Component {
 
                 {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
                 
+
+
                 <ButtonGroup>
                   {
                     this.state.contacted ? <Button id="contactedButtonSelected" size="sm" onClick={() => 

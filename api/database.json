@@ -188,6 +188,7 @@
       "contacted": true,
       "pending": false,
       "confirmed": false,
+      "notes": "",
       "id": 1
     },
     {
@@ -196,6 +197,7 @@
       "contacted": false,
       "pending": true,
       "confirmed": false,
+      "notes": "",
       "id": 2
     },
     {
@@ -204,14 +206,16 @@
       "contacted": false,
       "pending": false,
       "confirmed": true,
+      "notes": "",
       "id": 3
     },
     {
-      "venueId": 3,
+      "venueId": 2,
       "user_id": 1,
-      "contacted": true,
+      "contacted": false,
       "pending": false,
       "confirmed": false,
+      "notes": "",
       "id": 4
     }
   ]
