@@ -5,10 +5,10 @@
   color: white;
 }
 
-#tourDeleteButton {
+#tourRemoveButton {
   background-color: rgb(0, 35, 75);
-  margin-right: 3px;
   margin-left: 20px;
+  margin-right: -85px
 }
 
 #tourVenuesContainer {
@@ -42,16 +42,34 @@
 
 /* the following ids assign the colors used with state change and add margins */
 
+.tourButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+#notesButton {
+  background-color: rgb(0, 35, 75);
+  margin-right: 10px;
+  margin-top: 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 #contactedButton {
   background-color: rgb(0, 35, 75);
   margin-right: 1px;
-  margin-left: 80px;
+  margin-left: 1px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 #contactedButtonSelected {
   background-color: green;
   margin-right: 1px;
-  margin-left: 80px;
+  margin-left: 1px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 #pendingButton {
@@ -68,13 +86,13 @@
 
 #confirmedButton {
   background-color: rgb(0, 35, 75);
-  margin-right: 3px;
+  margin-right: 1px;
   margin-left: 1px;
 }
 
 #confirmedButtonSelected {
   background-color: green;
-  margin-right: 3px;
+  margin-right: 1px;
   margin-left: 1px;
 }
 
@@ -113,4 +131,15 @@
 #removeTourFilterButton {
   background-color: rgb(0, 35, 75);
   margin: 0px 5px 10px 5px
+}
+
+#tourNotesContainer {
+  margin-top: 10px;
+  display: block
+
+}
+
+#tourCardFooter {
+  margin-top: 10px;
+  border: solid 1px black;
 }

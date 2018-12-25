@@ -194,7 +194,7 @@ venueId = parseInt(this.props.match.params.venueId)
                 <Input type="textarea" name="notes" id="notes" onChange={(event) => this.handleFieldChange(event)} value={this.state.notes}/>
               </FormGroup>
 
-              <ButtonGroup>
+              <ButtonGroup> 
                 <Label id="editFavoriteLabel" for="favorite">Mark As Favorite?</Label>
                 <Button id="venueEditYes" size="sm" onClick={() => this.onRadioBtnClick("yes")} active={this.state.favorite === "yes"} value={this.state.favorite}>Yes</Button>
                 <Button id="venueEditNo" size="sm" onClick={() => this.onRadioBtnClick("no")} active={this.state.favorite === "no"} value={this.state.favorite}>No</Button>
