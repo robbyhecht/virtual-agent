@@ -7,7 +7,8 @@
 
 #tourRemoveButton {
   background-color: rgb(0, 35, 75);
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-right: -85px
 }
 
 #tourVenuesContainer {

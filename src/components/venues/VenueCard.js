@@ -232,7 +232,7 @@ export default class VenueCard extends Component {
                     </ModalBody>
                     <ModalFooter>
                     <Button color="danger" size="sm"
-                      onClick={() => this.props.deleteTourVenue(this.props.tourVenue.id, this.props.currentUser)}
+                      onClick={() => this.props.removeTourVenue(this.props.tourVenue.id, this.props.currentUser)}
                       >Remove</Button>
                     <Button color="secondary" size="sm" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
@@ -240,17 +240,11 @@ export default class VenueCard extends Component {
 
                 </section>
                 
-                {/* <form> */}
                 <section id="tourNotesContainer">
                   <Input type="textarea" name="notes" id="notes" placeholder="Notes" value={this.state.notes} 
                   onChange={this.handleNoteChange.bind(this)}
                   />
-                {/* {
-                <Button className="card-link" id="notesButton" size="sm" onClick={() => this.fireNoteChange}
-                >Note</Button>
-                } */}
                 </section>
-                {/* </form> */}
                 
               </div>
             }
@@ -267,23 +261,3 @@ export default class VenueCard extends Component {
 // <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button> :
 // <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Edit Note</Button>
 // }
-
-// <section className="tourButtonContainer">
-// <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button>
-
-{/* <Modal isOpen={this.state.modalNote} className={this.props.className}>
-<ModalBody>
-  <Label for="notes">Notes</Label>
-  <Input type="textarea" name="notes" id="notes" onChange={() => this.handleNoteChange(this.props.tourVenue.notes)} value={this.state.notes}
-  // .then(() => console.log())
-  />
-</ModalBody>
-<ModalFooter>
-<Button color="success" size="sm"
-  onClick={() =>
-    console.log(`footer`)
-  }
-  >Add Note</Button>
-<Button color="secondary" size="sm" onClick={this.toggle2}>Cancel</Button>
-</ModalFooter>
-</Modal> */}

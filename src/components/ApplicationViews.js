@@ -120,7 +120,7 @@ export default class ApplicationViews extends Component {
 
   // Removes a venue object from the TourList page - called in VenueCard
   
-  deleteTourVenue = (tour_id) => {
+  removeTourVenue = (tour_id) => {
     return TourVenueManager.removeVenueFromTour(tour_id)
     .then(() => TourVenueManager.getAll(this.props.currentUser))
     .then(tour =>
@@ -237,7 +237,7 @@ export default class ApplicationViews extends Component {
             deleteTour={this.deleteTour}
             tourpage={this.state.tourpage}
             updateTourButtons={this.updateTourButtons}
-            deleteTourVenue={this.deleteTourVenue}
+            removeTourVenue={this.removeTourVenue}
             updateTourVenue={this.updateTourVenue}
             filterVenuesByContacted={this.filterVenuesByContacted}
             filterVenuesByPending={this.filterVenuesByPending}
