@@ -188,17 +188,8 @@
       "contacted": false,
       "pending": true,
       "confirmed": false,
-      "notes": "hi my name is note. what is your name?",
+      "notes": "hi my name is note. what is your name??? yo yo yo. burlap muthaeffers. yo mama. boom shakalaka",
       "id": 1
-    },
-    {
-      "venueId": 6,
-      "user_id": 1,
-      "contacted": false,
-      "pending": true,
-      "confirmed": false,
-      "notes": "",
-      "id": 2
     },
     {
       "venueId": 7,

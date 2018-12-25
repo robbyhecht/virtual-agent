@@ -70,12 +70,8 @@ export default class VenueCard extends Component {
   }
 
   handleNoteChange = (event) => {
-    // this.props.updateTourVenue({notes: event.target.value})
-    // .then(() => 
-    // this.setState({notes: this.props.tourVenue.notes})
     let noteState = {notes: event.target.value}
     this.setState({notes: event.target.value})
-    console.log(noteState)
     this.props.updateTourVenue(noteState, this.props.tourVenue.id)
   }
 
@@ -244,17 +240,17 @@ export default class VenueCard extends Component {
 
                 </section>
                 
-                <form onSubmit={this.fireNoteChange}>
+                {/* <form> */}
                 <section id="tourNotesContainer">
                   <Input type="textarea" name="notes" id="notes" placeholder="Notes" value={this.state.notes} 
                   onChange={this.handleNoteChange.bind(this)}
                   />
-                {
+                {/* {
                 <Button className="card-link" id="notesButton" size="sm" onClick={() => this.fireNoteChange}
                 >Note</Button>
-                }
+                } */}
                 </section>
-                </form>
+                {/* </form> */}
                 
               </div>
             }
