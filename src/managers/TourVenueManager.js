@@ -16,7 +16,7 @@ class ToursManager extends APIManager {
     return this.delete(tour_id).then(() => this.all())
   }
 
-  updateTourVenue(property, id) {
+  updateTourVenues(property, id) {
     return this.patch(property, id)
   }
 

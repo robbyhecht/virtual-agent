@@ -69,11 +69,28 @@ export default class VenueCard extends Component {
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
   }
 
-  handleNoteChange = (id) => {
-    const newNote = {notes: this.value}
-    this.props.updateTourVenue(newNote, id)
-    .then(() => this.setState({notes: this.props.tourVenue.notes}))
+  handleNoteChange = (event) => {
+    // this.props.updateTourVenue({notes: event.target.value})
+    // .then(() => 
+    // this.setState({notes: this.props.tourVenue.notes})
+    let noteState = {notes: event.target.value}
+    this.setState({notes: event.target.value})
+    console.log(noteState)
+    this.props.updateTourVenue(noteState, this.props.tourVenue.id)
   }
+
+  // fireNoteChange = (event) => {
+  //   this.props.updateTourVenue(event, this.props.venueId)
+  // }
+
+  // this.setState({notes: event.target.value})
+
+
+  // handleNoteChange = (id) => {
+  //   const newNote = {notes: this.value}
+  //   this.props.updateTourVenue(newNote, id)
+  //   .then(() => this.setState({notes: this.props.tourVenue.notes}))
+  // }
 
   // handleNoteChange(tourVenue) {
   //   const stateToChange = {};
@@ -226,17 +243,18 @@ export default class VenueCard extends Component {
                   </Modal>
 
                 </section>
-
+                
+                <form onSubmit={this.fireNoteChange}>
                 <section id="tourNotesContainer">
-                  <Input type="textarea" name="notes" id="notes" placeholder="Notes" value={this.state.notes}
-
+                  <Input type="textarea" name="notes" id="notes" placeholder="Notes" value={this.state.notes} 
+                  onChange={this.handleNoteChange.bind(this)}
                   />
                 {
-                this.state.notes === "" ? 
-                <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button> :
-                <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Edit Note</Button>
+                <Button className="card-link" id="notesButton" size="sm" onClick={() => this.fireNoteChange}
+                >Note</Button>
                 }
                 </section>
+                </form>
                 
               </div>
             }
@@ -249,6 +267,10 @@ export default class VenueCard extends Component {
 }
 
 
+// this.state.notes === "" ? 
+// <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button> :
+// <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Edit Note</Button>
+// }
 
 // <section className="tourButtonContainer">
 // <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button>

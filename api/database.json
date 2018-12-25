@@ -188,7 +188,7 @@
       "contacted": false,
       "pending": true,
       "confirmed": false,
-      "notes": "hi my name is note",
+      "notes": "hi my name is note. what is your name?",
       "id": 1
     },
     {
@@ -212,9 +212,9 @@
     {
       "venueId": 2,
       "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": false,
+      "contacted": true,
+      "pending": true,
+      "confirmed": true,
       "notes": "",
       "id": 4
     }

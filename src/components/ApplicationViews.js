@@ -133,7 +133,7 @@ export default class ApplicationViews extends Component {
   // Changes the boolean state in a tour object on the "contacted", "pending" and "confirmed" properties - called in VenueCard
 
   updateTourVenue = (property, id) => {
-    return TourVenueManager.updateTourVenue(property, id)
+    return TourVenueManager.updateTourVenues(property, id)
     .then(() => TourVenueManager.getAll())
     .then (tour =>
       this.setState({
