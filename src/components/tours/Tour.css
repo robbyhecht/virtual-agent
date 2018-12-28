@@ -24,6 +24,7 @@
 #cards {
   margin-bottom: 20px;
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
   width: 800px;
@@ -136,10 +137,4 @@
 #tourNotesContainer {
   margin-top: 10px;
   display: block
-
-}
-
-#tourCardFooter {
-  margin-top: 10px;
-  border: solid 1px black;
 }

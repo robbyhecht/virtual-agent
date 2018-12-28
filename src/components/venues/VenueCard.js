@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup, Label, Input } from 'reactstrap'
+import { Card, Button, CardHeader, CardBody, CardTitle, CardText, Modal, ModalBody, ModalFooter, ButtonGroup, Input } from 'reactstrap'
 import { Link } from "react-router-dom"
 import "./Venues.css"
 
@@ -101,7 +101,7 @@ export default class VenueCard extends Component {
 
       // the cards all share these initial properties for both tour page and venues page
 
-      <div id="cards">
+      <span id="cards">
 
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
 
@@ -251,7 +251,7 @@ export default class VenueCard extends Component {
 
           </CardBody>
         </Card>
-      </div>
+      </span>
     )
   }
 }
