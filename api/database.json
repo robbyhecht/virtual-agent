@@ -102,7 +102,7 @@
       "venueState": "IL",
       "buyer": "Troy Hansbrough",
       "email": "thansbrough@oldtownschool.org",
-      "phone": "email",
+      "phone": "email only",
       "notes": "The staff were nice af.",
       "user_id": 1,
       "favorite": "yes",
@@ -203,11 +203,19 @@
     {
       "venueId": 1,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
       "confirmed": false,
       "id": 4,
       "notes": ""
+    },
+    {
+      "venueId": 8,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 5
     }
   ]
 }

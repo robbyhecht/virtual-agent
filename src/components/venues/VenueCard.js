@@ -19,18 +19,11 @@ export default class VenueCard extends Component {
     }
     
     this.toggle = this.toggle.bind(this);
-    this.toggle2 = this.toggle2.bind(this);
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal,
-    });
-  }
-
-  toggle2() {
-    this.setState({
-      modalNote: !this.state.modalNote,
     });
   }
 
@@ -255,9 +248,3 @@ export default class VenueCard extends Component {
     )
   }
 }
-
-
-// this.state.notes === "" ? 
-// <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Add Note</Button> :
-// <Button className="card-link" id="notesButton" size="sm" onClick={this.toggle2}>Edit Note</Button>
-// }
