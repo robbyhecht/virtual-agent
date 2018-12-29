@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
-import { Navbar, Nav, NavItem, } from "reactstrap";
+import { Navbar, Nav, NavItem, NavbarToggler, Collapse } from "reactstrap";
 import "./Nav.css"
 export default class NavBar extends Component {
+
+    constructor(props) {
+      super(props);
+  
+      this.toggleNavbar = this.toggleNavbar.bind(this);
+      this.state = {
+        collapsed: true
+      };
+    }
+  
+    toggleNavbar() {
+      this.setState({
+        collapsed: !this.state.collapsed
+      });
+    }
 
   // clears session storage, then reloads window to complete logout 
 
@@ -17,6 +32,8 @@ export default class NavBar extends Component {
       <div>
         <Navbar id="navBar" light expand="md">
         <Link id="navTitle" to={`/`}>VIRTUAL AGENT</Link>
+        <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+          <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <Link id="navVenues" to={`/venues/`}>VENUES</Link>
@@ -32,6 +49,7 @@ export default class NavBar extends Component {
                 <Link to={'/'} id="navLogout" onClick={this.logout}>LOG OUT</Link>
               </NavItem>
             </Nav>
+            </Collapse>
         </Navbar>
       </div>
     );

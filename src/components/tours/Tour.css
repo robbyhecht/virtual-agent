@@ -13,6 +13,7 @@
 
 #tourVenuesContainer {
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
   margin-top: 30px;
@@ -24,6 +25,8 @@
 #cards {
   margin-bottom: 20px;
   display: flex;
+  /* flex-wrap: wrap; */
+  flex-basis: 30%;
   box-sizing: border-box;
   justify-content: center;
   width: 800px;
@@ -44,8 +47,9 @@
 
 .tourButtonContainer {
   display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
-  align-items: center
 }
 
 #notesButton {
@@ -100,10 +104,9 @@
 
 #tourFilterButtons {
   display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
-  align-items: center;
-  /* margin-bottom: 10px; */
 }
 
 #newFilterButton {
@@ -136,10 +139,4 @@
 #tourNotesContainer {
   margin-top: 10px;
   display: block
-
-}
-
-#tourCardFooter {
-  margin-top: 10px;
-  border: solid 1px black;
 }
