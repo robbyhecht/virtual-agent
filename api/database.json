@@ -179,6 +179,20 @@
       "havePlayed": "yes",
       "user_id": 1,
       "id": 12
+    },
+    {
+      "name": "Mercy Lounge",
+      "city": "Nashville",
+      "venueState": "TN",
+      "buyer": "Application form on website",
+      "email": "booking@mercylounge.com",
+      "phone": "615-251-3020",
+      "url": "https://www.mercylounge.com",
+      "notes": "This is the booking info for all three Cannery venues",
+      "favorite": "yes",
+      "havePlayed": "yes",
+      "user_id": 1,
+      "id": 13
     }
   ],
   "tour": [
@@ -216,6 +230,15 @@
       "pending": false,
       "confirmed": false,
       "id": 5
+    },
+    {
+      "venueId": 9,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": false,
+      "id": 6,
+      "notes": "Follow up after the new year"
     }
   ]
 }
