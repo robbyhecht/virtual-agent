@@ -3,7 +3,6 @@ import APIManager from "./APIManager"
 class ToursManager extends APIManager {
 
   getAll(user) {
-    console.log("get all user", user)
     return this.all(user)
   }
 

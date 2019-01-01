@@ -208,7 +208,7 @@
     {
       "venueId": 7,
       "user_id": 1,
-      "contacted": false,
+      "contacted": true,
       "pending": false,
       "confirmed": true,
       "notes": "Booked for April 27th.",

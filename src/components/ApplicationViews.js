@@ -230,7 +230,6 @@ export default class ApplicationViews extends Component {
         }}  />
 
         <Route exact path="/tours" render={(props) => {
-          console.log("tour state", this.state.tour)
           return <TourList {...props} 
             tour={this.state.tour}
             venues={this.state.venues}
