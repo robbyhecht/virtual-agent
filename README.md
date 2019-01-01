@@ -1,4 +1,4 @@
-#Virtual Agent
+# Virtual Agent
 
 Virtual Agent is an application for the self-booking touring entertainer. The app functions as an informational database of venues and a tour organizer. Venues are clearly displayed alphabetically and can be added, edited and deleted as well as filtered by category and location to assist in routing before they are added to a potential tour. The venues can then be organized and filtered within a tour by booking status, and the user can use the notes functionality to track communication with talent buyers.
 
