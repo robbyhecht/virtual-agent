@@ -60,6 +60,7 @@ export default class VenueCard extends Component {
     const status = {confirmed: !this.state.confirmed}
     this.props.updateTourVenue(status, id)
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
+    .then(() => (this.state.confirmed) ? console.log("Gig confirmed!") : null)
   }
 
   handleNoteChange = (event) => {
