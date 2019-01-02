@@ -11,10 +11,11 @@ export default class HomePage extends Component {
     // home page is divided into 2x2 colums and rows
 
     return(
+    <div className="mainHome">
     <Container id="homeDiv">
       <Row>
       <Col>
-      <h1 id="slogan">Where do you <br /> want to play?</h1>
+      <h1 className="slogan">Where do you <br /> want to play?</h1>
       </Col>
       <Col>
       <Link to={`/venues/`}><Button className="card-link" color="primary" size="sm" id="button1">ENTER VENUES</Button></Link>
@@ -22,7 +23,7 @@ export default class HomePage extends Component {
       </Row>
       <Row>
       <Col>
-      <p id="sub-slogan">Book gigs.<br />
+      <p className="sub-slogan">Book gigs.<br />
       Stay organized.<br />
       Take your touring to the next level.</p>
       </Col>
@@ -31,6 +32,7 @@ export default class HomePage extends Component {
       </Col>
       </Row>
     </Container>
+    </div>
     )
   }
   

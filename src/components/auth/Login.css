@@ -1,12 +1,24 @@
-#mainLogin {
+.mainLogin {
   padding: 30px;
+  margin-top: 150px
+}
+
+.slogan-log {
+  color: white;
+  margin-left: 80px;
+  margin-bottom: 40px;
+}
+
+.sub-slogan-log {
+  color: white;
+  margin-left: 80px;
 }
 
 .loginForm {
   text-align: center;
   border: 1px solid #CFE1F6;
   background-color:#CFE1F6;
-  margin: 140px 80px 390px 0px;
+  margin-right: 10%;
   border-radius: 10px;
 }
 
