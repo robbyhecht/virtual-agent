@@ -92,14 +92,14 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div id="mainLogin">
+      <div className="mainLogin">
         <Container>
 
           <Row>
 
             <Col>
-              <h1 id="slogan">Where do you <br /> want to play?</h1>
-              <p id="sub-slogan">Book gigs.<br />
+              <h1 className="slogan-log">Where do you <br /> want to play?</h1>
+              <p className="sub-slogan-log">Book gigs.<br />
               Stay organized.<br />
               Take your touring to the next level.</p>
             </Col>

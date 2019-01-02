@@ -9,6 +9,11 @@
       "username": "r",
       "password": "h",
       "id": 2
+    },
+    {
+      "username": "rh",
+      "password": "rh",
+      "id": 3
     }
   ],
   "venues": [
@@ -193,52 +198,54 @@
       "havePlayed": "yes",
       "user_id": 1,
       "id": 13
+    },
+    {
+      "name": "WDVX Blue Plate Special",
+      "city": "Knoxville",
+      "venueState": "TN",
+      "buyer": "Red Hickey",
+      "email": "bpsbooking@wdvx.com",
+      "phone": "865-544-1029",
+      "url": "https://wdvx.com/program/blue-plate-special",
+      "notes": "Noon performance at the studio, live audience and broadcast on WDVX",
+      "favorite": "yes",
+      "havePlayed": "yes",
+      "user_id": 1,
+      "id": 14
     }
   ],
   "tour": [
     {
       "venueId": 11,
       "user_id": 1,
-      "contacted": false,
-      "pending": true,
+      "contacted": true,
+      "pending": false,
       "confirmed": false,
-      "notes": "Reached out on 12/17. Owner says she thinks she can do something in March. Follow up in two weeks.\n",
       "id": 1
     },
     {
-      "venueId": 7,
+      "venueId": 6,
       "user_id": 1,
-      "contacted": true,
+      "contacted": false,
+      "pending": true,
+      "confirmed": false,
+      "id": 2
+    },
+    {
+      "venueId": 12,
+      "user_id": 1,
+      "contacted": false,
       "pending": false,
       "confirmed": true,
-      "notes": "Booked for April 27th.",
       "id": 3
     },
     {
-      "venueId": 1,
-      "user_id": 1,
-      "contacted": true,
-      "pending": false,
-      "confirmed": false,
-      "id": 4,
-      "notes": ""
-    },
-    {
-      "venueId": 8,
+      "venueId": 10,
       "user_id": 1,
       "contacted": false,
       "pending": false,
       "confirmed": false,
-      "id": 5
-    },
-    {
-      "venueId": 9,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": false,
-      "id": 6,
-      "notes": "Follow up after the new year"
+      "id": 4
     }
   ]
 }

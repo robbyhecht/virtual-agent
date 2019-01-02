@@ -1,72 +1,27 @@
 #navBar {
-  background-color: #4E93BB;
-  padding-top: 15px;
-}
-
-.navLink {
-  color: white;
+  margin-top: 20px;
 }
 
 #navItems {
   color: white;
 }
 
-/* styling for individual links in navbar */
-
-#navTitle {
+.navLink {
   background-color: #4E93BB;
   color: white;
-  font-size: 20px;
+  font-size: 21px;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.navLink:hover {
+  color: #CFE1F6;
+}
+
+#navTitle {
   margin-left: 70px;
 }
 
-#navTitle:hover {
-  color: #CFE1F6;
-}
-#navVenues {
-  background-color: #4E93BB;
-  color: white;
-  font-size: 20px;
-  margin-right: 20px;
-  margin-left: 5px;
-}
-
-#navVenues:hover {
-  color: #CFE1F6;
-}
-
-#navTours {
-  background-color: #4E93BB;
-  color: white;
-  font-size: 20px;
-  margin-right: 20px;
-  margin-left: 5px;
-}
-
-#navTours:hover {
-  color: #CFE1F6;
-}
-
-#navAbout {
-  background-color: #4E93BB;
-  color: white;
-  font-size: 20px;
-  margin-right: 20px;
-  margin-left: 5px;
-}
-
-#navAbout:hover {
-  color: #CFE1F6;
-}
-
 #navLogout {
-  background-color: #4E93BB;
-  color: white;
-  font-size: 20px;
-  margin-right: 60px;
-  margin-left: 5px;
-}
-
-#navLogout:hover {
-  color: #CFE1F6;
+  margin-right: 100px;
 }

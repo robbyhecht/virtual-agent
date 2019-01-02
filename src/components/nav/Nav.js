@@ -31,22 +31,22 @@ export default class NavBar extends Component {
     return (
       <div>
         <Navbar id="navBar" light expand="md">
-        <Link id="navTitle" to={`/`}>VIRTUAL AGENT</Link>
+        <Link className="navLink" id="navTitle" to={`/`}>VIRTUAL AGENT</Link>
         <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link id="navVenues" to={`/venues/`}>VENUES</Link>
+                <Link className="navLink" to={`/venues/`}>VENUES</Link>
               </NavItem>
               <NavItem>
-                <Link id="navVenues" to={`/tours/`}>TOUR</Link>
+                <Link className="navLink" to={`/tours/`}>TOUR</Link>
               </NavItem>
 
               <NavItem>
 
                 {/* calls log out function and links to home page */}
 
-                <Link to={'/'} id="navLogout" onClick={this.logout}>LOG OUT</Link>
+                <Link to={'/'} className="navLink" id="navLogout" onClick={this.logout}>LOG OUT</Link>
               </NavItem>
             </Nav>
             </Collapse>

@@ -26,15 +26,14 @@
   height: 700px;
 }
 
-#slogan {
+.slogan {
   color: white;
   margin-top: 32%;
   margin-left: 80px;
   margin-bottom: 40px;
 }
 
-#sub-slogan {
+.sub-slogan {
   color: white;
   margin-left: 80px;
-
 }

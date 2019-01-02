@@ -95,7 +95,7 @@ export default class VenueCard extends Component {
 
       // the cards all share these initial properties for both tour page and venues page
 
-      <span id="cards">
+      <div className="cards">
 
       <Card key={this.props.venue.id} className="venueCard text-center" id="venueCard">
 
@@ -245,7 +245,7 @@ export default class VenueCard extends Component {
 
           </CardBody>
         </Card>
-      </span>
+      </div>
     )
   }
 }
