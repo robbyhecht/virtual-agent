@@ -14,5 +14,7 @@ code {
 }
 
 #root {
+  height: 100vh;
+  overflow: auto;
   background-color: #4E93BB;
 }

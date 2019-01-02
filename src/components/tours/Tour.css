@@ -11,30 +11,29 @@
   margin-right: -85px
 }
 
-#tourVenuesContainer {
+.tourVenuesList {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   box-sizing: border-box;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 
 /* VenueCard */
 
-#cards {
+.cards {
   margin-bottom: 20px;
   display: flex;
-  /* flex-wrap: wrap; */
-  flex-basis: 30%;
   box-sizing: border-box;
   justify-content: center;
-  width: 800px;
 }
 
-#venueCard {
+.venueCard {
   border: 1px solid rgb(0, 35, 75);
-  width: 60%;
+  width: 500px;
+  flex-basis: 90%;
 }
 
 #cardHeader {
@@ -52,13 +51,13 @@
   justify-content: center;
 }
 
-#notesButton {
+/* #notesButton {
   background-color: rgb(0, 35, 75);
   margin-right: 10px;
   margin-top: 5px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-}
+} */
 
 #contactedButton {
   background-color: rgb(0, 35, 75);
@@ -111,29 +110,29 @@
 
 #newFilterButton {
   background-color: rgb(0, 35, 75);
-  margin: 0px 5px 10px 5px
+  margin: 0px 5px 0px 5px
 }
 
 #contactedFilterButton {
   background-color: rgb(0, 35, 75);
-  margin: 0px 5px 10px 5px
+  margin: 0px 5px 0px 5px
 }
 
 
 #pendingFilterButton {
   background-color: rgb(0, 35, 75);
-  margin: 0px 5px 10px 5px
+  margin: 0px 5px 0px 5px
 }
 
 
 #confirmedFilterButton {
   background-color: rgb(0, 35, 75);
-  margin: 0px 5px 10px 5px
+  margin: 0px 5px 0px 5px
 }
 
 #removeTourFilterButton {
   background-color: rgb(0, 35, 75);
-  margin: 0px 5px 10px 5px
+  margin: 0px 5px 0px 5px
 }
 
 #tourNotesContainer {

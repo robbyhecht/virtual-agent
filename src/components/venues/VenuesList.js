@@ -190,9 +190,6 @@ export default class VenuesList extends Component {
           </section>
         </div>
 
-        <div id="venuesContainer">
-
-
           {/* maps over the 'venues' array and sends the information to VenueCard to make a card for each venue. */}
 
           {/* add a query to fetches to see if the venue id is in the tour array. if it is, add a boolean property below to pass along to venue card that tells it to not add the 'add to tour' button. Name the property whatever and give it the value of true or false. if true, you won't show the button in the card. */}
@@ -206,7 +203,6 @@ export default class VenuesList extends Component {
               } ) 
             }
           </article>
-        </div>
 
       </React.Fragment>
     )
