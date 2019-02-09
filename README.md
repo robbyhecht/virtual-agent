@@ -10,6 +10,8 @@ Clone the repo to your computer and run npm install in the directory
 If you don't have json-server you'll also need to run npm install -g json-server to install it globally.
 Rename api/db.json to api/database.json
 
+To run json-server in the terminal... from the api folder, run: json-server -p 5002 -w database.json
+
 In the project directory, run:
 
 ### `npm start`
