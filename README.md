@@ -4,16 +4,19 @@ Virtual Agent is an application for the self-booking touring entertainer. The ap
 
 ![ERD](/src/images/VA_ERD.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Take VA for a spin
 
-## Available Scripts
+Clone the repo to your computer and run npm install in the directory
+If you don't have json-server you'll also need to run npm install -g json-server to install it globally.
+Rename api/db.json to api/database.json
 
-In the project directory, you can run:
+In the project directory, run:
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
+This will run the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+You can register a new user or login with Username:robby Password:hecht to access existing database of venues
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
