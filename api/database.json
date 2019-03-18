@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "username": "robby",
-      "password": "hecht",
+      "username": "bruce",
+      "password": "springsteen",
       "id": 1
     },
     {
@@ -14,6 +14,11 @@
       "username": "rh",
       "password": "rh",
       "id": 3
+    },
+    {
+      "username": "newperson",
+      "password": "ffffff",
+      "id": 4
     }
   ],
   "venues": [
@@ -24,9 +29,9 @@
       "buyer": "Laurie Koster",
       "email": "bookthemuse@gmail.com",
       "phone": "704-618-4181",
-      "notes": "Played Summer 2018. Don and Laurie call their house \"The Rock and Roll Motel\" and make you hash browns in the morning if you stay there.",
+      "notes": "Played Summer 2018. Don and Laurie are the best.",
       "favorite": "yes",
-      "havePlayed": "yes",
+      "havePlayed": "no",
       "url": "http://eveningmuse.com",
       "user_id": 1,
       "id": 1
@@ -66,10 +71,10 @@
       "buyer": "Dana LaChance",
       "email": "dana@thecrimsonmoon.com",
       "phone": "404-374-1026",
-      "notes": "Not much of a built in crowd. Poor turnout and food was only half-off but at least there's a good beef jerky store down the street.",
+      "notes": "Good beef jerky store down the street :)",
       "user_id": 1,
       "favorite": "no",
-      "havePlayed": "yes",
+      "havePlayed": "no",
       "url": "",
       "id": 4
     },
@@ -80,7 +85,7 @@
       "buyer": "Matt Munoz",
       "email": "mmunoz@kut.org",
       "phone": "512-232-7606",
-      "notes": "On the UT-Austin campus. Matt is super nice but slow to respond so be persistent. Sound is great.",
+      "notes": "On the UT-Austin campus. Sound is great.",
       "user_id": 1,
       "favorite": "no",
       "havePlayed": "yes",
@@ -151,7 +156,7 @@
       "email": "marko@hotelcafe.com",
       "phone": "email only",
       "url": "http://www.hotelcafe.com",
-      "notes": "Played the small room which sounds good but holds like 20.",
+      "notes": "Saw F&F play there... good vibes",
       "favorite": "no",
       "havePlayed": "no",
       "user_id": 1,
@@ -165,7 +170,7 @@
       "email": "tara@burlapandbean.com",
       "phone": "484-427-4547",
       "url": "http://burlapandbean.com",
-      "notes": "Cozy space. Owner is easy to work with but sound guy is a mess.",
+      "notes": "Cozy space and nice audience.",
       "favorite": "no",
       "havePlayed": "yes",
       "user_id": 1,
@@ -195,7 +200,7 @@
       "url": "https://www.mercylounge.com",
       "notes": "This is the booking info for all three Cannery venues",
       "favorite": "yes",
-      "havePlayed": "yes",
+      "havePlayed": "no",
       "user_id": 1,
       "id": 13
     },
@@ -227,19 +232,28 @@
     {
       "venueId": 6,
       "user_id": 1,
-      "contacted": true,
+      "contacted": false,
       "pending": true,
       "confirmed": false,
       "id": 2,
       "notes": "Looking at a date in April"
     },
     {
-      "venueId": 12,
+      "venueId": 4,
+      "user_id": 1,
+      "contacted": false,
+      "pending": false,
+      "confirmed": true,
+      "id": 3,
+      "notes": "Confirmed for 12/27"
+    },
+    {
+      "venueId": 3,
       "user_id": 1,
       "contacted": false,
       "pending": false,
       "confirmed": false,
-      "id": 3
+      "id": 4
     }
   ]
 }
