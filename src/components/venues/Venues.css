@@ -158,6 +158,9 @@
   border: 1px solid rgb(0, 35, 75);
   width: 500px;
   flex-basis: 90%;
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #cardHeader {

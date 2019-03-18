@@ -93,7 +93,23 @@ export default class VenuesList extends Component {
               <DropdownToggle id="stateButton">
                 Filter By State
               </DropdownToggle>
-              <DropdownMenu 
+              <DropdownMenu
+              modifiers={{
+                setMaxHeight: {
+                  enabled: true,
+                  order: 890,
+                  fn: (data) => {
+                    return {
+                      ...data,
+                      styles: {
+                        ...data.styles,
+                        overflow: 'auto',
+                        maxHeight: 200,
+                      },
+                    };
+                  },
+                },
+              }}
               >
                 <DropdownItem header>CHOOSE A STATE</DropdownItem>
                 <DropdownItem divider />
