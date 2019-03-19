@@ -227,28 +227,28 @@
       "pending": false,
       "confirmed": false,
       "id": 1,
-      "notes": "Reached out Jan 3rd"
-    },
-    {
-      "venueId": 6,
-      "user_id": 1,
-      "contacted": false,
-      "pending": true,
-      "confirmed": false,
-      "id": 2,
-      "notes": "Looking at a date in April"
+      "notes": "Reached out 3/16."
     },
     {
       "venueId": 4,
       "user_id": 1,
       "contacted": false,
+      "pending": true,
+      "confirmed": false,
+      "id": 2,
+      "notes": "Looking at something for and of August."
+    },
+    {
+      "venueId": 12,
+      "user_id": 1,
+      "contacted": false,
       "pending": false,
       "confirmed": true,
       "id": 3,
-      "notes": "Confirmed for 12/27"
+      "notes": "Confirmed for July 15th. Load in 5pm."
     },
     {
-      "venueId": 3,
+      "venueId": 10,
       "user_id": 1,
       "contacted": false,
       "pending": false,
