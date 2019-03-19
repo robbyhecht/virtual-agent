@@ -15,7 +15,8 @@ export default class ApplicationViews extends Component {
     venues: [],
     tour: [],
     tourpage: false,
-    // venueWithTour: []
+    venuesToShow: [],
+    useFilter:false
     }
 
   componentDidMount() {
@@ -46,7 +47,8 @@ export default class ApplicationViews extends Component {
     .then(() => VenuesManager.getAll(this.props.currentUser))
     .then(venues => 
       this.setState({
-        venues: venues
+        venues: venues,
+        useFilter:true
       })
     )
 
@@ -56,7 +58,9 @@ export default class ApplicationViews extends Component {
     return VenuesManager.removeAndList(id, user)
     .then(venues =>
         this.setState({
-          venues: venues
+          venues: venues,
+          useFilter:false
+
         })
       )
     }
@@ -67,7 +71,8 @@ export default class ApplicationViews extends Component {
   VenuesManager.patchAndListVenue(venues, url)
     .then(() => VenuesManager.getAll(this.props.currentUser)).then(venues =>
       this.setState({
-        venues: venues
+        venues: venues,
+        useFilter:false
       })
     )
 
@@ -80,7 +85,8 @@ export default class ApplicationViews extends Component {
   VenuesManager.getByState(venueState, user)
   .then(venues =>
     this.setState({
-      venues: venues
+      venuesToShow: venues,
+      useFilter:true
     })
   )
 
@@ -90,18 +96,22 @@ export default class ApplicationViews extends Component {
     VenuesManager.getByFavorite(`yes`, this.props.currentUser)
     .then(venues =>
       this.setState({
-        venues: venues
+        venuesToShow: venues,
+        useFilter:true
       })
     )
   }
 
   filterVenuesByHavePlayed = (havePlayed) => {
+    console.log('function running')
     VenuesManager.getByHavePlayed(`yes`, this.props.currentUser)
-    .then(venues =>
+    .then(venues => {
+      console.log(venues)
       this.setState({
-        venues: venues
+        venuesToShow: venues,
+        useFilter:true
       })
-    )
+    })
   }
 
   // TOUR FUNCTIONS
@@ -207,7 +217,8 @@ export default class ApplicationViews extends Component {
             deleteVenue={this.deleteVenue}
             addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
-            venueWithTour={this.state.venueWithTour}
+            venuesToShow={this.state.venuesToShow}
+            useFilter={this.state.useFilter}
             tour={this.state.tour}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
