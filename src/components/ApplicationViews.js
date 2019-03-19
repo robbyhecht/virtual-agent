@@ -6,7 +6,7 @@ import VenuesEdit from "./venues/VenuesEdit"
 import VenuesManager from "./../managers/VenuesManager"
 import HomePage from "./home/Home"
 import TourList from "./tours/TourList"
-import TourVenueManager from "./../managers/TourVenueManager"
+import TourManager from "./../managers/TourManager"
 
 
 export default class ApplicationViews extends Component {
@@ -23,7 +23,7 @@ export default class ApplicationViews extends Component {
     // Chains fetches to set state all at once via a variable called stateSet
 
     let stateSet = {}
-    TourVenueManager.getAll(this.props.currentUser)
+    TourManager.getAll(this.props.currentUser)
     .then(tour => (stateSet.tour = tour))
     .then(() => VenuesManager.getAll(this.props.currentUser))
     .then(allVenues => (stateSet.venues = allVenues))
@@ -109,8 +109,8 @@ export default class ApplicationViews extends Component {
   // Adds a venue to the TourList page - called in VenueCard
 
   addVenueToTour = (venue) => {
-    TourVenueManager.postVenueToTour(venue, this.props.currentUser)
-    .then(() => TourVenueManager.getAll(this.props.currentUser))
+    TourManager.postVenueToTour(venue, this.props.currentUser)
+    .then(() => TourManager.getAll(this.props.currentUser))
     .then(tour => {
       this.setState({
         tour: tour
@@ -121,8 +121,8 @@ export default class ApplicationViews extends Component {
   // Removes a venue object from the TourList page - called in VenueCard
   
   removeTourVenue = (tour_id) => {
-    return TourVenueManager.removeVenueFromTour(tour_id)
-    .then(() => TourVenueManager.getAll(this.props.currentUser))
+    return TourManager.removeVenueFromTour(tour_id)
+    .then(() => TourManager.getAll(this.props.currentUser))
     .then(tour =>
       this.setState({
         tour: tour
@@ -133,8 +133,8 @@ export default class ApplicationViews extends Component {
   // Changes the boolean state in a tour object on the "contacted", "pending" and "confirmed" properties - called in VenueCard
 
   updateTourVenue = (property, id) => {
-    return TourVenueManager.updateTourVenues(property, id)
-    .then(() => TourVenueManager.getAll())
+    return TourManager.updateTourVenues(property, id)
+    .then(() => TourManager.getAll())
     .then (tour =>
       this.setState({
         tour: tour
@@ -148,7 +148,7 @@ export default class ApplicationViews extends Component {
   // Shows only those venues with the "contacted" property set to "true" - called in TourList inside handleClickContacted method
 
   filterVenuesByContacted = () => {
-    TourVenueManager.getByContacted(this.props.currentUser)
+    TourManager.getByContacted(this.props.currentUser)
     .then(tour =>
       this.setState({
         tour: tour
@@ -159,7 +159,7 @@ export default class ApplicationViews extends Component {
   // Shows only those venues with the "pending" property set to "true" - called in TourList inside handleClickPending method
 
   filterVenuesByPending = () => {
-    TourVenueManager.getByPending(this.props.currentUser)
+    TourManager.getByPending(this.props.currentUser)
     .then(tour =>
       this.setState({
         tour: tour
@@ -170,7 +170,7 @@ export default class ApplicationViews extends Component {
   // Shows only those venues with the "confirmed" property set to "true" - called in TourList inside handleClickConfirmed method
 
   filterVenuesByConfirmed = () => {
-    TourVenueManager.getByConfirmed(this.props.currentUser)
+    TourManager.getByConfirmed(this.props.currentUser)
     .then(tour =>
       this.setState({
         tour: tour
@@ -179,7 +179,7 @@ export default class ApplicationViews extends Component {
   }
 
   filterVenuesByNew = () => {
-    TourVenueManager.getByNew(this.props.currentUser)
+    TourManager.getByNew(this.props.currentUser)
     .then(tour =>
       this.setState({
         tour: tour
@@ -208,7 +208,7 @@ export default class ApplicationViews extends Component {
             addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
             venueWithTour={this.state.venueWithTour}
-            tours={this.state.tours}
+            tour={this.state.tour}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
             filterVenuesByFavorite={this.filterVenuesByFavorite}
@@ -229,7 +229,7 @@ export default class ApplicationViews extends Component {
           return <VenuesForm {...props} addVenue={this.addVenue} />
         }}  />
 
-        <Route exact path="/tours" render={(props) => {
+        <Route exact path="/tour" render={(props) => {
           return <TourList {...props} 
             tour={this.state.tour}
             venues={this.state.venues}
@@ -256,7 +256,7 @@ export default class ApplicationViews extends Component {
 //   this.setState({venues: allVenues})
 // })
 
-// TourVenueManager.getAll(this.props.currentUser)
+// TourManager.getAll(this.props.currentUser)
 // .then(tour => {
 // this.setState({tour: tour})})
 
@@ -268,7 +268,7 @@ export default class ApplicationViews extends Component {
   // }
 
   // checkStatus = (venueId) => {
-  //   let venueInTour = TourVenueManager.getAll(this.props.currentUser).find(tour => tour.venueId === venueId)
+  //   let venueInTour = TourManager.getAll(this.props.currentUser).find(tour => tour.venueId === venueId)
   //   .then(() => 
   //   console.log(venueInTour))
   // }
@@ -276,7 +276,7 @@ export default class ApplicationViews extends Component {
   // grab the venue
 
   // checkStatus = (venue) => {
-  //   let tourVenues = TourVenueManager.getAll(this.props.currentUser)
+  //   let tourVenues = TourManager.getAll(this.props.currentUser)
   //   let thisVenue = VenuesManager.getVenue(venue)
   //   let bool = thisVenue.find(venue => venue.id === tourVenues.venueId) ? true : false
   //   console.log(bool)

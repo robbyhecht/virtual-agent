@@ -104,7 +104,7 @@ export default class VenuesList extends Component {
                       styles: {
                         ...data.styles,
                         overflow: 'auto',
-                        maxHeight: 200,
+                        maxHeight: 800,
                       },
                     };
                   },
