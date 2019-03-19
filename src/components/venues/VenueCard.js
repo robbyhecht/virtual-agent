@@ -28,6 +28,7 @@ export default class VenueCard extends Component {
   }
 
   componentDidMount () {
+
     if (this.props.page === "tour") {
     this.setState({
       contacted: this.props.tourVenue.contacted,
@@ -88,9 +89,18 @@ export default class VenueCard extends Component {
   //   this.setState(stateToChange);
   // }
 
+    
 
   render() {
-    
+
+    let foundIt = this.props.tour.find((venueInTour) => {
+      let foundOne = false
+      if (venueInTour.venueId === this.props.venue.id) {
+        foundOne = true
+      }
+      return foundOne
+    })
+
     return(
 
       // the cards all share these initial properties for both tour page and venues page
@@ -124,17 +134,20 @@ export default class VenueCard extends Component {
 
               <div id="venueCardButtons">
 
-              {/* this button adds the selected venue to the tour page, alerting the user */}
-              {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
-
                 <span id="havePlayedIcon">
                   {this.props.venue.havePlayed === "yes" ? `🎙` : null}
                 </span>
+            
+
+
+
+
+              {/* this button adds the selected venue to the tour page, alerting the user */}
+              {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
+
                 { 
-                // !this.props.venue.tour.length  ?
-                <Button className="venueToTour" id="tourButton" size="sm"
+                <Button className="venueToTour " disabled={foundIt} id="tourButton" size="sm"
                 onClick={() => {
-                  // this.props.checkStatus()
                   alert(`${this.props.venue.name} has been added to your tour!`)
                   return (
                     this.props.addVenueToTour(this.props.venue.id)
@@ -142,8 +155,13 @@ export default class VenueCard extends Component {
                   }}>
                 Add to your tour
                 </Button>
-                // : null
                 }
+
+
+
+
+
+                
 
                 {/* edit card button */}
 
@@ -249,3 +267,28 @@ export default class VenueCard extends Component {
     )
   }
 }
+
+
+
+// {/* <div id="venueCardButtons">
+
+// {/* this button adds the selected venue to the tour page, alerting the user */}
+// {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
+
+//   <span id="havePlayedIcon">
+//     {this.props.venue.havePlayed === "yes" ? `🎙` : null}
+//   </span>
+//   { 
+//   // !this.props.venue.tour.length  ?
+//   <Button className="venueToTour" id="tourButton" size="sm"
+//   onClick={() => {
+//     // this.props.checkStatus()
+//     alert(`${this.props.venue.name} has been added to your tour!`)
+//     return (
+//       this.props.addVenueToTour(this.props.venue.id)
+//     )
+//     }}>
+//   Add to your tour
+//   </Button>
+//   // : null
+//   } */}
