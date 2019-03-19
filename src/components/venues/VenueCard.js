@@ -145,8 +145,8 @@ export default class VenueCard extends Component {
               {/* this button adds the selected venue to the tour page, alerting the user */}
               {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
 
-                { 
-                <Button className="venueToTour " disabled={foundIt} id="tourButton" size="sm"
+                {
+                <Button className="venueToTour" disabled={foundIt ? true:false} id="tourButton" size="sm"
                 onClick={() => {
                   alert(`${this.props.venue.name} has been added to your tour!`)
                   return (
