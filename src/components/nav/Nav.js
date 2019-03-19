@@ -39,7 +39,7 @@ export default class NavBar extends Component {
                 <Link className="navLink" to={`/venues/`}>VENUES</Link>
               </NavItem>
               <NavItem>
-                <Link className="navLink" to={`/tours/`}>TOUR</Link>
+                <Link className="navLink" to={`/tour/`}>TOUR</Link>
               </NavItem>
 
               <NavItem>

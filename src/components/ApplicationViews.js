@@ -208,7 +208,7 @@ export default class ApplicationViews extends Component {
             addVenueToTour={this.addVenueToTour}
             venues={this.state.venues}
             venueWithTour={this.state.venueWithTour}
-            tours={this.state.tours}
+            tour={this.state.tour}
             currentUser={this.props.currentUser}
             filterVenuesByState={this.filterVenuesByState}
             filterVenuesByFavorite={this.filterVenuesByFavorite}
@@ -229,7 +229,7 @@ export default class ApplicationViews extends Component {
           return <VenuesForm {...props} addVenue={this.addVenue} />
         }}  />
 
-        <Route exact path="/tours" render={(props) => {
+        <Route exact path="/tour" render={(props) => {
           return <TourList {...props} 
             tour={this.state.tour}
             venues={this.state.venues}

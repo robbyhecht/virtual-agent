@@ -28,7 +28,7 @@ export default class HomePage extends Component {
       Take your touring to the next level.</p>
       </Col>
       <Col>
-      <Link to={`/tours/`}><Button className="card-link" color="primary" size="sm" id="button2">ENTER TOUR</Button></Link>
+      <Link to={`/tour/`}><Button className="card-link" color="primary" size="sm" id="button2">ENTER TOUR</Button></Link>
       </Col>
       </Row>
     </Container>

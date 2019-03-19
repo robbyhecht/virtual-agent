@@ -1,6 +1,6 @@
 import APIManager from "./APIManager"
 
-class ToursManager extends APIManager {
+class TourManager extends APIManager {
 
   getAll(user) {
     return this.all(user)
@@ -37,6 +37,6 @@ class ToursManager extends APIManager {
   
 }
 
-export default new ToursManager("tour")
+export default new TourManager("tour")
 
 
