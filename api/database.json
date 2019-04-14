@@ -227,28 +227,28 @@
       "pending": false,
       "confirmed": false,
       "id": 1,
-      "notes": "Reached out 3/16."
+      "notes": "Reached out March 20th."
     },
     {
-      "venueId": 4,
+      "venueId": 6,
       "user_id": 1,
       "contacted": false,
       "pending": true,
       "confirmed": false,
       "id": 2,
-      "notes": "Looking at something for and of August."
+      "notes": "Looking at a potential opening on July 31st"
     },
     {
-      "venueId": 12,
+      "venueId": 4,
       "user_id": 1,
       "contacted": false,
       "pending": false,
       "confirmed": true,
       "id": 3,
-      "notes": "Confirmed for July 15th. Load in 5pm."
+      "notes": "Confirmed for August 15th"
     },
     {
-      "venueId": 10,
+      "venueId": 14,
       "user_id": 1,
       "contacted": false,
       "pending": false,
@@ -256,28 +256,12 @@
       "id": 4
     },
     {
-      "venueId": 5,
+      "venueId": 2,
       "user_id": 1,
       "contacted": false,
       "pending": false,
       "confirmed": false,
       "id": 5
-    },
-    {
-      "venueId": 7,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": false,
-      "id": 6
-    },
-    {
-      "venueId": 6,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": false,
-      "id": 7
     }
   ]
 }
