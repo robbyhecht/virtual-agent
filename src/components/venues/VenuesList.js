@@ -13,7 +13,6 @@ export default class VenuesList extends Component {
     this.state = {
       dropdownOpen: false,
       page: "venue",
-      useFilter: false
     }
   }
 
@@ -35,33 +34,24 @@ export default class VenuesList extends Component {
 
   handleClickVenue = choice => {
     this.props.filterVenuesByState(choice, this.props.currentUser)
-    // this.setState({useFilter:true})
   }
 
   // Similar to the above function but this json extension specifies the 'favorite' property
 
   handleClickFavorite() {
     this.props.filterVenuesByFavorite()
-    // this.setState({useFilter:true})
   }
 
   // Similar to the above function but this json extension specifies the 'havePlayed' property
 
   handleClickHavePlayed() {
     this.props.filterVenuesByHavePlayed()
-    // this.setState({useFilter:true})
   }
 
-  // This function just reloads the page to remove a filter
-
+  // reloads the page to remove filtering
   removeFilter = () => {
     window.location.reload()
   }
-
-  // venueCheck = (venue) => {
-  //   let venueExists = this.props.checkVenueId(venue)
-  // }
-
 
 
   render() {

@@ -14,35 +14,34 @@ export default class TourList extends Component {
     this.props.updateTourButtons(true)
   }
 
-  // Similar to the above function but this json extension specifies the 'contacted' property
 
+  // FILTER FUNCTIONS
+
+  // filters by 'contacted' property
   handleClickContacted() {
     this.props.filterVenuesByContacted()
   }
 
-  // Similar to the above functions but this json extension specifies the 'pending' property
-
-
+  // filters by 'pending' property
   handleClickPending() {
     this.props.filterVenuesByPending()
   }
 
-  // Similar to the above function but this json extension specifies the 'confirmed' property
-
-
+  // filters by 'confirmed' property
   handleClickConfirmed() {
     this.props.filterVenuesByConfirmed()
   }
 
+  // shows only properties that are neither contacted, pending nor confirmed
   handleClickNew() {
     this.props.filterVenuesByNew()
   }
 
-  // This function reloads the page to remove filter
-
+  // reloads the page to remove filter
   removeFilter = () => {
     window.location.reload()
   }
+  
 
   render() {
 
