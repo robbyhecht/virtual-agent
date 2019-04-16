@@ -105,8 +105,6 @@ export default class TourList extends Component {
 
           </section>
         
-        {/* <div id="tourVenuesContainer"> */}
-
           {/* map over the 'tour' array and compare venueIds with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
         
           <article className="tourVenuesList" id="tourVenuesList">
@@ -119,8 +117,6 @@ export default class TourList extends Component {
             }
           </article>
           
-        {/* </div> */}
-
       </React.Fragment>
     )}
   }

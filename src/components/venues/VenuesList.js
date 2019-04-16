@@ -234,16 +234,3 @@ export default class VenuesList extends Component {
     )
   }
 }
-
-
-// let venueExists = this.props.checkTourVenue(this.props.venues.venue_id)
-
-/* <article className="venuesList">
-{
-  this.props.venueWithTour.map(venue => {
-    
-    return <VenueCard page={this.state.page} key={venue.id} venue={venue} {...this.props} />
-
-  } ) 
-}
-</article> */

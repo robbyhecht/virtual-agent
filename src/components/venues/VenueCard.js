@@ -143,7 +143,7 @@ export default class VenueCard extends Component {
 
 
               {/* this button adds the selected venue to the tour page, alerting the user */}
-              {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
+              {/* if the venue is already in the tour, button is disabled */}
 
                 {
                 <Button className="venueToTour" disabled={foundIt ? true:false} id="tourButton" size="sm"
@@ -156,12 +156,6 @@ export default class VenueCard extends Component {
                 Add to your tour
                 </Button>
                 }
-
-
-
-
-
-                
 
                 {/* edit card button */}
 
@@ -202,8 +196,6 @@ export default class VenueCard extends Component {
 
                 {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
                 
-
- 
                 <section className="tourButtonContainer">
                   <ButtonGroup>
                     {
@@ -267,28 +259,3 @@ export default class VenueCard extends Component {
     )
   }
 }
-
-
-
-// {/* <div id="venueCardButtons">
-
-// {/* this button adds the selected venue to the tour page, alerting the user */}
-// {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
-
-//   <span id="havePlayedIcon">
-//     {this.props.venue.havePlayed === "yes" ? `🎙` : null}
-//   </span>
-//   { 
-//   // !this.props.venue.tour.length  ?
-//   <Button className="venueToTour" id="tourButton" size="sm"
-//   onClick={() => {
-//     // this.props.checkStatus()
-//     alert(`${this.props.venue.name} has been added to your tour!`)
-//     return (
-//       this.props.addVenueToTour(this.props.venue.id)
-//     )
-//     }}>
-//   Add to your tour
-//   </Button>
-//   // : null
-//   } */}
