@@ -248,14 +248,6 @@
       "notes": "Confirmed for August 15th"
     },
     {
-      "venueId": 14,
-      "user_id": 1,
-      "contacted": false,
-      "pending": false,
-      "confirmed": false,
-      "id": 4
-    },
-    {
       "venueId": 2,
       "user_id": 1,
       "contacted": false,

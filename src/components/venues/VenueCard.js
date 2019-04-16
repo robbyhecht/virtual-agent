@@ -43,12 +43,9 @@ export default class VenueCard extends Component {
   // The tour object id is passed in as the sole argument, and each method first makes a variable that reverses the state of the targeted property when called, then patches the new value to the database and sets the new state.
 
   changeContacted = (id) => {
-    // variable 'status' holds the new reversed boolean value
-    const status = {contacted: !this.state.contacted}
-    // the tour patch function is called using the new value as its argument
-    this.props.updateTourVenue(status, id)
-    // state is set using the updated value
-    .then(() => this.setState({contacted: this.props.tourVenue.contacted}))
+    const status = {contacted: !this.state.contacted} // variable 'status' holds the new reversed boolean value
+    this.props.updateTourVenue(status, id) // tour patch function is called using the new value as its argument
+    .then(() => this.setState({contacted: this.props.tourVenue.contacted})) // state is set using updated value
   }
 
   changePending = (id) => {
@@ -70,26 +67,6 @@ export default class VenueCard extends Component {
     this.props.updateTourVenue(noteState, this.props.tourVenue.id)
   }
 
-  // fireNoteChange = (event) => {
-  //   this.props.updateTourVenue(event, this.props.venueId)
-  // }
-
-  // this.setState({notes: event.target.value})
-
-
-  // handleNoteChange = (id) => {
-  //   const newNote = {notes: this.value}
-  //   this.props.updateTourVenue(newNote, id)
-  //   .then(() => this.setState({notes: this.props.tourVenue.notes}))
-  // }
-
-  // handleNoteChange(tourVenue) {
-  //   const stateToChange = {};
-  //   stateToChange[tourVenue.notes] = tourVenue.value;
-  //   this.setState(stateToChange);
-  // }
-
-    
 
   render() {
 
@@ -143,7 +120,7 @@ export default class VenueCard extends Component {
 
 
               {/* this button adds the selected venue to the tour page, alerting the user */}
-              {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
+              {/* if the venue is already in the tour, button is disabled */}
 
                 {
                 <Button className="venueToTour" disabled={foundIt ? true:false} id="tourButton" size="sm"
@@ -156,12 +133,6 @@ export default class VenueCard extends Component {
                 Add to your tour
                 </Button>
                 }
-
-
-
-
-
-                
 
                 {/* edit card button */}
 
@@ -202,8 +173,6 @@ export default class VenueCard extends Component {
 
                 {/* The group of buttons below toggles the state of the tour objects' contacted, pending and confirmed properties using a ternary operator and alternates color accordingly by changing the id. Essentially, in each instance, the ternary alternates between two versions of the same button.*/}
                 
-
- 
                 <section className="tourButtonContainer">
                   <ButtonGroup>
                     {
@@ -267,28 +236,3 @@ export default class VenueCard extends Component {
     )
   }
 }
-
-
-
-// {/* <div id="venueCardButtons">
-
-// {/* this button adds the selected venue to the tour page, alerting the user */}
-// {/* ADD AN IF STATEMENT TO ONLY SHOW THE BUTTON IF IT'S NOT ALREADY IN TOUR */}
-
-//   <span id="havePlayedIcon">
-//     {this.props.venue.havePlayed === "yes" ? `🎙` : null}
-//   </span>
-//   { 
-//   // !this.props.venue.tour.length  ?
-//   <Button className="venueToTour" id="tourButton" size="sm"
-//   onClick={() => {
-//     // this.props.checkStatus()
-//     alert(`${this.props.venue.name} has been added to your tour!`)
-//     return (
-//       this.props.addVenueToTour(this.props.venue.id)
-//     )
-//     }}>
-//   Add to your tour
-//   </Button>
-//   // : null
-//   } */}

@@ -14,35 +14,34 @@ export default class TourList extends Component {
     this.props.updateTourButtons(true)
   }
 
-  // Similar to the above function but this json extension specifies the 'contacted' property
 
+  // FILTER FUNCTIONS
+
+  // filters by 'contacted' property
   handleClickContacted() {
     this.props.filterVenuesByContacted()
   }
 
-  // Similar to the above functions but this json extension specifies the 'pending' property
-
-
+  // filters by 'pending' property
   handleClickPending() {
     this.props.filterVenuesByPending()
   }
 
-  // Similar to the above function but this json extension specifies the 'confirmed' property
-
-
+  // filters by 'confirmed' property
   handleClickConfirmed() {
     this.props.filterVenuesByConfirmed()
   }
 
+  // shows only properties that are neither contacted, pending nor confirmed
   handleClickNew() {
     this.props.filterVenuesByNew()
   }
 
-  // This function reloads the page to remove filter
-
+  // reloads the page to remove filter
   removeFilter = () => {
     window.location.reload()
   }
+  
 
   render() {
 
@@ -53,6 +52,7 @@ export default class TourList extends Component {
 
         <section id="tourFilterButtons">
 
+          {/* filter venues by new */}
           <Button
             id="newFilterButton"
             size="large"
@@ -63,6 +63,7 @@ export default class TourList extends Component {
             Filter By New
           </Button>
 
+          {/* filter venues by contacted */}
           <Button
             id="contactedFilterButton"
             size="large"
@@ -73,6 +74,7 @@ export default class TourList extends Component {
             Filter By Contacted
           </Button>
 
+          {/* filter venues by pending*/}
           <Button
             id="pendingFilterButton"
             size="large"
@@ -83,6 +85,7 @@ export default class TourList extends Component {
             Filter By Pending
           </Button>
 
+          {/* filter venues by confirmed */}
           <Button
             id="confirmedFilterButton"
             size="large"
@@ -93,34 +96,30 @@ export default class TourList extends Component {
             Filter By Confirmed
           </Button>
 
-            <Button
-            id="removeTourFilterButton"
-            size="large"
-            className="btn"
-            onClick={() => {
-              this.removeFilter()
-            }}>
-            Remove Tour Filter
-            </Button>
+          {/* remove filter */}
+          <Button
+          id="removeTourFilterButton"
+          size="large"
+          className="btn"
+          onClick={() => {
+            this.removeFilter()
+          }}>
+          Remove Tour Filter
+          </Button>
 
-          </section>
+        </section>
         
-        {/* <div id="tourVenuesContainer"> */}
-
-          {/* map over the 'tour' array and compare venueIds with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
-        
-          <article className="tourVenuesList" id="tourVenuesList">
-            {
-              this.props.tour.map(tourVenue => {
-                let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId);
-
-                return <VenueCard page={this.state.page} key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
-              })
-            }
-          </article>
+        {/* map over the 'tour' array and compare venueIds with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
+        <article className="tourVenuesList" id="tourVenuesList">
+          {
+            this.props.tour.map(tourVenue => {
+              let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId);
+              return <VenueCard page={this.state.page} key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
+            })
+          }
+        </article>
           
-        {/* </div> */}
-
       </React.Fragment>
-    )}
+    )
   }
+}
