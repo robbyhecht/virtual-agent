@@ -17,33 +17,32 @@ export default class VenuesList extends Component {
   }
 
   // Sets the state of 'tourpage' to 'false', letting VenueCard know to assign venue page buttons on card display. in TourList, this same function mounts as 'true'
-
   componentDidMount () {
     this.props.updateTourButtons(false)
   }
 
-  // Toggle function relates to the dropdown menu for venueState selection
 
+  // Toggle function relates to the dropdown menu for venueState selection
   toggle() {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
     }));
   }
 
-  // uses user selection from dropdown to show only the venues that exist in that venueState. The filterVenuesByState function draws on a json fetch address extension to filter specific states
 
+  // FILTER FUNCTIONS
+  
+  // filters venues by geographical state using json fetch address extension 
   handleClickVenue = choice => {
     this.props.filterVenuesByState(choice, this.props.currentUser)
   }
 
-  // Similar to the above function but this json extension specifies the 'favorite' property
-
+  // filters by 'favorite' property
   handleClickFavorite() {
     this.props.filterVenuesByFavorite()
   }
 
-  // Similar to the above function but this json extension specifies the 'havePlayed' property
-
+  // filters by 'havePlayed' property
   handleClickHavePlayed() {
     this.props.filterVenuesByHavePlayed()
   }
@@ -56,6 +55,7 @@ export default class VenuesList extends Component {
 
   render() {
 
+    // tells venue card which 'add to tour' buttons to disable
     let showVenues = this.props.venues
     if (this.props.useFilter) {
       showVenues = this.props.venuesToShow
@@ -83,8 +83,7 @@ export default class VenuesList extends Component {
               Add New Venue
             </Button>
 
-            {/* calls the state filter method */}
-
+            {/* calls the geographical state filter method */}
             <Dropdown
             isOpen={this.state.dropdownOpen} toggle={this.toggle}
             name="venueState" id="venueState" value="venueState"
@@ -168,7 +167,6 @@ export default class VenuesList extends Component {
             </Dropdown>
 
             {/* Calls the favorite filter method */}
-
             <Button
               id="favoriteButton"
               size="large"
@@ -180,7 +178,6 @@ export default class VenuesList extends Component {
             </Button>
 
               {/* Calls the havePlayed filter method */}
-
             <Button
               id="havePlayedButton"
               size="large"
@@ -192,7 +189,6 @@ export default class VenuesList extends Component {
             </Button>
             
               {/* calls the filter removal method */}
-
             <Button
               id="removeFilterButton"
               size="large"
@@ -202,20 +198,15 @@ export default class VenuesList extends Component {
               }}>
               Remove Venues Filter
             </Button>
+
           </section>
         </div>
 
           {/* maps over the 'venues' array and sends the information to VenueCard to make a card for each venue. */}
-
-          {/* add a query to fetches to see if the venue id is in the tour array. if it is, add a boolean property below to pass along to venue card that tells it to not add the 'add to tour' button. Name the property whatever and give it the value of true or false. if true, you won't show the button in the card. */}
-
           <article className="venuesList">
             {
-
               showVenues.map(venue => {
-                
                 return <VenueCard page={this.state.page} key={venue.id} venue={venue} {...this.props} />
-            
               } ) 
             }
           </article>

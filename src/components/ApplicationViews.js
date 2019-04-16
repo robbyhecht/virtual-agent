@@ -60,7 +60,6 @@ export default class ApplicationViews extends Component {
         this.setState({
           venues: venues,
           useFilter:false
-
         })
       )
     }

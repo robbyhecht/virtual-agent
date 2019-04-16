@@ -52,6 +52,7 @@ export default class TourList extends Component {
 
         <section id="tourFilterButtons">
 
+          {/* filter venues by new */}
           <Button
             id="newFilterButton"
             size="large"
@@ -62,6 +63,7 @@ export default class TourList extends Component {
             Filter By New
           </Button>
 
+          {/* filter venues by contacted */}
           <Button
             id="contactedFilterButton"
             size="large"
@@ -72,6 +74,7 @@ export default class TourList extends Component {
             Filter By Contacted
           </Button>
 
+          {/* filter venues by pending*/}
           <Button
             id="pendingFilterButton"
             size="large"
@@ -82,6 +85,7 @@ export default class TourList extends Component {
             Filter By Pending
           </Button>
 
+          {/* filter venues by confirmed */}
           <Button
             id="confirmedFilterButton"
             size="large"
@@ -92,29 +96,28 @@ export default class TourList extends Component {
             Filter By Confirmed
           </Button>
 
-            <Button
-            id="removeTourFilterButton"
-            size="large"
-            className="btn"
-            onClick={() => {
-              this.removeFilter()
-            }}>
-            Remove Tour Filter
-            </Button>
+          {/* remove filter */}
+          <Button
+          id="removeTourFilterButton"
+          size="large"
+          className="btn"
+          onClick={() => {
+            this.removeFilter()
+          }}>
+          Remove Tour Filter
+          </Button>
 
-          </section>
+        </section>
         
-          {/* map over the 'tour' array and compare venueIds with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
-        
-          <article className="tourVenuesList" id="tourVenuesList">
-            {
-              this.props.tour.map(tourVenue => {
-                let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId);
-
-                return <VenueCard page={this.state.page} key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
-              })
-            }
-          </article>
+        {/* map over the 'tour' array and compare venueIds with the 'venues' array. Each matching venue is given the label 'tourVenue' and passed to VenueCard. */}
+        <article className="tourVenuesList" id="tourVenuesList">
+          {
+            this.props.tour.map(tourVenue => {
+              let venue = this.props.venues.find(venue => venue.id === tourVenue.venueId);
+              return <VenueCard page={this.state.page} key={tourVenue.id} tourVenue={tourVenue} venue={venue} {...this.props} />
+            })
+          }
+        </article>
           
       </React.Fragment>
     )}
