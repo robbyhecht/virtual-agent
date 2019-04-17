@@ -11,7 +11,6 @@ export default class VenueCard extends Component {
     super(props);
     this.state = {
       modal: false,
-      modalNote: false,
       contacted: "",
       pending: "",
       confirmed: "",
