@@ -9,6 +9,7 @@ export default class HomePage extends Component {
   render() {
 
     // home page is divided into 2x2 colums and rows
+    // buttons are wrapped in React <Link> tags to better utilize available tools
 
     return(
     <div className="mainHome">
