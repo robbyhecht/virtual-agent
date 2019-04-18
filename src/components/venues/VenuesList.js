@@ -55,10 +55,10 @@ export default class VenuesList extends Component {
 
   render() {
 
-    // tells venue card which 'add to tour' buttons to disable
-    let showVenues = this.props.venues
-    if (this.props.useFilter) {
-      showVenues = this.props.venuesToShow
+    // tells venues page which venues to display based on filters
+    let showVenues = this.props.venues // Default to showing all of the venues
+    if (this.props.useFilter) { // BUT if a filter is being used...
+      showVenues = this.props.venuesToShow // ...then these are the venues to display
     }
 
     return (
@@ -71,7 +71,7 @@ export default class VenuesList extends Component {
 
           <section id="venueButtons">
 
-            {/* pushes the user to the venues/new address */}
+            {/* sends the user to the venues/new address */}
 
             <Button
               id="newVenueButton"
@@ -166,7 +166,7 @@ export default class VenuesList extends Component {
               </DropdownMenu>
             </Dropdown>
 
-            {/* Calls the favorite filter method */}
+            {/* Calls the 'favorite' filter method */}
             <Button
               id="favoriteButton"
               size="large"
@@ -177,7 +177,7 @@ export default class VenuesList extends Component {
               Filter By Favorites
             </Button>
 
-              {/* Calls the havePlayed filter method */}
+              {/* Calls the 'havePlayed' filter method */}
             <Button
               id="havePlayedButton"
               size="large"

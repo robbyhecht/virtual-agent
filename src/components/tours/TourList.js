@@ -32,7 +32,7 @@ export default class TourList extends Component {
     this.props.filterVenuesByConfirmed()
   }
 
-  // shows only properties that are neither contacted, pending nor confirmed
+  // shows only properties that are not marked as contacted, pending or confirmed
   handleClickNew() {
     this.props.filterVenuesByNew()
   }

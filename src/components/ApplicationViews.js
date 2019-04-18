@@ -16,7 +16,7 @@ export default class ApplicationViews extends Component {
     tour: [],
     tourpage: false,
     venuesToShow: [],
-    useFilter:false
+    useFilter:false // venue filtration defaults to false if no filter has been added
     }
 
   componentDidMount() {
@@ -72,6 +72,7 @@ export default class ApplicationViews extends Component {
 
 
   // VENUE FILTERS
+  // these "filters" determine the specifics of the fetch calls
 
   // Used to show only venue objects with specific "venueState" value - called in VenuesList
   filterVenuesByState = (venueState, user) =>
