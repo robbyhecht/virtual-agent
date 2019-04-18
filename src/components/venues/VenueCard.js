@@ -5,13 +5,12 @@ import "./Venues.css"
 
 export default class VenueCard extends Component {
 
-  // set state in constructor for the modals and tour button status
+  // set state in constructor for the modals toggle and tour button status
 
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      modalNote: false,
       contacted: "",
       pending: "",
       confirmed: "",
@@ -21,6 +20,7 @@ export default class VenueCard extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
+  // toggles delete/remove modals
   toggle() {
     this.setState({
       modal: !this.state.modal,
@@ -29,6 +29,7 @@ export default class VenueCard extends Component {
 
   componentDidMount () {
 
+    // sets the boolean state of the tour section card buttons each time the component mounts
     if (this.props.page === "tour") {
     this.setState({
       contacted: this.props.tourVenue.contacted,
@@ -39,8 +40,11 @@ export default class VenueCard extends Component {
     }
   }
 
-  // these are functions that toggle boolean state of button properties in the tour objects.
-  // The tour object id is passed in as the sole argument, and each method first makes a variable that reverses the state of the targeted property when called, then patches the new value to the database and sets the new state.
+  // Below are functions that toggle boolean state of button properties in the tour objects.
+  // (1) The tour object id is passed in as the sole argument
+  // (2) Method makes a variable holding the reversed state of the targeted property
+  // (3) Patches the new value to the database
+  // (4) Sets the new state
 
   changeContacted = (id) => {
     const status = {contacted: !this.state.contacted} // variable 'status' holds the new reversed boolean value
@@ -58,22 +62,24 @@ export default class VenueCard extends Component {
     const status = {confirmed: !this.state.confirmed}
     this.props.updateTourVenue(status, id)
     .then(() => this.setState({confirmed: this.props.tourVenue.confirmed}))
-    .then(() => (this.state.confirmed) ? console.log("Gig confirmed!") : null)
+    .then(() => (this.state.confirmed) ? console.log("Gig confirmed!") : null) //(change this to an alert if you decide to congratulate user for a confirmed gig)
   }
 
+  // Adds new user 'notes' input to state on tour section cards
   handleNoteChange = (event) => {
     let noteState = {notes: event.target.value}
-    this.setState({notes: event.target.value})
-    this.props.updateTourVenue(noteState, this.props.tourVenue.id)
+    this.setState({notes: event.target.value}) //update the state of 'notes' with user input
+    this.props.updateTourVenue(noteState, this.props.tourVenue.id) // patch changes to tour object
   }
 
 
   render() {
 
+    // this will be used to set the disabled status on the 'add to tour' venue card button
     let foundIt = this.props.tour.find((venueInTour) => {
-      let foundOne = false
+      let foundOne = false // defaults to false which will mean an active button (disabled is false)
       if (venueInTour.venueId === this.props.venue.id) {
-        foundOne = true
+        foundOne = true // if this venue's id matches a venue in the tour array, disabled will be set to true
       }
       return foundOne
     })
